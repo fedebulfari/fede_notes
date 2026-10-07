@@ -23,13 +23,5 @@ Problems are characterized by variables:
 ![[Es.1]]
  
 
-
-
-
-|            |  1  |  2  |  3  |  4  |  5  | 6   |
-| :--------: | :-: | :-: | :-: | :-: | :-: | --- |
-| max amount |  7  |  2  |  4  |  5  |  4  | 1   |
-|  cooupon   |  5  |  3  |  2  |  3  |  1  | 1   |
-
 ---
 Related: [[_Operational Research MOC]]

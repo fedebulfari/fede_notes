@@ -12,4 +12,4 @@ Decide how much to invest in each instrument to maximize the economical return f
 - Upper bounds: $x_{1}\leq40, x_{1}\leq 12, x_{1}\leq 180, x_{1}\leq 5, x_{1}\leq 400$
 - Coupons($c_{i}$): $x_1=3.2, x_{2}=1.5,  x_{3}=4.2, x_{4}=0.7, x_{5}=17$
 	$y_{i}=\frac{x_{i}}{upper\_bound(x_{i})}$
- $\implies$  
+ $\implies$  ![[Es.1-1791390205262.webp|294x281]]
