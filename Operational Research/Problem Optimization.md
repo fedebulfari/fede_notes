@@ -4,4 +4,9 @@ Given a problem we need to establish:
 - Objective -> Objective Function
 
 ## Variables
-Problems are characterized 
+Problems are characterized by variables:
+- Non negative variables
+- Unrestricted variables
+- Relative variables
+- Binary variables
+- Discrete variables
