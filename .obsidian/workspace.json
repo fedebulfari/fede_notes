@@ -57,7 +57,7 @@
               "state": {
                 "file": "Operational Research/Problem Optimization.md",
                 "mode": "source",
-                "source": true
+                "source": false
               },
               "icon": "lucide-file",
               "title": "Problem Optimization"
