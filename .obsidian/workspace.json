@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Problem Optimization.md",
+                "file": "Operational Research/Problem Optimization.md",
                 "mode": "source",
                 "source": false
               },
@@ -179,16 +179,6 @@
               "icon": "git-pull-request",
               "title": "Source Control"
             }
-          },
-          {
-            "id": "e9e1e10788f21663",
-            "type": "leaf",
-            "state": {
-              "type": "copilot-agent-chat-view",
-              "state": {},
-              "icon": "copilot-agent",
-              "title": "Copilot Agent"
-            }
           }
         ],
         "currentTab": 5
@@ -212,11 +202,8 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "3d676871ca8ab868",
+  "active": "04676eb336cffe0f",
   "lastOpenFiles": [
-    "Problem Optimization.md",
-    "Senza nome/Senza nome.md",
-    "Senza nome",
     "copilot/skills/obsidian-cli/SKILL.md",
     "copilot/skills/obsidian-cli/LICENSE",
     "copilot/skills/obsidian-cli",
@@ -236,10 +223,13 @@
     "copilot/skills/obsidian-markdown/references/PROPERTIES.md",
     "copilot/skills/obsidian-markdown/references/EMBEDS.md",
     "copilot/skills/obsidian-markdown/references/CALLOUTS.md",
+    "copilot/skills/obsidian-markdown/references",
     "copilot/skills/openartifacts-publish/SKILL.md",
     "copilot/skills/openartifacts-publish/themes/research-memo.md",
     "copilot/skills/copilot-fetch-x/SKILL.md",
     "copilot/skills/copilot-youtube-transcript/SKILL.md",
+    "Operational Research/Problem Optimization.md",
+    "Senza nome/Senza nome.md",
     "Excalidraw/Drawing 2026-10-07 11.55.49.excalidraw.md",
     "Operational Research/Benvenuto.md"
   ]

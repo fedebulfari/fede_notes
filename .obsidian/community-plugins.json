@@ -1,7 +1,6 @@
 [
   "obsidian-git",
-  "copilot",
   "obsidian-excalidraw-plugin",
   "obsidian-linter",
-  "templater-obsidian"
+  "copilot"
 ]
