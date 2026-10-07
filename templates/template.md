@@ -1,10 +1,13 @@
-<% let noteType = await tp.system.suggester(["lecture","exercise"])%>
+<%* 
+let noteType = await tp.system.suggester(["Lecture", "Exercise"], ["lecture", "exercise"]); 
+_%>
 ---
 date: <% tp.file.creation_date("DD-MM-YYYY") %>
 subject: <% tp.file.folder(false) %>
 tags: [<% noteType %>]
 ---
-# <% tp.file.title %>
+
+
 
 ---
-**Related** [[_<% tp.file.folder(false) %>_MOC]]
+Related: [[_<% tp.file.folder(false) %>_MOC]]
