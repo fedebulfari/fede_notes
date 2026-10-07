@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Operational Research/Senza nome 1.md",
+                "file": "templates/template.md",
                 "mode": "source",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
-              "title": "Senza nome 1"
+              "title": "template"
             }
           }
         ],
@@ -190,7 +190,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Operational Research/Senza nome 1.md",
+                "file": "templates/template.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -256,8 +256,8 @@
   },
   "active": "f3113cdfcc1e67f0",
   "lastOpenFiles": [
-    "Operational Research/Senza nome.md",
     "Operational Research/Senza nome 1.md",
+    "Operational Research/Senza nome.md",
     "templates/template.md",
     "templates/Nuovo Documento di testo.md",
     "templates/Nuovo Documento di testo.txt",
