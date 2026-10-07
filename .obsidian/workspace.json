@@ -195,7 +195,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 200,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -212,7 +213,7 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "2cb8085403a072de",
+  "active": "3d676871ca8ab868",
   "lastOpenFiles": [
     "copilot/skills/obsidian-cli/SKILL.md",
     "copilot/skills/obsidian-cli/LICENSE",
@@ -241,6 +242,4 @@
     "Operational Research/Problem Optimization.md",
     "Senza nome/Senza nome.md",
     "Excalidraw/Drawing 2026-10-07 11.55.49.excalidraw.md",
-    "Operational Research/Benvenuto.md"
-  ]
-}
+    "Operational Resea

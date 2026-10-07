@@ -3,4 +3,4 @@ Given a problem we need to establish:
 - Rules
 - Objectives
 ## Variables
-Problems are characterized bu
+Problems are characterized b
