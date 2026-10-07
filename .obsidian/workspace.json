@@ -62,9 +62,23 @@
               "icon": "lucide-file",
               "title": "Problem Optimization"
             }
+          },
+          {
+            "id": "b308c9487fccd25a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Operational Research/Problem Optimization.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Problem Optimization"
+            }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -268,15 +282,17 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "0c930744471f7712",
+  "active": "b308c9487fccd25a",
   "lastOpenFiles": [
-    "Operational Research/Senza nome.md",
+    "Operational Research/_Operational Research MOC.md",
+    "templates/template.md",
+    "templates/_MOC.md",
+    "Operational Research/Problem Optimization.md",
+    "Operational Research/__.md",
     "Operational Research/objects/Senza nome.md",
     "Operational Research/objects/Pasted image 20261007122210.png",
     "Operational Research/objects/Pasted image 20261007122246.png",
-    "templates/template.md",
     "Operational Research/MIn.md",
-    "Operational Research/Problem Optimization.md",
     "Operational Research/Senza nome 1.md",
     "Operational Research/Senza nome 2.md",
     "templates/Nuovo Documento di testo.md",
@@ -305,7 +321,6 @@
     "copilot/skills/copilot-fetch-x/SKILL.md",
     "copilot/skills/copilot-youtube-transcript/SKILL.md",
     "Senza nome/Senza nome.md",
-    "Excalidraw/Drawing 2026-10-07 11.55.49.excalidraw.md",
-    "Operational Research/Benvenuto.md"
+    "Excalidraw/Drawing 2026-10-07 11.55.49.excalidraw.md"
   ]
 }

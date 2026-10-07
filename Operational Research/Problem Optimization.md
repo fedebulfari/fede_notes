@@ -1,3 +1,7 @@
+---
+date: 07-10-2026
+subject: Operational Research
+---
 Given a problem we need to establish:
 - Decisions -> Variables
 - Rules -> Mathematical constraints
@@ -10,3 +14,8 @@ Problems are characterized by variables:
 - Relative variables
 - Binary variables
 - Discrete variables
+
+
+
+---
+Related: [[_Operational Research MOC]]
