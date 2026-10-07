@@ -20,8 +20,23 @@
               "icon": "lucide-file",
               "title": "Problem Optimization"
             }
+          },
+          {
+            "id": "a39d7b80eada92eb",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "templates/Senza nome.md",
+                "mode": "source",
+                "source": true
+              },
+              "icon": "lucide-file",
+              "title": "Senza nome"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -161,7 +176,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Operational Research/Problem Optimization.md",
+                "file": "templates/Senza nome.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -210,11 +225,16 @@
       "obsidian-git:Open Git source control": false,
       "copilot:Open Copilot Agent Chat": false,
       "obsidian-excalidraw-plugin:New drawing": false,
-      "templater-obsidian:Templater": false
+      "templater-obsidian:Templater": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
+      "omnisearch:Omnisearch": false
     }
   },
-  "active": "3d676871ca8ab868",
+  "active": "a39d7b80eada92eb",
   "lastOpenFiles": [
+    "templates/Senza nome.md",
+    "templates",
+    "Operational Research/Problem Optimization.md",
     "Operational Research/objects/Pasted image 20261007122246.png",
     "Operational Research/objects/Pasted image 20261007122210.png",
     "Operational Research/objects",
@@ -233,7 +253,6 @@
     "copilot/skills/obsidian-bases/references",
     "copilot/skills/obsidian-bases",
     "copilot/skills/obsidian-markdown/SKILL.md",
-    "copilot/skills/obsidian-markdown/LICENSE",
     "copilot/skills/obsidian-markdown/references/PROPERTIES.md",
     "copilot/skills/obsidian-markdown/references/EMBEDS.md",
     "copilot/skills/obsidian-markdown/references/CALLOUTS.md",
@@ -241,7 +260,6 @@
     "copilot/skills/openartifacts-publish/themes/research-memo.md",
     "copilot/skills/copilot-fetch-x/SKILL.md",
     "copilot/skills/copilot-youtube-transcript/SKILL.md",
-    "Operational Research/Problem Optimization.md",
     "Senza nome/Senza nome.md",
     "Excalidraw/Drawing 2026-10-07 11.55.49.excalidraw.md",
     "Operational Research/Benvenuto.md"

@@ -2,5 +2,13 @@
   "obsidian-git",
   "obsidian-excalidraw-plugin",
   "obsidian-linter",
-  "copilot"
+  "copilot",
+  "templater-obsidian",
+  "obsidian-latex-suite",
+  "table-editor-obsidian",
+  "image-converter",
+  "dataview",
+  "mousewheel-image-zoom",
+  "omnisearch",
+  "text-extractor"
 ]

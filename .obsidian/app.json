@@ -1,6 +1,7 @@
 {
   "newFileLocation": "current",
-  "attachmentFolderPath": "./objects",
+  "attachmentFolderPath": "./media",
   "promptDelete": false,
-  "showLineNumber": true
+  "showLineNumber": true,
+  "alwaysUpdateLinks": true
 }
