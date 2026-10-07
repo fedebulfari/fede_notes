@@ -161,7 +161,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Senza nome.md",
+                "file": "Operational Research/Problem Optimization.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -179,9 +179,19 @@
               "icon": "git-pull-request",
               "title": "Source Control"
             }
+          },
+          {
+            "id": "2cb8085403a072de",
+            "type": "leaf",
+            "state": {
+              "type": "copilot-agent-chat-view",
+              "state": {},
+              "icon": "copilot-agent",
+              "title": "Copilot Agent"
+            }
           }
         ],
-        "currentTab": 5
+        "currentTab": 6
       }
     ],
     "direction": "horizontal",
@@ -202,7 +212,7 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "04676eb336cffe0f",
+  "active": "2cb8085403a072de",
   "lastOpenFiles": [
     "copilot/skills/obsidian-cli/SKILL.md",
     "copilot/skills/obsidian-cli/LICENSE",
