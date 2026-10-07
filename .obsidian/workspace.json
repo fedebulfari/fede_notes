@@ -83,7 +83,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 200
   },
   "right": {
     "id": "a208faef6a30291a",
@@ -215,6 +215,9 @@
   },
   "active": "3d676871ca8ab868",
   "lastOpenFiles": [
+    "Operational Research/objects/Pasted image 20261007122246.png",
+    "Operational Research/objects/Pasted image 20261007122210.png",
+    "Operational Research/objects",
     "copilot/skills/obsidian-cli/SKILL.md",
     "copilot/skills/obsidian-cli/LICENSE",
     "copilot/skills/obsidian-cli",
@@ -234,7 +237,6 @@
     "copilot/skills/obsidian-markdown/references/PROPERTIES.md",
     "copilot/skills/obsidian-markdown/references/EMBEDS.md",
     "copilot/skills/obsidian-markdown/references/CALLOUTS.md",
-    "copilot/skills/obsidian-markdown/references",
     "copilot/skills/openartifacts-publish/SKILL.md",
     "copilot/skills/openartifacts-publish/themes/research-memo.md",
     "copilot/skills/copilot-fetch-x/SKILL.md",
@@ -242,4 +244,6 @@
     "Operational Research/Problem Optimization.md",
     "Senza nome/Senza nome.md",
     "Excalidraw/Drawing 2026-10-07 11.55.49.excalidraw.md",
-    "Operational Resea
+    "Operational Research/Benvenuto.md"
+  ]
+}
