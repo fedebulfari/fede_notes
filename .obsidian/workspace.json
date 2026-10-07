@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "da7894a4b675ad34",
+        "id": "893c9117ac55296e",
         "type": "tabs",
         "children": [
           {
-            "id": "ba1ff1ea3dc12933",
+            "id": "3d676871ca8ab868",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -175,9 +175,19 @@
               "icon": "git-pull-request",
               "title": "Source Control"
             }
+          },
+          {
+            "id": "e9e1e10788f21663",
+            "type": "leaf",
+            "state": {
+              "type": "copilot-agent-chat-view",
+              "state": {},
+              "icon": "copilot-agent",
+              "title": "Copilot Agent"
+            }
           }
         ],
-        "currentTab": 5
+        "currentTab": 6
       }
     ],
     "direction": "horizontal",
@@ -192,11 +202,16 @@
       "templates:Inserisci modello": false,
       "command-palette:Apri riquadro comandi": false,
       "bases:Crea nuova Base": false,
-      "obsidian-git:Open Git source control": false
+      "obsidian-git:Open Git source control": false,
+      "copilot:Open Copilot Agent Chat": false,
+      "obsidian-excalidraw-plugin:New drawing": false,
+      "templater-obsidian:Templater": false
     }
   },
-  "active": "04676eb336cffe0f",
+  "active": "962e634c0bc6f7cd",
   "lastOpenFiles": [
+    "Excalidraw/Drawing 2026-10-07 11.55.49.excalidraw.md",
+    "Excalidraw",
     "Operational Research",
     "Operational Research/Benvenuto.md",
     "Operational Research",
