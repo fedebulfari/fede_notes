@@ -12,6 +12,9 @@ Decide how much to invest in each instrument to maximize the economical return f
 - Upper bounds: $x_{1}\leq40, x_{1}\leq 12, x_{1}\leq 180, x_{1}\leq 5, x_{1}\leq 400$
 - Coupons($c_{i}$): $x_1=3.2, x_{2}=1.5,  x_{3}=4.2, x_{4}=0.7, x_{5}=17$
 	$y_{i}=\frac{x_{i}}{upper\_bound(x_{i})}$ , $0\leq y_{i}\leq 1$
- $\implies$  ![[Es.1-1791390205262.webp|218x208]]
+  ![[Es.1-1791390205262.webp|218x208]]
 
-If the problem was binary ($y_{i}belong{}$)
+If the problem was binary ($y_{i}\in{\{0,1\}}$) then the solution strategy would have been different:
+	 ![[Es.1-1791401200992.webp|221]]
+
+The first solution accept infinite solution, the later only $2^n$ solutions.

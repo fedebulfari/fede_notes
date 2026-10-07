@@ -23,5 +23,6 @@ Problems are characterized by variables:
 ![[Es.1]]
  
 
+
 ---
 Related: [[_Operational Research MOC]]
