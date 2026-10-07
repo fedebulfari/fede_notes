@@ -4,4 +4,4 @@ Given a problem we need to establish:
 - Objectives
 ![[Pasted image 20261007122246.png|161]]
 ## Variables
-Problems are characterized b
+Problems are characterized 

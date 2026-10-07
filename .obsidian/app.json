@@ -1,5 +1,6 @@
 {
   "newFileLocation": "current",
   "attachmentFolderPath": "./objects",
-  "promptDelete": false
+  "promptDelete": false,
+  "showLineNumber": true
 }
