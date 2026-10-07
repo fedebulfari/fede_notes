@@ -8,14 +8,15 @@ Given a problem we need to establish:
 - Objective -> Objective Function
 
 ## Variables
+
 Problems are characterized by variables:
 - Non negative variables
 - Unrestricted variables
+	 We can transform unrestricted variable into a restricted one:
+		$\pi_{ts}^+\geq 0, \pi_{ts}^- \geq0 \implies \pi_{ts}=\pi_{ts}^+ - \pi_{ts}^-$
 - Relative variables
 - Binary variables
 - Discrete variables
-
-
 
 ---
 Related: [[_Operational Research MOC]]
