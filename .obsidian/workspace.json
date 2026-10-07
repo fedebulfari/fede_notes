@@ -165,13 +165,23 @@
               "icon": "lucide-list",
               "title": "Struttura"
             }
+          },
+          {
+            "id": "04676eb336cffe0f",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
           }
-        ]
+        ],
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -181,11 +191,13 @@
       "daily-notes:Apri nota giornaliera": false,
       "templates:Inserisci modello": false,
       "command-palette:Apri riquadro comandi": false,
-      "bases:Crea nuova Base": false
+      "bases:Crea nuova Base": false,
+      "obsidian-git:Open Git source control": false
     }
   },
-  "active": "ba1ff1ea3dc12933",
+  "active": "04676eb336cffe0f",
   "lastOpenFiles": [
+    "Operational Research",
     "Operational Research/Benvenuto.md",
     "Operational Research",
     "Senza nome.md"
