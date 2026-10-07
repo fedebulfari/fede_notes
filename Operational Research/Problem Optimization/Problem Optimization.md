@@ -20,13 +20,8 @@ Problems are characterized by variables:
 
 ### Optimization problem
 
- Given a set of financial instruments
-
-|            |  1  |  2  |  3  |  4  |  5  |
-|:----------:|:---:|:---:|:---:|:---:|:---:|
-| max amount | 40  | 12  | 130 |  5  | 400 |
-|  cooupon   | 3.2 | 1.5 | 4.2 | 0.7 | 17  |
-Decide how much to invest in each instrument to maximize the economical return from the coupons:
+![[Es.1]]
+ 
 
 
 
