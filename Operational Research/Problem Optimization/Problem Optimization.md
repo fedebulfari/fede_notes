@@ -38,7 +38,7 @@ $$\min_{x} \ f(x) \qquad \text{s.t.} \quad g_i(x) \leq 0,\ i = 1,\dots,m; \qquad
 Example:
 
 ![[Es.1]]
-
+##
 
 
 ---
