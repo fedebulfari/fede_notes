@@ -39,5 +39,7 @@ Example:
 
 ![[Es.1]]
 
+
+
 ---
 Related: [[_Operational Research MOC]]
