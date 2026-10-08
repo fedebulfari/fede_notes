@@ -1,4 +1,5 @@
 {
   "accentColor": "",
-  "cssTheme": "Solarized"
+  "cssTheme": "Solarized",
+  "nativeMenus": true
 }

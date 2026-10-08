@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Operational Research/Problem Optimization/Problem Optimization.md",
+                "file": "Operational Research/_Operational Research MOC.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Problem Optimization"
+              "title": "_Operational Research MOC"
             }
           }
         ],
@@ -114,7 +114,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Operational Research/Problem Optimization/Problem Optimization.md",
+                "file": "Operational Research/_Operational Research MOC.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -133,7 +133,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Operational Research/Problem Optimization/Problem Optimization.md",
+                "file": "Operational Research/_Operational Research MOC.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
@@ -176,7 +176,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Operational Research/Problem Optimization/Problem Optimization.md",
+                "file": "Operational Research/_Operational Research MOC.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -216,12 +216,11 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -240,10 +239,10 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "32c604d94264cee9",
+  "active": "04676eb336cffe0f",
   "lastOpenFiles": [
-    "Operational Research/_Operational Research MOC.md",
     "Operational Research/Problem Optimization/Problem Optimization.md",
+    "Operational Research/_Operational Research MOC.md",
     "Operational Research/Problem Optimization/parts/media/Es.1-1791390205262.webp",
     "Operational Research/Problem Optimization/parts/media/Es.1-1791401200992.webp",
     "Operational Research/Problem Optimization/parts/Es.1.md",
