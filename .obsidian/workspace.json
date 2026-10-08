@@ -98,7 +98,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "a208faef6a30291a",
@@ -220,7 +221,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 589.1666259765625
+    "width": 299.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -239,8 +240,10 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "2cb8085403a072de",
+  "active": "32c604d94264cee9",
   "lastOpenFiles": [
+    "Operational Research/_Operational Research MOC.md",
+    "Operational Research/Problem Optimization/Problem Optimization.md",
     "Operational Research/PDF/chapter+1.pdf",
     "Operational Research/PDF/chapter+2.pdf",
     "Operational Research/PDF/chapter+3.pdf",
@@ -249,8 +252,6 @@
     "Operational Research/Nuova cartella",
     "copilot/copilot-conversations/agent__improve@20261008_110205.md",
     "copilot/copilot-conversations",
-    "Operational Research/_Operational Research MOC.md",
-    "Operational Research/Problem Optimization/Problem Optimization.md",
     "Operational Research/Problem Optimization/parts/media/Es.1-1791390205262.webp",
     "Operational Research/Problem Optimization/parts/media/Es.1-1791401200992.webp",
     "Operational Research/Problem Optimization/parts/Es.1.md",
@@ -267,7 +268,6 @@
     "Operational Research/Senza nome 1.md",
     "Operational Research/Senza nome 2.md",
     "templates/Nuovo Documento di testo.md",
-    "templates/Nuovo Documento di testo.txt",
     "copilot/skills/obsidian-cli/SKILL.md",
     "copilot/skills/json-canvas/SKILL.md",
     "copilot/skills/json-canvas/references/EXAMPLES.md",
