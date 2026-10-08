@@ -4,11 +4,11 @@ subject: Operational Research
 ---
 Modeling a problem means translating it into an optimization problem by establishing three correspondences:
 
-| Problem side | Model side |
-|:------------:|:----------:|
-| Decisions | Variables |
-| Rules | Mathematical constraints |
-| Objective | Objective function |
+| Problem side |        Model side        |
+| :----------: | :----------------------: |
+|  Decisions   |        Variables         |
+|    Rules     | Mathematical constraints |
+|  Objective   |    Objective function    |
 
 The result is an **optimization problem**: find the values of the variables that optimize (min/max) the objective while satisfying every constraint.
 
@@ -17,8 +17,9 @@ The result is an **optimization problem**: find the values of the variables that
 The decisions become decision variables, and their domain is part of the model:
 
 - **Non negative** — $x_i \geq 0$: natural for quantities such as amounts, flows, times.
-- **Unrestricted** — free to take any sign. We can transform an unrestricted variable into a restricted one:
-	$\pi_{ts}^+ \geq 0,\ \pi_{ts}^- \geq 0 \implies \pi_{ts} = \pi_{ts}^+ - \pi_{ts}^-$
+- **Unrestricted** — free to take any sign.
+	We can transform an unrestricted variable into a restricted one:
+		$\pi_{ts}^+ \geq 0,\ \pi_{ts}^- \geq 0 \implies \pi_{ts} = \pi_{ts}^+ - \pi_{ts}^-$
 	This way the model only contains non-negative variables (standard form).
 - **Relative** — defined with respect to a reference value instead of in absolute terms, e.g. the normalized share
 	$y_i = \dfrac{x_i}{\bar{x}_i} \in [0,1]$, where $\bar{x}_i$ is the upper bound of $x_i$ (as in [[Es.1]]).
