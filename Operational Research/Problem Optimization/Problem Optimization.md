@@ -34,7 +34,7 @@ $$\min_{x} \ f(x) \qquad \text{s.t.} \quad g_i(x) \leq 0,\ i = 1,\dots,m; \qquad
 - continuous variables + linear $f$, $g$, $h$ → **LP** (linear program), in standard form $\max\ c^\top x \ \text{s.t.}\ Ax \leq b,\ x \geq 0$
 - integer/binary variables → **IP / MILP**, with a finite (possibly exponential) number of feasible solutions
 
-Worked example:
+Example:
 
 ![[Es.1]]
 

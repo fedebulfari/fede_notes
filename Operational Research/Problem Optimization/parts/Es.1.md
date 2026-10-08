@@ -1,3 +1,4 @@
+
 Given a set of financial instruments:
 
 |            |  1  |  2  |  3  |  4  |  5  |
@@ -20,8 +21,10 @@ With relative variables $y_{i}=\dfrac{x_{i}}{\bar{x}_{i}}$, $\ 0\leq y_{i}\leq 1
 
 ![[Es.1-1791390205262.webp|218x208]]
 
-If the decisions were binary ($y_{i}\in{\{0,1\}}$, i.e. invest the full max amount in instrument $i$ or nothing at all, $x_{i}\in{\{0,\bar{x}_{i}\}}$), then the solution strategy would have been different:
+If the decisions were binary ($y_{i}\in{\{0,1\}}$, i.e. invest the full max amount in instrument $i$ or nothing at all, $x_{i}\in{\{0,\bar{x}_{i}\}}$),
+	then the solution strategy would have been different:
 
 ![[Es.1-1791401200992.webp|221]]
 
-The continuous model admits infinitely many feasible solutions (an LP, solved at a vertex of the feasible region), while the binary one has only $2^n$ combinations — here $2^5 = 32$ — so the solution strategy becomes combinatorial.
+The continuous model admits infinitely many feasible solutions (an LP, solved at a vertex of the feasible region), while the binary one has only $2^n$ combinations 
+	Here $2^5 = 32$ — so the solution strategy becomes combinatorial.
