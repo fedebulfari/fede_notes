@@ -11,6 +11,7 @@ subject: Formal Languages and Compilers
 
 >[!info] Length
 >Number of elements
+>_Es. $\vert{}bbc\vert{} = 3$_
 
 >[!info] Equality
 Two strings are equal iif :
@@ -31,14 +32,6 @@ $\epsilon$ is the neutral element with respect to concatenation: chaining $\epsi
 >$$x=u \ y \ v$$
 >$y$ is a **substrigs**, $u$ is a **prefix**, $v$ is a **suffix**
 >![[Basics-1791567228274.webp|279x101]]
-## LENGTH OF A STRING $x$
-- is the number of elements (letters)
-
-- $\vert{}bbc\vert{} = 3$
-
-- $\vert{}abbc\vert{} = 4$
-
-
 ## EQUALITY OF TWO STRINGS:
 - two strings are equal if and only if (iff) they have the same length and their elements orderly coincide, from left to right
 
