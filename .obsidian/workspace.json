@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Operational Research/Graphs/Graphs.md",
+                "file": "Operational Research/Graphs/media/Es. 1.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Graphs"
+              "title": "Es. 1"
             }
           },
           {
@@ -256,7 +256,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 7
       }
     ],
     "direction": "horizontal",
@@ -282,6 +282,11 @@
   },
   "active": "2401c7cbfafa874b",
   "lastOpenFiles": [
+    "Operational Research/Graphs/media/media/Es. 1-1791561061335.webp",
+    "Operational Research/Graphs/media/media",
+    "Operational Research/Graphs/Graphs.md",
+    "Operational Research/Graphs/media/Es. 1.md",
+    "Operational Research/Graphs/Senza nome",
     "Operational Research/Graphs/media/Graphs-1791560716558.webp",
     "Operational Research/Graphs/media/Graphs-1791560389715.webp",
     "Operational Research/Graphs/media/Graphs-1791560347791.webp",
@@ -289,36 +294,32 @@
     "Operational Research/Graphs/media/Graphs-1791560256435.webp",
     "Operational Research/Graphs/media",
     "Operational Research/Graphs/parts/Senza nome.md",
-    "Operational Research/Graphs/Graphs.md",
     "Operational Research/Graphs/parts",
     "Operational Research/Problem Optimization/Problem Optimization.md",
     "Operational Research/_Operational Research MOC.md",
     "Operational Research/Graphs/_Graphs MOC.md",
     "templates/template.md",
     "Operational Research/Graphs",
-    "Operational Research/Problem Optimization/parts/Es. 3.md",
-    "Operational Research/Problem Optimization/parts/media/Es. 3-1791478780648.webp",
-    "Operational Research/Problem Optimization/parts/media/Es. 3-1791478758471.webp",
-    "Operational Research/Problem Optimization/parts/media/grafi2.md",
-    "Operational Research/Problem Optimization/parts/Es. 2.md",
-    "Operational Research/Problem Optimization/parts/Es.1.md",
-    "Operational Research/Problem Optimization/parts/media/grafo1.md",
+    "Operational Research/Problem Optimization/media/Es. 3.md",
+    "Operational Research/Problem Optimization/media/media/Es. 3-1791478780648.webp",
+    "Operational Research/Problem Optimization/media/media/Es. 3-1791478758471.webp",
+    "Operational Research/Problem Optimization/media/media/grafi2.md",
+    "Operational Research/Problem Optimization/media/Es. 2.md",
+    "Operational Research/Problem Optimization/media/Es.1.md",
+    "Operational Research/Problem Optimization/media/media/grafo1.md",
     "Excalidraw",
-    "Operational Research/Problem Optimization/parts/media/Es. 3-1791473777167.webp",
+    "Operational Research/Problem Optimization/media/media/Es. 3-1791473777167.webp",
     "Operational Research/Problem Optimization/media",
     "Excalidraw/Drawing 2026-10-08 17.22.51.excalidraw.md",
     "Operational Research/PDF/chapter+1.pdf",
     "Operational Research/PDF/chapter+2.pdf",
     "Operational Research/PDF/chapter+3.pdf",
-    "Operational Research/PDF/chapter+4.pdf",
-    "Operational Research/PDF",
     "copilot/copilot-conversations/agent__improve@20261008_110205.md",
-    "Operational Research/Problem Optimization/parts/media/Es.1-1791390205262.webp",
-    "Operational Research/Problem Optimization/parts/media/Es.1-1791401200992.webp",
+    "Operational Research/Problem Optimization/media/media/Es.1-1791390205262.webp",
+    "Operational Research/Problem Optimization/media/media/Es.1-1791401200992.webp",
     "templates/_MOC.md",
     "Operational Research/__.md",
     "Operational Research/objects/Senza nome.md",
-    "Operational Research/objects/Pasted image 20261007122210.png",
     "Operational Research/MIn.md",
     "Operational Research/Senza nome 1.md",
     "Operational Research/Senza nome 2.md",
@@ -326,7 +327,6 @@
     "copilot/skills/obsidian-cli/SKILL.md",
     "copilot/skills/json-canvas/SKILL.md",
     "copilot/skills/json-canvas/references/EXAMPLES.md",
-    "copilot/skills/obsidian-bases/SKILL.md",
-    "copilot/skills/obsidian-bases/references/EXAMPLES.md"
+    "copilot/skills/obsidian-bases/SKILL.md"
   ]
 }
