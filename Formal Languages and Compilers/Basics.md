@@ -31,7 +31,10 @@ $\epsilon$ is the neutral element with respect to concatenation: chaining $\epsi
 >[!info] Substring
 >$$x=u \ y \ v$$
 >$y$ is a **substrigs**, $u$ is a **prefix**, $v$ is a **suffix**
->![[Basics-1791567228274.webp|279x101]]
+>_Es. $$x=abccbc\\
+>prefix= a, ab,abc, abcc, abccb, abccbc\\
+>suffix= c, bc, cbc, ccbc, bccbc, abccbc\\
+>substring= \dots,bc,cc ,cb ,\dots$$_
 
 >[!info] Mirroring (Reflection)
 >$(xy)z = x(yz)$
