@@ -1,26 +1,30 @@
 - Alphabet: finite set of element
 - Strings: atomic elements (repeatable)
-	- Length: number of elements
-	- Equality: two strings are equal iif 
-		they have the same lengthù
-		thieir elements orderly coincide from left to right
-- Language: node finite set of Strin
+- Language: node finite set of String
 - Formal Language(Artificial): Language with regular structure and well defined Rules
 # Operations
-## Stirng
+## Strings Properties
+>[!info] Length
+>number of elements
 
-## CONCATENATION (product of strings)
+>[!info] Equality: 
+Two strings are equal iif :
+>- they have the same length
+>- thier elements orderly coincide from left to right
 
-- is a basic operation
+>[!info] Concatenation:
+>is a basic operation
+>is associative
+>changes the length
 
-- is associative
+>[!info] Empty String (or NULL string):
+$\epsilon$ is the neutral element with respect to concatenation: chaining $\epsilon$ on the left or right does not change the string
+>
+>_Pay attention: $\epsilon$ is NOT the same as $\emptyset$ (the empty set)_
 
-- changes the length
 
-## EMPTY STRING (or NULL string)
-- is the neutral element with respect to concatenation: chaining $\epsilon$ on the left or right does not change the string
 
-- Pay attention: $\epsilon$ is NOT the same as $\emptyset$ (the empty set)
+
 
 
 ## SUBSTRING: $x=uyv$
