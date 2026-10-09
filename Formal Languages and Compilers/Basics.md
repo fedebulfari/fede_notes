@@ -32,7 +32,6 @@ subject: Formal Languages and Compilers
 > - suffix: $c, bc, cbc, ccbc, bccbc, abccbc$
 > - substring: $\dots, bc, cc, cb, \dots$
 >
-> ![[Basics-1791567228274.webp|279x101]]
 
 ## Strings Operations
 
