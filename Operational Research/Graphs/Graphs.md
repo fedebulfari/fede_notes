@@ -20,7 +20,9 @@ A Graph is defined by its arcs and its nodes.
 - Eulerian Tour: All arcs are visited
 	Eulerian Tours are  Simple Cycle.
 - Graphs can be directional or not
--
+	![[Graphs-1791560716558.webp|353]]
+
+
 Installation casts[cite: 1]
 Problem ser a sheet of arasse that cach is vested to any other nods by at least paть minimizing the listallathe spaniny tres fondetin[cite: 1]
 
