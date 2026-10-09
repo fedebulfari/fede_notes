@@ -1,4 +1,3 @@
-
 Given a set of financial instruments:
 
 |            |  1  |  2  |  3  |  4  |  5  |

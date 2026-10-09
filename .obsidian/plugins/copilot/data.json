@@ -429,15 +429,6 @@
     {
       "providerId": "25a25676-0068-4254-90f3-94ff7de3a49b",
       "info": {
-        "id": "opencode/fledge-alpha-free",
-        "displayName": "opencode/Fledge Alpha Free"
-      },
-      "configuredModelId": "d688d476-1d81-4f8c-a473-ad7e9d1edde5",
-      "configuredAt": 1791367138023
-    },
-    {
-      "providerId": "25a25676-0068-4254-90f3-94ff7de3a49b",
-      "info": {
         "id": "opencode/ling-3.0-flash-fin-free",
         "displayName": "opencode/Ling 3.0 Flash Fin Free"
       },
@@ -506,14 +497,22 @@
       },
       "configuredModelId": "4276b75f-e4c2-43bb-80d9-7c64f68fec08",
       "configuredAt": 1791367138025
+    },
+    {
+      "providerId": "25a25676-0068-4254-90f3-94ff7de3a49b",
+      "info": {
+        "id": "opencode/step-5-preview-free",
+        "displayName": "opencode/Step 5 Preview Free"
+      },
+      "configuredModelId": "66b34878-3529-4e5d-9143-328a7428dc64",
+      "configuredAt": 1791470137965
     }
   ],
   "backends": {
     "opencode": {
       "enabledModels": [
         "7eed4e3a-433f-4eed-b5bb-c31b55d76e52",
-        "10c96a8d-aea8-4a05-a430-3b355637a651",
-        "d688d476-1d81-4f8c-a473-ad7e9d1edde5"
+        "10c96a8d-aea8-4a05-a430-3b355637a651"
       ]
     }
   },
