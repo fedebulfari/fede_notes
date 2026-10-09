@@ -282,8 +282,15 @@
   },
   "active": "2401c7cbfafa874b",
   "lastOpenFiles": [
-    "Operational Research/Problem Optimization/Problem Optimization.md",
+    "Operational Research/Graphs/media/Graphs-1791560389715.webp",
+    "Operational Research/Graphs/media/Graphs-1791560347791.webp",
+    "Operational Research/Graphs/media/Graphs-1791560346423.webp",
+    "Operational Research/Graphs/media/Graphs-1791560256435.webp",
+    "Operational Research/Graphs/media",
+    "Operational Research/Graphs/parts/Senza nome.md",
     "Operational Research/Graphs/Graphs.md",
+    "Operational Research/Graphs/parts",
+    "Operational Research/Problem Optimization/Problem Optimization.md",
     "Operational Research/_Operational Research MOC.md",
     "Operational Research/Graphs/_Graphs MOC.md",
     "templates/template.md",
@@ -304,9 +311,7 @@
     "Operational Research/PDF/chapter+3.pdf",
     "Operational Research/PDF/chapter+4.pdf",
     "Operational Research/PDF",
-    "Operational Research/Nuova cartella",
     "copilot/copilot-conversations/agent__improve@20261008_110205.md",
-    "copilot/copilot-conversations",
     "Operational Research/Problem Optimization/parts/media/Es.1-1791390205262.webp",
     "Operational Research/Problem Optimization/parts/media/Es.1-1791401200992.webp",
     "templates/_MOC.md",
@@ -322,8 +327,6 @@
     "copilot/skills/json-canvas/SKILL.md",
     "copilot/skills/json-canvas/references/EXAMPLES.md",
     "copilot/skills/obsidian-bases/SKILL.md",
-    "copilot/skills/obsidian-bases/references/EXAMPLES.md",
-    "copilot/skills/obsidian-bases/references/FUNCTIONS_REFERENCE.md",
-    "copilot/skills/obsidian-markdown/SKILL.md"
+    "copilot/skills/obsidian-bases/references/EXAMPLES.md"
   ]
 }

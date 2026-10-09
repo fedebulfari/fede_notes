@@ -3,43 +3,24 @@ date: 08-10-2026
 subject: Operational Research
 ---
 A Graph is defined by its arcs and its nodes.
-
-Given a graph, we can define a Path, sequence of consecutive of consecutive arcs, to link it's nodes, .
-
-A Path can 
-- Path: sequence of consecutive of consecutive arcs
+# Notation
+- Path: sequence of consecutive of consecutive arcs.
+	Given a graph, we can define a Path to link it's nodes.
+	![[Graphs-1791560256435.webp|346]]
+	
 - Simple Path: link nodes not repeating arcs
-- Elemental Path: link nodes passin through them  up to one time
-- Cycle: Path that links backk to starting nodes
+	![[Graphs-1791560347791.webp|350]]
+- Elementary Path: link nodes passing through them  up to one time
+	![[Graphs-1791560389715.webp|350]]
+- Cycle: Path that links backkto starting nodes
+- Elementary Cycle:  No repeated nodes
 - Hemiltonian Cycle: Cycle linking all nodes
+	Hemiltonian Cycles are an Elementary Cycle.
+- Simple Cycle: No repeated arcs
+- Eulerian Tour: All arcs are visited
+	Eulerian Tours are  Simple Cycle.
 - Graphs can be directional or not
-- Simple Cicle is an Eurelian Tour
-
-
-# graphs and act flow[cite: 1]
-
-[IMAGE: Un grafo di rete con nodi etichettati e archi pesati, alcuni dei quali evidenziati a formare un albero.][cite: 1]
-
-Guven graph[cite: 1]
-defare a Path to link li's moder[cite: 1]
-* Path sequence of consecutive area[cite: 1]
-* Single Pilk ball nodes not repeting arcs[cite: 1]
-* Elamenbal loth moder poing through them uple one time[cite: 1]
-* Cacle Polk that links back to shartig nude[cite: 1]
-* Ciclo Cicla linking all moder[cite: 1]
-
-Graphs can be divecleaned or not[cite: 1]
-* Simple tule is in Evelen Tour[cite: 1]
-* We want to exige the latest astwerkt Pelle[cite: 1]
-
-Politecnico's centers[cite: 1]
-Potential links[cite: 1]
-
-ivanacondirseted graph $G=(N,A)$[cite: 1]
-with weights on the $w_{0}\ge n~c(c,j)\in A$[cite: 1]
-tommetted supraph $G^{\prime}=(S,A^{\prime}),A^{\prime}\subseteq A_{1})$[cite: 1]
-$\Sigma$[cite: 1]
-
+-
 Installation casts[cite: 1]
 Problem ser a sheet of arasse that cach is vested to any other nods by at least paть minimizing the listallathe spaniny tres fondetin[cite: 1]
 
@@ -76,6 +57,9 @@ anti[cite: 1]
 
 ## Graph sarch[cite: 2]
 
+```
+
+```
 for [UNREADABLE] PL3-0[cite: 2]
 P ; Qos[cite: 2]
 repest[cite: 2]
