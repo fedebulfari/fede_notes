@@ -64,5 +64,6 @@ $$\max \sum_{i}\left( \sum_{j} x_{j}-\sum_{j} c_{j}y_{i} \right)$$
 
 ![[Es. 3]]
 
+
 ---
 Related: [[_Operational Research MOC]]

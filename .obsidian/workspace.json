@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Operational Research/Graphs/Graphs.md",
+                "file": "Operational Research/Problem Optimization/Problem Optimization.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Graphs"
+              "title": "Problem Optimization"
             }
           },
           {
@@ -256,12 +256,11 @@
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 6
       }
     ],
     "direction": "horizontal",
-    "width": 299.5,
-    "collapsed": true
+    "width": 299.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -280,13 +279,13 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "2401c7cbfafa874b",
+  "active": "2cb8085403a072de",
   "lastOpenFiles": [
-    "Operational Research/Graphs/_Graphs MOC.md",
+    "Operational Research/_Operational Research MOC.md",
     "Operational Research/Graphs/Graphs.md",
+    "Operational Research/Graphs/_Graphs MOC.md",
     "Operational Research/Problem Optimization/Problem Optimization.md",
     "templates/template.md",
-    "Operational Research/_Operational Research MOC.md",
     "Operational Research/Graphs",
     "Operational Research/Problem Optimization/parts/Es. 3.md",
     "Operational Research/Problem Optimization/parts/media/Es. 3-1791478780648.webp",
