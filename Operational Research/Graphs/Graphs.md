@@ -2,7 +2,11 @@
 date: 08-10-2026
 subject: Operational Research
 ---
-Given a graph, we can define a Path to link it's nodes:
+A Graph is defined by its arcs and its nodes.
+
+Given a graph, we can define a Path, sequence of consecutive of consecutive arcs, to link it's nodes, .
+
+A Path can 
 - Path: sequence of consecutive of consecutive arcs
 - Simple Path: link nodes not repeating arcs
 - Elemental Path: link nodes passin through them  up to one time
