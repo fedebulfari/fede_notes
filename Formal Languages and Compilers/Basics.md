@@ -17,6 +17,7 @@ subject: Formal Languages and Compilers
 Two strings are equal iif :
 >- they have the same length
 >- thier elements orderly coincide from left to right
+>_Es. $x=y \leftrightarrow k=i \wedge a_{j}=b_{j}$ with $j=1,...k$
 
 >[!info] Concatenation
 >is a basic operation
@@ -32,22 +33,12 @@ $\epsilon$ is the neutral element with respect to concatenation: chaining $\epsi
 >$$x=u \ y \ v$$
 >$y$ is a **substrigs**, $u$ is a **prefix**, $v$ is a **suffix**
 >![[Basics-1791567228274.webp|279x101]]
-## EQUALITY OF TWO STRINGS:
-- two strings are equal if and only if (iff) they have the same length and their elements orderly coincide, from left to right
 
-- $x=a_{1}a_{2}...a_{k}, y=b_{1}b_{2}...b_{i}$
-
-- $x=y \leftrightarrow k=i \wedge a_{j}=b_{j}$ with $j=1,...k$
-
-
-## MIRRORING or REFLECTION
-- $(xy)z = x(yz)$
-
-- $\vert{}xyz\vert{} = \vert{}x\vert{} + \vert{}y\vert{} + \vert{}z\vert{}$
-
-- $x\epsilon = \epsilon x = x$
-
-- $\vert{}\epsilon\vert{} = 0$
+>[!info] Mirroring (Reflection)
+>$(xy)z = x(yz)$
+$\vert{}xyz\vert{} = \vert{}x\vert{} + \vert{}y\vert{} + \vert{}z\vert{}$
+$x\epsilon = \epsilon x = x$
+$\vert{}\epsilon\vert{} = 0$
 
 
 ## String Operators
