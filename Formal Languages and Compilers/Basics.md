@@ -1,44 +1,32 @@
-- Alphabet: finite set of element
-- Strings: atomic elements (repeatable)
-- Language: node finite set of String
+- Alphabet: finite set of elements
+- Strings: ordered set of atomic elements (repeatable)
+- Language: unordered set of String
 - Formal Language(Artificial): Language with regular structure and well defined Rules
 # Operations
 ## Strings Properties
+
 >[!info] Length
 >number of elements
 
->[!info] Equality: 
+>[!info] Equality
 Two strings are equal iif :
 >- they have the same length
 >- thier elements orderly coincide from left to right
 
->[!info] Concatenation:
+>[!info] Concatenation
 >is a basic operation
 >is associative
 >changes the length
 
->[!info] Empty String (or NULL string):
+>[!info] Empty String (or NULL string)
 $\epsilon$ is the neutral element with respect to concatenation: chaining $\epsilon$ on the left or right does not change the string
 >
 >_Pay attention: $\epsilon$ is NOT the same as $\emptyset$ (the empty set)_
 
-
-
-
-
-
-## SUBSTRING: $x=uyv$
-- y is a substring
-
-- u is a prefix
-
-- v is a suffix
-
-- Proper substring: y if $u \neq \epsilon \vee v \neq \epsilon$
-
-- $Start_{k}(x) = k \text{ prefix of } x$
-
-
+>[!info] Substring
+>$$x=u \ y \ v$$
+>$y$ is a **substrigs**, $u$ is a **prefix**, $v$ is a **suffix**
+>![[Basics-1791567228274.webp|279x101]]
 ## LENGTH OF A STRING $x$
 - is the number of elements (letters)
 
