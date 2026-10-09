@@ -43,8 +43,10 @@ $x\epsilon = \epsilon x = x$
 $\vert{}\epsilon\vert{} = 0$
 
 >[!info] Repetition 
->the $m_{th}$power of a string (with m ≥ 1) concatenates
-the string to itself for m − 1 times
+>the $m_{th}$power of a string (with m ≥ 1) concatenates the string to itself for m−1 times
+
+>[!info] Percentage between operators
+>Power precedes Concatenation, Mirroring precedes Concatenation
 ## String Operators
 - Prefix(L): $\{y \vert{} y \text{ is prefix of } x \in L\}$
 
