@@ -6,7 +6,7 @@ subject: Formal Languages and Compilers
 - Strings: ordered set of atomic elements (repeatable)
 - Language: unordered set of String
 - Formal(Artificial) Language: Language with regular structure and well defined Rules
-## Strings Properties
+# Strings Properties
 
 >[!info] Length
 >Number of elements
@@ -16,8 +16,8 @@ subject: Formal Languages and Compilers
 Two strings are equal iif :
 >- they have the same length
 >- thier elements orderly coincide from left to right
->_Es. $x=y \leftrightarrow k=i \wedge a_{j}=b_{j}$ with $j=1,...k$
-##O
+>_Es. $x=y \leftrightarrow k=i \wedge a_{j}=b_{j}$ with $j=1,...k$_
+# Strings Operations
 >[!info] Concatenation
 >is a basic operation
 >is associative
@@ -34,7 +34,7 @@ $\epsilon$ is the neutral element with respect to concatenation: chaining $\epsi
 >_Es. $$x=abccbc\\
 >prefix= a, ab,abc, abcc, abccb, abccbc\\
 >suffix= c, bc, cbc, ccbc, bccbc, abccbc\\
->substring= \dots,bc,cc ,cb ,\dots$$_
+>substring= \dots,bc,cc ,cb ,\dots$$
 
 >[!info] Mirroring (Reflection)
 >$(xy)z = x(yz)$
@@ -42,7 +42,9 @@ $\vert{}xyz\vert{} = \vert{}x\vert{} + \vert{}y\vert{} + \vert{}z\vert{}$
 $x\epsilon = \epsilon x = x$
 $\vert{}\epsilon\vert{} = 0$
 
-
+>[!info] Repetition 
+>the $m_{th}$power of a string (with m ≥ 1) concatenates
+the string to itself for m − 1 times
 ## String Operators
 - Prefix(L): $\{y \vert{} y \text{ is prefix of } x \in L\}$
 
