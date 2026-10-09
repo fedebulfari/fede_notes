@@ -13,7 +13,7 @@ Modeling a problem means translating it into an optimization problem by establis
 
 The result is an **optimization problem**: find the values of the variables that optimize (min or max) the objective while satisfying every constraint.
 
-# Variables
+## Variables
 
 The decisions become **decision variables**, and their domain is part of the model:
 
@@ -25,7 +25,7 @@ The decisions become **decision variables**, and their domain is part of the mod
 - **Binary**: $x_i \in \{0,1\}$ — yes/no, on/off decisions.
 - **Discrete**: $x_i$ takes values in a discrete set (typically integers, possibly bounded) — counting decisions.
 
-## Optimization problem
+### Optimization problem
 
 General form:
 
@@ -40,7 +40,7 @@ Example:
 
 ![[Es.1]]
 
-# Constraints
+## Constraints
 
 Typical families:
 
@@ -52,7 +52,7 @@ Typical families:
 		At least one literal per clause must be true for the whole formula to be true.
 - **Flow conservation** constraints
 
-## Transformations
+### Transformations
 
 An inequality can be turned into an equality by adding a slack or surplus variable:
 
@@ -63,7 +63,7 @@ A $\leq$ constraint can be reversed into a $\geq$ one by multiplying both sides 
 
 $$\sum^n_{i=1}a_{i}x_{i} \leq b \;\iff\; \sum^n_{i=1}-a_{i}x_{i} \geq -b$$
 
-# Objective function
+## Objective function
 
 The function that expresses what to optimize (min or max) in a problem.
 
