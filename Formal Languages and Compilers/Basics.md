@@ -54,7 +54,6 @@ subject: Formal Languages and Compilers
 > - changes the length additively: $|xy| = |x| + |y|$, in general $|xyz| = |x| + |y| + |z|$
 > - is **not** commutative: in general $xy \ne yx$
 
-
 > [!info] Mirroring (Reflection)
 > $$x = a_1 a_2 \dots a_h \ \Rightarrow\ x^R = a_h a_{h-1} \dots a_2 a_1$$
 > - $(x^R)^R = x$ (mirroring is an involution)
