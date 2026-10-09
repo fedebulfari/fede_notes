@@ -33,6 +33,12 @@ A Minimal Solution has the following properties:
 - Adding one arc to $G'$ make it a cycle
 - Removing one arc from $G'$ give us two connected components
 ## Kruskal Algorithm [1956]
-
+1) Sort arcs in increasing order of $w_{ij}$
+2) $A'=∅$
+3) repeat
+	1) consider the next arc $\{i,j\}$ in order
+	2) if $A'\cup  \{i,j\}$does not include a cycle
+	3) then $A'←A'\{i,j\}$
+4) Until $|A'|=n-1$
 ---
 Related: [[_Operational Research MOC]]
