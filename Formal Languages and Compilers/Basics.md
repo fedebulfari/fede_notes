@@ -6,7 +6,7 @@
 ## Strings Properties
 
 >[!info] Length
->number of elements
+>Number of elements
 
 >[!info] Equality
 Two strings are equal iif :
