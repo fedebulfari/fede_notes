@@ -14,4 +14,5 @@ We do this minimizing $$\sum_{(i,j)\in A'}w_{ij}$$
 \end{cases}$$
 - Objective function:$$min\left( \sum_{\{i,j\}\in A'} w_{ij}x_{ij}\right)$$
 - Constraints:
-	Between any two nodes $$
+	Between any two nodes $\exists$ a path of arcs in $A'$
+	
