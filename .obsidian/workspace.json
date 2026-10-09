@@ -282,6 +282,7 @@
   },
   "active": "2401c7cbfafa874b",
   "lastOpenFiles": [
+    "Formal Languages and Compilers/formal_languages_basics.md",
     "Operational Research/Graphs/Graphs.md",
     "Formal Languages and Compilers/Basics.md",
     "Formal Languages and Compilers",
@@ -326,7 +327,6 @@
     "templates/Nuovo Documento di testo.md",
     "copilot/skills/obsidian-cli/SKILL.md",
     "copilot/skills/json-canvas/SKILL.md",
-    "copilot/skills/json-canvas/references/EXAMPLES.md",
-    "copilot/skills/obsidian-bases/SKILL.md"
+    "copilot/skills/json-canvas/references/EXAMPLES.md"
   ]
 }
