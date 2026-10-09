@@ -1,3 +1,7 @@
+---
+date: 09-10-2026
+subject: Formal Languages and Compilers
+---
 - Alphabet: finite set of elements
 - Strings: ordered set of atomic elements (repeatable)
 - Language: unordered set of String
@@ -135,3 +139,6 @@ $\epsilon$ is the neutral element with respect to concatenation: chaining $\epsi
 - it shortens the phrases of a language L by stripping off a suffix out of another language L'
 
 - $L = L'/L'' = \{y \vert{} (x = yz \in L') \wedge z \in L''\}$
+
+---
+Related: [[_Formal Languages and Compilers MOC]]
