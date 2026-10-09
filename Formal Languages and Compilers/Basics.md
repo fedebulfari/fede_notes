@@ -18,6 +18,7 @@ Two strings are equal iif :
 >- thier elements orderly coincide from left to right
 >_Es. $x=y \leftrightarrow k=i \wedge a_{j}=b_{j}$ with $j=1,...k$_
 # Strings Operations
+
 >[!info] Concatenation
 >is a basic operation
 >is associative
@@ -47,7 +48,8 @@ $\vert{}\epsilon\vert{} = 0$
 
 >[!info] Percentage between operators
 >Power precedes Concatenation, Mirroring precedes Concatenation
-## String Operators
+# Language Operations
+
 - Prefix(L): $\{y \vert{} y \text{ is prefix of } x \in L\}$
 
 - Concatenation $L_{1}L_{2} = \{xy \vert{} x \in L_{1} \wedge y \in L_{2}\}$
