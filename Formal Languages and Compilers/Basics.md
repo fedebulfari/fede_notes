@@ -2,8 +2,6 @@
 date: 2026-10-09
 subject: Formal Languages and Compilers
 ---
-
-
 ## Definitions
 
 - **Alphabet** ($\Sigma$): finite set of atomic elements (symbols/letters)
@@ -41,6 +39,13 @@ subject: Formal Languages and Compilers
 >
 > $\epsilon$ is a prefix and a suffix of every string; every string is a prefix and a suffix of itself.
 
+> [!info] Empty String (or NULL string)
+> $\epsilon$ is the neutral element with respect to concatenation: chaining $\epsilon$ on the left or right does not change the string.
+> $$x\epsilon = \epsilon x = x \qquad |\epsilon| = 0$$
+> *Pay attention: $\epsilon$ is NOT $\emptyset$:*
+> - $\epsilon$ is a **string** (an element of $\Sigma^*$)
+> - $\emptyset$ is the **empty language** (a set with no strings)
+> - $\{\epsilon\}$ is the language containing exactly the empty string — different from both
 ## String Operations
 
 > [!info] Concatenation
@@ -49,13 +54,6 @@ subject: Formal Languages and Compilers
 > - changes the length additively: $|xy| = |x| + |y|$, in general $|xyz| = |x| + |y| + |z|$
 > - is **not** commutative: in general $xy \ne yx$
 
-> [!info] Empty String (or NULL string)
-> $\epsilon$ is the neutral element with respect to concatenation: chaining $\epsilon$ on the left or right does not change the string.
-> $$x\epsilon = \epsilon x = x \qquad |\epsilon| = 0$$
-> *Pay attention: $\epsilon$ is NOT $\emptyset$:*
-> - $\epsilon$ is a **string** (an element of $\Sigma^*$)
-> - $\emptyset$ is the **empty language** (a set with no strings)
-> - $\{\epsilon\}$ is the language containing exactly the empty string — different from both
 
 > [!info] Mirroring (Reflection)
 > $$x = a_1 a_2 \dots a_h \ \Rightarrow\ x^R = a_h a_{h-1} \dots a_2 a_1$$
