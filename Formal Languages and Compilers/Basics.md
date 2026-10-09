@@ -5,7 +5,7 @@ subject: Formal Languages and Compilers
 - Alphabet: finite set of elements
 - Strings: ordered set of atomic elements (repeatable)
 - Language: unordered set of String
-- Formal Language(Artificial): Language with regular structure and well defined Rules
+- Formal(Artificial) Language: Language with regular structure and well defined Rules
 # Operations
 ## Strings Properties
 
