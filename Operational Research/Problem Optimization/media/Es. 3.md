@@ -22,7 +22,7 @@
 - **Constraints**:
 	- Serve all customers:
 		$$\sum_{j\in S} x_{ij}=1, \quad \forall i\in C$$
-		~~$\sum_{i\in C}\sum_{j \in S} x_{ij}=\mu$~~ → wrong
+		$$~~\sum_{i\in C}\sum_{j \in S} x_{ij}=\mu~~\canc\text{→ wrong}$$~~ 
 	- Capacity:
 		$$\sum_{i\in C}x_{ij}\leq\mu$$
 	- Avoid $x_{ij}=1$ when $y_j=0$:
