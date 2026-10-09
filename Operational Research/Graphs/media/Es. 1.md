@@ -9,5 +9,5 @@ We do this minimizing $$\sum_{(i,j)\in A'}w_{ij}$$
 
 - Parameters: $$w_{ij}\geq 0, \forall\{i,j\}\in A$$
 - Variables:$$x_{ij}\begin{cases}
-1 
+1[i,j]
 \end{cases}$$
