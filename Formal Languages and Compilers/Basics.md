@@ -61,7 +61,7 @@ subject: Formal Languages and Compilers
 > - $|x^R| = |x|$
 
 > [!info] Repetition (Power, Iteration)
-> The $m$-th power of a string (with $m \ge 0$) concatenates the string with itself $m$ times:
+> The $m$-th power of a string (with $m \ge 0$) concatenates the string with itself $m-1$ times:
 > $$x^m = x^{m-1}x \quad (m > 0) \qquad x^0 = \epsilon$$
 > - $|x^m| = m\,|x|$
 > - e.g. $(ab)^2 = abab \ne a^2b^2 = aabb$
