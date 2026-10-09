@@ -6,7 +6,6 @@ subject: Formal Languages and Compilers
 - Strings: ordered set of atomic elements (repeatable)
 - Language: unordered set of String
 - Formal(Artificial) Language: Language with regular structure and well defined Rules
-# Operations
 ## Strings Properties
 
 >[!info] Length
@@ -18,7 +17,7 @@ Two strings are equal iif :
 >- they have the same length
 >- thier elements orderly coincide from left to right
 >_Es. $x=y \leftrightarrow k=i \wedge a_{j}=b_{j}$ with $j=1,...k$
-
+##O
 >[!info] Concatenation
 >is a basic operation
 >is associative
