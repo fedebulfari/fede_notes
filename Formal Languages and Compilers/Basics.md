@@ -2,135 +2,93 @@
 date: 09-10-2026
 subject: Formal Languages and Compilers
 ---
-- Alphabet: finite set of elements
-- Strings: ordered set of atomic elements (repeatable)
-- Language: unordered set of String
-- Formal(Artificial) Language: Language with regular structure and well defined Rules
-# Strings Properties
 
->[!info] Length
->Number of elements
->_Es. $\vert{}bbc\vert{} = 3$_
+# Basics
 
->[!info] Equality
-Two strings are equal iif :
->- they have the same length
->- thier elements orderly coincide from left to right
->_Es. $x=y \leftrightarrow k=i \wedge a_{j}=b_{j}$ with $j=1,...k$_
-# Strings Operations
+- **Alphabet**: finite set of elements
+- **Strings**: ordered set of atomic elements (repeatable)
+- **Language**: set of strings
+- **Formal (Artificial) Language**: a language with a regular structure and well-defined rules
 
->[!info] Concatenation
->is a basic operation
->is associative
->changes the length
+## Strings Properties
 
->[!info] Empty String (or NULL string)
-$\epsilon$ is the neutral element with respect to concatenation: chaining $\epsilon$ on the left or right does not change the string
+> [!info] Length
+> Number of elements
+> _Es. $|bbc| = 3$_
+
+> [!info] Equality
+> Two strings are equal iff:
+> - they have the same length
+> - their elements coincide, in order, from left to right
 >
->_Pay attention: $\epsilon$ is NOT the same as $\emptyset$ (the empty set)_
+> _Es. $x = y \leftrightarrow k = i \wedge a_j = b_j$ with $j = 1, \dots, k$_
 
->[!info] Substring
->$$x=u \ y \ v$$
->$y$ is a **substrigs**, $u$ is a **prefix**, $v$ is a **suffix**
->_Es. $$x=abccbc\\
->prefix= a, ab,abc, abcc, abccb, abccbc\\
->suffix= c, bc, cbc, ccbc, bccbc, abccbc\\
->substring= \dots,bc,cc ,cb ,\dots$$
+> [!info] Substring
+> $$x = u\,y\,v$$
+> $y$ is a **substring**, $u$ is a **prefix**, $v$ is a **suffix**
+>
+> _Es. $x = abccbc$_
+> - prefix: $a, ab, abc, abcc, abccb, abccbc$
+> - suffix: $c, bc, cbc, ccbc, bccbc, abccbc$
+> - substring: $\dots, bc, cc, cb, \dots$
+>
+> ![[Basics-1791567228274.webp|279x101]]
 
->[!info] Mirroring (Reflection)
->$(xy)z = x(yz)$
-$\vert{}xyz\vert{} = \vert{}x\vert{} + \vert{}y\vert{} + \vert{}z\vert{}$
-$x\epsilon = \epsilon x = x$
-$\vert{}\epsilon\vert{} = 0$
+## Strings Operations
 
->[!info] Repetition 
->the $m_{th}$power of a string (with m ≥ 1) concatenates the string to itself for m−1 times
+> [!info] Concatenation
+> - is a basic operation
+> - is associative: $(xy)z = x(yz)$
+> - changes the length: $|xyz| = |x| + |y| + |z|$
 
->[!info] Percentage between operators
->Power precedes Concatenation, Mirroring precedes Concatenation
-# Language Operations
+> [!info] Empty String (or NULL string)
+> $\epsilon$ is the neutral element with respect to concatenation: chaining $\epsilon$ on the left or right does not change the string.
+> $$x\epsilon = \epsilon x = x \qquad |\epsilon| = 0$$
+> _Pay attention: $\epsilon$ is NOT the same as $\emptyset$ (the empty set)_
 
-- Prefix(L): $\{y \vert{} y \text{ is prefix of } x \in L\}$
+> [!info] Mirroring (Reflection)
+> $x = a_1 a_2 \dots a_h \ \Rightarrow\ x^R = a_h a_{h-1} \dots a_2 a_1$
+> - $(x^R)^R = x$
+> - $(xy)^R = y^R x^R$
 
-- Concatenation $L_{1}L_{2} = \{xy \vert{} x \in L_{1} \wedge y \in L_{2}\}$
+> [!info] Repetition (or Iteration)
+> The $m$-th power of a string (with $m \ge 0$) concatenates the string to itself $m$ times:
+> $$x^m = x^{m-1}x \quad (m > 0) \qquad x^0 = \epsilon$$
 
-- Iteration $L^*$
+> [!info] Precedence between Operators
+> Power precedes Concatenation; Mirroring precedes Concatenation
 
-- Void Languages: $L \subseteq \Sigma^*$
+## Language Operations
 
-- Union $\cup$
+- **Prefix**: $\mathrm{Prefix}(L) = \{ y \mid y \text{ is a prefix of some } x \in L \}$
+- **Concatenation**: $L_1 L_2 = \{ xy \mid x \in L_1 \wedge y \in L_2 \}$
+- **Iteration**: $L^*$
+- **Union**: $L_1 \cup L_2$
+- A language over $\Sigma$ is any set $L \subseteq \Sigma^*$; the **void language** is $\emptyset$
 
-
-## STAR OPERATOR
-- also called Kleene star or concatenation closure
-
-- is the limit of the power operator
-
-- The union of all the powers of a language, for every positive or null exponent
-
+### Star Operator
+- Also called Kleene star or concatenation closure
+- Is the limit of the power operator: $L^* = \bigcup_{k \ge 0} L^k$, with $L^0 = \{\epsilon\}$
+- The union of all the powers of a language, for every non-negative exponent
 - $\epsilon$-CLOSURE
+- Every string in the star language of $L$ can be factored into substrings, each of which belongs to the language $L$
+- Sometimes the star language happens to be identical to the base language
+- **Properties**: monotone; closed w.r.t. concatenation; idempotent; commutes with mirroring
 
-- Every string in the star language of L can be factored into substrings each of which belongs to the language L
-
-- Sometimes, the star language happens to be identical to the base language
-
-
-## OPERATIONS ON STRINGS / 2
-- $x=a_{1}a_{2}...a_{h}$
-
-- $x^R = a_{h}a_{h-1}...a_{2}a_{1}$
-
-- $(x^R)^R = x$
-
-- $(xy)^R = y^R x^R$
-
-
-## REPETITION (or ITERATION):
-- the m-th power of a string (with $m \ge 0$) concatenates the string to itself for $m-1$ times
-
-- $x^m = x^{m-1}x, m>0$
-
-- $x^0 = \epsilon$
-
-
-## PRECEDENCE BETWEEN OPERATORS
-- power precedes concatenation
-
-- mirroring precedes concatenation
-
-
-## PREFIX-FREE LANGUAGE:
-- in the language there is not any string that is a prefix of another string of the language
-
-- Equivalently, prefix(L) and L are disjoint sets (i.e., prefix(L) $\cap$ L = $\emptyset$)
-
-
-## PROPERTIES OF THE STAR OPERATOR
-- monotonic
-
-- closed w.r.t. concatenation
-
-- idempotent
-
-- commutes with mirroring
-
-
-## CROSS OPERATOR
-- called Kleene cross or positive concatenation closure
-
-- is the non-reflexive closure with respect to concatenation
-
-- The unitary closure does not contain the null power
-
+### Cross Operator
+- Called Kleene cross or positive concatenation closure
+- Is the non-reflexive closure with respect to concatenation
+- Does not contain the null power
 - Sometimes very useful but not indispensable
-
 - The same language can be defined in different ways by different combinations of the same or other operators
 
+### Quotient Operator
+- Shortens the phrases of a language $L'$ by stripping off a suffix out of another language $L''$
+- $L'/L'' = \{ y \mid (x = yz \in L') \wedge z \in L'' \}$
 
-## QUOTIENT OPERATOR:
-- it shortens the phrases of a language L by stripping off a suffix out of another language L'
-
-- $L = L'/L'' = \{y \vert{} (x = yz \in L') \wedge z \in L''\}$
+### Prefix-Free Language
+- In the language there is not any string that is a prefix of another string of the language
+- Equivalently, $\mathrm{Prefix}(L)$ and $L$ are disjoint sets (i.e., $\mathrm{Prefix}(L) \cap L = \emptyset$)
 
 ---
 Related: [[_Formal Languages and Compilers MOC]]

@@ -205,8 +205,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 299.5,
-    "collapsed": true
+    "width": 299.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -225,7 +224,7 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "5c12f83f79ebbcf4",
+  "active": "2cb8085403a072de",
   "lastOpenFiles": [
     "Operational Research/Problem Optimization/Problem Optimization.md",
     "Operational Research/Problem Optimization/media/Es. 3.md",
