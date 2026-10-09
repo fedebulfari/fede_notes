@@ -9,5 +9,9 @@ We do this minimizing $$\sum_{(i,j)\in A'}w_{ij}$$
 
 - Parameters: $$w_{ij}\geq 0, \forall\{i,j\}\in A$$
 - Variables:$$x_{ij}\begin{cases}
-1[i,j]
+1 \ \ [i,j]\in A \\
+0
 \end{cases}$$
+- Objective function:$$min\left( \sum_{\{i,j\}\in A'} w_{ij}x_{ij}\right)$$
+- Constraints:
+	Between any two nodes $$
