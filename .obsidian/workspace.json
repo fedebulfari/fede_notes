@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Operational Research/Problem Optimization/Problem Optimization.md",
+                "file": "Operational Research/Problem Optimization/media/Es. 3.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Problem Optimization"
+              "title": "Es. 3"
             }
           }
         ]
@@ -224,11 +224,11 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "2cb8085403a072de",
+  "active": "5c12f83f79ebbcf4",
   "lastOpenFiles": [
+    "Operational Research/Problem Optimization/Problem Optimization.md",
     "copilot/copilot-conversations/agent__improve_notes@20261009_200128.md",
     "copilot/copilot-conversations/agent__improve@20261008_110205.md",
-    "Operational Research/Problem Optimization/Problem Optimization.md",
     "Formal Languages and Compilers/Basics.md",
     "Operational Research/Problem Optimization/media/Es. 3.md",
     "Formal Languages and Compilers/media/Basics-1791567228274.webp",
