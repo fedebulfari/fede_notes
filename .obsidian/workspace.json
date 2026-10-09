@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Operational Research/Graphs/Graphs.md",
+                "file": "Formal Languages and Compilers/Basics.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Graphs"
+              "title": "Basics"
             }
           },
           {
@@ -282,8 +282,10 @@
   },
   "active": "2401c7cbfafa874b",
   "lastOpenFiles": [
-    "Operational Research/Graphs/media/Es. 1.md",
     "Operational Research/Graphs/Graphs.md",
+    "Formal Languages and Compilers/Basics.md",
+    "Formal Languages and Compilers",
+    "Operational Research/Graphs/media/Es. 1.md",
     "Operational Research/Problem Optimization/media/Es. 3.md",
     "Operational Research/Graphs/media/media/Es. 1-1791561061335.webp",
     "Operational Research/Graphs/media/media",
@@ -313,7 +315,6 @@
     "Excalidraw/Drawing 2026-10-08 17.22.51.excalidraw.md",
     "Operational Research/PDF/chapter+1.pdf",
     "Operational Research/PDF/chapter+2.pdf",
-    "Operational Research/PDF/chapter+3.pdf",
     "copilot/copilot-conversations/agent__improve@20261008_110205.md",
     "Operational Research/Problem Optimization/media/media/Es.1-1791390205262.webp",
     "templates/_MOC.md",
