@@ -81,19 +81,20 @@ subject: Formal Languages and Compilers
 - **Mirroring**: $L^R = \{ x^R \mid x \in L \}$
 - A language over $\Sigma$ is any set $L \subseteq \Sigma^*$; the **void language** is $\emptyset$ (no phrases), which must not be confused with $\{\epsilon\}$ (one phrase: the empty string)
 
-### Star Operator
-- Also called **Kleene star** or **concatenation closure**
-- Is the limit of the power operator: $L^* = \bigcup_{k \ge 0} L^k$, with $L^0 = \{\epsilon\}$
-- The union of all the powers of a language, for every non-negative exponent
-- **ε-Closure**: every star language contains $\epsilon$ (it comes from $L^0$)
-- Every string in $L^*$ can be factored into substrings, each of which belongs to $L$
-- Sometimes the star language happens to be identical to the base language: $L^* = L$ iff $L$ is closed under concatenation and contains $\epsilon$ (e.g. $L = \Sigma^*$ or $L = \{\epsilon\}$)
-- $\emptyset^* = \{\epsilon\}$
-- **Properties**: monotone; closed w.r.t. concatenation; idempotent; commutes with mirroring
-  - monotone: $L \subseteq M \Rightarrow L^* \subseteq M^*$
-  - closed w.r.t. concatenation: $L^* L^* = L^*$
-  - idempotent: $(L^*)^* = L^*$
-  - commutes with mirroring: $(L^R)^* = (L^*)^R$
+>[!info] Star Operator
+Also called **Kleene star** or **concatenation closure**
+ Is the limit of the power operator: $L^* = \bigcup_{k \ge 0} L^k$, with $L^0 = \{\epsilon\}$
+ The union of all the powers of a language, for every non-negative exponent
+**ε-Closure**: every star language contains $\epsilon$ (it comes from $L^0$)
+Every string in $L^*$ can be factored into substrings, each of which belongs to $L$
+Sometimes the star language happens to be identical to the base language: $L^* = L$ iff $L$ is closed under concatenation and contains $\epsilon$ (e.g. $L = \Sigma^*$ or $L = \{\epsilon\}$)
+$\emptyset^* = \{\epsilon\}$
+>
+>**Properties**:  
+>- monotone: $L \subseteq M \Rightarrow L^* \subseteq M^*$
+>  - closed w.r.t. concatenation: $L^* L^* = L^*$
+>  - idempotent: $(L^*)^* = L^*$
+ > - commutes with mirroring: $(L^R)^* = (L^*)^R$
 
 ### Cross Operator
 - Called **Kleene plus** or **positive concatenation closure**
