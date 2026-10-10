@@ -76,40 +76,46 @@ subject: Formal Languages and Compilers
 
 ## Language Properties
 
-> [!info] Universal Language
-> the set of ALL the strings defined over the alphabet Σ, of any length (including also length 0)
->$$L= \sum^0 ∪ \sum^1 ∪ \sum^2 ∪\dots$$
-> _Sometimes called the **Free Monoid**_
+> [!info] Universal language
+> The set of **all** strings over $\Sigma$, of any length (including $0$):
+> $$\Sigma^* = \Sigma^0 \cup \Sigma^1 \cup \Sigma^2 \cup \dots$$
+> Sometimes called the **free monoid**.
 
->[!info] Void Language
->$$\emptyset^0=\epsilon$$
+> [!info] Void language
+> The language with no phrases: $\emptyset$.
+> - $\emptyset^0 = \{\epsilon\}$
+> - $\emptyset^* = \{\epsilon\}$
 
 ## Language Operations
 
 - **Union**: $L_1 \cup L_2 = \{ x \mid x \in L_1 \lor x \in L_2 \}$
-- Intersection: $L_{1}\cap L_{2}$
-- Complement: $¬L=L_{universal}/L$
-- **Concatenation**: $L_1 L_2 = \{ xy \mid x \in L_1 \land y \in L_2 \}$ — associative; 
-	$\emptyset$ is absorbent: $\emptyset L = L \emptyset = \emptyset$
-- **Iteration**: $L^0=\{\epsilon\},\ L^m=L^{m-1}L$
-- **Prefix**: $\mathrm{Prefix}(L) = \{ y \mid y \text{ is a prefix of some } x \in L,\ x=yz \}$
+- **Intersection**: $L_1 \cap L_2 = \{ x \mid x \in L_1 \land x \in L_2 \}$
+- **Complement**: $\lnot L = \Sigma^* \setminus L$
+- **Concatenation**: $L_1 L_2 = \{ xy \mid x \in L_1 \land y \in L_2 \}$ — associative; $\emptyset$ is absorbent: $\emptyset L = L \emptyset = \emptyset$
+- **Power**: $L^0 = \{\epsilon\}$, $L^m = L^{m-1}L$ for $m > 0$
+- **Prefix**: $\mathrm{Prefix}(L) = \{ y \mid y \text{ is a prefix of some } x \in L \}$, i.e. $x = yz$
 - **Mirroring**: $L^R = \{ x^R \mid x \in L \}$
+
 ### Star operator (Kleene star)
 
-Also called **concatenation closure**. Limit of the power operator: $$L^* = \bigcup_{k \ge 0} L^k, \quad \text{with } L^0 = \{\epsilon\}$$
+Also called **concatenation closure**. Limit of the power operator:
+$$L^* = \bigcup_{k \ge 0} L^k, \quad \text{with } L^0 = \{\epsilon\}$$
+
 - **$\epsilon$-closure**: every star language contains $\epsilon$ (from $L^0$)
 - every string in $L^*$ factors into pieces, each belonging to $L$
 - $L^* = L$ iff $L$ is closed under concatenation and contains $\epsilon$ (e.g. $L = \Sigma^*$ or $L = \{\epsilon\}$)
 - $\emptyset^* = \{\epsilon\}$
->[!info] **Properties:**
->- monotone: $L \subseteq M \Rightarrow L^* \subseteq M^*$
->- closed under concatenation: $L^* L^* = L^*$
->- idempotent: $(L^*)^* = L^*$
->- commutes with mirroring: $(L^R)^* = (L^*)^R$
+
+> [!info] Properties
+> - monotone: $L \subseteq M \Rightarrow L^* \subseteq M^*$
+> - closed under concatenation: $L^* L^* = L^*$
+> - idempotent: $(L^*)^* = L^*$
+> - commutes with mirroring: $(L^R)^* = (L^*)^R$
 
 ### Cross operator (Kleene plus)
 
- Positive concatenation closure: $$L^+ = \bigcup_{h=1\dots \infty} L^h=L^2\cup L^2\cup\dots$$
+Positive concatenation closure:
+$$L^+ = \bigcup_{h \ge 1} L^h = L^1 \cup L^2 \cup \dots$$
 - excludes the null power, so in general $\epsilon \notin L^+$
 - expressible via star: $L^+ = L L^* = L^* L$
 - hence $L^* = L^+ \cup \{\epsilon\}$
@@ -117,8 +123,9 @@ Also called **concatenation closure**. Limit of the power operator: $$L^* = \big
 ### Quotient operator
 
 - strips a suffix belonging to $L''$ from phrases of $L'$:
-$$L=L' / L'' = \{ y \mid yz \in L' \land z \in L'' \}$$
-	_e.g. $\{ab\} / \{b\} = \{a\}$_
+$$L' / L'' = \{ y \mid yz \in L' \land z \in L'' \}$$
+
+e.g. $\{ab\} / \{b\} = \{a\}$
 
 ### Prefix-free language
 
@@ -139,9 +146,9 @@ Equivalently: $L \cap \mathrm{ProperPrefix}(L) = \emptyset$, where $\mathrm{Prop
 | $L^+ = L L^* = L^* L$ | cross expressed via star + concatenation |
 | $(L^*)^* = L^*$ | idempotence of star |
 | $L^* L^* = L^*$ | closure under concatenation |
-| $\|xy\| = \|x\| + \|y\|$ | length is additive over concatenation |
+| $|xy| = |x| + |y|$ | length is additive over concatenation |
 | $(xy)^R = y^R x^R$ | mirroring reverses factor order |
 
 ---
 
-Related: [[_Formal Languages and Compilers MOC]], [[Regular expressions and Languages]], [[Context free Grammars]]
+Related: [[_Formal Languages and Compilers MOC]],
