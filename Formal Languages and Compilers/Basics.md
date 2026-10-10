@@ -12,6 +12,10 @@ subject: Formal Languages and Compilers
   - the set of **non-empty** strings is $\Sigma^+ = \Sigma^* \setminus \{\epsilon\}$
 - **Language**: a set of strings over an alphabet, i.e. any subset $L \subseteq \Sigma^*$; its elements are called **phrases**
 - **Formal (artificial) language**: a language with regular structure and well-defined rules
+- Two levels: unordered set $L$ of phrases, each phrase an ordered sequence of atomic symbols
+- **Cardinality** $|L|$: finite vs infinite language
+
+Source: [[FLC - series 01 - 2.pdf]]
 
 ## String Properties
 
@@ -39,6 +43,8 @@ subject: Formal Languages and Compilers
 > - substrings: any contiguous block, e.g. $bcc, cc, cb$
 >
 > $\epsilon$ is a prefix and suffix of every string; every string is a prefix and suffix of itself.
+> - **Proper** substring / prefix / suffix: $u,v \ne \epsilon$ (strictly shorter)
+> - $\mathrm{Start}_k(x)$: prefix of $x$ of length $k$
 
 > [!warning] Empty string vs empty language
 > $\epsilon$ is the neutral element for concatenation: $x\epsilon = \epsilon x = x$ and $|\epsilon| = 0$.
@@ -84,14 +90,18 @@ subject: Formal Languages and Compilers
 > [!info] Void language
 > The language with no phrases: $\emptyset$.
 >  $$\emptyset^0 = \{\epsilon\},\ \emptyset^* = \{\epsilon\}$$
+> Complement is taken against it: $\lnot \emptyset = \Sigma^*$.
 
 ## Language Operations
 
 - **Union**: $L_1 \cup L_2 = \{ x \mid x \in L_1 \lor x \in L_2 \}$
 - **Intersection**: $L_1 \cap L_2 = \{ x \mid x \in L_1 \land x \in L_2 \}$
 - **Complement**: $\lnot L = \Sigma^* \setminus L$
+  - complement of a finite language is always infinite; complement of an infinite language may be finite or infinite
+- **Set difference**: $L_1 - L_2 = L_1 \cap \lnot L_2$
 - **Concatenation**: $L_1 L_2 = \{ xy \mid x \in L_1 \land y \in L_2 \}$ — associative; $\emptyset$ is absorbent: $\emptyset L = L \emptyset = \emptyset$
 - **Power**: $L^0 = \{\epsilon\}$, $L^m = L^{m-1}L$ for $m > 0$
+  - fixes max length: e.g. over $\{a,b\}$, strings of length $\le 3$ via $(\{\epsilon\} \cup \{a,b\} \cup \{a,b\}^2 \cup \{a,b\}^3)$; $\epsilon$ supplies the shorter lengths
 - **Prefix**: $\mathrm{Prefix}(L) = \{ y \mid y \text{ is a prefix of some } x \in L \}$, i.e. $x = yz$
 - **Mirroring**: $L^R = \{ x^R \mid x \in L \}$
 
@@ -125,6 +135,7 @@ $$L^+ = \bigcup_{h \ge 1} L^h = L^1 \cup L^2 \cup \dots$$
 $$L' / L'' = \{ y \mid yz \in L' \land z \in L'' \}$$
 
 e.g. $\{ab\} / \{b\} = \{a\}$
+- if $x \in L'$ has no suffix in $L''$, it contributes nothing; if $L''/L' = \emptyset$ the quotient can be $\emptyset$
 
 ### Prefix-free language
 
@@ -139,14 +150,14 @@ Equivalently: $L \cap \mathrm{ProperPrefix}(L) = \emptyset$, where $\mathrm{Prop
 
 ## Key identities
 
-| Identity | Meaning |
-| --- | --- |
-| $L^* = L^+ \cup \{\epsilon\}$ | star adds the empty power to cross |
-| $L^+ = L L^* = L^* L$ | cross expressed via star + concatenation |
-| $(L^*)^* = L^*$ | idempotence of star |
-| $L^* L^* = L^*$ | closure under concatenation |
-| $|xy| = |x| + |y|$ | length is additive over concatenation |
-| $(xy)^R = y^R x^R$ | mirroring reverses factor order |
+| Identity                      | Meaning                                  |     |     |     |     |     |                                       |
+| ----------------------------- | ---------------------------------------- | --- | --- | --- | --- | --- | ------------------------------------- |
+| $L^* = L^+ \cup \{\epsilon\}$ | star adds the empty power to cross       |     |     |     |     |     |                                       |
+| $L^+ = L L^* = L^* L$         | cross expressed via star + concatenation |     |     |     |     |     |                                       |
+| $(L^*)^* = L^*$               | idempotence of star                      |     |     |     |     |     |                                       |
+| $L^* L^* = L^*$               | closure under concatenation              |     |     |     |     |     |                                       |
+| $                             | xy=                                      | =   | x   | +   | y   | $   | length is additive over concatenation |
+| $(xy)^R = y^R x^R$            | mirroring reverses factor order          |     |     |     |     |     |                                       |
 
 ---
 
