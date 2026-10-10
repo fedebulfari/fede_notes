@@ -91,28 +91,25 @@ subject: Formal Languages and Compilers
 - Complement: $¬L=L_{universal}-L$
 - **Concatenation**: $L_1 L_2 = \{ xy \mid x \in L_1 \land y \in L_2 \}$ — associative; 
 	$\emptyset$ is absorbent: $\emptyset L = L \emptyset = \emptyset$
-- **Iteration**: $L^*$ — see _Star operator_  below
+- **Iteration**: $L^0=\{\epsilon\},\ L^m=L^{m-1}L$
 - **Prefix**: $\mathrm{Prefix}(L) = \{ y \mid y \text{ is a prefix of some } x \in L,\ x=yz \}$
 - **Mirroring**: $L^R = \{ x^R \mid x \in L \}$
+### Star operator (Kleene star)
 
-> [!info] Star operator (Kleene star)
-> Also called **concatenation closure**. Limit of the power operator:
-> $$L^* = \bigcup_{k \ge 0} L^k, \quad \text{with } L^0 = \{\epsilon\}$$
->
-> - **$\epsilon$-closure**: every star language contains $\epsilon$ (from $L^0$)
-> - every string in $L^*$ factors into pieces, each belonging to $L$
-> - $L^* = L$ iff $L$ is closed under concatenation and contains $\epsilon$ (e.g. $L = \Sigma^*$ or $L = \{\epsilon\}$)
-> - $\emptyset^* = \{\epsilon\}$
->
-> **Properties:**
-> - monotone: $L \subseteq M \Rightarrow L^* \subseteq M^*$
-> - closed under concatenation: $L^* L^* = L^*$
-> - idempotent: $(L^*)^* = L^*$
-> - commutes with mirroring: $(L^R)^* = (L^*)^R$
+Also called **concatenation closure**. Limit of the power operator: $$L^* = \bigcup_{k \ge 0} L^k, \quad \text{with } L^0 = \{\epsilon\}$$
+- **$\epsilon$-closure**: every star language contains $\epsilon$ (from $L^0$)
+- every string in $L^*$ factors into pieces, each belonging to $L$
+- $L^* = L$ iff $L$ is closed under concatenation and contains $\epsilon$ (e.g. $L = \Sigma^*$ or $L = \{\epsilon\}$)
+- $\emptyset^* = \{\epsilon\}$
+>[!info] **Properties:**
+>- monotone: $L \subseteq M \Rightarrow L^* \subseteq M^*$
+>- closed under concatenation: $L^* L^* = L^*$
+>- idempotent: $(L^*)^* = L^*$
+>- commutes with mirroring: $(L^R)^* = (L^*)^R$
 
 ### Cross operator (Kleene plus)
 
-- positive concatenation closure: $L^+ = \bigcup_{k \ge 1} L^k$
+- positive concatenation closure: $L^+ = \bigcup_{h=1\dots \infty} L^h=L^2\cup L^2\cup\dots$
 - excludes the null power, so in general $\epsilon \notin L^+$
 - expressible via star: $L^+ = L L^* = L^* L$
 - hence $L^* = L^+ \cup \{\epsilon\}$
