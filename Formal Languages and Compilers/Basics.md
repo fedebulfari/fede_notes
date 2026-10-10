@@ -3,7 +3,7 @@ date: 2026-10-09
 subject: Formal Languages and Compilers
 ---
 
-## Definitions
+# Definitions
 
 - **Alphabet** ($\Sigma$): finite set of atomic elements (symbols / letters)
   - e.g. $\Sigma = \{a, b, c\}$
@@ -15,8 +15,7 @@ subject: Formal Languages and Compilers
 - Two levels: unordered set $L$ of phrases, each phrase an ordered sequence of atomic symbols
 - **Cardinality** $|L|$: finite vs infinite language
 
-Source: [[FLC - series 01 - 2.pdf]]
-
+# Strings
 ## String Properties
 
 > [!info] Length
@@ -80,6 +79,7 @@ Source: [[FLC - series 01 - 2.pdf]]
 >
 > e.g. $xy^2 = x(yy)$, while $(xy)^2 = xyxy$
 
+# Languages
 ## Language Properties
 
 > [!info] Universal language
@@ -97,11 +97,10 @@ Source: [[FLC - series 01 - 2.pdf]]
 - **Union**: $L_1 \cup L_2 = \{ x \mid x \in L_1 \lor x \in L_2 \}$
 - **Intersection**: $L_1 \cap L_2 = \{ x \mid x \in L_1 \land x \in L_2 \}$
 - **Complement**: $\lnot L = \Sigma^* \setminus L$
-  - complement of a finite language is always infinite; complement of an infinite language may be finite or infinite
+	complement of a finite language is always infinite; complement of an infinite language may be finite or infinite
 - **Set difference**: $L_1 - L_2 = L_1 \cap \lnot L_2$
 - **Concatenation**: $L_1 L_2 = \{ xy \mid x \in L_1 \land y \in L_2 \}$ — associative; $\emptyset$ is absorbent: $\emptyset L = L \emptyset = \emptyset$
 - **Power**: $L^0 = \{\epsilon\}$, $L^m = L^{m-1}L$ for $m > 0$
-  - fixes max length: e.g. over $\{a,b\}$, strings of length $\le 3$ via $(\{\epsilon\} \cup \{a,b\} \cup \{a,b\}^2 \cup \{a,b\}^3)$; $\epsilon$ supplies the shorter lengths
 - **Prefix**: $\mathrm{Prefix}(L) = \{ y \mid y \text{ is a prefix of some } x \in L \}$, i.e. $x = yz$
 - **Mirroring**: $L^R = \{ x^R \mid x \in L \}$
 
@@ -150,15 +149,16 @@ Equivalently: $L \cap \mathrm{ProperPrefix}(L) = \emptyset$, where $\mathrm{Prop
 
 ## Key identities
 
-| Identity                      | Meaning                                  |     |     |     |     |     |                                       |
-| ----------------------------- | ---------------------------------------- | --- | --- | --- | --- | --- | ------------------------------------- |
-| $L^* = L^+ \cup \{\epsilon\}$ | star adds the empty power to cross       |     |     |     |     |     |                                       |
-| $L^+ = L L^* = L^* L$         | cross expressed via star + concatenation |     |     |     |     |     |                                       |
-| $(L^*)^* = L^*$               | idempotence of star                      |     |     |     |     |     |                                       |
-| $L^* L^* = L^*$               | closure under concatenation              |     |     |     |     |     |                                       |
-| $                             | xy=                                      | =   | x   | +   | y   | $   | length is additive over concatenation |
-| $(xy)^R = y^R x^R$            | mirroring reverses factor order          |     |     |     |     |     |                                       |
+| Identity                      | Meaning                                  |
+| ----------------------------- | ---------------------------------------- |
+| $L^* = L^+ \cup \{\epsilon\}$ | star adds the empty power to cross       |
+| $L^+ = L L^* = L^* L$         | cross expressed via star + concatenation |
+| $(L^*)^* = L^*$               | idempotence of star                      |
+| $L^* L^* = L^*$               | closure under concatenation              |
+| $xy=x+y$                      | length is additive over concatenation    |
+| $(xy)^R = y^R x^R$            | mirroring reverses factor order          |
 
 ---
 
-Related: [[_Formal Languages and Compilers MOC]],
+Related: [[_Formal Languages and Compilers MOC]]
+Source: [[FLC - series 01 - 2.pdf]]

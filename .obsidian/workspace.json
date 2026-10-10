@@ -4,21 +4,39 @@
     "type": "split",
     "children": [
       {
-        "id": "24895d0c87ea2cd4",
+        "id": "b7d188106733122a",
         "type": "tabs",
         "children": [
           {
-            "id": "5c12f83f79ebbcf4",
+            "id": "44b4e0ee336522e1",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Formal Languages and Compilers/Basics.md",
+                "file": "Formal Languages and Compilers/Context free Grammars.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Basics"
+              "title": "Context free Grammars"
+            }
+          }
+        ]
+      },
+      {
+        "id": "0b2cc64b1c45f80c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "813ce76ba85f6bbe",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "Formal Languages and Compilers/PDF/FLC - series 03 - new.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "FLC - series 03 - new"
             }
           }
         ]
@@ -83,7 +101,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 304.40199279785156
   },
   "right": {
     "id": "a208faef6a30291a",
@@ -161,7 +179,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Formal Languages and Compilers/Basics.md",
+                "file": "Operational Research/Graphs.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -201,11 +219,11 @@
             }
           }
         ],
-        "currentTab": 6
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
-    "width": 299.5
+    "width": 222.12652587890625
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -224,35 +242,36 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "5c12f83f79ebbcf4",
+  "active": "44b4e0ee336522e1",
   "lastOpenFiles": [
+    "Formal Languages and Compilers/Basics.md",
+    "Formal Languages and Compilers/Context free Grammars.md",
+    "Formal Languages and Compilers/PDF/FLC - series 03 - new.pdf",
     "Formal Languages and Compilers/Regular expressions and Languages.md",
+    "Operational Research/Graphs.md",
+    "Operational Research/Problem Optimization.md",
+    "templates/template.md",
+    "Formal Languages and Compilers/_Formal Languages and Compilers MOC.md",
+    "Operational Research/PDF/chapter+2.pdf",
+    "Operational Research/_Operational Research MOC.md",
+    "Operational Research/media/Problem Optimization/media/Es. 3.md",
+    "Operational Research/PDF/chapter+1.pdf",
     "Formal Languages and Compilers/PDF.md",
     "Operational Research/media/Graphs/media/Es. 1.md",
-    "Operational Research/Problem Optimization.md",
-    "Operational Research/_Operational Research MOC.md",
     "Formal Languages and Compilers/PDF/FLC - series 04 - new.pdf",
-    "Formal Languages and Compilers/PDF/FLC - series 03 - new.pdf",
     "Formal Languages and Compilers/PDF/FLC - series 02 - 2.pdf",
     "Formal Languages and Compilers/PDF/FLC - series 01 - 2.pdf",
     "Formal Languages and Compilers/PDF",
     "Operational Research/media",
-    "Formal Languages and Compilers/_Formal Languages and Compilers MOC.md",
-    "Formal Languages and Compilers/Context free Grammars.md",
-    "Formal Languages and Compilers/Basics.md",
     "Formal Languages and Compilers/[!info]Star operator (Kleene star).md",
     "Formal Languages and Compilers/Regular expressions and Languages(1).md",
-    "Operational Research/media/Problem Optimization/media/Es. 3.md",
     "copilot/skills/copilot-fetch-x/SKILL.md",
     "copilot/skills/copilot-fetch-x/fetch-x.ps1",
     "copilot/skills/copilot-fetch-x/fetch-x.cmd",
-    "copilot/skills/copilot-fetch-x/fetch-x.sh",
-    "copilot/skills/copilot-fetch-x",
     "copilot/skills/copilot-youtube-transcript/SKILL.md",
     "copilot/copilot-conversations/agent__improve_notes@20261009_200128.md",
     "copilot/copilot-conversations/agent__improve@20261008_110205.md",
     "Formal Languages and Compilers/media/Basics-1791567228274.webp",
-    "Operational Research/Graphs.md",
     "Formal Languages and Compilers/Basic.md",
     "Formal Languages and Compilers/formal_languages_basics.md",
     "Operational Research/media/Graphs/media/media/Es. 1-1791561061335.webp",
@@ -263,14 +282,12 @@
     "Operational Research/media/Graphs/media/Graphs-1791560256435.webp",
     "Operational Research/Graphs/parts/Senza nome.md",
     "Operational Research/Graphs/_Graphs MOC.md",
-    "templates/template.md",
     "Operational Research/media/Problem Optimization/media/media/Es. 3-1791478780648.webp",
     "Operational Research/media/Problem Optimization/media/media/Es. 3-1791478758471.webp",
     "Operational Research/media/Problem Optimization/media/media/grafi2.md",
     "Operational Research/media/Problem Optimization/media/Es. 2.md",
     "Operational Research/media/Problem Optimization/media/Es.1.md",
     "Operational Research/media/Problem Optimization/media/media/grafo1.md",
-    "Operational Research/media/Problem Optimization/media/media/Es. 3-1791473777167.webp",
-    "Excalidraw/Drawing 2026-10-08 17.22.51.excalidraw.md"
+    "Operational Research/media/Problem Optimization/media/media/Es. 3-1791473777167.webp"
   ]
 }

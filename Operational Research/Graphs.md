@@ -2,43 +2,128 @@
 date: 08-10-2026
 subject: Operational Research
 ---
-A Graph is defined by its arcs and its nodes.
-# Notation
-- Path: sequence of consecutive of consecutive arcs.
-	Given a graph, we can define a Path to link it's nodes.
-	![[Graphs-1791560256435.webp|346]]
-	
-- Simple Path: link nodes not repeating arcs
-	![[Graphs-1791560347791.webp|350]]
-- Elementary Path: link nodes passing through them  up to one time
-	![[Graphs-1791560389715.webp|350]]
-- Cycle: Path that links backkto starting nodes
-- Elementary Cycle:  No repeated nodes
-- Hemiltonian Cycle: Cycle linking all nodes
-	Hemiltonian Cycles are an Elementary Cycle.
-- Simple Cycle: No repeated arcs
-- Eulerian Tour: All arcs are visited
-	Eulerian Tours are  Simple Cycle.
-- Graphs can be directional or not
-	![[Graphs-1791560716558.webp|353]]
-	
-![[Es. 1]]
-# Minimal feasible Solution
 
-A Minimal Solution has the following properties:
-- No cycles
-- $G'$ is connected
-- if $|N|=n\implies|A'|=n-1$
-- $G'$ is spanning tree
-- Adding one arc to $G'$ make it a cycle
-- Removing one arc from $G'$ give us two connected components
-## Kruskal Algorithm [1956]
-1) Sort arcs in increasing order of $w_{ij}$
-2) $A'=∅$
-3) repeat
-	1) consider the next arc $\{i,j\}$ in order
-	2) if $A'\cup  \{i,j\}$does not include a cycle
-	3) then $A'←A'\{i,j\}$
-4) Until $|A'|=n-1$
+# Definitions and Notation
+
+A graph $G = (N, A)$ is defined by a set of **nodes** $N$ and a set of **arcs** $A$.
+An arc is defined by a pair of nodes called its **endpoints**.
+
+- **Undirected graph:** pairs are unordered, $e = \{i,j\}$.
+- **Directed graph (digraph):** pairs are ordered, $a = (i,j)$.
+  - $i$ = **tail**, $j$ = **head**.
+- **Simple graph:** no multiple arcs and no self-loops ($i \neq j$).
+
+> [!tip] Directed vs undirected
+> Many definitions below are stated for digraphs. When orientation does not matter they also apply to undirected graphs — just replace path with chain, cycle with circuit, etc.
+> ![[Graphs-1791560716558.webp|353]]
+
+## Successors, predecessors, stars, degree
+
+For a digraph $G=(N,A)$:
+
+- **Set of successors**: $FN(i) = \{j \in N : (i,j) \in A\}$
+- **Set of predecessors**: $PN(j) = \{i \in N : (i,j) \in A\}$
+- **Adjacent nodes**: $AD(i) = FN(i) \cup PN(i)$
+- **Forward star(arcs)**: $FS(i) = \{(i,j) \in A\}$
+- **Backward star(arcs)**: $BS(j) = \{(i,j) \in A\}$
+- **Star(arcs)**: $S(i) = FS(i) \cup BS(i)$
+
+- **out-degree** $= |FS(i)| = |FN(i)|$
+- **in-degree** $= |BS(i)| = |PN(i)|$
+- **degree** $=$ out-degree + in-degree
+
+## Subgraphs and partial graphs
+
+- **Subgraph induced by $V \subseteq N$:** $G' = (V, A')$ with $A' = \{(i,j) \in A : i,j \in V\}$.
+- **Partial graph defined by $B \subseteq A$:** $G' = (N, B)$.
+- **Partial subgraph:** combine both.
+
+## Chain, Path, Cycle
+
+### Chain and circuit
+
+A **chain** is a sequence $i_1, a_1, i_2, \dots, i_{r-1}, a_{r-1}, i_r$ where each $a_k$ is either $(i_k, i_{k+1})$ or $(i_{k+1}, i_k)$.
+
+- Arcs $(i_k, i_{k+1})$ are **in accordance** with orientation $i_1 \to i_r$.
+- Arcs $(i_{k+1}, i_k)$ are **not in accordance**.
+- **Closed chain / circuit:** $i_1 = i_r$.
+
+### Path
+
+A **path** requires all arcs oriented forward: $a_k = (i_k, i_{k+1})$ for $k=1,\dots,r-1$.
+	
+- **Closed path:** $i_1 = i_r$.
+	![[Graphs-1791560256435.webp|356]]
+- **Simple path:** no repeated **arcs**. E.g. $2,4,5,4,3$.
+	![[Graphs-1791560347791.webp|356]]
+- **Elementary path:** no repeated **nodes**. E.g. $1,2,4,5$.
+	![[Graphs-1791560389715.webp|358]]
+
+### Cycle
+
+A **cycle** is a closed path where the only repeated node is the first one — i.e. an elementary path $i_1 \to i_r$ plus arc $(i_r, i_1)$. E.g. $2,4,2$.
+
+- **Simple cycle:** no repeated arcs.
+- **Elementary cycle:** no repeated nodes (except start/end).
+- Graph with no cycles is **acyclic**.
+
+> [!warning] Common confusion
+> - Simple = no repeated arcs, Elementary = no repeated nodes.
+> - Every elementary path is simple, not vice versa.
+
+#### Hamiltonian and Eulerian
+
+- **Hamiltonian cycle:** cycle containing **all nodes** in $N$, exactly $|N|$ arcs. Does not always exist.
+	Hamiltonian cycles are elementary cycles.
+- **Eulerian cycle / tour:** closed simple path containing **all arcs**, exactly $|A|$ arcs. Does not always exist.
+	Eulerian tours are simple cycles.
+	Exists iff $|FS(i)| = |BS(i)|$, $\forall i \in N$.
+
+## Connectivity, components, cuts
+
+- **Connected:** for every $i,j \in N$ there exists a **chain** from $i$ to $j$.
+- **Strongly connected:** for every $i,j \in N$ there exists a **path** from $i$ to $j$.
+- **Connected component:** maximal connected subgraph. Same for strongly connected component.
+- **Cut:** partition $N = N' \cup N''$, $N' \cap N'' = \emptyset$.
+	Direct arcs: tail in $N'$, head in $N''$.
+	Inverse arcs: tail in $N''$, head in $N'$.
+
+## Bipartite, tree, matching
+
+- **Bipartite graph:** $N = N_1 \cup N_2$ such that every arc $(i,j)$ has $i \in N_1, j \in N_2$ or vice versa.
+- **Tree:** connected graph with no closed chains.
+- **Spanning tree $T$:** tree containing all nodes of $G$.
+- **Matching:** partial graph where no two arcs share a node. **Perfect matching** if every node is incident to one arc.
+
+### Minimum Spanning Tree
+
+Given weighted undirected $G=(N,A)$ with weights $w_e > 0$, find spanning tree of minimum total weight.
+
+### Properties of a spanning tree $G' = (N, A')$
+
+Let $|N| = n$:
+1. No cycles
+2. $G'$ is connected
+3. $|A'| = n-1$
+4. Adding one arc creates exactly one cycle
+5. Removing one arc creates two connected components
+
+### Kruskal Algorithm [1956]
+
+> [!example] Idea
+> Take arcs in increasing weight order. Add an arc iff it does not create a cycle.
+
+1. Sort arcs in increasing order of $w_{ij}$
+2. $A' = \emptyset$
+3. Repeat:
+   1. Consider next arc $\{i,j\}$ in order
+   2. If $A' \cup \{\{i,j\}\}$ contains no cycle, then $A' \leftarrow A' \cup \{\{i,j\}\}$
+4. Until $|A'| = n-1$
+
+Key point from the book: stop when $|T| = |N|-1$, no need to scan all arcs.
+
+See [[chapter+2.pdf#page=10]] for worked example and optimality proof (exchange argument).
+
 ---
 Related: [[_Operational Research MOC]]
+Source: [[chapter+2.pdf]]

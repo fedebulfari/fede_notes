@@ -1,5 +1,6 @@
 {
   "accentColor": "",
   "cssTheme": "Solarized",
-  "nativeMenus": false
+  "nativeMenus": false,
+  "theme": "obsidian"
 }

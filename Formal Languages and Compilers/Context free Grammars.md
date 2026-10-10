@@ -1,144 +1,174 @@
-# Context free Grammars
+---
+date: 09-10-2026
+subject: Formal Languages and Compilers
+---
 
-* A Generative Grammar is constituted by rules that allow to generate all and only the phrases of the chosen Language
+# Definition
 
-* Derivation chain
+A **generative grammar** is a set of rules that, by repeated application, generate all and only the phrases of a language.
 
-* A Context free grammar is defined by means of four entities:
+A **context-free grammar** (Type 2, BNF) is a 4-tuple $G = (V, \Sigma, P, S)$:
 
-  * non-terminal alphabet, is a set of non-terminal symbols (or syntactic classes)
-  * terminal alphabet, is the set of the characters that constitute the phrases
-  * is a set of syntactic rules (also called production rules or simply rules)
-  * a particular non-terminal, called axiom
-* each rule of P is an ordered pair
+- $V$ — non-terminal alphabet (syntactic classes)
+- $\Sigma$ — terminal alphabet, disjoint from $V$
+- $P$ — set of production rules; each rule is an ordered pair $(X, \alpha)$ with $X \in V$, $\alpha \in (V \cup \Sigma)^*$, written $X \to \alpha$. Alternatives written $X \to \alpha_1 \mid \alpha_2 \mid \dots$
+- $S \in V$ — axiom
 
-* In order to avoid confusion, the metasymbols must not appear among the terminal and non-terminal symbols; moreover, the terminal and non-terminal alphabets must not share elements (must be disjoint sets)
+Metasymbols $\to$, $\mid$, $\cup$, $\epsilon$ must not appear in $V \cup \Sigma$.
 
+> [!example] Palindromes
+> - A phrase is $\epsilon$
+> - A phrase enclosed in $a \dots a$ is a phrase
+> - A phrase enclosed in $b \dots b$ is a phrase
+>
+> Derivation chain: $frase \Rightarrow a\,frase\,a \Rightarrow ab\,frase\,ba \Rightarrow abb\,frase\,bba \Rightarrow abbbba$.
 
 ## Conventions
-* 1 CONVENTION: `<phrase> ::= if <cond> then <phrase> else <phrase>`
 
-* 2 CONVENTION: `phrase -> if cond then phrase else phrase`
+- `<if_phrase> ::= if <cond> then <phrase> else <phrase>`
+- `if_phrase -> if cond then phrase else phrase`
+- `F \to \text{if } C \text{ then } D \text{ else } D`
 
-* CONVENTIONS USED IN THE FOLLOWING:
+Used below:
 
-  * terminal symbols (for characters or letters)
-  * non-terminal symbols (A, B)
-  * strings over $\Sigma$ that contain only terminal characters
-  * strings over $V \cup \Sigma$ that contain terminal and non-terminal elements $\alpha, \beta$
-  * strings over $V$ that contain only non-terminal symbols
+- $a, b, \dots$ — terminals
+- $A, B, \dots$ — non-terminals
+- $r, s, \dots, z$ — strings over $\Sigma$
+- $\alpha, \beta, \dots$ — strings over $V \cup \Sigma$
+- $\sigma$ — strings over $V$ only
 
-## Forms and Generated Languages
-* **TERMINAL:** the right part contains terminals or empty string
+### Rule shapes
 
-* **EMPTY:** the right part is the empty string
+- **Terminal:** right part in $\Sigma^*$ or $\epsilon$
+- **Empty:** right part is $\epsilon$
+- **Initial:** left part is the axiom $S$
+- **Recursive:** left part appears in right part, $A \Rightarrow^+ xAy$
+- **Left / right / two-sided recursive:** $A$ is prefix / suffix / either
+- **Copy (renaming):** $A \to B$
+- **Linear:** at most one non-terminal on the right
+- **Right / left linear:** that non-terminal is suffix / prefix
+- **Chomsky normal:** $A \to BC$ or $A \to a$
+- **Greibach normal:** $A \to a\alpha$ with prefix terminal
+- **Operator normal:** infix terminal
 
-* **INITIAL:** the left part is the axiom
+## 2. Derivation and generated language
 
-* **RECURSIVE:** the left part appears in the right part
+$\beta \Rightarrow_G \gamma$ if $\beta = hAd$, $\gamma = h\alpha d$ and $A \to \alpha$ is a rule. $\Rightarrow^*$ is its reflexive-transitive closure.
 
-* **LEFT RECURSIVE:** the left part is prefix of the right part
+- **Form from $A$:** $\alpha$ with $A \Rightarrow^* \alpha$.
+- **Sentential form:** form derived from $S$.
+- **Phrase:** sentential form with only terminals.
+- $L_A(G) = \{x \in \Sigma^* \mid A \Rightarrow^+ x\}$, $L(G) = L_S(G)$.
+- $G, G'$ are **equivalent** (weakly) iff $L(G) = L(G')$.
 
-* **RIGHT RECURSIVE:** the left part is suffix of the right part
+> [!example] Book structure
+> $S \to fA$, $A \to AtB \mid tB$, $B \to lB \mid l$.
+> $L_B = l^+$, $L(G)$ defined by $f(tl^+)^+$.
+> A language is context-free iff some free grammar generates it. This example is also regular.
 
-* **TWO-SIDED RECURSIVE:** superposition of previous cases
+## 3. Reduced form
 
-* **COPY (or RENAMING):** simply a change of name
+$G$ is in **reduced form** iff **both**:
 
-* **LINEAR:** the right part contains at most one nonterminal
+1. Every $A$ is **reachable** from $S$: $S \Rightarrow^* \alpha A \beta$
+2. Every $A$ **generates** something: $L_A(G) \neq \emptyset$
 
-* **RIGHT LINEAR:** like linear, but the nonterminal is suffix
+Two-phase algorithm:
 
-* **LEFT LINEAR:** like linear, but the nonterminal is prefix
+1. **Defined symbols:** start with $DEF = \{A \mid (A \to u) \in P, u \in \Sigma^*\}$, then iterate $DEF := DEF \cup \{B \mid (B \to D_1\dots D_n) \in P, \text{each } D_i \in \Sigma \text{ or } \in DEF\}$.
+2. **Reachable symbols:** reachability in graph of relation $A \Rightarrow A \to \alpha B \beta$. Remove unreachable non-terminals and rules mentioning them.
 
-* **CHOMSKY NORMAL:** either one term or two nonterm.s
+Often also required:
 
-* **GREIBACH NORMAL:** always a prefix term, max length 2
+- No **circular derivations** $A \Rightarrow^+ A$ — inessential and source of ambiguity.
 
-* **OPERATOR NORMAL:** always an infix terminal
+### Axiom on right and nullables
 
+- We can forbid $S$ on right sides by adding new axiom $S_0 \to S$.
+- $A$ is **nullable** iff $A \Rightarrow^+ \epsilon$.
+  - Compute $Null \subseteq V$: $A \in Null$ if $A \to \epsilon \in P$, or if $A \to A_1\dots A_n$ with all $A_i \in Null$.
+- **Non-nullable normal form:** no non-terminal $\neq S$ is nullable; $S$ is nullable iff $\epsilon \in L(G)$.
 
-## Reduced Form
-* A grammar is in reduced form if:
+## 4. Recursion and infinity
 
-  * All nonterminals are reachable from axiom
-  * All nonterminals generate a set of strings
-* Two phases Algorithm:
+To generate infinitely many strings, rules must allow derivations of **unbounded length**, i.e. recursion: $A \Rightarrow^+ xAy$.
 
-  * Construct the set of defined non-terminals
-  * Unreachable terminal symbols can be removed from the grammar
+> [!important] Infinity criterion
+> Let $G$ be reduced with no circular derivations. $L(G)$ is infinite **iff** $G$ admits recursive derivations.
+>
+> - Necessity: without recursion every derivation has bounded length.
+> - Sufficiency: from $S \Rightarrow^* uAv$, $A \Rightarrow^+ xAy$, $A \Rightarrow^* w$ we get $S \Rightarrow^* ux^mwy^mv$ for $m \ge 1$.
 
-## Restriction
-* It's possible to restrict the right member of a rule, it is allowed to the axiom and the node $S \rightarrow \epsilon$
+- $G$ is **recursion-free** iff the `produce` graph is acyclic.
+- Example: $E \to E+T \mid T$, $T \to T*F \mid F$, $F \to (E) \mid i$ — $E,T$ immediately left-recursive, $F$ indirectly recursive, hence infinite.
 
-* Symbol Nullable: A non-terminal is nullable if it derives to empty string ($\epsilon$)
+## 5. Syntax tree and canonical derivations
 
-* Every rule symbol and the axiom itself is nullable if the Language contains $\epsilon$
+- **Syntax tree:** connected acyclic graph (unique undirected path between nodes). Shows parent-child / root-leaf structure. Root = axiom, **frontier** (left-to-right leaves) = phrase. Node arity = rule length. **Subtree** rooted at $N$ = $N$ plus all descendants.
+- **Leftmost derivation:** always expand leftmost non-terminal. **Rightmost:** always expand rightmost.
 
+Strong vs weak equivalence:
 
-## A Grammar
-* Grammar is a finite set of rules that produce infinitely many strings
+- **Weak:** $L(G) = L(G')$ but trees may differ.
+- **Strong / structural:** same language **and** structurally equivalent trees (same condensed skeleton). Strong $\implies$ weak, not vice versa. Structural adequacy matters for semantics, e.g. $3+5 \times 8+2$ must parse as $3+(5\times 8)+2$.
 
-* In order to produce infinitely many strings the rules have to allow of unbounded length
+## 6. Dyck and regular composition
 
-* A NECESSARY AND SUFFICIENT CONDITION for a language L(G) to be infinite, where G is a grammar in the reduced form and does not have any circular derivations, is that G admits recursive derivations
+- **Dyck language:** paradigm of nested parentheses. $\Sigma = \{a,a',b,b',\dots\}$, e.g. $S \to aSa' \mid bSb' \mid \epsilon$. Cancellation test: repeatedly delete adjacent $aa'$, $bb'$ pairs; valid iff result is $\epsilon$.
+- $L_1 = \{a^nc a^n\}$ is linear but non-regular, subset of Dyck with one nest level.
+- Free languages are closed under **union, concatenation, star** (hence cross $^+$):
+  - Union: $S \to S_1 \mid S_2$
+  - Concat: $S \to S_1S_2$
+  - Star: $S \to SS_1 \mid \epsilon$; Cross: $S \to SS_1 \mid S_1$
+  - Keep $V_1 \cap V_2 = \emptyset$, else superset is generated.
+- Closed under **mirror**: mirror every right-hand side.
 
-* PROOF OF NECESSITY: if there were not any recursive derivation, then every derivation would be of bounded length, hence L(G) would be finite (would contain finitely many strings)
+## 7. Ambiguity
 
-* PROOF OF SUFFICIENCY: If there were such a derivation... since G is in the reduced form, it follows that A is reachable from S, hence from A at least one terminal string w can be derived, whence there exist infinitely many derivations that yield different strings
+Phrase $x$ is **ambiguous** if it has $\ge 2$ distinct syntax trees / derivations. Grammar $G$ is ambiguous if it generates at least one ambiguous string.
 
+- Ambiguity degree of $x$ = number of its trees (can be infinite with nullables). Degree of $G$ = max over strings, possibly unbounded.
+- Deciding ambiguity is **undecidable** in general. Check ad hoc or bound derivation length in practice — avoid ambiguity **by construction**.
 
-## Syntax Tree
-* Directed acyclic graph such that for every pair of nodes there exists one and only one path
+Catalogue:
 
-* Graphical representation of the derivation process
+1. **Two-sided recursion:** $E \to E+E \mid i$ gives $i+i+i$ two leftmost derivations. Fix with one-sided recursion: $E \to i+E \mid i+E i$ style / layered $E,T,C$.
+2. **Left+right lists:** $A \to aA \mid Ab \mid c$ — generate lists separately ($S \to AcB$) or in fixed order.
+3. **Union:** if $L_1 \cap L_2 \neq \emptyset$, union grammar is ambiguous on the intersection. Only $L_1 \setminus L_2$, $L_2 \setminus L_1$ stay clean.
+4. **Concatenation:** ambiguous if a suffix of $L_1$ is a prefix of $L_2$. Fix with separator: $S \to S_1 \# S_2$.
+5. **Regexp rules:** e.g. $S \to a^*b \mid ab^*$ overlapping, or ordering of $bSc \mid bbSc$.
 
-* Gives parent-child/root-leaf relation
+> [!warning] Inherently ambiguous
+> $L = \{a^ib^ic^j\} \cup \{a^ib^jc^k\} = \{a^ib^jc^k \mid i=j \lor j=k\}$. Strings $a^nb^nc^n$ are always derivable two ways (check $=_{a,b}$ vs $=_{b,c}$). No equivalent unambiguous grammar exists.
 
-* The root is the axiom and the frontier is the generated phrase
+## 8. Normal forms and transformations
 
-* Frontier: The sequence of leaves, scanned left to right
+- **Non-terminal expansion:** $A \to \alpha B \gamma$, $B \to \beta_1 \mid \dots$ gives $A \to \alpha\beta_i\gamma$ — power unchanged.
+- **Copy-rule elimination:** $Copy(A) = \{B \mid A \Rightarrow^+ B\}$. Removing copies flattens trees but loses sharing; e.g. arithmetic $E \to E+T \mid T+C$-style vs expanded $E \to E+T \mid T \times C$.
+- **Chomsky normal form:** only $A \to BC$ (binary, homogeneous) and $A \to a$, plus $S \to \epsilon$ if needed. Internal nodes arity 2, parents of leaves arity 1.
+- **Left $\to$ right recursion:** $A \to A\gamma_1 \mid \dots \mid \beta_1 \mid \dots$ becomes right-recursive with new $A'$; needed for top-down / recursive-descent parsers.
+- **Real-time / Greibach:** every rule $A \to a\alpha$ starts with a terminal ($ \alpha \in (V\cup\Sigma)^*$ for real-time, $\alpha \in V^*$ for Greibach). One terminal consumed per step, steps = $|x|$.
+- **Uni-linear (Type 3):** $A \to uB$ (right) or $A \to Bu$ (left), $u \in \Sigma^*$. Trees grow unbalanced. No self-inclusive $A \Rightarrow^+ uAv$ ($u,v \neq \epsilon$) — otherwise regular languages would need it; its absence characterizes regularity.
 
-* Degree of a node: length of the rule
+Closure summary ($R \in REG$, $L \in LIB$): $R \circ R \in REG$, $L \circ L \in LIB$ for union/concat; $R \cap R \in REG$ but $L_1 \cap L_2 \notin LIB$ in general; $R \cap L \in LIB$; complement flips out.
 
-* Sub Tree: Tree that has root N and the descendants of N
+## 9. Extended grammars (EBNF)
 
-* LEFTMOST DERIVATION
+Right sides may be regexps: $A \to \eta$ with $\eta$ over $V \cup \Sigma$. Same power as BNF since LIB is closed under union/star/concat, but more readable; directly drawable as **syntax diagrams**.
 
-* RIGHTMOST DERIVATION
+- Derivation: $\eta_1 = \alpha A \gamma \Rightarrow \alpha \vartheta \gamma = \eta_2$ if $A \to \eta$ and $\vartheta \in L(\eta)$ (no regexp operators left in $\eta_1,\eta_2$).
+- Tree nodes may have unbounded arity but lower depth, e.g. $E \to T(+T \mid -T)^*$.
+- Ambiguity can come from the regexp itself (e.g. $(ab)^*$ vs $a^*b^*$ overlaps).
 
+## 10. Chomsky hierarchy
 
-## Notes
-* As already seen, Grammars are used to express the rules of a Formal Language
+| Type | Rules | Languages | Recognizer |
+|---|---|---|---|
+| 0 | $\beta \to \alpha$, $\beta \neq \epsilon$ | Recursively enumerable | Turing machine |
+| 1 | $\beta \to \alpha$, $\|\beta\| \le \|\alpha\|$ | Context-dependent | Linear-bounded TM |
+| 2 | $A \to \alpha$ | Context-free / algebraic | Nondeterministic PDA |
+| 3 | $A \to uB$ / $A \to Bu$ | Regular / rational | Finite automaton |
 
-* We can exclude Circular Derivations ($A \rightarrow A$) and Copy Rules ($A \rightarrow B$)
-
-* We can therefore remove nullable terms and modify the rules with $\epsilon$ to obtain minimal grammars
-
-* Use Null $\{E, A, ...\}$ to specify the nullification of some elements
-
-
-## Syntax Tree
-* Graphical method to represent the derivation of a grammar
-
-
-## Ambiguity
-* Given the output string, the way to write it is ambiguous
-
-* It will occur when we eliminate these ambiguities
-
-* To eliminate them I can use different methods, although incomplete since it is an undecidable problem
-
-
-## Chomsky Normal Form
-* Form to which all grammars can be reduced
-
-* They are characterized only by null and binary rules
-
-
-## Left-Recursive / Right Recursive
-* $A \rightarrow A \beta_{1} \vert{} A \beta_{2}$
-
-* Real time form
-
-* Every rule begins with a terminal
+---
+Related: [[_Formal Languages and Compilers MOC]]
+Sources: [[FLC - series 03 - new.pdf]], [[FLC - series 04 - new.pdf]]

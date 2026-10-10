@@ -3,76 +3,88 @@ date: 07-10-2026
 subject: Operational Research
 ---
 
-Modeling a problem means translating it into an optimization problem by establishing three correspondences:
+# Definitions
 
-|  Problem side  |        Model side        |
-| :------------: | :----------------------: |
-|   Decisions    |        Variables         |
-|     Rules      | Mathematical constraints |
-|   Objective    |    Objective function    |
+Modeling a problem means translating it into an optimization problem via three correspondences:
 
-The result is an **optimization problem**: find the values of the variables that optimize (min or max) the objective while satisfying every constraint.
+| Problem side | Model side |
+| :----------: | :----------------------: |
+| Decisions | Variables |
+| Rules | Mathematical constraints |
+| Objective | Objective function |
 
-## Variables
+The result is an **optimization problem**: find values of the variables that optimize (min or max) the objective while satisfying every constraint.
 
-The decisions become **decision variables**, and their domain is part of the model:
+> [!note] Decision process
+> 1. Detect the decision problem
+> 2. Analyse facts and collect data
+> 3. Build the model (abstraction)
+> 4. Determine solution(s) via algorithms / solvers
+> 5. Interpret results on the real case — with feedback loops.
+>
+> A model is only an abstraction: validate that it captures the aspects relevant to the decision.
 
-- **Non-negative**: $x_i \geq 0$ — natural for quantities such as amounts, flows or times.
-- **Unrestricted**: free to take any sign. Any unrestricted variable can be rewritten using two non-negative ones:
-	$$\pi_{ts} = \pi_{ts}^+ - \pi_{ts}^-,\qquad \pi_{ts}^+ \geq 0,\ \pi_{ts}^- \geq 0$$
-	This way the model only contains non-negative variables (standard form).
-- **Relative**: defined with respect to a reference value instead of in absolute terms, e.g. the normalized share $y_i = \dfrac{x_i}{\bar{x}_i} \in [0,1]$, where $\bar{x}_i$ is the upper bound of $x_i$ (as in [[Es.1]]).
-- **Binary**: $x_i \in \{0,1\}$ — yes/no, on/off decisions.
-- **Discrete**: $x_i$ takes values in a discrete set (typically integers, possibly bounded) — counting decisions.
+# General form
 
-### Optimization problem
+$$\min_{x} \ f(x) \quad \text{s.t.} \quad g_i(x) \leq 0,\ i=1,\dots,m; \quad h_j(x)=0,\ j=1,\dots,p; \quad x \in X$$
 
-General form:
+- Continuous variables + linear $f, g, h$ → **LP**, e.g. standard form $\max c^\top x \ \text{s.t.} \ Ax \leq b,\ x \geq 0$.
+- Integer / binary variables → **IP / MILP**, finite but possibly exponential feasible set.
 
-$$\min_{x} \ f(x) \qquad \text{s.t.} \quad g_i(x) \leq 0,\ i = 1,\dots,m; \qquad h_j(x) = 0,\ j = 1,\dots,p; \qquad x \in X$$
-
-Depending on the variables:
-
-- Continuous variables + linear $f$, $g$, $h$ → **LP** (linear program), in standard form $\max\ c^\top x \ \text{s.t.}\ Ax \leq b,\ x \geq 0$.
-- Integer/binary variables → **IP / MILP**, with a finite (possibly exponential) number of feasible solutions.
-
-Example:
+> [!example] Farmer
+> $x_L, x_P$ = hectares of lettuce / potatoes.
+> $$\max 3000x_L+5000x_P$$
+> $$\text{s.t. } x_L+x_P \leq 12,\ 7x_L \leq 70,\ 3x_P \leq 18,\ 10x_L+20x_P \leq 160,\ x_L,x_P \geq 0$$
+> 2-variable LP: feasible region is intersection of half-planes; optimum at a vertex — here $(8,4)$ with value $44000$. With $n$ variables and $m$ inequalities, vertices can be up to $\binom{m}{n}$, so enumeration fails — need efficient algorithms. See `chapter+1.pdf` pp. 7–10.
 
 ![[Es.1]]
 
-## Constraints
+# Variables
+
+Decisions become **decision variables**; domain and sign are part of the model:
+
+- **Non-negative**: $x_i \geq 0$ — quantities, flows, times.
+- **Non-positive / free**: $x \leq 0$ or unrestricted. A free variable splits into two non-negative ones, e.g. train timetable perturbation:$$\pi_{ts} = \pi_{ts}^+ - \pi_{ts}^-,\qquad \pi_{ts}^+ \geq 0,\ \pi_{ts}^- \geq 0$$  where $\pi_{ts}^+$ is delay and $\pi_{ts}^-$ is advance. Similarly $x \leq 0$ becomes $x'=-x \geq 0$.
+- **Relative**: $y_i = x_i / \bar{x}_i \in [0,1]$ — shares, percentages, e.g. capital investment with $0 \leq x_i \leq 1$ (as in [[Es.1]]).
+- **Binary / logical**: $x_i \in \{0,1\}$ — yes/no, e.g. burglar knapsack $\max \sum v_i x_i \ \text{s.t.} \ \sum p_i x_i \leq 8$.
+- **Discrete choice**: $w_l \in \{d_1,\dots,d_r\}$, modeled as $w_l = \sum_k d_k y_k$, $\sum_k y_k = 1$, $y_k \in \{0,1\}$. With $\sum_k y_k \leq 1$ the $0$ (no allocation) option is also allowed.
+- Complement of a logical variable: $x' = 1-x$.
+
+# Constraints
 
 Typical families:
 
-- **Availability** constraints
-- **Requirement** constraints
-- **Blending** constraints
-- **Logical** constraints (0–1 and continuous case)
-	- *Satisfiability problem*: given a logical formula, find a truth assignment that makes it true:	$$(P_{11}\vee\dots \vee P_{1r})\wedge\dots \wedge(P_{n1}\vee\dots\vee P_{nr})$$
-		At least one literal per clause must be true for the whole formula to be true.
-- **Flow conservation** constraints
+- **Availability**: e.g. $x_L+x_P \leq 12$, $10x_L+20x_P \leq 160$.
+- **Requirement**: e.g. diet $\sum c_i x_i \geq 700$ calories.
+- **Blending / quality**: share constraints, e.g. vegetables $\geq 30\%$ of calories — multiply out the denominator to linearize:  $$-90x_{\text{pasta}}-75x_{\text{rice}}-60x_{\text{loin}}+49x_{\text{carrots}}+126x_{\text{potatoes}}+70x_{\text{pear}} \geq 0$$
+- **Flow conservation**: inflow = outflow at intermediate nodes; $\leq$ supply at wells, $\geq$ demand at refineries. See oil pipeline example pp. 14–15.
+- **Logical** (0–1 and continuous case):
+	- Exclusion: $\sum y_i \leq 1$ (exactly one if $=1$).
+	- Linking continuous to logical with big-$M$: $x \leq M y$, $y \in \{0,1\}$, then $y_{\text{pasta}}+y_{\text{rice}} \leq 1$.
+	- Implication $x_1 \Rightarrow x_2$: $x_1 \leq x_2$; $x_1 \Rightarrow \lnot x_2$: $x_1+x_2 \leq 1$.
+	- Generalized: if at least $m$ of $x_1,\dots,x_n$ are $1$ then $y=1$:$$y \geq \frac{\sum x_i - m + 1}{\,n-m+1\,}$$
+	  - *Satisfiability*: clause $P_1 \lor \lnot P_2 \lor P_3 \lor \lnot P_4$ becomes $x_1+(1-x_2)+x_3+(1-x_4) \geq 1$, i.e. $ax \geq 1-n(a)$. CNF $A$ is SAT iff the corresponding 0–1 system $Ax \geq b$ is feasible; MAX-SAT maximizes satisfied clauses.
 
-### Transformations
+## Transformations
 
-An inequality can be turned into an equality by adding a slack or surplus variable:
+$$A_i x \geq b_i \to A_i x - s_i = b_i, \qquad A_i x \leq b_i \to A_i x + s_i = b_i, \quad s_i \geq 0$$
 
-$$A_{i}x \geq b_{i} \;\to\; A_{i}x - s_{i} = b_{i}$$
-$$A_{i}x \leq b_{i} \;\to\; A_{i}x + s_{i} = b_{i}$$
+$s_i$ is slack (unused resource) or surplus (excess over requirement).
 
-A $\leq$ constraint can be reversed into a $\geq$ one by multiplying both sides by $-1$:
+$$\sum_{i=1}^n a_i x_i \leq b \to \sum_{i=1}^n -a_i x_i \geq -b$$
 
-$$\sum^n_{i=1}a_{i}x_{i} \leq b \;\iff\; \sum^n_{i=1}-a_{i}x_{i} \geq -b$$
+# Objective function
 
-## Objective function
-
-The function that expresses what to optimize (min or max) in a problem.
-
-- **Bottleneck**: minimize the largest term, e.g. $\min \max\left(p_{ij}x_{ij}\right)$.
-- A system can be characterized by **multiple objective functions**, e.g. $\max \sum_{i}\left( \sum_{j} x_{j}-\sum_{j} c_{j}y_{i} \right)$.
+- **Linear**: $\max \sum c_j x_j = -\min \sum (-c_j)x_j$ — only the optimal *value* changes sign, not the optimizer.
+- **Bottleneck**: $\min \max_{i,j} p_{ij}x_{ij}$. Improving one aspect make less optimized an other
+	![[Es. 3-1791478780648.webp|281]]
+- **Multi-objective**: we can have multiple obljective function
 
 ![[Es. 2]]
 
 ![[Es. 3]]
 
+
 ---
 Related: [[_Operational Research MOC]]
+Source: [[chapter+1.pdf]]

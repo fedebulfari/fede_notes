@@ -35,5 +35,3 @@
 	$$\min d = \min \max\left(p_{ij}x_{ij}\right) \quad\to\quad d^* \text{: optimal value} = \min\max$$
 	![[grafi2]]
 
-![[Es. 3-1791478758471.webp|369]]
-![[Es. 3-1791478780648.webp|370]]
