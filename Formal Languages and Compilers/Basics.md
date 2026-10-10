@@ -74,14 +74,25 @@ subject: Formal Languages and Compilers
 >
 > e.g. $xy^2 = x(yy)$, while $(xy)^2 = xyxy$
 
+## Language Properties
+
+> [!info] Universal Language
+> the set of ALL the strings defined over the alphabet Σ, of any length (including also length 0)
+>$$L= \sum^0 ∪ \sum^1 ∪ \sum^2 ∪\dots$$
+> _Sometimes called the **Free Monoid**_
+
+
 ## Language Operations
 
 - **Union**: $L_1 \cup L_2 = \{ x \mid x \in L_1 \lor x \in L_2 \}$
+- Intersection: $L_{1}\cap L_{2}$
+- Complement: $¬L=L_{universal}-L$
 - **Concatenation**: $L_1 L_2 = \{ xy \mid x \in L_1 \land y \in L_2 \}$ — associative; 
 	$\emptyset$ is absorbent: $\emptyset L = L \emptyset = \emptyset$
 - **Iteration**: $L^*$ — see [[#Star operator (Kleene star)]] below
 - **Prefix**: $\mathrm{Prefix}(L) = \{ y \mid y \text{ is a prefix of some } x \in L,\ x=yz \}$
 - **Mirroring**: $L^R = \{ x^R \mid x \in L \}$
+- 
 
 ### Star operator (Kleene star)
 
