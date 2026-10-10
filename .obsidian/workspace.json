@@ -220,8 +220,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 299.5,
-    "collapsed": true
+    "width": 299.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -240,7 +239,7 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "3af4ef408eb02da8",
+  "active": "2cb8085403a072de",
   "lastOpenFiles": [
     "Operational Research/Problem Optimization/Problem Optimization.md",
     "Formal Languages and Compilers/Basics.md",

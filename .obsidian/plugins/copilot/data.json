@@ -560,10 +560,8 @@
   "backends": {
     "opencode": {
       "enabledModels": [
-        "7eed4e3a-433f-4eed-b5bb-c31b55d76e52",
-        "10c96a8d-aea8-4a05-a430-3b355637a651",
         "7b5b8625-078e-474d-9e9a-2f1fca588ba8",
-        "4276b75f-e4c2-43bb-80d9-7c64f68fec08"
+        "cdd22b62-98f3-44e4-954b-bb4c2c30d4a9"
       ]
     },
     "chat": {
