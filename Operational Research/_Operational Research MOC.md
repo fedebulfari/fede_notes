@@ -1,2 +1,2 @@
-[[Problem Optimization]]
-[[Graphs]]
+1. [[Problem Optimization]]
+2. [[Graphs]]

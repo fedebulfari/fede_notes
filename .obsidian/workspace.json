@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Formal Languages and Compilers/Basics.md",
+                "file": "Formal Languages and Compilers/Regular expressions and Languages.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Basics"
+              "title": "Regular expressions and Languages"
             }
           }
         ]
@@ -161,7 +161,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Formal Languages and Compilers/Basics.md",
+                "file": "Formal Languages and Compilers/Regular expressions and Languages.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -224,14 +224,19 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "5c12f83f79ebbcf4",
+  "active": "962e634c0bc6f7cd",
   "lastOpenFiles": [
-    "Formal Languages and Compilers/[!info]Star operator (Kleene star).md",
-    "Formal Languages and Compilers/Basics.md",
-    "Operational Research/Problem Optimization/Problem Optimization.md",
+    "Formal Languages and Compilers/PDF",
+    "Operational Research/_Operational Research MOC.md",
+    "Operational Research/media",
     "Formal Languages and Compilers/_Formal Languages and Compilers MOC.md",
+    "Formal Languages and Compilers/Regular expressions and Languages.md",
+    "Formal Languages and Compilers/Context free Grammars.md",
+    "Formal Languages and Compilers/Basics.md",
+    "Formal Languages and Compilers/[!info]Star operator (Kleene star).md",
+    "Operational Research/Problem Optimization.md",
     "Formal Languages and Compilers/Regular expressions and Languages(1).md",
-    "Operational Research/Problem Optimization/media/Es. 3.md",
+    "Operational Research/media/Problem Optimization/media/Es. 3.md",
     "copilot/skills/copilot-fetch-x/SKILL.md",
     "copilot/skills/copilot-fetch-x/fetch-x.ps1",
     "copilot/skills/copilot-fetch-x/fetch-x.cmd",
@@ -246,31 +251,26 @@
     "copilot/copilot-conversations/agent__improve@20261008_110205.md",
     "Formal Languages and Compilers/media/Basics-1791567228274.webp",
     "Formal Languages and Compilers/media",
-    "Operational Research/Graphs/Graphs.md",
-    "Formal Languages and Compilers/Regular expressions and Languages.md",
-    "Formal Languages and Compilers/Context free Grammars.md",
+    "Operational Research/Graphs.md",
     "Formal Languages and Compilers/Basic.md",
     "Formal Languages and Compilers/formal_languages_basics.md",
-    "Formal Languages and Compilers",
-    "Operational Research/Graphs/media/Es. 1.md",
-    "Operational Research/Graphs/media/media/Es. 1-1791561061335.webp",
-    "Operational Research/Graphs/media/Graphs-1791560716558.webp",
-    "Operational Research/Graphs/media/Graphs-1791560389715.webp",
-    "Operational Research/Graphs/media/Graphs-1791560347791.webp",
-    "Operational Research/Graphs/media/Graphs-1791560346423.webp",
-    "Operational Research/Graphs/media/Graphs-1791560256435.webp",
+    "Operational Research/media/Graphs/media/Es. 1.md",
+    "Operational Research/media/Graphs/media/media/Es. 1-1791561061335.webp",
+    "Operational Research/media/Graphs/media/Graphs-1791560716558.webp",
+    "Operational Research/media/Graphs/media/Graphs-1791560389715.webp",
+    "Operational Research/media/Graphs/media/Graphs-1791560347791.webp",
+    "Operational Research/media/Graphs/media/Graphs-1791560346423.webp",
+    "Operational Research/media/Graphs/media/Graphs-1791560256435.webp",
     "Operational Research/Graphs/parts/Senza nome.md",
-    "Operational Research/_Operational Research MOC.md",
     "Operational Research/Graphs/_Graphs MOC.md",
     "templates/template.md",
-    "Operational Research/Problem Optimization/media/media/Es. 3-1791478780648.webp",
-    "Operational Research/Problem Optimization/media/media/Es. 3-1791478758471.webp",
-    "Operational Research/Problem Optimization/media/media/grafi2.md",
-    "Operational Research/Problem Optimization/media/Es. 2.md",
-    "Operational Research/Problem Optimization/media/Es.1.md",
-    "Operational Research/Problem Optimization/media/media/grafo1.md",
-    "Operational Research/Problem Optimization/media/media/Es. 3-1791473777167.webp",
-    "Excalidraw/Drawing 2026-10-08 17.22.51.excalidraw.md",
-    "templates/_MOC.md"
+    "Operational Research/media/Problem Optimization/media/media/Es. 3-1791478780648.webp",
+    "Operational Research/media/Problem Optimization/media/media/Es. 3-1791478758471.webp",
+    "Operational Research/media/Problem Optimization/media/media/grafi2.md",
+    "Operational Research/media/Problem Optimization/media/Es. 2.md",
+    "Operational Research/media/Problem Optimization/media/Es.1.md",
+    "Operational Research/media/Problem Optimization/media/media/grafo1.md",
+    "Operational Research/media/Problem Optimization/media/media/Es. 3-1791473777167.webp",
+    "Excalidraw/Drawing 2026-10-08 17.22.51.excalidraw.md"
   ]
 }

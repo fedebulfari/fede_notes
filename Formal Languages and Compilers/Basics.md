@@ -83,8 +83,7 @@ subject: Formal Languages and Compilers
 
 > [!info] Void language
 > The language with no phrases: $\emptyset$.
-> - $\emptyset^0 = \{\epsilon\}$
-> - $\emptyset^* = \{\epsilon\}$
+>  $$\emptyset^0 = \{\epsilon\},\ \emptyset^* = \{\epsilon\}$$
 
 ## Language Operations
 
