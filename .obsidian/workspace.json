@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Operational Research/_Operational Research MOC.md",
+                "file": "Formal Languages and Compilers/Basics.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "_Operational Research MOC"
+              "title": "Basics"
             }
           }
         ]
@@ -161,7 +161,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Operational Research/_Operational Research MOC.md",
+                "file": "Formal Languages and Compilers/Basics.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -226,14 +226,16 @@
   },
   "active": "5c12f83f79ebbcf4",
   "lastOpenFiles": [
-    "Operational Research/Problem Optimization.md",
     "Formal Languages and Compilers/Regular expressions and Languages.md",
+    "Formal Languages and Compilers/PDF.md",
+    "Operational Research/media/Graphs/media/Es. 1.md",
+    "Operational Research/Problem Optimization.md",
+    "Operational Research/_Operational Research MOC.md",
     "Formal Languages and Compilers/PDF/FLC - series 04 - new.pdf",
     "Formal Languages and Compilers/PDF/FLC - series 03 - new.pdf",
     "Formal Languages and Compilers/PDF/FLC - series 02 - 2.pdf",
     "Formal Languages and Compilers/PDF/FLC - series 01 - 2.pdf",
     "Formal Languages and Compilers/PDF",
-    "Operational Research/_Operational Research MOC.md",
     "Operational Research/media",
     "Formal Languages and Compilers/_Formal Languages and Compilers MOC.md",
     "Formal Languages and Compilers/Context free Grammars.md",
@@ -253,7 +255,6 @@
     "Operational Research/Graphs.md",
     "Formal Languages and Compilers/Basic.md",
     "Formal Languages and Compilers/formal_languages_basics.md",
-    "Operational Research/media/Graphs/media/Es. 1.md",
     "Operational Research/media/Graphs/media/media/Es. 1-1791561061335.webp",
     "Operational Research/media/Graphs/media/Graphs-1791560716558.webp",
     "Operational Research/media/Graphs/media/Graphs-1791560389715.webp",
