@@ -6,19 +6,20 @@
       {
         "id": "b7d188106733122a",
         "type": "tabs",
+        "dimension": 64.65517241379311,
         "children": [
           {
             "id": "44b4e0ee336522e1",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "split-diff-view",
               "state": {
-                "file": "Formal Languages and Compilers/Context free Grammars.md",
-                "mode": "source",
-                "source": false
+                "aFile": "Formal Languages and Compilers/Context free Grammars.md",
+                "bFile": "Formal Languages and Compilers/Context free Grammars.md",
+                "aRef": ""
               },
-              "icon": "lucide-file",
-              "title": "Context free Grammars"
+              "icon": "diff",
+              "title": "Diff: Context free Grammars  (Working Tree)"
             }
           }
         ]
@@ -26,6 +27,7 @@
       {
         "id": "0b2cc64b1c45f80c",
         "type": "tabs",
+        "dimension": 35.3448275862069,
         "children": [
           {
             "id": "813ce76ba85f6bbe",
@@ -244,13 +246,13 @@
   },
   "active": "44b4e0ee336522e1",
   "lastOpenFiles": [
-    "Formal Languages and Compilers/Basics.md",
     "Formal Languages and Compilers/Context free Grammars.md",
     "Formal Languages and Compilers/PDF/FLC - series 03 - new.pdf",
     "Formal Languages and Compilers/Regular expressions and Languages.md",
+    "templates/template.md",
+    "Formal Languages and Compilers/Basics.md",
     "Operational Research/Graphs.md",
     "Operational Research/Problem Optimization.md",
-    "templates/template.md",
     "Formal Languages and Compilers/_Formal Languages and Compilers MOC.md",
     "Operational Research/PDF/chapter+2.pdf",
     "Operational Research/_Operational Research MOC.md",

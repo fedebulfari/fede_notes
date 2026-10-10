@@ -14,23 +14,23 @@ A **context-free grammar** (Type 2, BNF) is a 4-tuple $G = (V, \Sigma, P, S)$:
 - $P$ — set of production rules; each rule is an ordered pair $(X, \alpha)$ with $X \in V$, $\alpha \in (V \cup \Sigma)^*$, written $X \to \alpha$. Alternatives written $X \to \alpha_1 \mid \alpha_2 \mid \dots$
 - $S \in V$ — axiom
 
-Metasymbols $\to$, $\mid$, $\cup$, $\epsilon$ must not appear in $V \cup \Sigma$.
+>[!warning] To avoid confusion
+>Meta-symbols $\to$, $\mid$, $\cup$, $\epsilon$ must not appear in $V \cup \Sigma$.
 
 > [!example] Palindromes
 > - A phrase is $\epsilon$
 > - A phrase enclosed in $a \dots a$ is a phrase
 > - A phrase enclosed in $b \dots b$ is a phrase
 >
-> Derivation chain: $frase \Rightarrow a\,frase\,a \Rightarrow ab\,frase\,ba \Rightarrow abb\,frase\,bba \Rightarrow abbbba$.
+> Derivation chain: $phrase \Rightarrow a\,phrase\,a \Rightarrow ab\,phrase\,ba \Rightarrow abb\,phrase\,bba \Rightarrow abbbba$.
 
 ## Conventions
 
-- `<if_phrase> ::= if <cond> then <phrase> else <phrase>`
-- `if_phrase -> if cond then phrase else phrase`
-- `F \to \text{if } C \text{ then } D \text{ else } D`
+1) `<if_phrase> ::= if <cond> then <phrase> else <phrase>`
+2) `if_phrase -> if cond then phrase else phrase`
+3) $F \to \text{if } C \text{ then } D \text{ else } D$
 
 Used below:
-
 - $a, b, \dots$ — terminals
 - $A, B, \dots$ — non-terminals
 - $r, s, \dots, z$ — strings over $\Sigma$
@@ -39,19 +39,20 @@ Used below:
 
 ### Rule shapes
 
-- **Terminal:** right part in $\Sigma^*$ or $\epsilon$
-- **Empty:** right part is $\epsilon$
-- **Initial:** left part is the axiom $S$
-- **Recursive:** left part appears in right part, $A \Rightarrow^+ xAy$
-- **Left / right / two-sided recursive:** $A$ is prefix / suffix / either
-- **Copy (renaming):** $A \to B$
-- **Linear:** at most one non-terminal on the right
-- **Right / left linear:** that non-terminal is suffix / prefix
-- **Chomsky normal:** $A \to BC$ or $A \to a$
-- **Greibach normal:** $A \to a\alpha$ with prefix terminal
-- **Operator normal:** infix terminal
+| **Terminal:** right part in $\Sigma^*$ or $\epsilon$                    | $\to u \| \epsilon$                         |
+| ----------------------------------------------------------------------- | ------------------------------------------- |
+| **Empty:** right part is $\epsilon$                                     | $\to\epsilon$                               |
+| **Initial:** left part is the axiom $S$                                 | $S\to$                                      |
+| **Recursive:** left part appears in right part, $A \Rightarrow^+ xAy$   | $A\to\alpha A\beta$                         |
+| **Left / right / two-sided recursive:** $A$ is prefix / suffix / either | $A\to A\beta,\ A\to\beta A,\ A\to A\beta A$ |
+| **Copy (renaming):** change of name                                     | $A\to B$                                    |
+| **Linear:** at most one non-terminal on the right                       | $\to uBv\|w$                                |
+| **Right / left linear:** that non-terminal is suffix / prefix           | $\to uB\|w,\ Bv\|w$                         |
+| **Chomsky normal:** either one term. ot two nonterm.s                   | $\to BC\|a$                                 |
+| **Greibach normal:**  prefix terminal, max length 2                     | $\to a\sigma\|b$                            |
+| **Operator normal:** infix terminal                                     | $\to AaB$                                   |
 
-## 2. Derivation and generated language
+# Derivation and generated language
 
 $\beta \Rightarrow_G \gamma$ if $\beta = hAd$, $\gamma = h\alpha d$ and $A \to \alpha$ is a rule. $\Rightarrow^*$ is its reflexive-transitive closure.
 
@@ -66,7 +67,7 @@ $\beta \Rightarrow_G \gamma$ if $\beta = hAd$, $\gamma = h\alpha d$ and $A \to \
 > $L_B = l^+$, $L(G)$ defined by $f(tl^+)^+$.
 > A language is context-free iff some free grammar generates it. This example is also regular.
 
-## 3. Reduced form
+# Reduced form
 
 $G$ is in **reduced form** iff **both**:
 
@@ -82,14 +83,14 @@ Often also required:
 
 - No **circular derivations** $A \Rightarrow^+ A$ — inessential and source of ambiguity.
 
-### Axiom on right and nullables
+## Axiom on right and nullables
 
 - We can forbid $S$ on right sides by adding new axiom $S_0 \to S$.
 - $A$ is **nullable** iff $A \Rightarrow^+ \epsilon$.
   - Compute $Null \subseteq V$: $A \in Null$ if $A \to \epsilon \in P$, or if $A \to A_1\dots A_n$ with all $A_i \in Null$.
 - **Non-nullable normal form:** no non-terminal $\neq S$ is nullable; $S$ is nullable iff $\epsilon \in L(G)$.
 
-## 4. Recursion and infinity
+# Recursion and infinity
 
 To generate infinitely many strings, rules must allow derivations of **unbounded length**, i.e. recursion: $A \Rightarrow^+ xAy$.
 
@@ -102,7 +103,7 @@ To generate infinitely many strings, rules must allow derivations of **unbounded
 - $G$ is **recursion-free** iff the `produce` graph is acyclic.
 - Example: $E \to E+T \mid T$, $T \to T*F \mid F$, $F \to (E) \mid i$ — $E,T$ immediately left-recursive, $F$ indirectly recursive, hence infinite.
 
-## 5. Syntax tree and canonical derivations
+# Syntax tree and canonical derivations
 
 - **Syntax tree:** connected acyclic graph (unique undirected path between nodes). Shows parent-child / root-leaf structure. Root = axiom, **frontier** (left-to-right leaves) = phrase. Node arity = rule length. **Subtree** rooted at $N$ = $N$ plus all descendants.
 - **Leftmost derivation:** always expand leftmost non-terminal. **Rightmost:** always expand rightmost.
@@ -112,7 +113,7 @@ Strong vs weak equivalence:
 - **Weak:** $L(G) = L(G')$ but trees may differ.
 - **Strong / structural:** same language **and** structurally equivalent trees (same condensed skeleton). Strong $\implies$ weak, not vice versa. Structural adequacy matters for semantics, e.g. $3+5 \times 8+2$ must parse as $3+(5\times 8)+2$.
 
-## 6. Dyck and regular composition
+# Dyck and regular composition
 
 - **Dyck language:** paradigm of nested parentheses. $\Sigma = \{a,a',b,b',\dots\}$, e.g. $S \to aSa' \mid bSb' \mid \epsilon$. Cancellation test: repeatedly delete adjacent $aa'$, $bb'$ pairs; valid iff result is $\epsilon$.
 - $L_1 = \{a^nc a^n\}$ is linear but non-regular, subset of Dyck with one nest level.
@@ -123,7 +124,7 @@ Strong vs weak equivalence:
   - Keep $V_1 \cap V_2 = \emptyset$, else superset is generated.
 - Closed under **mirror**: mirror every right-hand side.
 
-## 7. Ambiguity
+# Ambiguity
 
 Phrase $x$ is **ambiguous** if it has $\ge 2$ distinct syntax trees / derivations. Grammar $G$ is ambiguous if it generates at least one ambiguous string.
 
@@ -141,7 +142,7 @@ Catalogue:
 > [!warning] Inherently ambiguous
 > $L = \{a^ib^ic^j\} \cup \{a^ib^jc^k\} = \{a^ib^jc^k \mid i=j \lor j=k\}$. Strings $a^nb^nc^n$ are always derivable two ways (check $=_{a,b}$ vs $=_{b,c}$). No equivalent unambiguous grammar exists.
 
-## 8. Normal forms and transformations
+# Normal forms and transformations
 
 - **Non-terminal expansion:** $A \to \alpha B \gamma$, $B \to \beta_1 \mid \dots$ gives $A \to \alpha\beta_i\gamma$ — power unchanged.
 - **Copy-rule elimination:** $Copy(A) = \{B \mid A \Rightarrow^+ B\}$. Removing copies flattens trees but loses sharing; e.g. arithmetic $E \to E+T \mid T+C$-style vs expanded $E \to E+T \mid T \times C$.
@@ -152,7 +153,7 @@ Catalogue:
 
 Closure summary ($R \in REG$, $L \in LIB$): $R \circ R \in REG$, $L \circ L \in LIB$ for union/concat; $R \cap R \in REG$ but $L_1 \cap L_2 \notin LIB$ in general; $R \cap L \in LIB$; complement flips out.
 
-## 9. Extended grammars (EBNF)
+# Extended grammars (EBNF)
 
 Right sides may be regexps: $A \to \eta$ with $\eta$ over $V \cup \Sigma$. Same power as BNF since LIB is closed under union/star/concat, but more readable; directly drawable as **syntax diagrams**.
 
@@ -160,7 +161,7 @@ Right sides may be regexps: $A \to \eta$ with $\eta$ over $V \cup \Sigma$. Same 
 - Tree nodes may have unbounded arity but lower depth, e.g. $E \to T(+T \mid -T)^*$.
 - Ambiguity can come from the regexp itself (e.g. $(ab)^*$ vs $a^*b^*$ overlaps).
 
-## 10. Chomsky hierarchy
+# Chomsky hierarchy
 
 | Type | Rules | Languages | Recognizer |
 |---|---|---|---|
