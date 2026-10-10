@@ -63,11 +63,10 @@ $$x = a_1 a_2 \dots a_h \Rightarrow x^R = a_h a_{h-1} \dots a_2 a_1$$
 - $|x^R| = |x|$
 
 ### Repetition (Power)
-The $m$-th power ($m \ge 0$) concatenates the string with itself $m$ times:
-$$x^m = x^{m-1}x \quad (m > 0), \qquad x^0 = \epsilon$$
-_e.g. $(ab)^2 = abab \ne a^2b^2 = aabb$_
 
-
+The $m$-th power ($m \ge 0$) concatenates the string with itself $m-1$ times:$$x^m = x^{m-1}x \quad (m > 0), \qquad x^0 = \epsilon$$
+	_e.g. $(ab)^2 = abab \ne a^2b^2 = aabb$_   
+	
 > [!tip] Operator precedence
 > **Power** and **mirroring** bind tighter than **concatenation**:
 > 1. Power / mirroring
