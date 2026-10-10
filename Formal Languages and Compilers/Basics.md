@@ -77,7 +77,8 @@ subject: Formal Languages and Compilers
 ## Language Operations
 
 - **Union**: $L_1 \cup L_2 = \{ x \mid x \in L_1 \lor x \in L_2 \}$
-- **Concatenation**: $L_1 L_2 = \{ xy \mid x \in L_1 \land y \in L_2 \}$ — associative; $\emptyset$ is absorbent: $\emptyset L = L \emptyset = \emptyset$
+- **Concatenation**: $L_1 L_2 = \{ xy \mid x \in L_1 \land y \in L_2 \}$ — associative; 
+	$\emptyset$ is absorbent: $\emptyset L = L \emptyset = \emptyset$
 - **Iteration**: $L^*$ — see [[#Star operator (Kleene star)]] below
 - **Prefix**: $\mathrm{Prefix}(L) = \{ y \mid y \text{ is a prefix of some } x \in L \}$
 - **Mirroring**: $L^R = \{ x^R \mid x \in L \}$
