@@ -81,7 +81,6 @@ subject: Formal Languages and Compilers
 >$$L= \sum^0 ∪ \sum^1 ∪ \sum^2 ∪\dots$$
 > _Sometimes called the **Free Monoid**_
 
-
 ## Language Operations
 
 - **Union**: $L_1 \cup L_2 = \{ x \mid x \in L_1 \lor x \in L_2 \}$
@@ -89,14 +88,11 @@ subject: Formal Languages and Compilers
 - Complement: $¬L=L_{universal}-L$
 - **Concatenation**: $L_1 L_2 = \{ xy \mid x \in L_1 \land y \in L_2 \}$ — associative; 
 	$\emptyset$ is absorbent: $\emptyset L = L \emptyset = \emptyset$
-- **Iteration**: $L^*$ — see [[#Star operator (Kleene star)]] below
+- **Iteration**: $L^*$ — see [[[Star operator (Kleene star)]] below
 - **Prefix**: $\mathrm{Prefix}(L) = \{ y \mid y \text{ is a prefix of some } x \in L,\ x=yz \}$
 - **Mirroring**: $L^R = \{ x^R \mid x \in L \}$
-- 
 
-### Star operator (Kleene star)
-
-> [!info] Star operator
+> [!info] Star operator (Kleene star)
 > Also called **concatenation closure**. Limit of the power operator:
 > $$L^* = \bigcup_{k \ge 0} L^k, \quad \text{with } L^0 = \{\epsilon\}$$
 >
