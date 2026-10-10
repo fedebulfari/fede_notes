@@ -83,6 +83,7 @@ subject: Formal Languages and Compilers
 
 >[!info] Void Language
 >$$\emptyset^0=\epsilon$$
+
 ## Language Operations
 
 - **Union**: $L_1 \cup L_2 = \{ x \mid x \in L_1 \lor x \in L_2 \}$
