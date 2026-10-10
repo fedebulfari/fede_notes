@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Formal Languages and Compilers/Regular expressions and Languages.md",
+                "file": "Operational Research/_Operational Research MOC.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Regular expressions and Languages"
+              "title": "_Operational Research MOC"
             }
           }
         ]
@@ -161,7 +161,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Formal Languages and Compilers/Regular expressions and Languages.md",
+                "file": "Operational Research/_Operational Research MOC.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -224,19 +224,21 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "962e634c0bc6f7cd",
+  "active": "5c12f83f79ebbcf4",
   "lastOpenFiles": [
+    "Operational Research/Problem Optimization.md",
+    "Formal Languages and Compilers/Regular expressions and Languages.md",
+    "Formal Languages and Compilers/PDF/FLC - series 04 - new.pdf",
+    "Formal Languages and Compilers/PDF/FLC - series 03 - new.pdf",
     "Formal Languages and Compilers/PDF/FLC - series 02 - 2.pdf",
     "Formal Languages and Compilers/PDF/FLC - series 01 - 2.pdf",
     "Formal Languages and Compilers/PDF",
     "Operational Research/_Operational Research MOC.md",
     "Operational Research/media",
     "Formal Languages and Compilers/_Formal Languages and Compilers MOC.md",
-    "Formal Languages and Compilers/Regular expressions and Languages.md",
     "Formal Languages and Compilers/Context free Grammars.md",
     "Formal Languages and Compilers/Basics.md",
     "Formal Languages and Compilers/[!info]Star operator (Kleene star).md",
-    "Operational Research/Problem Optimization.md",
     "Formal Languages and Compilers/Regular expressions and Languages(1).md",
     "Operational Research/media/Problem Optimization/media/Es. 3.md",
     "copilot/skills/copilot-fetch-x/SKILL.md",
@@ -245,9 +247,6 @@
     "copilot/skills/copilot-fetch-x/fetch-x.sh",
     "copilot/skills/copilot-fetch-x",
     "copilot/skills/copilot-youtube-transcript/SKILL.md",
-    "copilot/skills/copilot-youtube-transcript/youtube-transcript.ps1",
-    "copilot/skills/copilot-youtube-transcript/youtube-transcript.cmd",
-    "copilot/skills/copilot-youtube-transcript/youtube-transcript.sh",
     "copilot/copilot-conversations/agent__improve_notes@20261009_200128.md",
     "copilot/copilot-conversations/agent__improve@20261008_110205.md",
     "Formal Languages and Compilers/media/Basics-1791567228274.webp",
