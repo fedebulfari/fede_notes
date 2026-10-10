@@ -80,7 +80,7 @@ subject: Formal Languages and Compilers
 - **Concatenation**: $L_1 L_2 = \{ xy \mid x \in L_1 \land y \in L_2 \}$ — associative; 
 	$\emptyset$ is absorbent: $\emptyset L = L \emptyset = \emptyset$
 - **Iteration**: $L^*$ — see [[#Star operator (Kleene star)]] below
-- **Prefix**: $\mathrm{Prefix}(L) = \{ y \mid y \text{ is a prefix of some } x \in L \}$
+- **Prefix**: $\mathrm{Prefix}(L) = \{ y \mid y \text{ is a prefix of some } x \in L,\ x=yz \}$
 - **Mirroring**: $L^R = \{ x^R \mid x \in L \}$
 
 ### Star operator (Kleene star)
