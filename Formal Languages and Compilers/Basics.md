@@ -88,7 +88,7 @@ subject: Formal Languages and Compilers
 
 - **Union**: $L_1 \cup L_2 = \{ x \mid x \in L_1 \lor x \in L_2 \}$
 - Intersection: $L_{1}\cap L_{2}$
-- Complement: $¬L=L_{universal}-L$
+- Complement: $¬L=L_{universal}/L$
 - **Concatenation**: $L_1 L_2 = \{ xy \mid x \in L_1 \land y \in L_2 \}$ — associative; 
 	$\emptyset$ is absorbent: $\emptyset L = L \emptyset = \emptyset$
 - **Iteration**: $L^0=\{\epsilon\},\ L^m=L^{m-1}L$
@@ -109,7 +109,7 @@ Also called **concatenation closure**. Limit of the power operator: $$L^* = \big
 
 ### Cross operator (Kleene plus)
 
-- positive concatenation closure: $L^+ = \bigcup_{h=1\dots \infty} L^h=L^2\cup L^2\cup\dots$
+ Positive concatenation closure: $$L^+ = \bigcup_{h=1\dots \infty} L^h=L^2\cup L^2\cup\dots$$
 - excludes the null power, so in general $\epsilon \notin L^+$
 - expressible via star: $L^+ = L L^* = L^* L$
 - hence $L^* = L^+ \cup \{\epsilon\}$
@@ -117,8 +117,8 @@ Also called **concatenation closure**. Limit of the power operator: $$L^* = \big
 ### Quotient operator
 
 - strips a suffix belonging to $L''$ from phrases of $L'$:
-$$L' / L'' = \{ y \mid yz \in L' \land z \in L'' \}$$
-- e.g. $\{ab\} / \{b\} = \{a\}$
+$$L=L' / L'' = \{ y \mid yz \in L' \land z \in L'' \}$$
+	_e.g. $\{ab\} / \{b\} = \{a\}$_
 
 ### Prefix-free language
 
