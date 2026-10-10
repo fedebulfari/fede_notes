@@ -50,23 +50,23 @@ subject: Formal Languages and Compilers
 
 ## String Operations
 
-### Concatenation
-- basic operation: joins two strings in sequence
-- associative: $(xy)z = x(yz)$, so parentheses are irrelevant
-- length is additive: $|xy| = |x| + |y|$
-- **not** commutative: in general $xy \ne yx$
+> [!info] Concatenation
+> - basic operation: joins two strings in sequence
+> - associative: $(xy)z = x(yz)$, so parentheses are irrelevant
+> - length is additive: $|xy| = |x| + |y|$
+> - **not** commutative: in general $xy \ne yx$
 
-### Mirroring (Reflection)
-$$x = a_1 a_2 \dots a_h \Rightarrow x^R = a_h a_{h-1} \dots a_2 a_1$$
-- $(x^R)^R = x$ (involution)
-- $(xy)^R = y^R x^R$
-- $|x^R| = |x|$
+> [!info] Mirroring (Reflection)
+> $$x = a_1 a_2 \dots a_h \Rightarrow x^R = a_h a_{h-1} \dots a_2 a_1$$
+> - $(x^R)^R = x$ (involution)
+> - $(xy)^R = y^R x^R$
+> - $|x^R| = |x|$
 
-### Repetition (Power)
+> [!info] Repetition (Power)
+> The $m$-th power ($m \ge 0$) concatenates the string with itself $m-1$ times:
+> $$x^m = x^{m-1}x \quad (m > 0), \qquad x^0 = \epsilon$$
+> e.g. $(ab)^2 = abab \ne a^2b^2 = aabb$
 
-The $m$-th power ($m \ge 0$) concatenates the string with itself $m-1$ times:$$x^m = x^{m-1}x \quad (m > 0), \qquad x^0 = \epsilon$$
-	_e.g. $(ab)^2 = abab \ne a^2b^2 = aabb$_   
-	
 > [!tip] Operator precedence
 > **Power** and **mirroring** bind tighter than **concatenation**:
 > 1. Power / mirroring
