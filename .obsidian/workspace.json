@@ -4,41 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "b7d188106733122a",
+        "id": "95e07069ae4110cd",
         "type": "tabs",
-        "dimension": 64.65517241379311,
         "children": [
           {
-            "id": "44b4e0ee336522e1",
+            "id": "f543cfbe603e21fe",
             "type": "leaf",
             "state": {
-              "type": "split-diff-view",
+              "type": "markdown",
               "state": {
-                "aFile": "Formal Languages and Compilers/Context free Grammars.md",
-                "bFile": "Formal Languages and Compilers/Context free Grammars.md",
-                "aRef": ""
+                "file": "Image Analysis/Planar Geometry.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "diff",
-              "title": "Diff: Context free Grammars  (Working Tree)"
-            }
-          }
-        ]
-      },
-      {
-        "id": "0b2cc64b1c45f80c",
-        "type": "tabs",
-        "dimension": 35.3448275862069,
-        "children": [
-          {
-            "id": "813ce76ba85f6bbe",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "Formal Languages and Compilers/PDF/FLC - series 03 - new.pdf"
-              },
-              "icon": "lucide-file-text",
-              "title": "FLC - series 03 - new"
+              "icon": "lucide-file",
+              "title": "Planar Geometry"
             }
           }
         ]
@@ -103,7 +83,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 304.40199279785156
+    "width": 304.40199279785156,
+    "collapsed": true
   },
   "right": {
     "id": "a208faef6a30291a",
@@ -144,21 +125,6 @@
               },
               "icon": "links-going-out",
               "title": "Collegamenti in uscita"
-            }
-          },
-          {
-            "id": "13614e7302ed3ed6",
-            "type": "leaf",
-            "state": {
-              "type": "tag",
-              "state": {
-                "sortOrder": "frequency",
-                "useHierarchy": true,
-                "showSearch": false,
-                "searchQuery": ""
-              },
-              "icon": "lucide-tags",
-              "title": "Etichette"
             }
           },
           {
@@ -209,32 +175,22 @@
               "icon": "copilot-agent",
               "title": "Copilot Agent"
             }
-          },
-          {
-            "id": "788965c08e838b89",
-            "type": "leaf",
-            "state": {
-              "type": "advanced-tables-toolbar",
-              "state": {},
-              "icon": "spreadsheet",
-              "title": "Advanced Tables"
-            }
           }
         ],
-        "currentTab": 5
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
-    "width": 222.12652587890625
+    "width": 586.3231201171875
   },
   "left-ribbon": {
     "hiddenItems": {
       "switcher:Apri selettore rapido": false,
       "graph:Apri vista grafo": false,
-      "canvas:Crea nuova lavagna": false,
-      "daily-notes:Apri nota giornaliera": false,
-      "templates:Inserisci modello": false,
-      "command-palette:Apri riquadro comandi": false,
+      "canvas:Crea nuova lavagna": true,
+      "daily-notes:Apri nota giornaliera": true,
+      "templates:Inserisci modello": true,
+      "command-palette:Apri riquadro comandi": true,
       "bases:Crea nuova Base": false,
       "obsidian-git:Open Git source control": false,
       "copilot:Open Copilot Agent Chat": false,
@@ -244,52 +200,54 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "44b4e0ee336522e1",
+  "active": "04676eb336cffe0f",
   "lastOpenFiles": [
-    "Formal Languages and Compilers/Context free Grammars.md",
-    "Formal Languages and Compilers/PDF/FLC - series 03 - new.pdf",
-    "Formal Languages and Compilers/Regular expressions and Languages.md",
-    "templates/template.md",
-    "Formal Languages and Compilers/Basics.md",
+    "Image Analysis/Planar Geometry.md",
+    "Image Analysis/_Image Analysis MOC.md",
+    "Image Analysis/Derivatives Estimation.md",
+    "Image Analysis/Space Geometry.md",
+    "Image Analysis/Optical system.md",
+    "Image Analysis/Non-linear Filters.md",
+    "Image Analysis/Geometry matching.md",
+    "Image Analysis/Camera Geometry.md",
+    "Image Analysis/PDF/IACV 2026 - H - Model fitting to noisy images.pdf",
     "Operational Research/Graphs.md",
     "Operational Research/Problem Optimization.md",
-    "Formal Languages and Compilers/_Formal Languages and Compilers MOC.md",
-    "Operational Research/PDF/chapter+2.pdf",
+    "Formal Languages and Compilers/Basics.md",
     "Operational Research/_Operational Research MOC.md",
-    "Operational Research/media/Problem Optimization/media/Es. 3.md",
-    "Operational Research/PDF/chapter+1.pdf",
-    "Formal Languages and Compilers/PDF.md",
+    "Image Analysis/PDF/IACV 2026 - G - 3D Reconstruction.pdf",
+    "Image Analysis/PDF/IACV 2026 - F - Multi-view Geometry.pdf",
+    "Image Analysis/PDF/IACV 2026 - E - Single-view Geometry and Camera Calibration.pdf",
+    "Image Analysis/PDF/IACV 2026 - D - 3D Projective Geometry.pdf",
+    "Image Analysis/PDF/IACV 2026 - C - 2D Projective Geometry and 2D Reconstruction.pdf",
+    "Image Analysis/PDF/IACV 2026 - B - Camera Optical System.pdf",
+    "Image Analysis/PDF/IACV 2026 - A - Introduction and Exam Rules.pdf",
+    "Image Analysis/PDF/LECTURE SLIDES 2026-20261011.zip",
+    "Formal Languages and Compilers/Context free Grammars.md",
+    "Image Analysis/PDF",
+    "Formal Languages and Compilers/Regular expressions and Languages.md",
     "Operational Research/media/Graphs/media/Es. 1.md",
-    "Formal Languages and Compilers/PDF/FLC - series 04 - new.pdf",
-    "Formal Languages and Compilers/PDF/FLC - series 02 - 2.pdf",
-    "Formal Languages and Compilers/PDF/FLC - series 01 - 2.pdf",
-    "Formal Languages and Compilers/PDF",
-    "Operational Research/media",
+    "Formal Languages and Compilers/_Formal Languages and Compilers MOC.md",
+    "Senza nome.canvas",
+    "2026-10-11.md",
+    "templates/template.md",
+    "Operational Research/media/Problem Optimization/media/Es. 3.md",
+    "Formal Languages and Compilers/PDF.md",
     "Formal Languages and Compilers/[!info]Star operator (Kleene star).md",
     "Formal Languages and Compilers/Regular expressions and Languages(1).md",
     "copilot/skills/copilot-fetch-x/SKILL.md",
-    "copilot/skills/copilot-fetch-x/fetch-x.ps1",
-    "copilot/skills/copilot-fetch-x/fetch-x.cmd",
     "copilot/skills/copilot-youtube-transcript/SKILL.md",
     "copilot/copilot-conversations/agent__improve_notes@20261009_200128.md",
     "copilot/copilot-conversations/agent__improve@20261008_110205.md",
     "Formal Languages and Compilers/media/Basics-1791567228274.webp",
-    "Formal Languages and Compilers/Basic.md",
-    "Formal Languages and Compilers/formal_languages_basics.md",
     "Operational Research/media/Graphs/media/media/Es. 1-1791561061335.webp",
     "Operational Research/media/Graphs/media/Graphs-1791560716558.webp",
     "Operational Research/media/Graphs/media/Graphs-1791560389715.webp",
     "Operational Research/media/Graphs/media/Graphs-1791560347791.webp",
     "Operational Research/media/Graphs/media/Graphs-1791560346423.webp",
     "Operational Research/media/Graphs/media/Graphs-1791560256435.webp",
-    "Operational Research/Graphs/parts/Senza nome.md",
-    "Operational Research/Graphs/_Graphs MOC.md",
     "Operational Research/media/Problem Optimization/media/media/Es. 3-1791478780648.webp",
     "Operational Research/media/Problem Optimization/media/media/Es. 3-1791478758471.webp",
-    "Operational Research/media/Problem Optimization/media/media/grafi2.md",
-    "Operational Research/media/Problem Optimization/media/Es. 2.md",
-    "Operational Research/media/Problem Optimization/media/Es.1.md",
-    "Operational Research/media/Problem Optimization/media/media/grafo1.md",
     "Operational Research/media/Problem Optimization/media/media/Es. 3-1791473777167.webp"
   ]
 }

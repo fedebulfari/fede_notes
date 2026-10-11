@@ -54,10 +54,9 @@ Used below:
 
 # Derivation and generated language
 
-$\beta \Rightarrow_G \gamma$ if $\beta = hAd$, $\gamma = h\alpha d$ and $A \to \alpha$ is a rule. $\Rightarrow^*$ is its reflexive-transitive closure.
-
-- **Form from $A$:** $\alpha$ with $A \Rightarrow^* \alpha$.
-- **Sentential form:** form derived from $S$.
+$\beta \Rightarrow_G \gamma$ if $\beta = hAd$, $\gamma = h\alpha d$ and $A \to \alpha$ is a rule of G. $\Rightarrow^*$ is its reflexive-transitive closure.
+- **Form from $A$:** $\alpha$ with $A \Rightarrow^* \alpha$.$$L_{A}(G)=\{x\in \sum^*|A\Rightarrow^+x\}$$
+- **Sentential form:** if $A$ is  the axiom, then the form is called _sentential_$$L(G)=L_{s}(G)=\left\{ x\in \sum^*|S\Rightarrow^+x \right\}$$
 - **Phrase:** sentential form with only terminals.
 - $L_A(G) = \{x \in \Sigma^* \mid A \Rightarrow^+ x\}$, $L(G) = L_S(G)$.
 - $G, G'$ are **equivalent** (weakly) iff $L(G) = L(G')$.
@@ -70,17 +69,16 @@ $\beta \Rightarrow_G \gamma$ if $\beta = hAd$, $\gamma = h\alpha d$ and $A \to \
 # Reduced form
 
 $G$ is in **reduced form** iff **both**:
-
 1. Every $A$ is **reachable** from $S$: $S \Rightarrow^* \alpha A \beta$
 2. Every $A$ **generates** something: $L_A(G) \neq \emptyset$
 
 Two-phase algorithm:
-
-1. **Defined symbols:** start with $DEF = \{A \mid (A \to u) \in P, u \in \Sigma^*\}$, then iterate $DEF := DEF \cup \{B \mid (B \to D_1\dots D_n) \in P, \text{each } D_i \in \Sigma \text{ or } \in DEF\}$.
-2. **Reachable symbols:** reachability in graph of relation $A \Rightarrow A \to \alpha B \beta$. Remove unreachable non-terminals and rules mentioning them.
+1. **Defined symbols:** 
+	Start with$$DEF = \{A \mid (A \to u) \in P, u \in \Sigma^*\}$$then iterate $$DEF := DEF \cup \{B \mid (B \to D_1\dots D_n) \in P, \text{each } D_i \in \Sigma \text{ or } \in DEF\}$$
+2. **Reachable symbols:** reachabiliy in graph of relation $A \Rightarrow A \to \alpha B \beta$. 
+	Remove unreachable non-terminals and rules mentioning them.
 
 Often also required:
-
 - No **circular derivations** $A \Rightarrow^+ A$ — inessential and source of ambiguity.
 
 ## Axiom on right and nullables
