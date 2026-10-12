@@ -11,10 +11,14 @@
             "id": "c9b89d436817a1bb",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Image Analysis/Non-linear Filters.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "Nuova scheda"
+              "title": "Non-linear Filters"
             }
           }
         ]
@@ -79,7 +83,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 304.40199279785156
+    "width": 200
   },
   "right": {
     "id": "a208faef6a30291a",
@@ -191,7 +195,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 360.3567352294922
+    "width": 200,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -210,7 +215,7 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "04676eb336cffe0f",
+  "active": "c9b89d436817a1bb",
   "lastOpenFiles": [
     "Sensor System/USART.md",
     "Image Analysis/Planar Geometry.md",
