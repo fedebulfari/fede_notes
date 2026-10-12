@@ -4,95 +4,20 @@
     "type": "split",
     "children": [
       {
-        "id": "270593f1c73e059e",
+        "id": "0a8a41e190020b9b",
         "type": "tabs",
-        "dimension": 56.3949635520212,
         "children": [
           {
-            "id": "a1a1c3d6d24a9d69",
+            "id": "c9b89d436817a1bb",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Image Analysis/Planar Geometry.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Planar Geometry"
+              "title": "Nuova scheda"
             }
           }
         ]
-      },
-      {
-        "id": "d36e9178f037154a",
-        "type": "split",
-        "dimension": 43.6050364479788,
-        "children": [
-          {
-            "id": "656c7a992b4aacb0",
-            "type": "tabs",
-            "children": [
-              {
-                "id": "f543cfbe603e21fe",
-                "type": "leaf",
-                "state": {
-                  "type": "pdf",
-                  "state": {
-                    "file": "Image Analysis/PDF/IACV 2026 - B - Camera Optical System.pdf"
-                  },
-                  "icon": "lucide-file-text",
-                  "title": "IACV 2026 - B - Camera Optical System"
-                }
-              },
-              {
-                "id": "f4a5cd1c61077986",
-                "type": "leaf",
-                "state": {
-                  "type": "pdf",
-                  "state": {
-                    "file": "Image Analysis/PDF/IACV 2026 - C - 2D Projective Geometry and 2D Reconstruction.pdf"
-                  },
-                  "icon": "lucide-file-text",
-                  "title": "IACV 2026 - C - 2D Projective Geometry and 2D Reconstruction"
-                }
-              }
-            ],
-            "currentTab": 1
-          },
-          {
-            "id": "c3cd25749339b409",
-            "type": "tabs",
-            "children": [
-              {
-                "id": "e32df6ee3f16d732",
-                "type": "leaf",
-                "state": {
-                  "type": "pdf",
-                  "state": {
-                    "file": "Image Analysis/PDF/IACV 2026 - B - Camera Optical System.pdf"
-                  },
-                  "icon": "lucide-file-text",
-                  "title": "IACV 2026 - B - Camera Optical System"
-                }
-              },
-              {
-                "id": "763bb5324bb8dbea",
-                "type": "leaf",
-                "state": {
-                  "type": "pdf",
-                  "state": {
-                    "file": "Image Analysis/PDF/Planar Geometry_261006_135247.pdf"
-                  },
-                  "icon": "lucide-file-text",
-                  "title": "Planar Geometry_261006_135247"
-                }
-              }
-            ],
-            "currentTab": 1
-          }
-        ],
-        "direction": "horizontal"
       }
     ],
     "direction": "vertical"
@@ -154,8 +79,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 304.40199279785156,
-    "collapsed": true
+    "width": 304.40199279785156
   },
   "right": {
     "id": "a208faef6a30291a",
@@ -288,12 +212,20 @@
   },
   "active": "04676eb336cffe0f",
   "lastOpenFiles": [
+    "Sensor System/USART.md",
     "Image Analysis/Planar Geometry.md",
+    "Sensor System/_Sensor System MOC.md",
+    "USART.md",
+    "Sensor System/PDF/05 - USART LCD 2026-2027.pdf",
+    "Sensor System/PDF",
+    "Sensor System/Nuova cartella",
+    "Sensor System/05 - USART LCD 2026-2027.pdf",
+    "Sensor System",
+    "Image Analysis/PDF/Planar Geometry_261006_135247.pdf",
+    "Image Analysis/PDF/IACV 2026 - C - 2D Projective Geometry and 2D Reconstruction.pdf",
     "Image Analysis/media/Planar Geometry-1791807415729.webp",
     "Image Analysis/media/Planar Geometry-1791805957885.webp",
-    "Image Analysis/PDF/IACV 2026 - C - 2D Projective Geometry and 2D Reconstruction.pdf",
     "Image Analysis/PDF/IACV 2026 - B - Camera Optical System.pdf",
-    "Image Analysis/PDF/Planar Geometry_261006_135247.pdf",
     "Image Analysis/Optical system.md",
     "Image Analysis/media/Optical system-1791747118286.webp",
     "Image Analysis/media/Optical system-1791747117960.webp",
@@ -318,11 +250,6 @@
     "Image Analysis/Camera Geometry.md",
     "Image Analysis/PDF/IACV 2026 - H - Model fitting to noisy images.pdf",
     "Operational Research/_Operational Research MOC.md",
-    "Image Analysis/PDF/IACV 2026 - G - 3D Reconstruction.pdf",
-    "Image Analysis/PDF/IACV 2026 - F - Multi-view Geometry.pdf",
-    "Image Analysis/PDF/IACV 2026 - E - Single-view Geometry and Camera Calibration.pdf",
-    "Image Analysis/PDF/IACV 2026 - D - 3D Projective Geometry.pdf",
-    "Image Analysis/PDF/IACV 2026 - A - Introduction and Exam Rules.pdf",
     "Operational Research/media/Graphs/media/Es. 1.md",
     "Senza nome.canvas",
     "2026-10-11.md",
@@ -331,8 +258,6 @@
     "Formal Languages and Compilers/PDF.md",
     "Formal Languages and Compilers/[!info]Star operator (Kleene star).md",
     "Formal Languages and Compilers/Regular expressions and Languages(1).md",
-    "copilot/skills/copilot-fetch-x/SKILL.md",
-    "copilot/skills/copilot-youtube-transcript/SKILL.md",
-    "copilot/copilot-conversations/agent__improve_notes@20261009_200128.md"
+    "copilot/skills/copilot-fetch-x/SKILL.md"
   ]
 }
