@@ -2,61 +2,95 @@
 date: 11-10-2026
 subject: Image Analysis
 ---
+                               
+# 1. Optical sensor: camera
 
-## Optical Systems
-- Cameras.
-- Composed of a screen of photosensitive elements called pixels (Optico-electrical transducers).
-- Used to capture 30-60 fps.
-- Optical systems allow capturing a single direction of the light reflected by the object.
-- E.g. Camera lenses deviate the incoming light aligning the light to the optical screen.
+Composed by Screen with order of $10^6$ or more photosensitive elements called pixels (PIXEL = PICture ELement).
+	Pixels are optical $\to$ electric transducers, plus electric circuits collecting the signal.
+Optical system selects a single direction of incoming light at each element.
+	30-60 frames per second, even more in special cameras.
 
-## Single lens
-- The simplest optical system is a single lens.
-- Simple lens given by the intersection of two spheres.
-- They are symmetric lenses.
-- Light refracts as in the drawing.
-- In the lens, the light trajectory has a deviated angle according to Snell's law.
-- Refraction index of the material.
-- $n_{1} \sin \theta_{1} = n_{2} \sin \theta_{2}$
-- Refraction Index.
-- Necessary to have very thin lenses such that $(x_{2}=-g_{2}/p_{2})$.
-- And therefore $y_{1}\times y_{2}$.
-- incident light beam.
-- lens refraction index n.
-- The deviated angle is: $\frac{\Theta-\alpha_{i}}{\theta^{\prime}-\alpha_{i}}\le\frac{sin(\Theta-\alpha_{i})}{sin(\Theta^{\prime}-\alpha_{i})}=n$.
-- deviation angle $\delta = \theta-\theta^{\prime}$.
-- This is valid for thin lenses and subjected to light rays of small angle.
-- All this creates a focal plane: parallel rays focus into a single point.
-- Focal plane.
+# 2. Single lens model
 
-## Deviation from the pin-hole model
-- focalization of rays coming from a single point at finite distance.
-- Diffusion of rays coming from a single point at finite distance if the screen is NOT placed at Z.
-- $f=\frac{1}{(n-1)(\frac{d}{p_{t}}+\frac{d}{p_{t}})}$
-- $\frac{1}{z}+\frac{1}{r}=\frac{1}{f}$
-- FRESNEL LAW.
-- This is valid for subjects at distance Z(p) lens Aperture, so that they are in focus.
-- On the other screens the image will be blurred.
-- These are limited by reducing the width or constructed light too close has difficulty modifying the focus.
+Simplified model: single simple  lens = intersection of two spheres, axial symmetric around the optical axis.
 
-## Using the pinhole model:
-- `[IMAGE: Diagram of a soccer field demonstrating pinhole camera projection and central perspective, with lines indicating vanishing points.]`
-- screen placement $Z=-f$
-- $\epsilon=f\frac{X}{Z}$
-- $y=f\frac{Y}{Z}$
+![[Optical system-1791738697985.webp|581]]
 
-## Central projection
-- non-linear.
-- not shape-preserving.
-- not length ratio preserving.
-- This is called Central Projection and is Non-linear (shapes are not maintained).
-- It projects such that its origin coincides with the optical center.
-- For a Constant (perpendicular plane) it is linear (particular case).
-- image of P is on the image plane and on the line(O,P).
-- viewing ray of p line(O,p).
-- locus of the scene points projecting onto image point p.
-- Mid points, Parallel lines, Orthogonal lines, Circles do not project to their correspondent.
+The Light ray has to pass first through air, then glass, then air again, therefore it's being refracted two time
+
+Geometry: radii $\rho_1, \rho_2$, heights $y_1, y_2$:$$\alpha_1 = \frac{y_1}{\rho_1}\\ \alpha_2 = -\frac{y_2}{\rho_2}$$Making the hypothesise that:
+- thin lens: very short light path inside, so $y_1 = y_2 = y$.
+- small angles: $\sin \theta \cong \theta$.
+
+We can assume:$$y_{1}=y_{2}=y$$
+>[!info] Snell law:
+>$n_1 \sin \theta_1 = n_2 \sin \theta_2$, with small-angle approximation:$$\frac{\theta - \alpha_1}{\theta' - \alpha_1} \cong \frac{\sin(\theta - \alpha_1)}{\sin(\theta' - \alpha_1)} = n \\ \frac{\sin(\theta' - \alpha_2)}{\sin(\theta'' - \alpha_2)} \cong \frac{\theta' - \alpha_2}{\theta'' - \alpha_2} = n$$
+>_n: Light refraction index of the material_
+
+So the Deviation angle $\delta \theta = \theta'' - \theta$ for the Snell law is:$$\delta \theta = (n-1) Y \left( \frac{1}{\rho_1} + \frac{1}{\rho_2} \right)$$
+In particular, for $Y= 0 \to \delta \theta = 0$: ray through centre is un-deviated.
+
+![[Optical system-1791740538486.webp|415]]
+
+# 3. Focalization of parallel rays
+
+All parallel rays crossing the lens concur at a common point on the focal plane $Z = -f$.
+
+With $\delta \theta = \frac{y}{f}$:$$f = \frac{1}{(n-1)(\frac{1}{\rho_1} + \frac{1}{\rho_2})} \text{: focal distance.}$$
+
+Same plane for any direction of parallel rays. Parallel rays = rays from a point at infinite distance.
+
+![[Optical system-1791740662290.webp|416]]
+
+# 4. Focalization at finite distance and screen placement
+
+For a point $P$ at finite distance $Z$, focused at distance $r$:$$\frac{1}{Z} + \frac{1}{r} = \frac{1}{f}$$
+![[Optical system-1791740843861.webp|401]]
+
+>[!warning] Screen placement
+> If the screen is NOT placed at $Z = r$, rays diffuse $\to$ blurred image.
+>
+>Hence: place the screen where parallel rays converge, i.e. at $Z = -f$, valid when $Z(P) \gg$ lens aperture so subjects are in focus. Other depths are blurred; stopping down the aperture reduces blur but close objects stay hard to focus.
+
+# 5. Pin-hole camera model
+
+Assumptions:
+- thin lens, small angles, plus observed points distant from lens: $Z(P) \gg$ lens aperture.
+- screen at $Z = -f$.
+
+Then the image of $P$ is where the undeviated ray hits the focal plane:
+- $p =$ image plane $\cap$ line $(O,P)$
+- viewing ray of $p$: line $(O,p)$, locus of scene points projecting onto $p$.
+
+Our simplified model is therefore: thin spherical lens + small angles + $Z(P) \gg a$ + $Z = -f$ $\to$ PIN-HOLE CAMERA.
+
+Projection with $Z = -f$:
+- $x = f \frac{X}{Z}$
+- $y = f \frac{Y}{Z}$
+
+# 6. Central projection: what you see IS NOT what you get
+
+Central projection is:
+- non-linear
+- not shape-preserving
+- not length-ratio preserving
+
+>[!warning] Be careful
+>It maps $P$ onto $p$ on line $(O,P)$. We imagine image = scaled version of object, but:
+>- parallel lines DO NOT project onto parallel lines
+>- circumferences DO NOT project onto circumferences
+>- midpoints DO NOT project onto midpoints
+>- orthogonal lines DO NOT project onto orthogonal lines
+>- sphere outlines DO NOT project onto circumferences
+>
+>![[Optical system-1791747117960.webp|358]]
+>
+>Exception: planar scene parallel to image plane, $Z = Z_o =$ const:
+>- $x = f \frac{X}{Z_o} = k X$, $y = f \frac{Y}{Z_o} = k Y$
+>- image is a scaled version: same shape, angles preserved.
+>
+>So to estimate SHAPE from image we need the geometry of projection.
 
 ---
 Related: [[_Image Analysis MOC]]
-Source:
+Source: [[IACV 2026 - B - Camera Optical System.pdf]]

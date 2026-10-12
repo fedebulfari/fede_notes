@@ -3,7 +3,7 @@ date: 07-10-2026
 subject: Operational Research
 ---
 
-# Definitions
+# 1. Definitions
 
 Modeling a problem means translating it into an optimization problem via three correspondences:
 
@@ -24,7 +24,7 @@ The result is an **optimization problem**: find values of the variables that opt
 >
 > A model is only an abstraction: validate that it captures the aspects relevant to the decision.
 
-# General form
+# 2. General form
 
 $$\min_{x} \ f(x) \quad \text{s.t.} \quad g_i(x) \leq 0,\ i=1,\dots,m; \quad h_j(x)=0,\ j=1,\dots,p; \quad x \in X$$
 
@@ -39,7 +39,7 @@ $$\min_{x} \ f(x) \quad \text{s.t.} \quad g_i(x) \leq 0,\ i=1,\dots,m; \quad h_j
 
 ![[Es.1]]
 
-# Variables
+# 3. Variables
 
 Decisions become **decision variables**; domain and sign are part of the model:
 
@@ -50,7 +50,7 @@ Decisions become **decision variables**; domain and sign are part of the model:
 - **Discrete choice**: $w_l \in \{d_1,\dots,d_r\}$, modeled as $w_l = \sum_k d_k y_k$, $\sum_k y_k = 1$, $y_k \in \{0,1\}$. With $\sum_k y_k \leq 1$ the $0$ (no allocation) option is also allowed.
 - Complement of a logical variable: $x' = 1-x$.
 
-# Constraints
+# 4. Constraints
 
 Typical families:
 
@@ -65,7 +65,7 @@ Typical families:
 	- Generalized: if at least $m$ of $x_1,\dots,x_n$ are $1$ then $y=1$:$$y \geq \frac{\sum x_i - m + 1}{\,n-m+1\,}$$
 	  - *Satisfiability*: clause $P_1 \lor \lnot P_2 \lor P_3 \lor \lnot P_4$ becomes $x_1+(1-x_2)+x_3+(1-x_4) \geq 1$, i.e. $ax \geq 1-n(a)$. CNF $A$ is SAT iff the corresponding 0–1 system $Ax \geq b$ is feasible; MAX-SAT maximizes satisfied clauses.
 
-## Transformations
+## 4.1 Transformations
 
 $$A_i x \geq b_i \to A_i x - s_i = b_i, \qquad A_i x \leq b_i \to A_i x + s_i = b_i, \quad s_i \geq 0$$
 
@@ -73,7 +73,7 @@ $s_i$ is slack (unused resource) or surplus (excess over requirement).
 
 $$\sum_{i=1}^n a_i x_i \leq b \to \sum_{i=1}^n -a_i x_i \geq -b$$
 
-# Objective function
+# 5. Objective function
 
 - **Linear**: $\max \sum c_j x_j = -\min \sum (-c_j)x_j$ — only the optimal *value* changes sign, not the optimizer.
 - **Bottleneck**: $\min \max_{i,j} p_{ij}x_{ij}$. Improving one aspect make less optimized an other

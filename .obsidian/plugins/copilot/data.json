@@ -335,7 +335,7 @@
   "parallelApiKey": "",
   "exaApiKey": "",
   "supadataApiKey": "",
-  "docProcessorBackend": "miyo",
+  "docProcessorBackend": "plus",
   "enableLexicalBoosts": true,
   "suggestedDefaultCommands": false,
   "autonomousAgentEnabledToolIds": [
@@ -407,20 +407,6 @@
       "providerId": "25a25676-0068-4254-90f3-94ff7de3a49b",
       "addedAt": 1791367138018,
       "apiKeyKeychainId": null
-    },
-    "abe4f894-a392-435e-b465-e0873b6ccf77": {
-      "providerType": "google",
-      "displayName": "Google",
-      "baseUrl": "https://generativelanguage.googleapis.com",
-      "enableCors": false,
-      "requiresApiKey": true,
-      "origin": {
-        "kind": "byok",
-        "catalogProviderId": "google"
-      },
-      "providerId": "abe4f894-a392-435e-b465-e0873b6ccf77",
-      "addedAt": 1791570498106,
-      "apiKeyKeychainId": "copilot-v4cc0ac26-provider-abe4f894-a392-435e-b465-e0873b6ccf77"
     }
   },
   "configuredModels": [
@@ -522,52 +508,16 @@
       },
       "configuredModelId": "66b34878-3529-4e5d-9143-328a7428dc64",
       "configuredAt": 1791470137965
-    },
-    {
-      "configuredModelId": "7b5b8625-078e-474d-9e9a-2f1fca588ba8",
-      "providerId": "abe4f894-a392-435e-b465-e0873b6ccf77",
-      "info": {
-        "id": "gemini-3.8-flash",
-        "displayName": "Gemini 3.8 Flash",
-        "modalities": {
-          "input": [
-            "text",
-            "image",
-            "video",
-            "audio",
-            "pdf"
-          ],
-          "output": [
-            "text"
-          ]
-        },
-        "limits": {
-          "context": 1048576,
-          "output": 65536
-        },
-        "reasoning": true,
-        "toolCall": true,
-        "releaseDate": "2026-09-02",
-        "cost": {
-          "input": 0.75,
-          "output": 3.75,
-          "cacheRead": 0.075
-        }
-      },
-      "configuredAt": 1791570498109
     }
   ],
   "backends": {
     "opencode": {
       "enabledModels": [
-        "7b5b8625-078e-474d-9e9a-2f1fca588ba8",
         "cdd22b62-98f3-44e4-954b-bb4c2c30d4a9"
       ]
     },
     "chat": {
-      "enabledModels": [
-        "7b5b8625-078e-474d-9e9a-2f1fca588ba8"
-      ]
+      "enabledModels": []
     }
   },
   "copilotPlusCatalog": {

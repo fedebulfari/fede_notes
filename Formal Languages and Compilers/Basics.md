@@ -3,7 +3,7 @@ date: 2026-10-09
 subject: Formal Languages and Compilers
 ---
 
-# Definitions
+# 1. Definitions
 
 - **Alphabet** ($\Sigma$): finite set of atomic elements (symbols / letters)
   - e.g. $\Sigma = \{a, b, c\}$
@@ -15,8 +15,8 @@ subject: Formal Languages and Compilers
 - Two levels: unordered set $L$ of phrases, each phrase an ordered sequence of atomic symbols
 - **Cardinality** $|L|$: finite vs infinite language
 
-# Strings
-## String Properties
+# 2. Strings
+## 2.1 String Properties
 
 > [!info] Length
 > Number of symbols in the string: $|x|$
@@ -53,7 +53,7 @@ subject: Formal Languages and Compilers
 > - $\emptyset$ — the **empty language** (set with no strings)
 > - $\{\epsilon\}$ — the language containing only the empty string
 
-## String Operations
+## 2.2 String Operations
 
 > [!info] Concatenation
 > - basic operation: joins two strings in sequence
@@ -79,8 +79,8 @@ subject: Formal Languages and Compilers
 >
 > e.g. $xy^2 = x(yy)$, while $(xy)^2 = xyxy$
 
-# Languages
-## Language Properties
+# 3. Languages
+## 3.1 Language Properties
 
 > [!info] Universal language
 > The set of **all** strings over $\Sigma$, of any length (including $0$):
@@ -92,7 +92,7 @@ subject: Formal Languages and Compilers
 >  $$\emptyset^0 = \{\epsilon\},\ \emptyset^* = \{\epsilon\}$$
 > Complement is taken against it: $\lnot \emptyset = \Sigma^*$.
 
-## Language Operations
+## 3.2 Language Operations
 
 - **Union**: $L_1 \cup L_2 = \{ x \mid x \in L_1 \lor x \in L_2 \}$
 - **Intersection**: $L_1 \cap L_2 = \{ x \mid x \in L_1 \land x \in L_2 \}$
@@ -104,7 +104,7 @@ subject: Formal Languages and Compilers
 - **Prefix**: $\mathrm{Prefix}(L) = \{ y \mid y \text{ is a prefix of some } x \in L \}$, i.e. $x = yz$
 - **Mirroring**: $L^R = \{ x^R \mid x \in L \}$
 
-### Star operator (Kleene star)
+### 3.2.1 Star operator (Kleene star)
 
 Also called **concatenation closure**. Limit of the power operator:
 $$L^* = \bigcup_{k \ge 0} L^k, \quad \text{with } L^0 = \{\epsilon\}$$
@@ -120,7 +120,7 @@ $$L^* = \bigcup_{k \ge 0} L^k, \quad \text{with } L^0 = \{\epsilon\}$$
 > - idempotent: $(L^*)^* = L^*$
 > - commutes with mirroring: $(L^R)^* = (L^*)^R$
 
-### Cross operator (Kleene plus)
+### 3.2.2 Cross operator (Kleene plus)
 
 Positive concatenation closure:
 $$L^+ = \bigcup_{h \ge 1} L^h = L^1 \cup L^2 \cup \dots$$
@@ -128,7 +128,7 @@ $$L^+ = \bigcup_{h \ge 1} L^h = L^1 \cup L^2 \cup \dots$$
 - expressible via star: $L^+ = L L^* = L^* L$
 - hence $L^* = L^+ \cup \{\epsilon\}$
 
-### Quotient operator
+### 3.2.3 Quotient operator
 
 - strips a suffix belonging to $L''$ from phrases of $L'$:
 $$L' / L'' = \{ y \mid yz \in L' \land z \in L'' \}$$
@@ -136,7 +136,7 @@ $$L' / L'' = \{ y \mid yz \in L' \land z \in L'' \}$$
 e.g. $\{ab\} / \{b\} = \{a\}$
 - if $x \in L'$ has no suffix in $L''$, it contributes nothing; if $L''/L' = \emptyset$ the quotient can be $\emptyset$
 
-### Prefix-free language
+### 3.2.4 Prefix-free language
 
 A language is **prefix-free** if no string is a *proper* prefix of another: for all $x, y \in L$, if $x$ is a prefix of $y$ then $x = y$.
 
@@ -147,7 +147,7 @@ Equivalently: $L \cap \mathrm{ProperPrefix}(L) = \emptyset$, where $\mathrm{Prop
 >
 > e.g. $\{ab, ba\}$ is prefix-free; $\{a, ab\}$ is not ($a$ is a proper prefix of $ab$).
 
-## Key identities
+## 3.3 Key identities
 
 | Identity                      | Meaning                                  |
 | ----------------------------- | ---------------------------------------- |

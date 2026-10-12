@@ -3,7 +3,7 @@ date: 09-10-2026
 subject: Formal Languages and Compilers
 ---
 
-# Definition
+# 1. Definition
 
 A **generative grammar** is a set of rules that, by repeated application, generate all and only the phrases of a language.
 
@@ -24,7 +24,7 @@ A **context-free grammar** (Type 2, BNF) is a 4-tuple $G = (V, \Sigma, P, S)$:
 >
 > Derivation chain: $phrase \Rightarrow a\,phrase\,a \Rightarrow ab\,phrase\,ba \Rightarrow abb\,phrase\,bba \Rightarrow abbbba$.
 
-## Conventions
+## 1.1 Conventions
 
 1) `<if_phrase> ::= if <cond> then <phrase> else <phrase>`
 2) `if_phrase -> if cond then phrase else phrase`
@@ -37,7 +37,7 @@ Used below:
 - $\alpha, \beta, \dots$ — strings over $V \cup \Sigma$
 - $\sigma$ — strings over $V$ only
 
-### Rule shapes
+### 1.1.1 Rule shapes
 
 | **Terminal:** right part in $\Sigma^*$ or $\epsilon$                    | $\to u \| \epsilon$                         |
 | ----------------------------------------------------------------------- | ------------------------------------------- |
@@ -52,7 +52,7 @@ Used below:
 | **Greibach normal:**  prefix terminal, max length 2                     | $\to a\sigma\|b$                            |
 | **Operator normal:** infix terminal                                     | $\to AaB$                                   |
 
-# Derivation and generated language
+# 2. Derivation and generated language
 
 $\beta \Rightarrow_G \gamma$ if $\beta = hAd$, $\gamma = h\alpha d$ and $A \to \alpha$ is a rule of G. $\Rightarrow^*$ is its reflexive-transitive closure.
 - **Form from $A$:** $\alpha$ with $A \Rightarrow^* \alpha$.$$L_{A}(G)=\{x\in \sum^*|A\Rightarrow^+x\}$$
@@ -66,7 +66,7 @@ $\beta \Rightarrow_G \gamma$ if $\beta = hAd$, $\gamma = h\alpha d$ and $A \to \
 > $L_B = l^+$, $L(G)$ defined by $f(tl^+)^+$.
 > A language is context-free iff some free grammar generates it. This example is also regular.
 
-# Reduced form
+# 3. Reduced form
 
 $G$ is in **reduced form** iff **both**:
 1. Every $A$ is **reachable** from $S$: $S \Rightarrow^* \alpha A \beta$
@@ -81,14 +81,14 @@ Two-phase algorithm:
 Often also required:
 - No **circular derivations** $A \Rightarrow^+ A$ — inessential and source of ambiguity.
 
-## Axiom on right and nullables
+## 3.1 Axiom on right and nullables
 
 - We can forbid $S$ on right sides by adding new axiom $S_0 \to S$.
 - $A$ is **nullable** iff $A \Rightarrow^+ \epsilon$.
   - Compute $Null \subseteq V$: $A \in Null$ if $A \to \epsilon \in P$, or if $A \to A_1\dots A_n$ with all $A_i \in Null$.
 - **Non-nullable normal form:** no non-terminal $\neq S$ is nullable; $S$ is nullable iff $\epsilon \in L(G)$.
 
-# Recursion and infinity
+# 4. Recursion and infinity
 
 To generate infinitely many strings, rules must allow derivations of **unbounded length**, i.e. recursion: $A \Rightarrow^+ xAy$.
 
@@ -101,7 +101,7 @@ To generate infinitely many strings, rules must allow derivations of **unbounded
 - $G$ is **recursion-free** iff the `produce` graph is acyclic.
 - Example: $E \to E+T \mid T$, $T \to T*F \mid F$, $F \to (E) \mid i$ — $E,T$ immediately left-recursive, $F$ indirectly recursive, hence infinite.
 
-# Syntax tree and canonical derivations
+# 5. Syntax tree and canonical derivations
 
 - **Syntax tree:** connected acyclic graph (unique undirected path between nodes). Shows parent-child / root-leaf structure. Root = axiom, **frontier** (left-to-right leaves) = phrase. Node arity = rule length. **Subtree** rooted at $N$ = $N$ plus all descendants.
 - **Leftmost derivation:** always expand leftmost non-terminal. **Rightmost:** always expand rightmost.
@@ -111,7 +111,7 @@ Strong vs weak equivalence:
 - **Weak:** $L(G) = L(G')$ but trees may differ.
 - **Strong / structural:** same language **and** structurally equivalent trees (same condensed skeleton). Strong $\implies$ weak, not vice versa. Structural adequacy matters for semantics, e.g. $3+5 \times 8+2$ must parse as $3+(5\times 8)+2$.
 
-# Dyck and regular composition
+# 6. Dyck and regular composition
 
 - **Dyck language:** paradigm of nested parentheses. $\Sigma = \{a,a',b,b',\dots\}$, e.g. $S \to aSa' \mid bSb' \mid \epsilon$. Cancellation test: repeatedly delete adjacent $aa'$, $bb'$ pairs; valid iff result is $\epsilon$.
 - $L_1 = \{a^nc a^n\}$ is linear but non-regular, subset of Dyck with one nest level.
@@ -122,7 +122,7 @@ Strong vs weak equivalence:
   - Keep $V_1 \cap V_2 = \emptyset$, else superset is generated.
 - Closed under **mirror**: mirror every right-hand side.
 
-# Ambiguity
+# 7. Ambiguity
 
 Phrase $x$ is **ambiguous** if it has $\ge 2$ distinct syntax trees / derivations. Grammar $G$ is ambiguous if it generates at least one ambiguous string.
 
@@ -140,7 +140,7 @@ Catalogue:
 > [!warning] Inherently ambiguous
 > $L = \{a^ib^ic^j\} \cup \{a^ib^jc^k\} = \{a^ib^jc^k \mid i=j \lor j=k\}$. Strings $a^nb^nc^n$ are always derivable two ways (check $=_{a,b}$ vs $=_{b,c}$). No equivalent unambiguous grammar exists.
 
-# Normal forms and transformations
+# 8. Normal forms and transformations
 
 - **Non-terminal expansion:** $A \to \alpha B \gamma$, $B \to \beta_1 \mid \dots$ gives $A \to \alpha\beta_i\gamma$ — power unchanged.
 - **Copy-rule elimination:** $Copy(A) = \{B \mid A \Rightarrow^+ B\}$. Removing copies flattens trees but loses sharing; e.g. arithmetic $E \to E+T \mid T+C$-style vs expanded $E \to E+T \mid T \times C$.
@@ -151,7 +151,7 @@ Catalogue:
 
 Closure summary ($R \in REG$, $L \in LIB$): $R \circ R \in REG$, $L \circ L \in LIB$ for union/concat; $R \cap R \in REG$ but $L_1 \cap L_2 \notin LIB$ in general; $R \cap L \in LIB$; complement flips out.
 
-# Extended grammars (EBNF)
+# 9. Extended grammars (EBNF)
 
 Right sides may be regexps: $A \to \eta$ with $\eta$ over $V \cup \Sigma$. Same power as BNF since LIB is closed under union/star/concat, but more readable; directly drawable as **syntax diagrams**.
 
@@ -159,7 +159,7 @@ Right sides may be regexps: $A \to \eta$ with $\eta$ over $V \cup \Sigma$. Same 
 - Tree nodes may have unbounded arity but lower depth, e.g. $E \to T(+T \mid -T)^*$.
 - Ambiguity can come from the regexp itself (e.g. $(ab)^*$ vs $a^*b^*$ overlaps).
 
-# Chomsky hierarchy
+# 10. Chomsky hierarchy
 
 | Type | Rules | Languages | Recognizer |
 |---|---|---|---|

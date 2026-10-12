@@ -4,11 +4,12 @@
     "type": "split",
     "children": [
       {
-        "id": "95e07069ae4110cd",
+        "id": "270593f1c73e059e",
         "type": "tabs",
+        "dimension": 56.3949635520212,
         "children": [
           {
-            "id": "f543cfbe603e21fe",
+            "id": "a1a1c3d6d24a9d69",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -22,6 +23,76 @@
             }
           }
         ]
+      },
+      {
+        "id": "d36e9178f037154a",
+        "type": "split",
+        "dimension": 43.6050364479788,
+        "children": [
+          {
+            "id": "656c7a992b4aacb0",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "f543cfbe603e21fe",
+                "type": "leaf",
+                "state": {
+                  "type": "pdf",
+                  "state": {
+                    "file": "Image Analysis/PDF/IACV 2026 - B - Camera Optical System.pdf"
+                  },
+                  "icon": "lucide-file-text",
+                  "title": "IACV 2026 - B - Camera Optical System"
+                }
+              },
+              {
+                "id": "f4a5cd1c61077986",
+                "type": "leaf",
+                "state": {
+                  "type": "pdf",
+                  "state": {
+                    "file": "Image Analysis/PDF/IACV 2026 - C - 2D Projective Geometry and 2D Reconstruction.pdf"
+                  },
+                  "icon": "lucide-file-text",
+                  "title": "IACV 2026 - C - 2D Projective Geometry and 2D Reconstruction"
+                }
+              }
+            ],
+            "currentTab": 1
+          },
+          {
+            "id": "c3cd25749339b409",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "e32df6ee3f16d732",
+                "type": "leaf",
+                "state": {
+                  "type": "pdf",
+                  "state": {
+                    "file": "Image Analysis/PDF/IACV 2026 - B - Camera Optical System.pdf"
+                  },
+                  "icon": "lucide-file-text",
+                  "title": "IACV 2026 - B - Camera Optical System"
+                }
+              },
+              {
+                "id": "763bb5324bb8dbea",
+                "type": "leaf",
+                "state": {
+                  "type": "pdf",
+                  "state": {
+                    "file": "Image Analysis/PDF/Planar Geometry_261006_135247.pdf"
+                  },
+                  "icon": "lucide-file-text",
+                  "title": "Planar Geometry_261006_135247"
+                }
+              }
+            ],
+            "currentTab": 1
+          }
+        ],
+        "direction": "horizontal"
       }
     ],
     "direction": "vertical"
@@ -100,7 +171,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Operational Research/Problem Optimization/Problem Optimization.md",
+                "file": "Image Analysis/Optical system.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -175,13 +246,28 @@
               "icon": "copilot-agent",
               "title": "Copilot Agent"
             }
+          },
+          {
+            "id": "701d0393cf285b15",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Etichette"
+            }
           }
         ],
         "currentTab": 4
       }
     ],
     "direction": "horizontal",
-    "width": 586.3231201171875
+    "width": 360.3567352294922
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -203,31 +289,41 @@
   "active": "04676eb336cffe0f",
   "lastOpenFiles": [
     "Image Analysis/Planar Geometry.md",
+    "Image Analysis/media/Planar Geometry-1791807415729.webp",
+    "Image Analysis/media/Planar Geometry-1791805957885.webp",
+    "Image Analysis/PDF/IACV 2026 - C - 2D Projective Geometry and 2D Reconstruction.pdf",
+    "Image Analysis/PDF/IACV 2026 - B - Camera Optical System.pdf",
+    "Image Analysis/PDF/Planar Geometry_261006_135247.pdf",
+    "Image Analysis/Optical system.md",
+    "Image Analysis/media/Optical system-1791747118286.webp",
+    "Image Analysis/media/Optical system-1791747117960.webp",
+    "Image Analysis/media/Optical system-1791747092652.webp",
+    "Image Analysis/media/Optical system-1791740843861.webp",
+    "Image Analysis/media/Optical system-1791740662290.webp",
+    "Image Analysis/media/Optical system-1791740538486.webp",
+    "Image Analysis/media/Optical system-1791738697985.webp",
+    "Image Analysis/media/Optical system-1791738511368.webp",
+    "Image Analysis/media",
+    "Image Analysis/Non-linear Filters.md",
+    "Formal Languages and Compilers/Basics.md",
+    "Formal Languages and Compilers/_Formal Languages and Compilers MOC.md",
+    "Operational Research/Problem Optimization.md",
+    "Operational Research/Graphs.md",
+    "Formal Languages and Compilers/Regular expressions and Languages.md",
+    "Formal Languages and Compilers/Context free Grammars.md",
+    "Image Analysis/Space Geometry.md",
     "Image Analysis/_Image Analysis MOC.md",
     "Image Analysis/Derivatives Estimation.md",
-    "Image Analysis/Space Geometry.md",
-    "Image Analysis/Optical system.md",
-    "Image Analysis/Non-linear Filters.md",
     "Image Analysis/Geometry matching.md",
     "Image Analysis/Camera Geometry.md",
     "Image Analysis/PDF/IACV 2026 - H - Model fitting to noisy images.pdf",
-    "Operational Research/Graphs.md",
-    "Operational Research/Problem Optimization.md",
-    "Formal Languages and Compilers/Basics.md",
     "Operational Research/_Operational Research MOC.md",
     "Image Analysis/PDF/IACV 2026 - G - 3D Reconstruction.pdf",
     "Image Analysis/PDF/IACV 2026 - F - Multi-view Geometry.pdf",
     "Image Analysis/PDF/IACV 2026 - E - Single-view Geometry and Camera Calibration.pdf",
     "Image Analysis/PDF/IACV 2026 - D - 3D Projective Geometry.pdf",
-    "Image Analysis/PDF/IACV 2026 - C - 2D Projective Geometry and 2D Reconstruction.pdf",
-    "Image Analysis/PDF/IACV 2026 - B - Camera Optical System.pdf",
     "Image Analysis/PDF/IACV 2026 - A - Introduction and Exam Rules.pdf",
-    "Image Analysis/PDF/LECTURE SLIDES 2026-20261011.zip",
-    "Formal Languages and Compilers/Context free Grammars.md",
-    "Image Analysis/PDF",
-    "Formal Languages and Compilers/Regular expressions and Languages.md",
     "Operational Research/media/Graphs/media/Es. 1.md",
-    "Formal Languages and Compilers/_Formal Languages and Compilers MOC.md",
     "Senza nome.canvas",
     "2026-10-11.md",
     "templates/template.md",
@@ -237,17 +333,6 @@
     "Formal Languages and Compilers/Regular expressions and Languages(1).md",
     "copilot/skills/copilot-fetch-x/SKILL.md",
     "copilot/skills/copilot-youtube-transcript/SKILL.md",
-    "copilot/copilot-conversations/agent__improve_notes@20261009_200128.md",
-    "copilot/copilot-conversations/agent__improve@20261008_110205.md",
-    "Formal Languages and Compilers/media/Basics-1791567228274.webp",
-    "Operational Research/media/Graphs/media/media/Es. 1-1791561061335.webp",
-    "Operational Research/media/Graphs/media/Graphs-1791560716558.webp",
-    "Operational Research/media/Graphs/media/Graphs-1791560389715.webp",
-    "Operational Research/media/Graphs/media/Graphs-1791560347791.webp",
-    "Operational Research/media/Graphs/media/Graphs-1791560346423.webp",
-    "Operational Research/media/Graphs/media/Graphs-1791560256435.webp",
-    "Operational Research/media/Problem Optimization/media/media/Es. 3-1791478780648.webp",
-    "Operational Research/media/Problem Optimization/media/media/Es. 3-1791478758471.webp",
-    "Operational Research/media/Problem Optimization/media/media/Es. 3-1791473777167.webp"
+    "copilot/copilot-conversations/agent__improve_notes@20261009_200128.md"
   ]
 }
