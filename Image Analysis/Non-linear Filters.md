@@ -2,7 +2,7 @@
 date: 11-10-2026
 subject: Image Analysis
 ---
-[[]]
+
 ## Non Linear Filters
 - Linear filters are not always optimal.
 - Non linear filters follow a function $g()$.
