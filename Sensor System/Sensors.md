@@ -52,26 +52,26 @@ Subdivided in:
 - **Number of bits (n)**: in sensors with digital output, $2^n$ is number of levels in which FSR is divided:$$2^n = \frac{FSR}{LSB}$$
 - **Accuracy**: error between result of a measurement and true value being measured
 - **Repeatability / Precision**: ability of sensor to output same value for same input over a number of trials
-  ![[Sensors-1791925614863.webp|508]]
   > [!tip] Accuracy vs Precision
   > - Precise without accurate: repeated measurements clustered together but far from true value
   > - Accurate without precise: measurements centered on true value but spread out
   > - Precise and accurate: measurements clustered on true value
+  ![[Sensors-1791925614863.webp|508]]
+  >	
 - **Linearity**: deviation of output from a best-fit straight line for a given range.
-  Differential Non-Linearity (DNL) and Integral Non-Linearity (INL):
-  $DNL(i) = \Delta in(i) - LSB$
-  $INL(i) = \sum_{k=1}^{i} DNL(k)$
-  - DNL: difference of real step compared to ideal one (i.e. 1 LSB)
-  - INL: distance between real and ideal output voltage
-  ![[Sensors-1791925826885.webp|402]]
+  Differential Non-Linearity (DNL) and Integral Non-Linearity (INL):$$DNL(i) = \Delta in(i) - LSB\\INL(i) = \sum_{k=1}^{i} DNL(k)$$
+	- DNL: difference of real step compared to ideal one (i.e. 1 LSB)
+	- INL: distance between real and ideal output voltage
+	  ![[Sensors-1791925826885.webp|402]]
+
 - **Transfer Function (Frequency Response)**: relationship between physical input signal and electrical output signal, which may constitute complete description of sensor characteristics as function of frequency. Can describe the whole sensor characteristics.
 - **Bandwidth**: frequency range between lower and upper cutoff frequencies, within which sensor transfer function is at constant gain or linear
 - **Noise**: random fluctuation in measured value. Quantified with its rms (root mean square) value.
   ![[Sensors-1791926310050.webp|409]]
-- **Dynamic Range**: ratio of maximum recordable input amplitude to minimum input amplitude, in dB:
-  $DR = 20 \cdot \log\left( \frac{\text{Input-Amplitude}|_{Max}}{\text{Input-Amplitude}|_{min}} \right)$
-  - Min Input: typically noise
-  - Max Input: typically FSR
+
+- **Dynamic Range**: ratio of maximum recordable input amplitude to minimum input amplitude, in dB:$$DR = 20 \cdot \log\left( \frac{\text{Input-Amplitude}|_{Max}}{\text{Input-Amplitude}|_{min}} \right)$$
+	- Min Input: typically noise
+	- Max Input: typically FSR
 
 # 4. Readout
 
