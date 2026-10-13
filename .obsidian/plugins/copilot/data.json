@@ -517,33 +517,6 @@
       },
       "configuredModelId": "0b7e436e-e241-49b9-975e-14befd281882",
       "configuredAt": 1791880425909
-    },
-    {
-      "providerId": "25a25676-0068-4254-90f3-94ff7de3a49b",
-      "info": {
-        "id": "ollama/qwen2.5-coder:1.5b-base",
-        "displayName": "ollama/qwen2.5-coder:1.5b-base"
-      },
-      "configuredModelId": "0b464c1d-3076-4baa-8de0-184facfc08ff",
-      "configuredAt": 1791881416553
-    },
-    {
-      "providerId": "25a25676-0068-4254-90f3-94ff7de3a49b",
-      "info": {
-        "id": "ollama/qwen2.5-coder:3b-base",
-        "displayName": "ollama/qwen2.5-coder:3b-base"
-      },
-      "configuredModelId": "86c00a1a-d963-4479-b1a3-1a89f6adc86b",
-      "configuredAt": 1791881416558
-    },
-    {
-      "providerId": "25a25676-0068-4254-90f3-94ff7de3a49b",
-      "info": {
-        "id": "ollama/qwen2.5-coder:7b",
-        "displayName": "ollama/qwen2.5-coder:7b"
-      },
-      "configuredModelId": "bf360f91-32dc-4f54-b205-378c005b6067",
-      "configuredAt": 1791881416559
     }
   ],
   "backends": {

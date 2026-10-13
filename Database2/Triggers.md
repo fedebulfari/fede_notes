@@ -14,7 +14,7 @@ From passive to active:
 - **SQL:1999:** triggers / active rules (procedural specification)
 - Support varies widely across vendors, with different execution semantics.
 
-## 1. Constraints vs Triggers
+# 1. Constraints vs Triggers
 
 Declarative constraints example:
 
@@ -29,8 +29,8 @@ CREATE TABLE author (
 CREATE TABLE book (
   idBook SERIAL PRIMARY KEY,
   title VARCHAR(200) NOT NULL,
-  authorref INT NOT NULL REFERENCES author(idAut)
-    ON DELETE CASCADE
+  authorref INT NOT NULL 
+	REFERENCES author(idAut) ON DELETE CASCADE
 );
 ```
 
@@ -40,7 +40,7 @@ CREATE TABLE book (
 
 Triggers are needed when checks are **too complex for constraints**. They are compiled and stored in the DBMS like stored procedures, but executed automatically on events, not invoked by client.
 
-## 2. Event-Condition-Action (ECA) Paradigm
+# 2. Event-Condition-Action (ECA)
 
 - **Event (E):** normally a DB state modification: `INSERT`, `DELETE`, `UPDATE [OF column]`
 - **Condition (C):** predicate identifying when action is required (`WHEN` clause)
@@ -59,7 +59,7 @@ Example: log grade history
 
 Question: manage at DB level or in external application? At DB level → centralized, transparent to all apps.
 
-## 3. Execution Model - The Big Picture
+# 3. Execution Model
 
 ```
 SQL_statement (INSERT/DELETE/UPDATE)
@@ -79,33 +79,35 @@ WHERE StudID = '12345' OR (StudID = '54321' AND CourseID = '35');
 
 Affected rows are visible as `OLD` (before: Grade = null) and `NEW` (after: Grade = 30).
 
-## 4. SQL:1999 Syntax
+![[Triggers-1791900160390.webp|527]]
+
+# 4. SQL:1999 Syntax
 
 ```sql
-CREATE TRIGGER <TriggerName>
-{ BEFORE | AFTER }
-{ INSERT | DELETE | UPDATE [OF <Column>] } ON <Table>
-REFERENCING { [ OLD TABLE [AS] <OldTableAlias> ]
-              [ NEW TABLE [AS] <NewTableAlias> ] |
-              [ OLD [ROW] [AS] <OldTupleName> ]
-              [ NEW [ROW] [AS] <NewTupleName> ] }
-[ FOR EACH { ROW | STATEMENT } ]
-[ WHEN <Condition> ]
-<SQLProceduralStatement>;
+	CREATE TRIGGER <TriggerName>
+	{ BEFORE | AFTER }
+E	{ INSERT | DELETE | UPDATE [OF <Column>] } ON <Table>
+	REFERENCING { [ OLD TABLE [AS] <OldTableAlias> ]
+	              [ NEW TABLE [AS] <NewTableAlias> ] |
+	              [ OLD [ROW] [AS] <OldTupleName> ]
+	              [ NEW [ROW] [AS] <NewTupleName> ] }
+	[ FOR EACH { ROW | STATEMENT } ]
+C	[ WHEN <Condition> ]
+A	<SQLProceduralStatement>;
 ```
 
 - `E` = timing + event + table
 - `C` = `WHEN`
 - `A` = procedural statement
 
-## 5. Transition Variables
+# 5. Transition Variables
 
-| Granularity | Before state | After state |
-|---|---|---|
-| Row-level | `OLD` / `old` tuple variable | `NEW` / `new` tuple variable |
-| Statement-level | `OLD TABLE` | `NEW TABLE` |
+| Granularity     | Before state         | After state          |
+| --------------- | -------------------- | -------------------- |
+| Row-level       | `OLD` tuple variable | `NEW` tuple variable |
+| Statement-level | `OLD TABLE`          | `NEW TABLE`          |
 
-- `OLD` / `OLD TABLE` undefined for `INSERT`
+- `OLD` / `OLD TABLE` undefined for `INSERT` 
 - `NEW` / `NEW TABLE` undefined for `DELETE`
 
 Cases:
@@ -116,9 +118,9 @@ Cases:
 > [!tip] Naming
 > Standard uses `OLD` / `NEW`, `OLD TABLE` / `NEW TABLE`. Postgres uses `OLD` / `NEW` for rows and `REFERENCING OLD TABLE AS ...`. Oracle uses `:OLD`, `:NEW`. Always check vendor syntax.
 
-## 6. Execution Modes: BEFORE vs AFTER
+# 6. Execution Modes: BEFORE vs AFTER
 
-### BEFORE
+## BEFORE
 - Action executed **before** DB change, if condition holds.
 - Used to **validate a modification before it takes place** and possibly condition its effect.
 - Safeness constraint: BEFORE triggers cannot update DB directly, but **can modify transition variables** in row-level granularity:
@@ -127,7 +129,7 @@ Cases:
 SET new.VALUE = 0;
 ```
 
-### AFTER
+## AFTER
 - Action executed **after** DB modification, if condition holds.
 - Most common mode, suitable for most applications.
 
@@ -197,17 +199,21 @@ WHERE (passengerName, flightNumber, date) IN (
 );
 ```
 
-## 7. Granularity: ROW vs STATEMENT
+# 7. Granularity: ROW vs STATEMENT
 
-### Row-level: `FOR EACH ROW`
+## Row-level: `For each Row`
 - Considered and possibly executed **once per affected tuple**.
 - Simpler to write, but can be less efficient.
 
-### Statement-level: `FOR EACH STATEMENT`
+## Statement-level: `For Each Statement`
 - Considered and possibly executed **only once per activating statement**, independently of number of affected tuples (even if zero).
 - Set-oriented, closer to traditional SQL philosophy.
 
-## 8. Replication Examples
+## Transition Variables
+
+Special variables denoting the before and after state of the modification with a syntax that depends on the granularity:
+
+# 8. Conditional replication
 
 Tables `T1(ID, VALUE)` and replica `T2(ID, VALUE)`.
 
@@ -230,10 +236,7 @@ WHEN (new.ID = old.ID)
 UPDATE T2 SET VALUE = new.VALUE WHERE ID = new.ID;
 ```
 
-> [!question] Homework
-> Rewrite `Replic_Upd` to also handle ID change (DELETE + INSERT logic).
-
-### Conditional replication: only VALUE >= 10
+Conditional replication: only VALUE >= 10
 
 ```sql
 CREATE TRIGGER Cond_Repl_Ins
@@ -270,7 +273,7 @@ WHEN (old.VALUE >= 10 AND new.VALUE < 10 AND new.ID = old.ID)
 DELETE FROM T2 WHERE ID = new.ID;
 ```
 
-### Statement-level version
+## Statement-level version
 
 ```sql
 -- DELETE
@@ -301,7 +304,7 @@ END;
 
 Statement-level is compact for bulk `UPDATE T1 SET value = 2*value`.
 
-## 9. Multiple Triggers on Same Event
+# 9. Multiple Triggers on Same Event
 
 SQL:1999 prescribed order:
 
@@ -313,12 +316,12 @@ SQL:1999 prescribed order:
 
 If several triggers in same category: order depends on implementation (creation time, alphabetical name, `PRECEDES` / `FOLLOWS` in MySQL).
 
-## 10. Cascading and Termination
+# 10. Cascading and Termination
 
 - **Cascading / nesting:** action of T1 fires T2.
 - **Recursive cascading / looping:** statement S on T starts cascade generating same event S on T.
 
-### Termination analysis via triggering graph
+## Termination analysis via triggering graph
 - Node i for each trigger Ti.
 - Arc i → j if execution of Ti's action **may activate** Tj (syntactic analysis).
 - If **acyclic → guaranteed termination** (sufficient, not necessary).
@@ -353,23 +356,22 @@ Real systems limits:
 - **Oracle:** up to 32 cascades at once; limited by `OPEN_CURSORS`.
 - **Informix:** complex rules, see docs.
 
-## 11. Application 1: Book Sales
-
+>[!example] Es 1: Book Sales
+>
 Schema:
-
-```
+>
+>```
 BOOK(Isbn, Title, SoldCopies)
 WRITING(Isbn, Name)
 AUTHOR(Name, SoldCopies) -- maintained only by triggers
-```
-
+>```
+>
 No cascading: events on base tables, actions on materialized table.
-
-- T1: `UPDATE SoldCopies ON BOOK` → update AUTHOR
-- T2: `INSERT ON WRITING` → update AUTHOR
-- T3 on `INSERT BOOK` not needed: referential integrity forces BOOK and AUTHOR to exist before WRITING.
-
-```sql
+>
+>- T1: `UPDATE SoldCopies ON BOOK` → update AUTHOR
+>- T2: `INSERT ON WRITING` → update AUTHOR
+>- T3 on `INSERT BOOK` not needed: referential integrity forces BOOK and AUTHOR to exist before WRITING.
+>>```sql
 CREATE TRIGGER UpdateSalesAfterNewSale
 AFTER UPDATE OF SoldCopies ON Book
 FOR EACH ROW
@@ -377,9 +379,9 @@ UPDATE Author
 SET SoldCopies = SoldCopies + new.SoldCopies - old.SoldCopies
 WHERE Name IN (SELECT Name FROM Writing WHERE Isbn = new.Isbn);
 -- assumes Isbn never updated
-```
-
-```sql
+>```
+>
+>```sql
 CREATE TRIGGER UpdateSalesAfterNewAuthorship
 AFTER INSERT ON Writing
 FOR EACH ROW
@@ -387,31 +389,31 @@ UPDATE Author
 SET SoldCopies = SoldCopies +
   (SELECT SoldCopies FROM Book WHERE Isbn = new.Isbn)
 WHERE Name = new.Name;
-```
+>```
 
-## 12. Application 2: Hierarchy Management
-
-```
+>[!example] Es 2: Hierarchy Management
+>
+>```
 Product(ID, Name, SuperProduct, OwnWeight, TotalWeight)
 -- TotalWeight = OwnWeight + sum(sub-products TotalWeight)
 -- Root: SuperProduct = NULL
 -- TotalWeight updated only by triggers
-```
-
+>```
+>
 Assumption: users can only 1) insert, 2) delete, 3) update SuperProduct. Alternative is recursive view (`WITH RECURSIVE`). Triggers good design **only if reads of TotalWeight >> updates**.
-
-- T1: INSERT product → set `TotalWeight = OwnWeight` (+ propagate via T3)
-- T2: DELETE product → decrease super's TotalWeight (+ propagate via T3)
-- T3: UPDATE TotalWeight → propagate to super (recursive cascading)
-- T4: UPDATE SuperProduct → move weight from old super to new super
-- Deletion of sub-products managed by `ON DELETE CASCADE`.
-
-```sql
+>
+>- T1: INSERT product → set `TotalWeight = OwnWeight` (+ propagate via T3)
+>- T2: DELETE product → decrease super's TotalWeight (+ propagate via T3)
+>- T3: UPDATE TotalWeight → propagate to super (recursive cascading)
+>- T4: UPDATE SuperProduct → move weight from old super to new super
+>- Deletion of sub-products managed by `ON DELETE CASCADE`.
+>
+>```sql
 -- T1
 CREATE TRIGGER Product_After_Insert
 AFTER INSERT ON Product FOR EACH ROW
 UPDATE Product SET TotalWeight = OwnWeight WHERE ID = new.ID;
-
+>
 -- T2
 CREATE TRIGGER Product_After_Delete
 AFTER DELETE ON Product FOR EACH ROW
@@ -419,7 +421,7 @@ WHEN (old.SuperProduct IS NOT NULL)
 UPDATE Product
 SET TotalWeight = TotalWeight - old.TotalWeight
 WHERE ID = old.SuperProduct;
-
+>
 -- T3: propagation
 CREATE TRIGGER Product_After_Update_TotalWeight
 AFTER UPDATE OF TotalWeight ON Product FOR EACH ROW
@@ -428,7 +430,7 @@ WHEN (new.SuperProduct IS NOT NULL
 UPDATE Product
 SET TotalWeight = TotalWeight + (new.TotalWeight - old.TotalWeight)
 WHERE ID = new.SuperProduct;
-
+>
 -- T4: move
 CREATE TRIGGER Product_After_Update_Super
 AFTER UPDATE OF SuperProduct ON Product FOR EACH ROW
@@ -441,18 +443,18 @@ BEGIN
   SET TotalWeight = TotalWeight + new.TotalWeight
   WHERE ID = new.SuperProduct;
 END;
-```
-
-> [!warning] Cascading order
+>```
+>
+>> [!warning] Cascading order
 > When multiple triggers fire on same event, vendors decide precedence differently. Delayed triggers execute later; full behaviour is far from trivial. See Postgres example below.
 
-### Postgres cascading trap
-
-```sql
+> [!warning] Postgres cascading trap
+>
+>```sql
 CREATE TRIGGER T1 AFTER UPDATE OF x ON ttest
 FOR EACH ROW WHEN (NEW.x >= 10)
 UPDATE ttest SET x = NEW.x / 2.0;
-
+>
 CREATE TRIGGER T2 AFTER UPDATE OF x ON ttest
 FOR EACH ROW WHEN (NEW.x >= 6)
 UPDATE ttest SET x = NEW.x * 1.4;
@@ -460,58 +462,57 @@ UPDATE ttest SET x = NEW.x * 1.4;
 -- chain creates delayed T2 instances seeing stale NEW values
 -- e.g. T2 sees NEW=11.76 but current x=5.88 -> sets 16.46
 -- process never stops -> error
-```
+>```
+>
+>Key lesson: delayed instances see **activation-time NEW**, not current value. Document and avoid such mutual recursion.
 
-Key lesson: delayed instances see **activation-time NEW**, not current value. Document and avoid such mutual recursion.
-
-## 13. Application 3: Materialized Views
-
-```sql
+>[!example] Es 3: Materialized Views
+>
+>```sql
 CREATE VIEW DeptCost AS
 SELECT d.DeptNum AS dept, COALESCE(SUM(e.salary),0) AS totCost
 FROM dept d LEFT JOIN emp e ON e.dept = d.DeptNum
 GROUP BY d.DeptNum;
-```
-
-- Normal view: rewritten each query to use base tables.
-- **Materialization:** store result in table. Useful when **queries >> updates**.
-- Some DBMS have `CREATE MATERIALIZED VIEW`; alternative: triggers.
-
-Incremental maintenance: most modifications affect small part:
-
-- Update `idemp`: no effect
-- Insert/delete employee, update salary: 1 tuple in DeptCost
-- Update `dept`: 2 tuples
-- Insert/delete department: 1 tuple
-
+>```
+>- Normal view: rewritten each query to use base tables.
+>- **Materialization:** store result in table. Useful when **queries >> updates**.
+>- Some DBMS have `CREATE MATERIALIZED VIEW`; alternative: triggers.
+>
+>Incremental maintenance: most modifications affect small part:
+>
+>- Update `idemp`: no effect
+>- Insert/delete employee, update salary: 1 tuple in DeptCost
+>- Update `dept`: 2 tuples
+>- Insert/delete department: 1 tuple
+>
 If incremental cost < recompute from scratch → prefer incremental.
-
+>
 Solution sketch (no cascading, events on base, actions on view table):
-- T1 INSERT EMP → increase totCost
-- T2 DELETE EMP → decrease totCost
-- T3 UPDATE salary (dept unchanged) → apply delta
-- T4 UPDATE dept → + new dept, - old dept
-- T5 INSERT DEPT → insert `(new.DeptNum, 0)`
-- T6 DELETE DEPT → delete (or via FK)
-
-```sql
+>- T1 INSERT EMP → increase totCost
+>- T2 DELETE EMP → decrease totCost
+>- T3 UPDATE salary (dept unchanged) → apply delta
+>- T4 UPDATE dept → + new dept, - old dept
+>- T5 INSERT DEPT → insert `(new.DeptNum, 0)`
+>- T6 DELETE DEPT → delete (or via FK)
+>
+>```sql
 CREATE TRIGGER Incremental_InsEmp
 AFTER INSERT ON emp FOR EACH ROW
 UPDATE DeptCost SET totCost = totCost + new.salary
 WHERE dept = new.dept;
-
+>
 CREATE TRIGGER Incremental_DelEmp
 AFTER DELETE ON emp FOR EACH ROW
 UPDATE DeptCost SET totCost = totCost - old.salary
 WHERE dept = old.dept;
-
+>
 CREATE TRIGGER Incremental_SalaryUpdate
 AFTER UPDATE OF salary ON emp FOR EACH ROW
 WHEN (old.dept = new.dept)
 UPDATE DeptCost
 SET totCost = totCost - old.salary + new.salary
 WHERE dept = new.dept;
-
+>
 CREATE TRIGGER Incremental_DeptChange
 AFTER UPDATE OF dept ON emp FOR EACH ROW
 BEGIN
@@ -520,32 +521,32 @@ BEGIN
   UPDATE DeptCost SET totCost = totCost - old.salary
   WHERE dept = old.dept;
 END;
-
+>
 CREATE TRIGGER Incremental_DeptInsert
 AFTER INSERT ON dept FOR EACH ROW
 INSERT INTO DeptCost VALUES (new.DeptNum, 0);
-
+>
 CREATE TRIGGER Incremental_DeptDelete
 AFTER DELETE ON dept FOR EACH ROW
 DELETE FROM DeptCost WHERE dept = old.DeptNum;
-```
-
+>```
+>
 Integrity interaction:
-
-```sql
+>
+>```sql
 CREATE TABLE emp (
   idemp INT NOT NULL AUTO_INCREMENT,
   salary INT DEFAULT NULL,
   dept INT NOT NULL,
   PRIMARY KEY (idemp),
   CONSTRAINT empdept FOREIGN KEY (dept)
-    REFERENCES dept(DeptNum) ON DELETE CASCADE
+>	REFERENCES dept(DeptNum) ON DELETE CASCADE
 );
-```
+>```
+>
+>Triggers assume referential integrity: deleting dept cascades to employees; assigning to non-existing dept → violation.
 
-Triggers assume referential integrity: deleting dept cascades to employees; assigning to non-existing dept → violation.
-
-## 14. Design Principles
+# 11. Design Principles
 
 - Use triggers to guarantee that when specific operation is performed, related actions are performed.
 - Do not duplicate built-in DBMS features. Prefer declarative constraints for bad-data rejection.
@@ -556,7 +557,7 @@ Triggers assume referential integrity: deleting dept cascades to employees; assi
 
 Source: https://docs.oracle.com/cd/B12037_01/appdev.101/b10795/adfns_tri.htm
 
-## 15. Evolution and Vendor Syntax
+# 12. Evolution and Vendor Syntax
 
 Active DB evolution:
 - Execution mode (immediate, deferred, detached)
@@ -599,7 +600,7 @@ ON tbl_name FOR EACH ROW
 trigger_body;
 ```
 
-## 16. Conclusions
+# 13. Conclusions
 
 - All major RDBMS support triggers, mostly subset of SQL:1999, with subtle execution differences and proprietary languages → **portability is hard**.
 - Centralize semantics in DB under DBMS control, not replicated in apps.

@@ -6,6 +6,7 @@
       {
         "id": "0a8a41e190020b9b",
         "type": "tabs",
+        "dimension": 54.29988974641676,
         "children": [
           {
             "id": "c9b89d436817a1bb",
@@ -22,30 +23,78 @@
             }
           },
           {
-            "id": "45ad7483a4f7f7c8",
+            "id": "372dbf4e4613e77e",
             "type": "leaf",
             "state": {
-              "type": "pdf",
+              "type": "markdown",
               "state": {
-                "file": "Database2/PDF/1 - Triggers/01_Triggers.pdf"
+                "file": "Database2/Triggers.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-file-text",
-              "title": "01_Triggers"
-            }
-          },
-          {
-            "id": "2b09e860d11e5b38",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "Database2/PDF/1 - Triggers/Extra_01_Triggers_example_before_vs_after_foreachstatement.pdf"
-              },
-              "icon": "lucide-file-text",
-              "title": "Extra_01_Triggers_example_before_vs_after_foreachstatement"
+              "icon": "lucide-file",
+              "title": "Triggers"
             }
           }
-        ]
+        ],
+        "currentTab": 1
+      },
+      {
+        "id": "827fdc8d40e5f5fd",
+        "type": "split",
+        "dimension": 45.70011025358324,
+        "children": [
+          {
+            "id": "4cdcd47d649f8d65",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "3adcd36d285d5a98",
+                "type": "leaf",
+                "state": {
+                  "type": "pdf",
+                  "state": {
+                    "file": "Database2/PDF/1 - Triggers/01_Triggers.pdf"
+                  },
+                  "icon": "lucide-file-text",
+                  "title": "01_Triggers"
+                }
+              }
+            ]
+          },
+          {
+            "id": "e2fc933c662a4ae3",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "c2bcba6c8b216b5d",
+                "type": "leaf",
+                "state": {
+                  "type": "pdf",
+                  "state": {
+                    "file": "Database2/PDF/1 - Triggers/01_Triggers.pdf"
+                  },
+                  "icon": "lucide-file-text",
+                  "title": "01_Triggers"
+                }
+              },
+              {
+                "id": "ae814c15168a7379",
+                "type": "leaf",
+                "state": {
+                  "type": "pdf",
+                  "state": {
+                    "file": "file:C:/Users/feder/Documents/appunti/raw/Triggers_260924_083612.pdf"
+                  },
+                  "icon": "lucide-file-text",
+                  "title": "Triggers_260924_083612"
+                }
+              }
+            ],
+            "currentTab": 1
+          }
+        ],
+        "direction": "horizontal"
       }
     ],
     "direction": "vertical"
@@ -107,7 +156,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "a208faef6a30291a",
@@ -229,7 +279,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 574.6383056640625
+    "width": 574.6383056640625,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -248,10 +299,16 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "04676eb336cffe0f",
+  "active": "372dbf4e4613e77e",
   "lastOpenFiles": [
+    "Database2/PDF/1 - Triggers/01_Triggers.pdf",
     "Database2/Triggers.md",
+    "Database2/media/Triggers-1791900160390.webp",
+    "Database2/media",
+    "file:C:/Users/feder/Documents/appunti/raw/Triggers_260924_083612.pdf",
+    "Image Analysis/PDF/Planar Geometry_261006_135247.pdf",
     "Database2/Physical Data.md",
+    "Database2/PDF/1 - Triggers/Extra_01_Triggers_example_before_vs_after_foreachstatement.pdf",
     "templates/template.md",
     "Image Analysis/Planar Geometry.md",
     "Image Analysis/Optical system.md",
@@ -260,14 +317,9 @@
     "Database2/PDF/2 - Physical DB/02a_Physical_Databases_Finalslides.pdf",
     "Database2/PDF/2 - Physical DB/02_Physical_Databases.pdf",
     "Database2/_Database2 MOC.md",
-    "Database2/PDF/1 - Triggers/01_Triggers.pdf",
-    "Database2/PDF/1 - Triggers/Extra_01_Triggers_example_before_vs_after_foreachstatement.pdf",
     "Sensor System/USART.md",
     "Database2/PDF/Readings/50 Year of Queries.pdf",
     "Database2/PDF/Readings",
-    "Database2/PDF/6 - Reliability/06_Reliability.pdf",
-    "Database2/PDF/6 - Reliability/06_Reliability summary used in class.pdf",
-    "Database2/PDF/6 - Reliability",
     "Operational Research/Graphs.md",
     "Software Engenering 2/Senza nome.md",
     "Operational Research/Problem Optimization.md",
@@ -285,7 +337,6 @@
     "Image Analysis/media/Optical system-1791740662290.webp",
     "Image Analysis/media/Optical system-1791740538486.webp",
     "Image Analysis/media/Optical system-1791738697985.webp",
-    "Image Analysis/media/Optical system-1791738511368.webp",
     "Formal Languages and Compilers/Basics.md",
     "Formal Languages and Compilers/_Formal Languages and Compilers MOC.md",
     "Formal Languages and Compilers/Regular expressions and Languages.md",
