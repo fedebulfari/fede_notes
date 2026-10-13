@@ -112,4 +112,4 @@ Try sending from the PC via UART a string of variable length.
 
 ---
 Related: [[_Sensor System MOC]]
-Source: [[05 - USART LCD 2026-2027.pdf]]
+Source: [[05 - USART  LCD 2026-2027.pdf]]

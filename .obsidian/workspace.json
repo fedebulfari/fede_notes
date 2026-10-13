@@ -13,12 +13,36 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Image Analysis/Non-linear Filters.md",
+                "file": "Database2/Physical Data.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Non-linear Filters"
+              "title": "Physical Data"
+            }
+          },
+          {
+            "id": "45ad7483a4f7f7c8",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "Database2/PDF/1 - Triggers/01_Triggers.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "01_Triggers"
+            }
+          },
+          {
+            "id": "2b09e860d11e5b38",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "Database2/PDF/1 - Triggers/Extra_01_Triggers_example_before_vs_after_foreachstatement.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "Extra_01_Triggers_example_before_vs_after_foreachstatement"
             }
           }
         ]
@@ -189,14 +213,23 @@
               "icon": "lucide-tags",
               "title": "Etichette"
             }
+          },
+          {
+            "id": "9fb7fed58f336877",
+            "type": "leaf",
+            "state": {
+              "type": "copilot-relevant-notes-view",
+              "state": {},
+              "icon": "files",
+              "title": "Copilot Relevant Notes"
+            }
           }
         ],
-        "currentTab": 4
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 574.6383056640625
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -217,21 +250,34 @@
   },
   "active": "c9b89d436817a1bb",
   "lastOpenFiles": [
-    "Sensor System/USART.md",
+    "Database2/Triggers.md",
+    "Database2/Physical Data.md",
+    "templates/template.md",
     "Image Analysis/Planar Geometry.md",
+    "Image Analysis/Optical system.md",
+    "Image Analysis/Space Geometry.md",
+    "Database2/PDF/2 - Physical DB/02b_ Physical_DB_Exercise0 - COMAI.pdf",
+    "Database2/PDF/2 - Physical DB/02a_Physical_Databases_Finalslides.pdf",
+    "Database2/PDF/2 - Physical DB/02_Physical_Databases.pdf",
+    "Database2/_Database2 MOC.md",
+    "Database2/PDF/1 - Triggers/01_Triggers.pdf",
+    "Database2/PDF/1 - Triggers/Extra_01_Triggers_example_before_vs_after_foreachstatement.pdf",
+    "Sensor System/USART.md",
+    "Database2/PDF/Readings/50 Year of Queries.pdf",
+    "Database2/PDF/Readings",
+    "Database2/PDF/6 - Reliability/06_Reliability.pdf",
+    "Database2/PDF/6 - Reliability/06_Reliability summary used in class.pdf",
+    "Database2/PDF/6 - Reliability",
+    "Operational Research/Graphs.md",
+    "Software Engenering 2/Senza nome.md",
+    "Operational Research/Problem Optimization.md",
+    "Image Analysis/Camera Geometry.md",
+    "Image Analysis/Derivatives Estimation.md",
+    "Image Analysis/Non-linear Filters.md",
     "Sensor System/_Sensor System MOC.md",
     "USART.md",
-    "Sensor System/PDF/05 - USART LCD 2026-2027.pdf",
-    "Sensor System/PDF",
-    "Sensor System/Nuova cartella",
-    "Sensor System/05 - USART LCD 2026-2027.pdf",
-    "Sensor System",
-    "Image Analysis/PDF/Planar Geometry_261006_135247.pdf",
-    "Image Analysis/PDF/IACV 2026 - C - 2D Projective Geometry and 2D Reconstruction.pdf",
     "Image Analysis/media/Planar Geometry-1791807415729.webp",
     "Image Analysis/media/Planar Geometry-1791805957885.webp",
-    "Image Analysis/PDF/IACV 2026 - B - Camera Optical System.pdf",
-    "Image Analysis/Optical system.md",
     "Image Analysis/media/Optical system-1791747118286.webp",
     "Image Analysis/media/Optical system-1791747117960.webp",
     "Image Analysis/media/Optical system-1791747092652.webp",
@@ -240,29 +286,15 @@
     "Image Analysis/media/Optical system-1791740538486.webp",
     "Image Analysis/media/Optical system-1791738697985.webp",
     "Image Analysis/media/Optical system-1791738511368.webp",
-    "Image Analysis/media",
-    "Image Analysis/Non-linear Filters.md",
     "Formal Languages and Compilers/Basics.md",
     "Formal Languages and Compilers/_Formal Languages and Compilers MOC.md",
-    "Operational Research/Problem Optimization.md",
-    "Operational Research/Graphs.md",
     "Formal Languages and Compilers/Regular expressions and Languages.md",
     "Formal Languages and Compilers/Context free Grammars.md",
-    "Image Analysis/Space Geometry.md",
     "Image Analysis/_Image Analysis MOC.md",
-    "Image Analysis/Derivatives Estimation.md",
     "Image Analysis/Geometry matching.md",
-    "Image Analysis/Camera Geometry.md",
-    "Image Analysis/PDF/IACV 2026 - H - Model fitting to noisy images.pdf",
     "Operational Research/_Operational Research MOC.md",
     "Operational Research/media/Graphs/media/Es. 1.md",
     "Senza nome.canvas",
-    "2026-10-11.md",
-    "templates/template.md",
-    "Operational Research/media/Problem Optimization/media/Es. 3.md",
-    "Formal Languages and Compilers/PDF.md",
-    "Formal Languages and Compilers/[!info]Star operator (Kleene star).md",
-    "Formal Languages and Compilers/Regular expressions and Languages(1).md",
-    "copilot/skills/copilot-fetch-x/SKILL.md"
+    "2026-10-11.md"
   ]
 }

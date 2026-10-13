@@ -1,6 +1,7 @@
 ---
 date: 11-10-2026
 subject: Image Analysis
+description:
 ---
                                
 # 1. Optical sensor: camera
