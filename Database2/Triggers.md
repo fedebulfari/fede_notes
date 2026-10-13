@@ -466,34 +466,38 @@ UPDATE ttest SET x = NEW.x * 1.4;
 >
 >Key lesson: delayed instances see **activation-time NEW**, not current value. Document and avoid such mutual recursion.
 
->[!example] Es 3: Materialized Views
->
->```sql
+# 11. Materialized Views
+
+A view is a virtual table defined with a query stored in the database catalog and then used in queries as if it were a normal table
+
+```sql
 CREATE VIEW DeptCost AS
 SELECT d.DeptNum AS dept, COALESCE(SUM(e.salary),0) AS totCost
 FROM dept d LEFT JOIN emp e ON e.dept = d.DeptNum
 GROUP BY d.DeptNum;
->```
->- Normal view: rewritten each query to use base tables.
->- **Materialization:** store result in table. Useful when **queries >> updates**.
->- Some DBMS have `CREATE MATERIALIZED VIEW`; alternative: triggers.
->
->Incremental maintenance: most modifications affect small part:
->
->- Update `idemp`: no effect
->- Insert/delete employee, update salary: 1 tuple in DeptCost
->- Update `dept`: 2 tuples
->- Insert/delete department: 1 tuple
->
+```
+
+- **Normal view**: rewritten each query to use base tables.
+- **Materialization:** store result in table. Useful when **queries >> updates**.
+- Some DBMS have `CREATE MATERIALIZED VIEW`; alternative: triggers.
+
+**Incremental maintenance**: most modifications affect small part:
+
+- Update `idemp`: no effect
+- Insert/delete employee, update salary: 1 tuple in deptcost
+- Update `dept`: 2 tuples in deptcost
+- Insert/delete department: 1 tuple in deptcost
+
 If incremental cost < recompute from scratch → prefer incremental.
->
+
 Solution sketch (no cascading, events on base, actions on view table):
->- T1 INSERT EMP → increase totCost
->- T2 DELETE EMP → decrease totCost
->- T3 UPDATE salary (dept unchanged) → apply delta
->- T4 UPDATE dept → + new dept, - old dept
->- T5 INSERT DEPT → insert `(new.DeptNum, 0)`
->- T6 DELETE DEPT → delete (or via FK)
+- T1 INSERT EMP → increase totCost
+- T2 DELETE EMP → decrease totCost
+- T3 UPDATE salary (dept unchanged) → apply delta
+- T4 UPDATE dept → + new dept, - old dept
+- T5 INSERT DEPT → insert `(new.DeptNum, 0)`
+- T6 DELETE DEPT → delete (or via FK)
+> [!example] Es. 3
 >
 >```sql
 CREATE TRIGGER Incremental_InsEmp
@@ -541,12 +545,12 @@ CREATE TABLE emp (
   PRIMARY KEY (idemp),
   CONSTRAINT empdept FOREIGN KEY (dept)
 >	REFERENCES dept(DeptNum) ON DELETE CASCADE
-);
+>);
 >```
->
->Triggers assume referential integrity: deleting dept cascades to employees; assigning to non-existing dept → violation.
 
-# 11. Design Principles
+>[!warning] Triggers assume referential integrity: deleting dept cascades to employees; assigning to non-existing dept → violation.
+
+# 12. Design Principles
 
 - Use triggers to guarantee that when specific operation is performed, related actions are performed.
 - Do not duplicate built-in DBMS features. Prefer declarative constraints for bad-data rejection.
@@ -557,7 +561,7 @@ CREATE TABLE emp (
 
 Source: https://docs.oracle.com/cd/B12037_01/appdev.101/b10795/adfns_tri.htm
 
-# 12. Evolution and Vendor Syntax
+# 13. Evolution and Vendor Syntax
 
 Active DB evolution:
 - Execution mode (immediate, deferred, detached)
@@ -600,7 +604,7 @@ ON tbl_name FOR EACH ROW
 trigger_body;
 ```
 
-# 13. Conclusions
+# 14. Conclusions
 
 - All major RDBMS support triggers, mostly subset of SQL:1999, with subtle execution differences and proprietary languages → **portability is hard**.
 - Centralize semantics in DB under DBMS control, not replicated in apps.
