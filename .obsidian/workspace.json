@@ -35,24 +35,6 @@
           }
         ],
         "currentTab": 1
-      },
-      {
-        "id": "fcc4c7b5bb006cd0",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "b626ab7cc2cccdc8",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "Sensor System/PDF/Theory/01 - Sensors.pdf"
-              },
-              "icon": "lucide-file-text",
-              "title": "01 - Sensors"
-            }
-          }
-        ]
       }
     ],
     "direction": "vertical"
@@ -232,11 +214,11 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
-    "width": 574.6383056640625
+    "width": 272.2955322265625
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -255,11 +237,11 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "04676eb336cffe0f",
+  "active": "6c035a9c9246b9da",
   "lastOpenFiles": [
-    "Sensor System/media/Sensors-1791926310050.webp",
     "Sensor System/PDF/Theory/01 - Sensors.pdf",
     "Sensor System/Sensors.md",
+    "Sensor System/media/Sensors-1791926310050.webp",
     "Sensor System/media/Sensors-1791925826885.webp",
     "Sensor System/media/Sensors-1791925614863.webp",
     "Sensor System/media/Sensors-1791908298449.webp",
@@ -296,7 +278,6 @@
     "Image Analysis/media/Planar Geometry-1791805957885.webp",
     "Image Analysis/media/Optical system-1791747118286.webp",
     "Image Analysis/media/Optical system-1791747117960.webp",
-    "Image Analysis/media/Optical system-1791747092652.webp",
     "Formal Languages and Compilers/Basics.md",
     "Formal Languages and Compilers/_Formal Languages and Compilers MOC.md",
     "Formal Languages and Compilers/Regular expressions and Languages.md",
