@@ -13,30 +13,30 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Operational Research/Graphs.md",
+                "file": "Sensor System/Light Sensor.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Graphs"
+              "title": "Light Sensor"
             }
           }
         ]
       },
       {
-        "id": "f35377524aa4f7b7",
+        "id": "f2d7eb9c34291f63",
         "type": "tabs",
         "children": [
           {
-            "id": "e1c5fc5a05be8815",
+            "id": "233aa1fe08161f91",
             "type": "leaf",
             "state": {
               "type": "pdf",
               "state": {
-                "file": "Operational Research/PDF/Slides/shortest pathsnew.pdf"
+                "file": "Sensor System/PDF/Theory/02 - Light sensors.pdf"
               },
               "icon": "lucide-file-text",
-              "title": "shortest pathsnew"
+              "title": "02 - Light sensors"
             }
           }
         ]
@@ -101,7 +101,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "a208faef6a30291a",
@@ -223,7 +224,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 272.2955322265625
+    "width": 272.2955322265625,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -244,8 +246,22 @@
   },
   "active": "9c6ea62c9b8accd1",
   "lastOpenFiles": [
-    "Operational Research/PDF/Slides/shortest pathsnew.pdf",
+    "Sensor System/PDF/Theory/02 - Light sensors.pdf",
+    "Sensor System/media/Light Sensor-1791984216910.webp",
+    "Sensor System/Light Sensor.md",
+    "Sensor System/media/Light Sensor-1791984039609.webp",
+    "Sensor System/Sensors.md",
     "Operational Research/Graphs.md",
+    "Sensor System/media/Light Sensor-1791982071614.webp",
+    "Sensor System/media/Light Sensor-1791981848603.webp",
+    "Sensor System/media/Light Sensor-1791981591420.webp",
+    "Sensor System/media/Light Sensor-1791980956918.webp",
+    "Sensor System/media/Light Sensor-1791980682491.webp",
+    "Sensor System/media/Light Sensor-1791980180271.webp",
+    "Sensor System/media/Light Sensor-1791980137504.webp",
+    "Sensor System/_Sensor System MOC.md",
+    "Operational Research/PDF/chapter+2.pdf",
+    "Operational Research/PDF/Slides/shortest pathsnew.pdf",
     "Operational Research/PDF/Slides/modelsnew.pdf",
     "Operational Research/PDF/Slides/LPnew.pdf",
     "Operational Research/PDF/Slides/ILPnew.pdf",
@@ -253,21 +269,9 @@
     "Operational Research/PDF/Slides/graphsnew2 (1).pdf",
     "Operational Research/PDF/Slides/froinfointro2026.pdf",
     "Operational Research/PDF/Slides/flowsnew.pdf",
-    "Operational Research/PDF/Slides",
     "Sensor System/Image Sensors.md",
-    "Sensor System/PDF/Theory/03 - Image sensors.pdf",
     "Sensor System/media/Image Sensors-1791964995643.webp",
-    "Sensor System/media/Image Sensors-1791964983553.webp",
-    "Sensor System/media/Image Sensors-1791964506041.webp",
-    "Sensor System/media/Image Sensors-1791964086769.webp",
-    "Sensor System/media/Image Sensors-1791964040671.webp",
-    "Sensor System/media/Image Sensors-1791963673827.webp",
     "Sensor System/media/Drawing 2026-10-14 09.31.09.excalidraw.md",
-    "Sensor System/media/Image Sensors-1791962560250.webp",
-    "Sensor System/media/Image Sensors-1791962540060.webp",
-    "Sensor System/media/Image Sensors-1791962308534.webp",
-    "Sensor System/media/Image Sensors-1791961262598.webp",
-    "Sensor System/Sensors.md",
     "Sensor System/media/Drawing 2026-10-14 08.55.32.excalidraw.md",
     "Sensor System/ciao.md",
     "Database2/Physical Data.md",
@@ -283,12 +287,10 @@
     "Image Analysis/Camera Geometry.md",
     "Image Analysis/Derivatives Estimation.md",
     "Image Analysis/Non-linear Filters.md",
-    "Sensor System/_Sensor System MOC.md",
     "USART.md",
     "Formal Languages and Compilers/Basics.md",
     "Formal Languages and Compilers/_Formal Languages and Compilers MOC.md",
     "Formal Languages and Compilers/Regular expressions and Languages.md",
-    "Formal Languages and Compilers/Context free Grammars.md",
     "Senza nome.canvas"
   ]
 }
