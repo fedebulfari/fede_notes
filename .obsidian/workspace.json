@@ -48,6 +48,18 @@
             }
           },
           {
+            "id": "f64cd43ea3d97619",
+            "type": "leaf",
+            "state": {
+              "type": "excalidraw",
+              "state": {
+                "file": "Sensor System/media/Drawing 2026-10-14 09.31.09.excalidraw.md"
+              },
+              "icon": "excalidraw-icon",
+              "title": "Drawing 2026-10-14 09.31.09.excalidraw"
+            }
+          },
+          {
             "id": "fa434046e4d1faaa",
             "type": "leaf",
             "state": {
@@ -140,7 +152,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "a208faef6a30291a",
@@ -283,13 +296,16 @@
   },
   "active": "c6ce965f4d212122",
   "lastOpenFiles": [
-    "Sensor System/media/Image Sensors-1791962308534.webp",
-    "Sensor System/PDF/Theory/03 - Image sensors.pdf",
+    "Sensor System/PDF/Theory/00 - Introduction.pdf",
+    "Sensor System/media/Drawing 2026-10-14 09.31.09.excalidraw.md",
     "Sensor System/Image Sensors.md",
+    "Sensor System/media/Image Sensors-1791962560250.webp",
+    "Sensor System/PDF/Theory/03 - Image sensors.pdf",
+    "Sensor System/media/Image Sensors-1791962540060.webp",
+    "Sensor System/media/Image Sensors-1791962308534.webp",
     "Sensor System/media/Image Sensors-1791961262598.webp",
     "Sensor System/Sensors.md",
     "Sensor System/media/Drawing 2026-10-14 08.55.32.excalidraw.md",
-    "Sensor System/PDF/Theory/00 - Introduction.pdf",
     "Excalidraw",
     "Sensor System/media/Image Sensors-1791960351242.webp",
     "Sensor System/PDF/Theory/01 - Sensors.pdf",
@@ -304,7 +320,6 @@
     "Database2/PDF/2 - Physical DB/02_Physical_Databases.pdf",
     "Database2/PDF/1 - Triggers/01_Triggers.pdf",
     "Database2/Triggers.md",
-    "Database2/media/Triggers-1791900160390.webp",
     "Database2/media",
     "file:C:/Users/feder/Documents/appunti/raw/Triggers_260924_083612.pdf",
     "Image Analysis/PDF/Planar Geometry_261006_135247.pdf",
@@ -322,13 +337,10 @@
     "Image Analysis/Non-linear Filters.md",
     "Sensor System/_Sensor System MOC.md",
     "USART.md",
-    "Image Analysis/media/Planar Geometry-1791807415729.webp",
-    "Image Analysis/media/Planar Geometry-1791805957885.webp",
     "Formal Languages and Compilers/Basics.md",
     "Formal Languages and Compilers/_Formal Languages and Compilers MOC.md",
     "Formal Languages and Compilers/Regular expressions and Languages.md",
     "Formal Languages and Compilers/Context free Grammars.md",
-    "Image Analysis/_Image Analysis MOC.md",
     "Senza nome.canvas"
   ]
 }
