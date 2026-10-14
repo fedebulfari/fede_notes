@@ -39,7 +39,8 @@ Main pixel components:
 - 3 transistors
 - Busses
 - Bayer filter
-- Micro-lens
+- Micro-lens [!uncomplete]
+![[Image Sensors-1791964040671.webp|242]]
 
 > Fill factor ≈ 30% (photosensitive area / total pixel area, rest is transistors) — much lower than CCD.
 
@@ -52,7 +53,7 @@ Main pixel components:
 ![[Image Sensors-1791962540060.webp|243]]
 All pixels in a column share one column amplifier.
 ![[Drawing 2026-10-14 09.31.09.excalidraw]]
-[!uncoplete]
+[!uncomplete]
 ## Noise sources
 
 - **Fixed Pattern Noise (FPN):** variation in photodiode efficiency + mismatch in source-follower performance. Constant and reproducible → removed by flat-field correction (on-chip subtraction of uniform-illumination image).
@@ -62,7 +63,7 @@ All pixels in a column share one column amplifier.
 
 ## Sensor structure and functional blocks
 
-Modern sensor: back-illuminated, 3D-stacked hybrid-bonding **CIS + ISP** (CMOS Image Sensor + Image Signal Processor).
+Modern sensor: **Back-illuminated**, 3D-stacked hybrid-bonding **CIS + ISP** (CMOS Image Sensor + Image Signal Processor).
 
 Typical blocks (VGA 640×480 example):
 - Line address register for readout + shielded pixels for black-level compensation
@@ -72,13 +73,14 @@ Typical blocks (VGA 640×480 example):
 - ADC
 - Image processing (interpolation, smoothing, white/black balancing)
 - Alternative for high frame rate: one video amp + ADC **per column**
-
+![[Image Sensors-1791963673827.webp|279]]
+>[!info] Functional Blocks
+![[Image Sensors-1791964086769.webp|278]]
 ## Readout flexibility
 
 - **Active window / subsampling:** read only window of interest or subsampled pixels → faster readout.
 - **Rolling shutter:** rows scanned sequentially, not all pixels at same instant → distortion on fast-moving objects / flashes.
 - **Global shutter:** entire frame captured at same instant.
-
 ## Communication protocols
 
 - **Parallel CMOS:** oldest, multiple data lines + clock/sync, still used in low-speed sensors

@@ -275,7 +275,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 272.2955322265625
+    "width": 272.2955322265625,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -296,11 +297,14 @@
   },
   "active": "c6ce965f4d212122",
   "lastOpenFiles": [
+    "Sensor System/PDF/Theory/03 - Image sensors.pdf",
+    "Sensor System/Image Sensors.md",
+    "Sensor System/media/Image Sensors-1791964086769.webp",
+    "Sensor System/media/Image Sensors-1791964040671.webp",
+    "Sensor System/media/Image Sensors-1791963673827.webp",
     "Sensor System/PDF/Theory/00 - Introduction.pdf",
     "Sensor System/media/Drawing 2026-10-14 09.31.09.excalidraw.md",
-    "Sensor System/Image Sensors.md",
     "Sensor System/media/Image Sensors-1791962560250.webp",
-    "Sensor System/PDF/Theory/03 - Image sensors.pdf",
     "Sensor System/media/Image Sensors-1791962540060.webp",
     "Sensor System/media/Image Sensors-1791962308534.webp",
     "Sensor System/media/Image Sensors-1791961262598.webp",
@@ -311,9 +315,6 @@
     "Sensor System/PDF/Theory/01 - Sensors.pdf",
     "Sensor System/media/Sensors-1791926310050.webp",
     "Sensor System/media/Sensors-1791925826885.webp",
-    "Sensor System/media/Sensors-1791925614863.webp",
-    "Sensor System/media/Sensors-1791908298449.webp",
-    "Sensor System/media/Sensors-1791907985501.webp",
     "Sensor System/media",
     "Sensor System/ciao.md",
     "Database2/Physical Data.md",
