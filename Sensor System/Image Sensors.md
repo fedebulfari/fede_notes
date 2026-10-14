@@ -76,9 +76,15 @@ Typical blocks (VGA 640×480 example):
 ![[Image Sensors-1791963673827.webp|279]]
 >[!info] Functional Blocks
 ![[Image Sensors-1791964086769.webp|278]]
-## Readout flexibility
 
-- **Active window / subsampling:** read only window of interest or subsampled pixels → faster readout.
+## Active window
+
+ **Active window / subsampling:** read only window of interest or subsampled pixels; 
+	Smalller resolution→ Faster readout.
+	![[Image Sensors-1791964506041.webp|521]]
+
+## Readout Modes
+
 - **Rolling shutter:** rows scanned sequentially, not all pixels at same instant → distortion on fast-moving objects / flashes.
 - **Global shutter:** entire frame captured at same instant.
 ## Communication protocols
