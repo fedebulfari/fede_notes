@@ -262,8 +262,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 272.2955322265625,
-    "collapsed": true
+    "width": 272.2955322265625
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -282,7 +281,7 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "c6ce965f4d212122",
+  "active": "2cb8085403a072de",
   "lastOpenFiles": [
     "Sensor System/PDF/Theory/03 - Image sensors.pdf",
     "Sensor System/Image Sensors.md",
