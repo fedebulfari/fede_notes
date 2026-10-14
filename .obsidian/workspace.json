@@ -6,6 +6,7 @@
       {
         "id": "4fdada197b05b1ab",
         "type": "tabs",
+        "dimension": 55.292171995589854,
         "children": [
           {
             "id": "9c6ea62c9b8accd1",
@@ -26,6 +27,7 @@
       {
         "id": "f2d7eb9c34291f63",
         "type": "tabs",
+        "dimension": 44.707828004410146,
         "children": [
           {
             "id": "233aa1fe08161f91",
@@ -224,8 +226,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 272.2955322265625,
-    "collapsed": true
+    "width": 272.2955322265625
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -247,8 +248,13 @@
   "active": "9c6ea62c9b8accd1",
   "lastOpenFiles": [
     "Sensor System/PDF/Theory/02 - Light sensors.pdf",
-    "Sensor System/media/Light Sensor-1791984216910.webp",
+    "Sensor System/media/Light Sensor-1791988073736.webp",
     "Sensor System/Light Sensor.md",
+    "Sensor System/media/Drawing 2026-10-14 16.05.50.excalidraw.md",
+    "Sensor System/Senza nome.md",
+    "Sensor System/media/Light Sensor-1791987413186.webp",
+    "Excalidraw",
+    "Sensor System/media/Light Sensor-1791984216910.webp",
     "Sensor System/media/Light Sensor-1791984039609.webp",
     "Sensor System/Sensors.md",
     "Operational Research/Graphs.md",
@@ -258,7 +264,6 @@
     "Sensor System/media/Light Sensor-1791980956918.webp",
     "Sensor System/media/Light Sensor-1791980682491.webp",
     "Sensor System/media/Light Sensor-1791980180271.webp",
-    "Sensor System/media/Light Sensor-1791980137504.webp",
     "Sensor System/_Sensor System MOC.md",
     "Operational Research/PDF/chapter+2.pdf",
     "Operational Research/PDF/Slides/shortest pathsnew.pdf",
@@ -268,9 +273,7 @@
     "Operational Research/PDF/Slides/heuristicsnewnew.pdf",
     "Operational Research/PDF/Slides/graphsnew2 (1).pdf",
     "Operational Research/PDF/Slides/froinfointro2026.pdf",
-    "Operational Research/PDF/Slides/flowsnew.pdf",
     "Sensor System/Image Sensors.md",
-    "Sensor System/media/Image Sensors-1791964995643.webp",
     "Sensor System/media/Drawing 2026-10-14 09.31.09.excalidraw.md",
     "Sensor System/media/Drawing 2026-10-14 08.55.32.excalidraw.md",
     "Sensor System/ciao.md",
@@ -289,8 +292,6 @@
     "Image Analysis/Non-linear Filters.md",
     "USART.md",
     "Formal Languages and Compilers/Basics.md",
-    "Formal Languages and Compilers/_Formal Languages and Compilers MOC.md",
-    "Formal Languages and Compilers/Regular expressions and Languages.md",
     "Senza nome.canvas"
   ]
 }
