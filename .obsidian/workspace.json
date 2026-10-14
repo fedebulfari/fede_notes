@@ -32,9 +32,53 @@
               "icon": "lucide-file",
               "title": "Sensors"
             }
+          },
+          {
+            "id": "c6ce965f4d212122",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Sensor System/Image Sensors.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Image Sensors"
+            }
+          },
+          {
+            "id": "fa434046e4d1faaa",
+            "type": "leaf",
+            "state": {
+              "type": "excalidraw",
+              "state": {
+                "file": "Sensor System/media/Drawing 2026-10-14 08.55.32.excalidraw.md"
+              },
+              "icon": "excalidraw-icon",
+              "title": "Drawing 2026-10-14 08.55.32.excalidraw"
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
+      },
+      {
+        "id": "31561521eb290bab",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "25386f8261405260",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "Sensor System/PDF/Theory/03 - Image sensors.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "03 - Image sensors"
+            }
+          }
+        ]
       }
     ],
     "direction": "vertical"
@@ -218,7 +262,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 272.2955322265625
+    "width": 272.2955322265625,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -237,18 +282,23 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "6c035a9c9246b9da",
+  "active": "c6ce965f4d212122",
   "lastOpenFiles": [
-    "Sensor System/PDF/Theory/01 - Sensors.pdf",
+    "Sensor System/PDF/Theory/03 - Image sensors.pdf",
+    "Sensor System/Image Sensors.md",
+    "Sensor System/media/Image Sensors-1791961262598.webp",
     "Sensor System/Sensors.md",
+    "Sensor System/media/Drawing 2026-10-14 08.55.32.excalidraw.md",
+    "Sensor System/PDF/Theory/00 - Introduction.pdf",
+    "Excalidraw",
+    "Sensor System/media/Image Sensors-1791960351242.webp",
+    "Sensor System/PDF/Theory/01 - Sensors.pdf",
     "Sensor System/media/Sensors-1791926310050.webp",
     "Sensor System/media/Sensors-1791925826885.webp",
     "Sensor System/media/Sensors-1791925614863.webp",
     "Sensor System/media/Sensors-1791908298449.webp",
     "Sensor System/media/Sensors-1791907985501.webp",
     "Sensor System/media",
-    "Sensor System/PDF/Theory/00 - Introduction.pdf",
-    "Sensor System/Senza nome.md",
     "Sensor System/ciao.md",
     "Database2/Physical Data.md",
     "Database2/PDF/2 - Physical DB/02_Physical_Databases.pdf",
@@ -258,12 +308,10 @@
     "Database2/media",
     "file:C:/Users/feder/Documents/appunti/raw/Triggers_260924_083612.pdf",
     "Image Analysis/PDF/Planar Geometry_261006_135247.pdf",
-    "Database2/PDF/1 - Triggers/Extra_01_Triggers_example_before_vs_after_foreachstatement.pdf",
     "templates/template.md",
     "Image Analysis/Planar Geometry.md",
     "Image Analysis/Optical system.md",
     "Image Analysis/Space Geometry.md",
-    "Database2/PDF/2 - Physical DB/02b_ Physical_DB_Exercise0 - COMAI.pdf",
     "Database2/_Database2 MOC.md",
     "Sensor System/USART.md",
     "Operational Research/Graphs.md",
@@ -276,14 +324,11 @@
     "USART.md",
     "Image Analysis/media/Planar Geometry-1791807415729.webp",
     "Image Analysis/media/Planar Geometry-1791805957885.webp",
-    "Image Analysis/media/Optical system-1791747118286.webp",
-    "Image Analysis/media/Optical system-1791747117960.webp",
     "Formal Languages and Compilers/Basics.md",
     "Formal Languages and Compilers/_Formal Languages and Compilers MOC.md",
     "Formal Languages and Compilers/Regular expressions and Languages.md",
     "Formal Languages and Compilers/Context free Grammars.md",
     "Image Analysis/_Image Analysis MOC.md",
-    "Image Analysis/Geometry matching.md",
     "Senza nome.canvas"
   ]
 }
