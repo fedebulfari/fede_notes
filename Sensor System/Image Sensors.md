@@ -22,6 +22,10 @@ Since the human eye is more sensitive to green than to the other two colors, the
 
 ## Types of CCD
 
-- **Full frame**: all the pixel are axpoised to the lite; to readout we need to exange the charge both verticaly and horizontaly. Slaw and poossibly out of focus cause during the readout 'cause of the light still coming(prevented by using mechanical shatter).
-- **Frame transfer**: only half the array is exposed to light, therefore half the resoolution.  On the other hand to make the readout we need to do only a vertical trasfer. Fast trasfer from the two reagion and then slow readout from masked region.
-- **Interline transfer:** one line and one not is masked. even faster transfer then the Frame transfer. Since the combination of the adiacent pixels makes rettagular form the pitch of vertical pixel is double the hotizontal one; we need to do an avarage between the lighted pixel to then fill the gap created by the masked one.
+- **Full frame**: entire chip is exposed to light. Readout requires shifting the charge both vertically and horizontally. Slow, and signal is corrupted during readout because light keeps arriving → mechanical shutter needed.
+- **Frame transfer**: upper (or lower) half of the array is shielded from light, so imaging happens only in the uncovered part. Fast vertical transfer from uncovered to masked region, then slow readout from the masked region.
+- **Interline transfer:** every other line is shielded from light. The uncovered line is transferred to the adjacent masked line for readout — even faster transfer than frame transfer. Since the resouling pixels are retttangular the vertical pithc is double the horizontal one; we need to do an avarage of adiacating pixel to compensate the gap.
+	![[Image Sensors-1791962308534.webp|135]]
+
+# 2. CMOS active image sensor
+
