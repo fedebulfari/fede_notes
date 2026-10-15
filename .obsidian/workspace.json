@@ -6,6 +6,7 @@
       {
         "id": "f2d7eb9c34291f63",
         "type": "tabs",
+        "dimension": 61.63175303197354,
         "children": [
           {
             "id": "233aa1fe08161f91",
@@ -20,12 +21,25 @@
               "icon": "lucide-file",
               "title": "Light Sensor"
             }
+          },
+          {
+            "id": "a5162cc271eecad7",
+            "type": "leaf",
+            "state": {
+              "type": "excalidraw",
+              "state": {
+                "file": "Sensor System/media/Drawing 2026-10-15 14.51.22.excalidraw.md"
+              },
+              "icon": "excalidraw-icon",
+              "title": "Drawing 2026-10-15 14.51.22.excalidraw"
+            }
           }
         ]
       },
       {
         "id": "cf983e93c9785efb",
         "type": "tabs",
+        "dimension": 38.36824696802646,
         "children": [
           {
             "id": "0b09f01aa021e928",
@@ -101,8 +115,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "a208faef6a30291a",
@@ -118,7 +131,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Sensor System/Light Sensor.md",
+                "file": "Sensor System/PDF/Theory/02 - Light sensors.pdf",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -219,12 +232,12 @@
               "title": "Copilot Relevant Notes"
             }
           }
-        ]
+        ],
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
-    "width": 272.2955322265625,
-    "collapsed": true
+    "width": 272.2955322265625
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -243,27 +256,28 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "233aa1fe08161f91",
+  "active": "0b09f01aa021e928",
   "lastOpenFiles": [
-    "Sensor System/PDF/Theory/02 - Light sensors.pdf",
     "Sensor System/Light Sensor.md",
+    "Sensor System/PDF/Theory/02 - Light sensors.pdf",
+    "Sensor System/media/Light Sensor-1792071267475.webp",
+    "Sensor System/media/Light Sensor-1792071241517.webp",
+    "Sensor System/media/Light Sensor-1792071214503.webp",
+    "Sensor System/media/Light Sensor-1792071180779.webp",
+    "Sensor System/media/Light Sensor-1792071126371.webp",
+    "Sensor System/media/Light Sensor-1792071106166.webp",
+    "Sensor System/media/Light Sensor-1792070072517.webp",
+    "Sensor System/media/Drawing 2026-10-15 14.51.22.excalidraw.md",
+    "Sensor System/Sensors.md",
+    "Sensor System/media/Light Sensor-1792068259522.webp",
+    "Sensor System/media/Light Sensor-1792068237487.webp",
     "Sensor System/media/Drawing 2026-10-15 12.50.50.excalidraw.md",
     "Sensor System/_Sensor System MOC.md",
     "Sensor System/media/Light Sensor-1791988073736.webp",
     "Sensor System/media/Drawing 2026-10-14 16.05.50.excalidraw.md",
     "Sensor System/Senza nome.md",
-    "Sensor System/media/Light Sensor-1791987413186.webp",
     "Excalidraw",
-    "Sensor System/media/Light Sensor-1791984216910.webp",
-    "Sensor System/media/Light Sensor-1791984039609.webp",
-    "Sensor System/Sensors.md",
     "Operational Research/Graphs.md",
-    "Sensor System/media/Light Sensor-1791982071614.webp",
-    "Sensor System/media/Light Sensor-1791981848603.webp",
-    "Sensor System/media/Light Sensor-1791981591420.webp",
-    "Sensor System/media/Light Sensor-1791980956918.webp",
-    "Sensor System/media/Light Sensor-1791980682491.webp",
-    "Sensor System/media/Light Sensor-1791980180271.webp",
     "Operational Research/PDF/chapter+2.pdf",
     "Operational Research/PDF/Slides/shortest pathsnew.pdf",
     "Operational Research/PDF/Slides/modelsnew.pdf",
@@ -289,7 +303,6 @@
     "Image Analysis/Camera Geometry.md",
     "Image Analysis/Derivatives Estimation.md",
     "Image Analysis/Non-linear Filters.md",
-    "USART.md",
     "Senza nome.canvas"
   ]
 }
