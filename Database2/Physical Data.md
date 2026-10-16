@@ -429,4 +429,4 @@ Two lessons:
 
 ---
 Related: [[_Database2 MOC]]
-Source: [[02_Physical_Databases.pdf]], [[02a_Physical_Databases_Finalslides.pdf]], [[02b_ Physical_DB_Exercise0 - COMAI.pdf]], [[PhysDB-toComplete.pdf]
+Source: [[02_Physical_Databases.pdf]], [[02a_Physical_Databases_Finalslides.pdf]], [[02b_ Physical_DB_Exercise0 - COMAI.pdf]], [[PhysDB-toComplete.pdf]]
