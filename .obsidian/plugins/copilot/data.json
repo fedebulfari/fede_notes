@@ -22,7 +22,7 @@
   "userSystemPrompt": "",
   "openAIProxyBaseUrl": "",
   "stream": true,
-  "copilotFolder": ".copilot",
+  "copilotFolder": "copilot",
   "copilotRootHistory": [
     "copilot",
     ".copilot"
@@ -335,7 +335,7 @@
   "parallelApiKey": "",
   "exaApiKey": "",
   "supadataApiKey": "",
-  "docProcessorBackend": "plus",
+  "enableMiyoDocumentProcessing": false,
   "enableLexicalBoosts": true,
   "suggestedDefaultCommands": false,
   "autonomousAgentEnabledToolIds": [
@@ -367,6 +367,7 @@
     "activeBackend": "opencode",
     "backends": {},
     "debugFullFrames": false,
+    "offerFeedbackCards": true,
     "notificationSound": true,
     "notificationSoundId": "piano",
     "welcomeDismissed": true,
@@ -377,9 +378,6 @@
           "disabled": true
         },
         "copilot-web-fetch": {
-          "disabled": true
-        },
-        "copilot-read-pdf": {
           "disabled": true
         }
       }
@@ -476,15 +474,6 @@
     {
       "providerId": "25a25676-0068-4254-90f3-94ff7de3a49b",
       "info": {
-        "id": "opencode/cat-jam-free",
-        "displayName": "opencode/Cat Jam Free"
-      },
-      "configuredModelId": "0b7e436e-e241-49b9-975e-14befd281882",
-      "configuredAt": 1791880425909
-    },
-    {
-      "providerId": "25a25676-0068-4254-90f3-94ff7de3a49b",
-      "info": {
         "id": "opencode/deepseek-v4.1-flash-free",
         "displayName": "opencode/DeepSeek V4.1 Flash Free"
       },
@@ -517,6 +506,15 @@
       },
       "configuredModelId": "7a2799c8-5521-41af-a0dc-d2e84951978c",
       "configuredAt": 1792143552734
+    },
+    {
+      "providerId": "25a25676-0068-4254-90f3-94ff7de3a49b",
+      "info": {
+        "id": "opencode/beam-free",
+        "displayName": "opencode/Beam Free"
+      },
+      "configuredModelId": "13611833-e480-40d5-9632-f7bf2d4c41d1",
+      "configuredAt": 1792159818096
     }
   ],
   "backends": {
@@ -703,8 +701,9 @@
       "minimax-m3"
     ]
   },
+  "docProcessorBackend": "plus",
   "autoAddActiveContentToContext": true,
   "miyoConnectionMode": "local",
   "_keychainVaultId": "4cc0ac26",
-  "settingsVersion": 14
+  "settingsVersion": 15
 }

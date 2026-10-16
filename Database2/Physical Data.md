@@ -3,7 +3,7 @@ date: 13-10-2026
 subject: Database2
 description: Physical storage (blocks, pages, heap, hash, B/B+ indexes) and I/O cost model for sequential, point and interval lookups, joins and optimizer decisions.
 ---
- 
+
 > [!abstract] Goal
 > How are tables stored at the physical level? How can they be accessed efficiently? How does storage impact query performance?
 > Cost model in I/O-bound applications: **cost of a query = number of blocks moved** between secondary and main memory.
@@ -85,7 +85,7 @@ Running example used later:
 
 # 4. Physical Access Structures
 
-**Access method:** software module providing store/retrieve primitives for a physical structure, with its own data structures.
+**Access method:** software module providing store/retrieve primitives for each physical structures, with their own data structures.
 
 - **Primary structure:** contains all full tuples of a table. Each table has exactly one. Main purpose: store content.
 - **Secondary structures:** index primary structures, contain only field values + pointers to primary blocks. Main purpose: speed up search.
@@ -113,7 +113,7 @@ Not optimal for:
 - point search `WHERE …` — may scan whole table (but usable with secondary indexes)
 - updates growing tuple size — shift or delete-old + insert-new
 
-Example: `SELECT * FROM Student WHERE Name='John'` on heap → cost = #blocks of whole table.
+Example: `SELECT * FROM Student WHERE Name='John'` on heap → cost = \#blocks of whole table.
 
 ## Sequentially-ordered
 
@@ -124,24 +124,24 @@ Problem: inserts + growing updates. Solutions:
 - free space at load → local reordering
 - overflow file: new tuples in linked overflow chain
 
-Example: `SELECT * FROM Student WHERE ID BETWEEN 135 AND 380` → cost = #read blocks only, can stop early.
+Example: `SELECT * FROM Student WHERE ID BETWEEN 135 AND 380` → cost = \#read blocks only, can stop early.
 
-|  | Entry-sequenced | Sequentially-ordered |
-|---|---|---|
-| INSERT | Efficient | Not efficient |
-| UPDATE growing | Efficient* (*except find + delete+insert if grows) | Not efficient |
-| DELETE | Mark invalid | Mark invalid |
-| Tuple size | Fixed or variable | Fixed or variable |
-| `WHERE key` | Not efficient | More efficient |
+|                | Entry-sequenced                                    | Sequentially-ordered                 |
+| -------------- | -------------------------------------------------- | ------------------------------------ |
+| INSERT         | Efficient                                          | Not efficient                        |
+| UPDATE growing | Efficient* (*except find + delete+insert if grows) | Not efficient if data size increases |
+| DELETE         | Mark invalid                                       | Mark invalid                         |
+| Tuple size     | Fixed or variable                                  | Fixed or variable                    |
+| `WHERE key`    | Not efficient                                      | More efficient                       |
 
-> Most common solution is heap **paired with secondary indexes**.
+> Most common solution is **Entry-sequenced organization** paired with **Secondary access structures**.
 
 # 6. Hash-Based Structures (Primary)
 
 Efficient associative access on key value.
 
-- $NB$ buckets, $NB \ll$ #items. Bucket = typically 1 block, often adjacent.
-- Hash function $h(key) \in [0, NB-1]$ → bucket index.
+- $N_B$ buckets, $N_B \ll$ \#data_items. Bucket = typically 1 block, often stored adjacent in files.
+- Hash function $h(key) \in [0, N_B-1]$ → bucket index.
 - Implementation: **folding** (string → uniformly distributed positive int) + **hashing** (int → bucket number).
 
 Efficient for small, almost static tables + point queries `WHERE key = v`. Inefficient for range / full scan / very dynamic content.
@@ -153,10 +153,11 @@ Example `h(K)=K mod 10`:
 ## Overflow Chains
 
 - $B$ = tuples per block (1 bucket = 1 block hypothesis)
-- $T$ = #tuples
-- Load factor $= T / (B \times NB)$ = avg block occupancy, typical 50-80%
+- $T$ = \#tuples
+- $N_B=$ \#buckets
+- Load factor $= T / (B \times N_B)$ = average block occupancy, typical 50-80%
 
-Avg accesses to overflow list (from statistics):
+average accesses to overflow list (from statistics):
 
 | Load \ B | 1 | 2 | 3 | 5 | 10 |
 |---|---|---|---|---|---|
@@ -166,7 +167,7 @@ Avg accesses to overflow list (from statistics):
 | 0.8 | 2.0 | 0.903 | 0.554 | 0.289 | 0.110 |
 | 0.9 | 4.495 | 2.146 | 1.377 | 0.777 | 0.345 |
 
-Example: $B=3$, load 70% → cost $= 1 + 0.286$ I/O.
+_Example: $B=3$, load 70% → cost $= 1 + 0.286$ I/O._
 
 # 7. Indexes — Basic Concepts (Secondary)
 
@@ -192,7 +193,8 @@ Index = like book analytic index: pairs `[search key, pointer to block]`. Smalle
 | Secondary | Heap or ordered with $SK \ne OK$ | Unique and non-unique | Dense | Many |
 | Clustering | Sequentially ordered, $SK=OK$ | Non-unique | Typically sparse | One per table |
 
-Terminology varies by system — check meaning of primary/secondary/clustering/clustered in context.
+> [!warning] Terminology varies by system 
+> — check meaning of primary/secondary/clustering/clustered in context.
 
 > [!faq] Search key ≠ Primary key
 > - **Primary key:** logical constraint (minimal, unique, not null), no access path implied. Implemented via index.
@@ -202,12 +204,12 @@ Pros: small, support point/range/sorted scans. Hash indexes better for point que
 
 # 8. Hash-Based Indexes (Secondary)
 
-Same shape as primary hash, but buckets contain **key + pointer**, not full tuple. Supports equality predicates on search key.
+Used for secondary indexs. Same shape as primary hash, but buckets contain **key + pointer**, not full tuple. Supports equality predicates on search key.
 
 Example: `SELECT * FROM Student WHERE ID='342'`, $h(342)=2$:
 - cost = 1 to access hash index (without overflow, +0.3 with) + 1 to reach full tuple via pointer.
 
-# 9. Tree-Based Indexes — B and B+ Trees
+# 9. Tree-Based Indexes
 
 Most used in RDBMS for secondary indexes. SQL indexes are B+ trees. Support equality, intervals, `ORDER BY`, `GROUP BY`, `UNION`, `DISTINCT` (sorted).
 
@@ -215,14 +217,25 @@ Most used in RDBMS for secondary indexes. SQL indexes are B+ trees. Support equa
 - **B-tree:** key values also in internal nodes, no redundancy, slightly faster lookup but worse intervals.
 - **B+ tree (most used):** all key values in leaves; internal nodes = multilevel sparse index on leaves.
 
+## B+ Trees
+
+![[Physical Data-1792156284721.webp|437]]
 Structure:
 - One root, several intermediate nodes, several leaf nodes (majority of blocks). Each node = one block. Large fan-out/degree depends on block/key/pointer sizes.
 - Leaf: up to $N-1$ keys, at least $\lceil (N-1)/2 \rceil$, sorted $K_i < K_j$, plus pointers to primary blocks + pointer to next leaf (chain for sequential scan). Leaves form **dense index**.
-- Internal: up to $N-1$ keys + $N$ pointers, at least $\lceil N/2 \rceil$ pointers (except root), keys sorted. Search: if $V < K_1$ follow $P_1$, if $V \ge K_{N-1}$ follow $P_N$, else follow $P_{j+1}$ with $K_j \le V < K_{j+1}$.
+- Internal: up to $N-1$ keys + $N$ pointers, at least $\lceil N/2 \rceil$ pointers (except root), keys sorted. 
+	Search: if $V < K_1$ follow $P_1$, if $V \ge K_{N-1}$ follow $P_N$, else follow $P_{j+1}$ with $K_j \le V < K_{j+1}$.
 
 Leaf chain ordered by key → exact match + interval queries efficient.
 
-B-tree node: for each $K_i$ one pointer to sub-tree $[K_i, K_{i+1})$ + pointer(s) to block(s) with $K_i$ tuples.
+## B-trees
+
+Eliminates the redundant storage of search-key values, since search-key values appear only once and intermediate nodes only have pointer to sub-tree and too blocks containing the tuple of interest.
+
+For each $K_i$ one pointer to sub-tree $[K_i, K_{i+1})$ + pointer(s) to block(s) with $K_i$ tuples.
+
+ Lookup can be slightly faster, but interval queries are less efficient.
+ ![[Physical Data-1792157268978.webp|436]]
 
 # 10. SQL Indexes
 
@@ -267,7 +280,7 @@ With stats: 18K students, ~10 exams each (180K?/1.8M), only 200 take DB2 — pus
 Data dictionary stores per table $T$:
 - cardinality (#tuples) — `SELECT COUNT(*) FROM T` can answer from dictionary
 - bytes per attribute $A_j$
-- $val(A_j)$ = #distinct values
+- $val(A_j)$ = \#distinct values
 - $min/max$ per attribute — `<,>` queries may answer from dictionary
 - Periodically refreshed via `UPDATE STATISTICS`.
 
@@ -275,15 +288,18 @@ Selectivity = probability random tuple satisfies predicate.
 
 If $val(A)=N$ and uniform distribution, selectivity of $A=k$ is $1/N$.
 
-Example: $val(City)=200$ → $1/200 = 0.5\%$; 18K students → ~90 per city. If no distribution info → assume uniform!
+_Example: $val(City)=200$ → $1/200 = 0.5\%$; 18K students → ~90 per city. If no distribution info → assume uniform!_
 
-Operations: Selection, Projection, Sort, Join, Grouping. Access methods: Sequential, Hash, Tree.
+# 12. Optimizations
 
-# 12. Costs of Access Modes
+- Operations: Selection, Projection, Sort, Join, Grouping. 
+- Access methods: Sequential, Hash, Tree.
 
 ## Sequential Scan
 
-Sequential access to all tuples, while doing projection/selection. Example heap STUDENT ordered by ID:
+Sequential access to all tuples, while doing projection/selection.
+
+Example heap STUDENT ordered by ID:
 - `WHERE City='Milan'` → 1.7K I/O (full scan, City not ordering key)
 - `WHERE ID<500` → $\le 1.7K$ (can stop when ID=500)
 
@@ -302,7 +318,7 @@ Hash supports **equality** only. Tree supports `WHERE`/`JOIN` + sorting.
 - 1 (+overflow) for index + 1 for data block = 2–2.3 I/O
 
 **Secondary hash non-unique** `WHERE LastName='Rossi'`:
-- 1 (+0.3) for index + #tuples accesses. With $val=75K$, 150K tuples → avg 2 pointers/key → $1.3+2 = 3.3$ I/O. Cannot assume Rossis in same primary block.
+- 1 (+0.3) for index + $\#$tuples accesses. With $val=75K$, 150K tuples → avg 2 pointers/key → $1.3+2 = 3.3$ I/O. Cannot assume Rossis in same primary block.
 
 **Primary B+ unique** `WHERE ID=54` (full tuples in leaves, 4 levels: 3 intermediate + leaf):
 - 4 I/O
@@ -374,7 +390,27 @@ Hash vs B+ lesson (Publications 1M tuples, 100K blocks, 10/block, primary hash o
 
 Example `STUDENT JOIN EXAM ON ID=SID WHERE City='Milan' AND Grade='30'` ($val(City)=150$, $val(Grade)=17$): compare scan STUDENT + lookup EXAM vs scan EXAM + lookup STUDENT using selectivities.
 
-# 14. What Optimizer Really Does — Oracle Example
+# 14. What Optimizer Really Does
+
+ An optimization problem, whose decisions are: 
+ - The data access operations to execute (e.g., scan vs index access) 
+ - The order of operations (e.g., the join order) 
+ - The option to allocate to each operation (e.g., choosing the join method) 
+ - Parallelism and pipelining can improve performances
+
+Construct a decision tree, where each node corresponds to a choice and each leaf node corresponds to a specific execution plan.
+![[Physical Data-1792160815765.webp|367]]
+
+ Assign to each plan a cost: $$C_{total} = C_{I/O}*n_{I/O} + C_{CPU}*n_{CPU}$$ then choose the plan with the lowest cost.
+
+Two approach:
+ - **Compile and store**: the query is compiled once and executed many times (prepared statement).
+	 - The internal code is stored in the DBMS, together with an indication of the dependencies of the code on the particular versions of catalog used at compile time 
+	 - On relevant changes of the catalog, the compilation of the query is invalidated and repeated 
+ - **Compile and go**: immediate execution, no storage.
+	Even if not stored, the code may live for a while in the DBMS and be available for other executions
+
+_Example:_
 
 ```sql
 CUSTOMER(CustomerID PK, Name); -- 100K
@@ -384,7 +420,8 @@ FROM Customer c JOIN Orders o ON o.CustomerID = c.CustomerID
 WHERE c.CustomerID = 42;
 ```
 
-Without index on `Orders(CustomerID)`: scan ORDERS, keep 42, lookup CUSTOMER PK, join. With `CREATE INDEX idx_orders_customer ON Orders(CustomerID)`: find 42 in index, retrieve matching ORDERS, then CUSTOMER.
+Without index on `Orders(CustomerID)`: scan ORDERS, keep 42, lookup CUSTOMER PK, join.
+With `CREATE INDEX idx_orders_customer ON Orders(CustomerID)`: find 42 in index, retrieve matching ORDERS, then CUSTOMER.
 
 Two lessons:
 - **Query formulation matters:** `WHERE OrderDate >= DATE '2026-01-01' AND OrderDate < DATE '2027-01-01'` uses `idx_orders_date`; `WHERE EXTRACT(YEAR FROM OrderDate)=2026` does not.
@@ -392,4 +429,4 @@ Two lessons:
 
 ---
 Related: [[_Database2 MOC]]
-Source: [[02_Physical_Databases.pdf]], [[02a_Physical_Databases_Finalslides.pdf]], [[02b_ Physical_DB_Exercise0 - COMAI.pdf]], [[PhysDB-toComplete.pdf]]
+Source: [[02_Physical_Databases.pdf]], [[02a_Physical_Databases_Finalslides.pdf]], [[02b_ Physical_DB_Exercise0 - COMAI.pdf]], [[PhysDB-toComplete.pdf]

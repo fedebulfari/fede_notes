@@ -4,21 +4,12 @@
     "type": "split",
     "children": [
       {
-        "id": "8054af45eb00ba69",
+        "id": "9030c6f879bc1e81",
         "type": "tabs",
+        "dimension": 66.48291069459758,
         "children": [
           {
-            "id": "26cd771b14554112",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "Nuova scheda"
-            }
-          },
-          {
-            "id": "716264e4deab54ac",
+            "id": "03e09f8681777d28",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -31,15 +22,15 @@
               "title": "Physical Data"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       },
       {
-        "id": "49af2a95a7c82faa",
+        "id": "350916c77975a0bf",
         "type": "tabs",
+        "dimension": 33.51708930540242,
         "children": [
           {
-            "id": "4c8f0d1b43a309df",
+            "id": "2149b7ea694cc649",
             "type": "leaf",
             "state": {
               "type": "pdf",
@@ -84,7 +75,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tag:",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -112,7 +103,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "a208faef6a30291a",
@@ -254,54 +246,53 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "716264e4deab54ac",
+  "active": "03e09f8681777d28",
   "lastOpenFiles": [
-    "Database2/Physical Data.md",
-    "Sensor System/_Sensor System MOC.md",
-    "Formal Languages and Compilers/_Formal Languages and Compilers MOC.md",
-    "Image Analysis/_Image Analysis MOC.md",
-    "Database2/_Database2 MOC.md",
-    "Operational Research/Graphs.md",
-    "Operational Research/media/Graphs/media/Es. 1.md",
     "Database2/PDF/2 - Physical DB/02_Physical_Databases.pdf",
+    "Database2/Physical Data.md",
+    "Database2/media/Physical Data-1792160815765.webp",
+    "Database2/media/Physical Data-1792157268978.webp",
+    "Database2/media/Physical Data-1792156284721.webp",
+    "Database2/PDF/2 - Physical DB/PhysDB-toComplete.pdf",
+    "copilot/skills/copilot-fetch-x/SKILL.md",
+    "copilot/skills/copilot-fetch-x/fetch-x.ps1",
+    "copilot/skills/copilot-fetch-x/fetch-x.cmd",
+    "copilot/skills/copilot-fetch-x/fetch-x.sh",
+    "copilot/skills/copilot-fetch-x",
+    "copilot/skills/copilot-youtube-transcript/SKILL.md",
+    "copilot/skills/copilot-youtube-transcript/youtube-transcript.ps1",
+    "copilot/skills/copilot-youtube-transcript/youtube-transcript.cmd",
+    "copilot/skills/copilot-youtube-transcript/youtube-transcript.sh",
+    "copilot/skills/copilot-youtube-transcript",
+    "copilot/skills/obsidian-markdown/references/PROPERTIES.md",
+    "copilot/skills/obsidian-markdown/references/EMBEDS.md",
+    "copilot/skills/obsidian-markdown/references/CALLOUTS.md",
+    "copilot/skills/openartifacts-publish/themes/research-memo.md",
+    "copilot/skills/obsidian-bases/references/FUNCTIONS_REFERENCE.md",
+    "copilot/skills/json-canvas/references/EXAMPLES.md",
+    "copilot/skills/obsidian-bases/references/EXAMPLES.md",
+    "copilot/skills/obsidian-markdown/SKILL.md",
+    "copilot/skills/openartifacts-publish/SKILL.md",
+    "copilot/skills/json-canvas/SKILL.md",
+    "copilot/skills/obsidian-bases/SKILL.md",
+    "copilot/skills/obsidian-cli/SKILL.md",
+    "copilot/skills/miyo-search/SKILL.md",
+    "copilot/copilot-custom-prompts/Translate to Chinese.md",
+    "copilot/copilot-custom-prompts/Summarize.md",
+    "copilot/copilot-custom-prompts/Rewrite as tweet.md",
+    "copilot/copilot-custom-prompts/Simplify.md",
+    "copilot/copilot-custom-prompts/Remove URLs.md",
+    "copilot/copilot-custom-prompts/Rewrite as tweet thread.md",
+    "copilot/copilot-custom-prompts/Make longer.md",
+    "copilot/copilot-custom-prompts/Make shorter.md",
+    "copilot/copilot-custom-prompts/Emojify.md",
     "Database2/media/Physical Data-1792150200446.webp",
     "Database2/media/Physical Data-1792145181101.webp",
-    "Operational Research/Problem Optimization.md",
-    "Formal Languages and Compilers/Regular expressions and Languages.md",
-    "Formal Languages and Compilers/Context free Grammars.md",
-    "Formal Languages and Compilers/Basics.md",
-    "templates/template.md",
-    "Image Analysis/Planar Geometry.md",
-    "Image Analysis/Optical system.md",
-    "Image Analysis/Space Geometry.md",
-    "Sensor System/Image Sensors.md",
-    "Sensor System/Light Sensor.md",
     "Database2/media/Physical Data-1792144188500.webp",
     "Database2/media/Physical Data-1792144048944.webp",
-    "Sensor System/PDF/Theory/03 - Image sensors.pdf",
-    "Database2/Triggers.md",
-    "Senza nome.md",
-    "Sensor System/media/Drawing 2026-10-14 08.55.32.excalidraw.md",
-    "Sensor System/media/Drawing 2026-10-15 14.51.22.excalidraw.md",
-    "Sensor System/USART.md",
-    "Sensor System/PDF/Theory/02 - Light sensors.pdf",
     "Sensor System/media/Light Sensor-1792071267475.webp",
     "Sensor System/media/Light Sensor-1792071241517.webp",
     "Sensor System/media/Light Sensor-1792071214503.webp",
-    "Sensor System/media/Light Sensor-1792071180779.webp",
-    "Sensor System/media/Light Sensor-1792071126371.webp",
-    "Sensor System/media/Light Sensor-1792071106166.webp",
-    "Sensor System/Sensors.md",
-    "Sensor System/media/Drawing 2026-10-15 12.50.50.excalidraw.md",
-    "Sensor System/media/Drawing 2026-10-14 16.05.50.excalidraw.md",
-    "Sensor System/Senza nome.md",
-    "Excalidraw",
-    "Operational Research/PDF/chapter+2.pdf",
-    "Operational Research/PDF/Slides/shortest pathsnew.pdf",
-    "Operational Research/PDF/Slides/modelsnew.pdf",
-    "Operational Research/PDF/Slides/LPnew.pdf",
-    "Operational Research/PDF/Slides/ILPnew.pdf",
-    "Operational Research/PDF/Slides/heuristicsnewnew.pdf",
     "Senza nome.canvas"
   ]
 }
