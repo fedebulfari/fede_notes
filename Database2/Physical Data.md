@@ -3,12 +3,12 @@ date: 13-10-2026
 subject: Database2
 description: Physical storage (blocks, pages, heap, hash, B/B+ indexes) and I/O cost model for sequential, point and interval lookups, joins and optimizer decisions.
 ---
-
+ 
 > [!abstract] Goal
 > How are tables stored at the physical level? How can they be accessed efficiently? How does storage impact query performance?
 > Cost model in I/O-bound applications: **cost of a query = number of blocks moved** between secondary and main memory.
 
-## 1. DBMS Architecture for Query Management
+# 1. DBMS Architecture for Query Management
 
 - **Secondary Store Manager / Buffer Manager:** manages main memory, `fix` / `unfix` pages, guarantees reliability.
 - **Access Method Manager:** transforms query requests into `read` / `write` requests.
@@ -16,7 +16,7 @@ description: Physical storage (blocks, pages, heap, hash, B/B+ indexes) and I/O 
 - **Transaction / Reliability / Concurrency Control:** `begin, commit, abort`, lock tables.
 ![[Physical Data-1792144048944.webp|459]]
 
-## 2. Main vs Secondary Memory
+# 2. Main vs Secondary Memory
 
 Databases live (mainly) on **secondary memory** for:
 - **size** — too large for RAM
@@ -26,15 +26,14 @@ Data can be used only after transfer to main memory.
 
 - **Block:** unit of storage in secondary memory, usually fixed length, order of few KBytes.
 - **Page:** unit of storage in main memory. Assumption in this course: `size(page) = size(block)`. In real systems a page may contain several blocks.
+![[Physical Data-1792144188500.webp|220]]
 
 > [!info] **I/O operation:** 
 > moving a block <-> page.
 
-![[Physical Data-1792144188500.webp]]
+DBMS bypasses OS File System for data placement: uses FS only for `create/delete files, read/write blocks`, but directly manages file organization, record distribution in blocks, internal block structure, physical allocation on disk (sequential reads, write timing, reliability).
 
-DBMS bypasses OS FS for data placement: uses FS only for `create/delete files, read/write blocks`, but directly manages file organization, record distribution in blocks, internal block structure, physical allocation on disk (sequential reads, write timing, reliability).
-
-### Access Time
+## Access Time
 
 Mechanical HDD (Winchester: disks, spindle, arm, heads, tracks, sectors, blocks):
 - **seek time:** 8-12 ms — head on correct track
@@ -43,18 +42,27 @@ Mechanical HDD (Winchester: disks, spindle, arm, heads, tracks, sectors, blocks)
 
 SSD: fast read/write, more expensive. For very large datasets cheap storage is the only viable option.
 
-> [!warning] Key figure
-> Secondary memory access is **~4 orders of magnitude slower** than main memory. In I/O-bound apps cost depends exclusively on number of secondary accesses.
+![[Physical Data-1792145181101.webp|297]]
 
-## 3. Block Organization
+> [!warning] Key figure
+> Secondary memory access is **~4 orders of magnitude slower** than main memory. In I/O-bound apps cost depends exclusively on number of secondary accesses.$$\text{Cost of a query}= \text{\#blocks}$$
+
+# 3. Block Organization
+
+We define:
+- Blocks: physical components of files
+	Fixed size
+- Tuples: logical components of tables
+	Variable size
 
 Block contains:
 - **useful part** with data (tuples)
 - **page dictionary / offset table** with pointers (offsets from start) to each elementary item — dictionary and data grow as stacks in opposite directions
 - **block header/trailer** (FS control) + **page header/trailer** (access method control)
 - **checksum** to detect corruption
+![[Physical Data-1792150200446.webp|437]]
 
-### Block Factor
+## Block Factor
 
 - $ST$ = average tuple/record size (variable if `VARCHAR`, nullable)
 - $SB$ = block size (fixed, depends on FS/format)
@@ -69,13 +77,13 @@ Running example used later:
 - `STUDENT(ID, Name, LastName, Email, City, Birthdate, Sex)` — $t = 150K$, tuple $= 95$ bytes $(4+25+25+25+12+3+1)$, $B = 8192/95 = 87$, $b = 150000/87 \approx 1.7K$ blocks
 - `EXAM(SID, CourseID, Date, Grade)` — $t = 1.8M$, tuple $= 17$ bytes $(4+4+3+4)$, $B = 482$, $b \approx 5.3K$ blocks
 
-### Buffer Manager Primitives (In Main Memory, on Pages)
+## Buffer Manager Primitives (In Main Memory, on Pages)
 
-- **Insert / update:** may require page reorganization or new page; `VARCHAR` update can force reorganization.
+- **Insert / update:** may require page reorganization or new page; `VARCHAR` and other fields update can force reorganization.
 - **Delete:** often just mark as invalid + async reorganization later.
 - **Access to field:** offset w.r.t. tuple start + field length (from page dictionary).
 
-## 4. Physical Access Structures
+# 4. Physical Access Structures
 
 **Access method:** software module providing store/retrieve primitives for a physical structure, with its own data structures.
 
@@ -90,14 +98,14 @@ Three types:
 | **Hash-based** | In some DBMS (e.g. Oracle hash clusters, DB2 organize-by-hash) | Frequent |
 | **Tree-based (B/B+)** | Obsolete / rare | Typical |
 
-## 5. Sequential Structures (Primary)
+# 5. Sequential Structures (Primary)
 
 Sequential arrangement, next element/block supported. Blocks contiguous or sparse.
 
 - **Entry-sequenced (heap):** order = entry order.
 - **Sequentially-ordered:** ordered by key (one or more attributes), e.g. sorted by `ID` or `Lastname`.
 
-### Heap
+## Heap
 
 Effective for insertion (no shifting), space occupancy, full sequential `SELECT * FROM T` — especially if blocks contiguous (reduced seek+latency).
 
@@ -107,7 +115,7 @@ Not optimal for:
 
 Example: `SELECT * FROM Student WHERE Name='John'` on heap → cost = #blocks of whole table.
 
-### Sequentially-ordered
+## Sequentially-ordered
 
 Tuples sorted by key. Effective for range queries on key, `ORDER BY` / `GROUP BY` on key.
 
@@ -128,7 +136,7 @@ Example: `SELECT * FROM Student WHERE ID BETWEEN 135 AND 380` → cost = #read b
 
 > Most common solution is heap **paired with secondary indexes**.
 
-## 6. Hash-Based Structures (Primary)
+# 6. Hash-Based Structures (Primary)
 
 Efficient associative access on key value.
 
@@ -142,7 +150,7 @@ Example `h(K)=K mod 10`:
 - `WHERE ID='522'`, $h=2$, no overflow → 1 I/O
 - `WHERE ID='981'`, $h=1$, with overflow → 1 + avg overflow chain length, e.g. 2 I/O
 
-### Overflow Chains
+## Overflow Chains
 
 - $B$ = tuples per block (1 bucket = 1 block hypothesis)
 - $T$ = #tuples
@@ -160,19 +168,19 @@ Avg accesses to overflow list (from statistics):
 
 Example: $B=3$, load 70% → cost $= 1 + 0.286$ I/O.
 
-## 7. Indexes — Basic Concepts (Secondary)
+# 7. Indexes — Basic Concepts (Secondary)
 
 Index = like book analytic index: pairs `[search key, pointer to block]`. Smaller than data, can stay in memory. Note pointers point to **blocks** — whole block retrieved to read tuple.
 
 > [!warning] Indexes are not free
 > After every `INSERT/UPDATE/DELETE` DBMS must also update indexes. They speed reads but slow writes.
 
-### Dense vs Sparse
+## Dense vs Sparse
 
 - **Dense:** entry for each search-key value. Good performance: index search + tuple access. Usable also on heap.
 - **Sparse:** entries only for some values. Less space, slower (index search + block scan). Requires sequentially ordered file with $SK = OK$ (ordering key). Good trade-off: one entry per block.
 
-### Primary vs Secondary vs Clustering
+## Primary vs Secondary vs Clustering
 
 - **Primary index:** on sequentially ordered file, $SK = OK$, $SK$ unique. Only one per table. Dense or sparse. Usually on primary key, but not necessarily.
 - **Secondary index:** $SK \ne OK$. Multiple per table, on different keys. Necessarily **dense**, because contiguous $SK$ values can be scattered across blocks.
@@ -192,14 +200,14 @@ Terminology varies by system — check meaning of primary/secondary/clustering/c
 
 Pros: small, support point/range/sorted scans. Hash indexes better for point queries (see below).
 
-## 8. Hash-Based Indexes (Secondary)
+# 8. Hash-Based Indexes (Secondary)
 
 Same shape as primary hash, but buckets contain **key + pointer**, not full tuple. Supports equality predicates on search key.
 
 Example: `SELECT * FROM Student WHERE ID='342'`, $h(342)=2$:
 - cost = 1 to access hash index (without overflow, +0.3 with) + 1 to reach full tuple via pointer.
 
-## 9. Tree-Based Indexes — B and B+ Trees
+# 9. Tree-Based Indexes — B and B+ Trees
 
 Most used in RDBMS for secondary indexes. SQL indexes are B+ trees. Support equality, intervals, `ORDER BY`, `GROUP BY`, `UNION`, `DISTINCT` (sorted).
 
@@ -216,7 +224,7 @@ Leaf chain ordered by key → exact match + interval queries efficient.
 
 B-tree node: for each $K_i$ one pointer to sub-tree $[K_i, K_{i+1})$ + pointer(s) to block(s) with $K_i$ tuples.
 
-## 10. SQL Indexes
+# 10. SQL Indexes
 
 ```sql
 CREATE [UNIQUE] INDEX IndexName ON TableName(AttributeList);
@@ -235,7 +243,7 @@ Guidelines for choosing:
 
 > Add secondary structures progressively, checking optimizer actually uses them (`EXPLAIN PLAN`).
 
-## 11. Query Optimization
+# 11. Query Optimization
 
 Same query can be executed many ways. Optimizer:
 1. Lexical, syntactic, semantic analysis
@@ -254,7 +262,7 @@ WHERE Student.ID = Exam.SID AND Exam.CourseID = 'DB2';
 
 With stats: 18K students, ~10 exams each (180K?/1.8M), only 200 take DB2 — pushing selection down reduces intermediate from billions to hundreds.
 
-### Profiles and Selectivity
+## Profiles and Selectivity
 
 Data dictionary stores per table $T$:
 - cardinality (#tuples) — `SELECT COUNT(*) FROM T` can answer from dictionary
@@ -271,9 +279,9 @@ Example: $val(City)=200$ → $1/200 = 0.5\%$; 18K students → ~90 per city. If 
 
 Operations: Selection, Projection, Sort, Join, Grouping. Access methods: Sequential, Hash, Tree.
 
-## 12. Costs of Access Modes
+# 12. Costs of Access Modes
 
-### Sequential Scan
+## Sequential Scan
 
 Sequential access to all tuples, while doing projection/selection. Example heap STUDENT ordered by ID:
 - `WHERE City='Milan'` → 1.7K I/O (full scan, City not ordering key)
@@ -281,7 +289,7 @@ Sequential access to all tuples, while doing projection/selection. Example heap 
 
 Hash supports **equality** only. Tree supports `WHERE`/`JOIN` + sorting.
 
-### Equality Lookup $A_i = v$
+## Equality Lookup $A_i = v$
 
 - Sequential primary: no lookup (full scan); ordered may reduce.
 - Hash/Tree: supported if $A_i$ is search key. Cost depends on primary/secondary + unique/non-unique.
@@ -317,11 +325,11 @@ Hash supports **equality** only. Tree supports `WHERE`/`JOIN` + sorting.
 **Secondary B+ on EXAM** `WHERE Date='10/6/2019'` ($val=500$, 1.8M tuples/pointers, 2K leaves, 5.3K data blocks):
 - 3.6K tuples/date, 900 ptrs/leaf → 4 leaves → cost $= 3 + 4 + 3.6K \approx 3.6K$ I/O (read 4 leaves, follow 3600 pointers; usually date not leftmost → see non-unique handling)
 
-### Non-unique B+ Details
+## Non-unique B+ Details
 
 Same key → multiple pointers, possibly multiple leaves. Keys per level satisfy $K_1 \le K_2 \le … \le K_m$ even in intermediate nodes. Search extended: if $K$ is first key in leaf, also visit preceding sibling (double-linked list); continue forward until $>K$.
 
-### Interval Lookup $v_1 \le A_i \le v_2$ ($<v$, $>v$ = Edge to first/last)
+## Interval Lookup $v_1 \le A_i \le v_2$ ($<v$, $>v$ = Edge to first/last)
 
 - Sequential primary: full scan (ordered may reduce).
 - Hash (primary/secondary): not supported → full scan.
@@ -333,7 +341,7 @@ Example primary B+ `WHERE ID BETWEEN 6 AND 19`:
 - `SELECT *` → 2 intermediate + 3 leaves + 3 data = 8 I/O
 - `SELECT ID` (index-only, dense) → 2 + 3 = 5 I/O
 
-### Conjunction / Disjunction
+## Conjunction / Disjunction
 
 ```sql
 -- conjunction: use most selective supported predicate for access, rest in memory
@@ -342,7 +350,7 @@ SELECT * FROM STUDENT WHERE City='Milan' AND Birthdate='12/10/2000';
 SELECT * FROM STUDENT WHERE City='Milan' OR Birthdate='12/10/2000';
 ```
 
-### Multi-attribute Indexes (From Exercise)
+## Multi-attribute Indexes (From Exercise)
 
 `T(Name,Surname,City,Pathology,BloodType)`, 10M tuples, $val$ Name 1000, Surname 2000, City 1000, Pathology 100, BloodType 10. Indexes left-to-right access keys:
 - `Idx1(City,Name,Surname)`, `Idx2(Pathology,Name,BloodType)`, `Idx3(Pathology,Surname,City)`
@@ -357,7 +365,7 @@ Hash vs B+ lesson (Publications 1M tuples, 100K blocks, 10/block, primary hash o
 - `(PubCode='A' OR PubCode='B') AND ISBN='X'` via hash: 2 accesses ×1.11 = 2.22 I/O, filter ISBN in memory — best.
 - Via secondary B+: ≥3 to leaf +1 data = ≥4 I/O. Hash unbeatable for random point access; B+ wins for intervals.
 
-## 13. Joins (Cost Formulas)
+# 13. Joins (Cost Formulas)
 
 - **Nested loop:** compare each block of $T_{out}$ with all blocks of $T_{in}$. Cost $= B_{out} + B_{out} \times B_{in}$. If small enough for buffer: $B_{out}+B_{in}$. Optimize case by case (choose smaller as outer).
 - **Index scan + lookup:** use indexed $T_{in}$ to fetch only joining tuples without full check. Cost $= B_{out} + T_{out} \times (\text{cost of one index scan on } T_{in})$.
@@ -366,7 +374,7 @@ Hash vs B+ lesson (Publications 1M tuples, 100K blocks, 10/block, primary hash o
 
 Example `STUDENT JOIN EXAM ON ID=SID WHERE City='Milan' AND Grade='30'` ($val(City)=150$, $val(Grade)=17$): compare scan STUDENT + lookup EXAM vs scan EXAM + lookup STUDENT using selectivities.
 
-## 14. What Optimizer Really Does — Oracle Example
+# 14. What Optimizer Really Does — Oracle Example
 
 ```sql
 CUSTOMER(CustomerID PK, Name); -- 100K

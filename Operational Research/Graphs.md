@@ -95,6 +95,8 @@ A **cycle** is a closed path where the only repeated node is the first one — i
 - **Spanning tree $T$:** tree containing all nodes of $G$.
 - **Matching:** partial graph where no two arcs share a node. **Perfect matching** if every node is incident to one arc.
 
+![[Es. 1]]
+
 ## Minimum Spanning Tree
 
 Given weighted undirected $G=(N,A)$ with weights $w_e > 0$, find spanning tree of minimum total weight.
