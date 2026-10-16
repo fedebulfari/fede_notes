@@ -21,10 +21,10 @@ The result is an **optimization problem**: find values of the variables that opt
 > 3. Build the model (abstraction)
 > 4. Determine solution(s) via algorithms / solvers
 > 5. Interpret results on the real case — with feedback loops.
->
+> 
 > A model is only an abstraction: validate that it captures the aspects relevant to the decision.
 
-# 2. General form
+# 2. General Form
 
 $$\min_{x} \ f(x) \quad \text{s.t.} \quad g_i(x) \leq 0,\ i=1,\dots,m; \quad h_j(x)=0,\ j=1,\dots,p; \quad x \in X$$
 
@@ -63,7 +63,7 @@ Typical families:
 	- Linking continuous to logical with big-$M$: $x \leq M y$, $y \in \{0,1\}$, then $y_{\text{pasta}}+y_{\text{rice}} \leq 1$.
 	- Implication $x_1 \Rightarrow x_2$: $x_1 \leq x_2$; $x_1 \Rightarrow \lnot x_2$: $x_1+x_2 \leq 1$.
 	- Generalized: if at least $m$ of $x_1,\dots,x_n$ are $1$ then $y=1$:$$y \geq \frac{\sum x_i - m + 1}{\,n-m+1\,}$$
-	  - *Satisfiability*: clause $P_1 \lor \lnot P_2 \lor P_3 \lor \lnot P_4$ becomes $x_1+(1-x_2)+x_3+(1-x_4) \geq 1$, i.e. $ax \geq 1-n(a)$. CNF $A$ is SAT iff the corresponding 0–1 system $Ax \geq b$ is feasible; MAX-SAT maximizes satisfied clauses.
+		- *Satisfiability*: clause $P_1 \lor \lnot P_2 \lor P_3 \lor \lnot P_4$ becomes $x_1+(1-x_2)+x_3+(1-x_4) \geq 1$, i.e. $ax \geq 1-n(a)$. CNF $A$ is SAT iff the corresponding 0–1 system $Ax \geq b$ is feasible; MAX-SAT maximizes satisfied clauses.
 
 ## 4.1 Transformations
 
@@ -73,7 +73,7 @@ $s_i$ is slack (unused resource) or surplus (excess over requirement).
 
 $$\sum_{i=1}^n a_i x_i \leq b \to \sum_{i=1}^n -a_i x_i \geq -b$$
 
-# 5. Objective function
+# 5. Objective Function
 
 - **Linear**: $\max \sum c_j x_j = -\min \sum (-c_j)x_j$ — only the optimal *value* changes sign, not the optimizer.
 - **Bottleneck**: $\min \max_{i,j} p_{ij}x_{ij}$. Improving one aspect make less optimized an other
@@ -83,7 +83,6 @@ $$\sum_{i=1}^n a_i x_i \leq b \to \sum_{i=1}^n -a_i x_i \geq -b$$
 ![[Es. 2]]
 
 ![[Es. 3]]
-
 
 ---
 Related: [[_Operational Research MOC]]

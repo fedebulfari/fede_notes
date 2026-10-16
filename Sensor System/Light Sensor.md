@@ -3,6 +3,7 @@ date: 14-10-2026
 subject: Sensor System
 description:
 ---
+	
 
 # 1. Photodiode
 
@@ -137,6 +138,7 @@ Application circuit with Automatic Gain Control. Carrier frequency = 38 kHz.
 - Same sensitivity for a light beam with 80° angle is obtained at 0.35 relative distance (relative transmission distance vs relative spectral sensitivity)
 ![[Light Sensor-1792071214503.webp|464]] 
 ![[Light Sensor-1792071241517.webp|271x235]] ![[Light Sensor-1792071267475.webp|270x235]]
+
 # 2. Avalanche Photodiode (APD)
 
 ![[Light Sensor-1792071106166.webp|257]]
@@ -150,6 +152,7 @@ Basic structure:
 - Multiplication region = high electric field to provide internal photo-current gain by impact ionization
 
 # 3. Single-Photon Avalanche-Diode (SPAD)
+
 ![[Light Sensor-1792071126371.webp|287]]
 - P-N junction
 - Bias: well ABOVE breakdown ($V_a = V_{BD}+V_{EX}$)
@@ -183,6 +186,5 @@ Typical application (BJT switch driving LED):
 - WITH LIGHT: Low LDR, $V_{BE} = 0.7$ → BJT on → LED on
 
 ---
-
 Related: [[_Sensor System MOC]]
 Source: [[02 - Light sensors.pdf]]

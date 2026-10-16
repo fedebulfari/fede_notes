@@ -234,7 +234,7 @@ Camera phones, webcams, machine vision (area + line scan), high-speed motion cap
 - **CMOS pros:** faster readout (converter per pixel), selectable active window, digital output, less off-chip electronics (amp, ADC, processing on-chip), less power → lower temperature
 - **Cost:** custom imager → CCD; large-scale economy → CMOS
 
-![[Image Sensors-1791964983553.webp|427]]![[Image Sensors-1791964995643.webp|432]]
+![[Image Sensors-1791964983553.webp|427]] ![[Image Sensors-1791964995643.webp|448x237]]
 
 ---
 Related: [[_Sensor System MOC]]

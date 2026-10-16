@@ -14,10 +14,7 @@ description: Physical storage (blocks, pages, heap, hash, B/B+ indexes) and I/O 
 - **Access Method Manager:** transforms query requests into `read` / `write` requests.
 - **Query Manager:** receives `select, insert, delete, update`.
 - **Transaction / Reliability / Concurrency Control:** `begin, commit, abort`, lock tables.
-
-```
-Query -> Query Manager -> Access Methods -> Buffer (pages) <-> Secondary memory (blocks)
-```
+![[Physical Data-1792144048944.webp|459]]
 
 ## 2. Main vs Secondary Memory
 
@@ -29,11 +26,15 @@ Data can be used only after transfer to main memory.
 
 - **Block:** unit of storage in secondary memory, usually fixed length, order of few KBytes.
 - **Page:** unit of storage in main memory. Assumption in this course: `size(page) = size(block)`. In real systems a page may contain several blocks.
-- **I/O operation:** moving a block <-> page.
+
+> [!info] **I/O operation:** 
+> moving a block <-> page.
+
+![[Physical Data-1792144188500.webp]]
 
 DBMS bypasses OS FS for data placement: uses FS only for `create/delete files, read/write blocks`, but directly manages file organization, record distribution in blocks, internal block structure, physical allocation on disk (sequential reads, write timing, reliability).
 
-### Access time
+### Access Time
 
 Mechanical HDD (Winchester: disks, spindle, arm, heads, tracks, sectors, blocks):
 - **seek time:** 8-12 ms — head on correct track
@@ -68,7 +69,7 @@ Running example used later:
 - `STUDENT(ID, Name, LastName, Email, City, Birthdate, Sex)` — $t = 150K$, tuple $= 95$ bytes $(4+25+25+25+12+3+1)$, $B = 8192/95 = 87$, $b = 150000/87 \approx 1.7K$ blocks
 - `EXAM(SID, CourseID, Date, Grade)` — $t = 1.8M$, tuple $= 17$ bytes $(4+4+3+4)$, $B = 482$, $b \approx 5.3K$ blocks
 
-### Buffer manager primitives (in main memory, on pages)
+### Buffer Manager Primitives (In Main Memory, on Pages)
 
 - **Insert / update:** may require page reorganization or new page; `VARCHAR` update can force reorganization.
 - **Delete:** often just mark as invalid + async reorganization later.
@@ -101,7 +102,7 @@ Sequential arrangement, next element/block supported. Blocks contiguous or spars
 Effective for insertion (no shifting), space occupancy, full sequential `SELECT * FROM T` — especially if blocks contiguous (reduced seek+latency).
 
 Not optimal for:
-- point search `WHERE ...` — may scan whole table (but usable with secondary indexes)
+- point search `WHERE …` — may scan whole table (but usable with secondary indexes)
 - updates growing tuple size — shift or delete-old + insert-new
 
 Example: `SELECT * FROM Student WHERE Name='John'` on heap → cost = #blocks of whole table.
@@ -141,7 +142,7 @@ Example `h(K)=K mod 10`:
 - `WHERE ID='522'`, $h=2$, no overflow → 1 I/O
 - `WHERE ID='981'`, $h=1$, with overflow → 1 + avg overflow chain length, e.g. 2 I/O
 
-### Overflow chains
+### Overflow Chains
 
 - $B$ = tuples per block (1 bucket = 1 block hypothesis)
 - $T$ = #tuples
@@ -243,6 +244,7 @@ Same query can be executed many ways. Optimizer:
 4. Cost-based optimization (statistics + operator implementations) + code generation. May rewrite joins as nested queries.
 
 Example:
+
 ```sql
 SELECT LastName, FirstName FROM Student, Exam
 WHERE Student.ID = Exam.SID AND Exam.CourseID = 'DB2';
@@ -271,14 +273,15 @@ Operations: Selection, Projection, Sort, Join, Grouping. Access methods: Sequent
 
 ## 12. Costs of Access Modes
 
-### Sequential scan
+### Sequential Scan
+
 Sequential access to all tuples, while doing projection/selection. Example heap STUDENT ordered by ID:
 - `WHERE City='Milan'` → 1.7K I/O (full scan, City not ordering key)
 - `WHERE ID<500` → $\le 1.7K$ (can stop when ID=500)
 
 Hash supports **equality** only. Tree supports `WHERE`/`JOIN` + sorting.
 
-### Equality lookup $A_i = v$
+### Equality Lookup $A_i = v$
 
 - Sequential primary: no lookup (full scan); ordered may reduce.
 - Hash/Tree: supported if $A_i$ is search key. Cost depends on primary/secondary + unique/non-unique.
@@ -314,16 +317,17 @@ Hash supports **equality** only. Tree supports `WHERE`/`JOIN` + sorting.
 **Secondary B+ on EXAM** `WHERE Date='10/6/2019'` ($val=500$, 1.8M tuples/pointers, 2K leaves, 5.3K data blocks):
 - 3.6K tuples/date, 900 ptrs/leaf → 4 leaves → cost $= 3 + 4 + 3.6K \approx 3.6K$ I/O (read 4 leaves, follow 3600 pointers; usually date not leftmost → see non-unique handling)
 
-### Non-unique B+ details
-Same key → multiple pointers, possibly multiple leaves. Keys per level satisfy $K_1 \le K_2 \le ... \le K_m$ even in intermediate nodes. Search extended: if $K$ is first key in leaf, also visit preceding sibling (double-linked list); continue forward until $>K$.
+### Non-unique B+ Details
 
-### Interval lookup $v_1 \le A_i \le v_2$ ($<v$, $>v$ = edge to first/last)
+Same key → multiple pointers, possibly multiple leaves. Keys per level satisfy $K_1 \le K_2 \le … \le K_m$ even in intermediate nodes. Search extended: if $K$ is first key in leaf, also visit preceding sibling (double-linked list); continue forward until $>K$.
+
+### Interval Lookup $v_1 \le A_i \le v_2$ ($<v$, $>v$ = Edge to first/last)
 
 - Sequential primary: full scan (ordered may reduce).
 - Hash (primary/secondary): not supported → full scan.
 - Tree (primary/secondary) if $A_i$ search key:
-  - **Primary:** 1 per intermediate level to first leaf with $v_1$ + chain until $v_2$.
-  - **Secondary:** same + 1 data access per pointer in interval.
+	- **Primary:** 1 per intermediate level to first leaf with $v_1$ + chain until $v_2$.
+	- **Secondary:** same + 1 data access per pointer in interval.
 
 Example primary B+ `WHERE ID BETWEEN 6 AND 19`:
 - `SELECT *` → 2 intermediate + 3 leaves + 3 data = 8 I/O
@@ -338,7 +342,7 @@ SELECT * FROM STUDENT WHERE City='Milan' AND Birthdate='12/10/2000';
 SELECT * FROM STUDENT WHERE City='Milan' OR Birthdate='12/10/2000';
 ```
 
-### Multi-attribute indexes (from exercise)
+### Multi-attribute Indexes (From Exercise)
 
 `T(Name,Surname,City,Pathology,BloodType)`, 10M tuples, $val$ Name 1000, Surname 2000, City 1000, Pathology 100, BloodType 10. Indexes left-to-right access keys:
 - `Idx1(City,Name,Surname)`, `Idx2(Pathology,Name,BloodType)`, `Idx3(Pathology,Surname,City)`

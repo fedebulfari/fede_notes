@@ -6,6 +6,7 @@
       {
         "id": "8054af45eb00ba69",
         "type": "tabs",
+        "dimension": 61.224489795918366,
         "children": [
           {
             "id": "716264e4deab54ac",
@@ -13,28 +14,31 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Sensor System/Image Sensors.md",
+                "file": "Operational Research/Problem Optimization.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Image Sensors"
+              "title": "Problem Optimization"
             }
           }
         ]
       },
       {
-        "id": "d8ee6e3ceca9858e",
+        "id": "49af2a95a7c82faa",
         "type": "tabs",
+        "dimension": 38.775510204081634,
         "children": [
           {
-            "id": "9f94b16c5213a4d5",
+            "id": "4c8f0d1b43a309df",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "Nuova scheda"
+              "type": "pdf",
+              "state": {
+                "file": "Database2/PDF/2 - Physical DB/02_Physical_Databases.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "02_Physical_Databases"
             }
           }
         ]
@@ -115,6 +119,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Sensor System/Light Sensor.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -220,7 +225,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 272.2955322265625
+    "width": 272.2955322265625,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -239,13 +245,27 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "962e634c0bc6f7cd",
+  "active": "716264e4deab54ac",
   "lastOpenFiles": [
+    "Operational Research/Graphs.md",
+    "Formal Languages and Compilers/Regular expressions and Languages.md",
+    "Formal Languages and Compilers/Context free Grammars.md",
+    "Formal Languages and Compilers/Basics.md",
+    "templates/template.md",
+    "Image Analysis/Planar Geometry.md",
+    "Image Analysis/Optical system.md",
+    "Image Analysis/Space Geometry.md",
     "Sensor System/Image Sensors.md",
+    "Sensor System/Light Sensor.md",
+    "Database2/Physical Data.md",
+    "Database2/media/Physical Data-1792144188500.webp",
+    "Database2/media/Physical Data-1792144048944.webp",
+    "Database2/PDF/2 - Physical DB/02_Physical_Databases.pdf",
+    "Sensor System/PDF/Theory/03 - Image sensors.pdf",
+    "Database2/Triggers.md",
     "Senza nome.md",
     "Sensor System/media/Drawing 2026-10-14 08.55.32.excalidraw.md",
     "Sensor System/media/Drawing 2026-10-15 14.51.22.excalidraw.md",
-    "Sensor System/Light Sensor.md",
     "Sensor System/USART.md",
     "Sensor System/PDF/Theory/02 - Light sensors.pdf",
     "Sensor System/media/Light Sensor-1792071267475.webp",
@@ -257,36 +277,22 @@
     "Sensor System/media/Light Sensor-1792070072517.webp",
     "Sensor System/Sensors.md",
     "Sensor System/media/Light Sensor-1792068259522.webp",
-    "Sensor System/media/Light Sensor-1792068237487.webp",
     "Sensor System/media/Drawing 2026-10-15 12.50.50.excalidraw.md",
     "Sensor System/_Sensor System MOC.md",
-    "Sensor System/media/Light Sensor-1791988073736.webp",
     "Sensor System/media/Drawing 2026-10-14 16.05.50.excalidraw.md",
     "Sensor System/Senza nome.md",
     "Excalidraw",
-    "Operational Research/Graphs.md",
     "Operational Research/PDF/chapter+2.pdf",
     "Operational Research/PDF/Slides/shortest pathsnew.pdf",
     "Operational Research/PDF/Slides/modelsnew.pdf",
     "Operational Research/PDF/Slides/LPnew.pdf",
     "Operational Research/PDF/Slides/ILPnew.pdf",
     "Operational Research/PDF/Slides/heuristicsnewnew.pdf",
-    "Operational Research/PDF/Slides/graphsnew2 (1).pdf",
-    "Operational Research/PDF/Slides/froinfointro2026.pdf",
     "Sensor System/media/Drawing 2026-10-14 09.31.09.excalidraw.md",
     "Sensor System/ciao.md",
-    "Database2/Physical Data.md",
-    "Database2/Triggers.md",
-    "templates/template.md",
-    "Image Analysis/Planar Geometry.md",
-    "Image Analysis/Optical system.md",
-    "Image Analysis/Space Geometry.md",
     "Database2/_Database2 MOC.md",
     "Software Engenering 2/Senza nome.md",
     "Operational Research/Problem Optimization.md",
-    "Image Analysis/Camera Geometry.md",
-    "Image Analysis/Derivatives Estimation.md",
-    "Image Analysis/Non-linear Filters.md",
     "Senza nome.canvas"
   ]
 }

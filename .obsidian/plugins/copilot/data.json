@@ -318,7 +318,7 @@
   "inlineEditCommands": [],
   "projectList": [],
   "lastDismissedVersion": null,
-  "lastShownStartupVersion": "4.0.14",
+  "lastShownStartupVersion": "4.0.15",
   "passMarkdownImages": true,
   "enableAutonomousAgent": true,
   "enableCustomPromptTemplating": true,
@@ -476,15 +476,6 @@
     {
       "providerId": "25a25676-0068-4254-90f3-94ff7de3a49b",
       "info": {
-        "id": "opencode/step-5-preview-free",
-        "displayName": "opencode/Step 5 Preview Free"
-      },
-      "configuredModelId": "66b34878-3529-4e5d-9143-328a7428dc64",
-      "configuredAt": 1791470137965
-    },
-    {
-      "providerId": "25a25676-0068-4254-90f3-94ff7de3a49b",
-      "info": {
         "id": "opencode/cat-jam-free",
         "displayName": "opencode/Cat Jam Free"
       },
@@ -499,6 +490,33 @@
       },
       "configuredModelId": "5d15005e-a9b6-4fe4-b0e5-d33d0de2d879",
       "configuredAt": 1792059152334
+    },
+    {
+      "providerId": "25a25676-0068-4254-90f3-94ff7de3a49b",
+      "info": {
+        "id": "opencode/nemotron-3.5-super-vl-free",
+        "displayName": "opencode/Nemotron 3.5 Super VL Free"
+      },
+      "configuredModelId": "c868d229-0f9e-4c17-905a-da405327d8e5",
+      "configuredAt": 1792089865294
+    },
+    {
+      "providerId": "25a25676-0068-4254-90f3-94ff7de3a49b",
+      "info": {
+        "id": "opencode/glm-5.3-flash-free",
+        "displayName": "opencode/GLM-5.3-Flash Free"
+      },
+      "configuredModelId": "bfb0665a-100a-4a76-b716-bcc606aae3ff",
+      "configuredAt": 1792143552733
+    },
+    {
+      "providerId": "25a25676-0068-4254-90f3-94ff7de3a49b",
+      "info": {
+        "id": "opencode/ll-alpha-free",
+        "displayName": "opencode/LL Alpha Free"
+      },
+      "configuredModelId": "7a2799c8-5521-41af-a0dc-d2e84951978c",
+      "configuredAt": 1792143552734
     }
   ],
   "backends": {

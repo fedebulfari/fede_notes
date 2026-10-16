@@ -6,28 +6,29 @@ subject: Formal Languages and Compilers
 # 1. Definitions
 
 - **Alphabet** ($\Sigma$): finite set of atomic elements (symbols / letters)
-  - e.g. $\Sigma = \{a, b, c\}$
+	- e.g. $\Sigma = \{a, b, c\}$
 - **String**: finite, ordered sequence of symbols from an alphabet; symbols may repeat
-  - the set of all strings over $\Sigma$ is denoted $\Sigma^*$
-  - the set of **non-empty** strings is $\Sigma^+ = \Sigma^* \setminus \{\epsilon\}$
+	- the set of all strings over $\Sigma$ is denoted $\Sigma^*$
+	- the set of **non-empty** strings is $\Sigma^+ = \Sigma^* \setminus \{\epsilon\}$
 - **Language**: a set of strings over an alphabet, i.e. any subset $L \subseteq \Sigma^*$; its elements are called **phrases**
 - **Formal (artificial) language**: a language with regular structure and well-defined rules
 - Two levels: unordered set $L$ of phrases, each phrase an ordered sequence of atomic symbols
 - **Cardinality** $|L|$: finite vs infinite language
 
 # 2. Strings
+
 ## 2.1 String Properties
 
 > [!info] Length
 > Number of symbols in the string: $|x|$
->
+> 
 > e.g. $|bbc| = 3$
 
 > [!info] Equality
 > Two strings $x = a_1 a_2 \dots a_k$ and $y = b_1 b_2 \dots b_h$ are equal iff:
 > - they have the same length: $k = h$
 > - symbols coincide left-to-right: $a_j = b_j$ for every $j = 1, \dots, k$
->
+> 
 > $x = y \iff k = h \land a_j = b_j \quad (j = 1, \dots, k)$
 
 > [!info] Substring, Prefix, Suffix
@@ -35,19 +36,19 @@ subject: Formal Languages and Compilers
 > - $y$ is a **substring** of $x$ (contiguous block)
 > - $u$ is a **prefix** of $x$ (initial segment)
 > - $v$ is a **suffix** of $x$ (final segment)
->
+> 
 > e.g. $x = abccbc$
 > - prefixes: $\epsilon, a, ab, abc, abcc, abccb, abccbc$
 > - suffixes: $\epsilon, c, bc, cbc, ccbc, bccbc, abccbc$
 > - substrings: any contiguous block, e.g. $bcc, cc, cb$
->
+> 
 > $\epsilon$ is a prefix and suffix of every string; every string is a prefix and suffix of itself.
 > - **Proper** substring / prefix / suffix: $u,v \ne \epsilon$ (strictly shorter)
 > - $\mathrm{Start}_k(x)$: prefix of $x$ of length $k$
 
 > [!warning] Empty string vs empty language
 > $\epsilon$ is the neutral element for concatenation: $x\epsilon = \epsilon x = x$ and $|\epsilon| = 0$.
->
+> 
 > Do not confuse:
 > - $\epsilon$ — a **string** (element of $\Sigma^*$)
 > - $\emptyset$ — the **empty language** (set with no strings)
@@ -76,10 +77,11 @@ subject: Formal Languages and Compilers
 > **Power** and **mirroring** bind tighter than **concatenation**:
 > 1. Power / mirroring
 > 2. Concatenation
->
+> 
 > e.g. $xy^2 = x(yy)$, while $(xy)^2 = xyxy$
 
 # 3. Languages
+
 ## 3.1 Language Properties
 
 > [!info] Universal language
@@ -89,7 +91,7 @@ subject: Formal Languages and Compilers
 
 > [!info] Void language
 > The language with no phrases: $\emptyset$.
->  $$\emptyset^0 = \{\epsilon\},\ \emptyset^* = \{\epsilon\}$$
+> $$\emptyset^0 = \{\epsilon\},\ \emptyset^* = \{\epsilon\}$$
 > Complement is taken against it: $\lnot \emptyset = \Sigma^*$.
 
 ## 3.2 Language Operations
@@ -104,7 +106,7 @@ subject: Formal Languages and Compilers
 - **Prefix**: $\mathrm{Prefix}(L) = \{ y \mid y \text{ is a prefix of some } x \in L \}$, i.e. $x = yz$
 - **Mirroring**: $L^R = \{ x^R \mid x \in L \}$
 
-### 3.2.1 Star operator (Kleene star)
+### 3.2.1 Star Operator (Kleene Star)
 
 Also called **concatenation closure**. Limit of the power operator:
 $$L^* = \bigcup_{k \ge 0} L^k, \quad \text{with } L^0 = \{\epsilon\}$$
@@ -120,7 +122,7 @@ $$L^* = \bigcup_{k \ge 0} L^k, \quad \text{with } L^0 = \{\epsilon\}$$
 > - idempotent: $(L^*)^* = L^*$
 > - commutes with mirroring: $(L^R)^* = (L^*)^R$
 
-### 3.2.2 Cross operator (Kleene plus)
+### 3.2.2 Cross Operator (Kleene Plus)
 
 Positive concatenation closure:
 $$L^+ = \bigcup_{h \ge 1} L^h = L^1 \cup L^2 \cup \dots$$
@@ -128,7 +130,7 @@ $$L^+ = \bigcup_{h \ge 1} L^h = L^1 \cup L^2 \cup \dots$$
 - expressible via star: $L^+ = L L^* = L^* L$
 - hence $L^* = L^+ \cup \{\epsilon\}$
 
-### 3.2.3 Quotient operator
+### 3.2.3 Quotient Operator
 
 - strips a suffix belonging to $L''$ from phrases of $L'$:
 $$L' / L'' = \{ y \mid yz \in L' \land z \in L'' \}$$
@@ -136,7 +138,7 @@ $$L' / L'' = \{ y \mid yz \in L' \land z \in L'' \}$$
 e.g. $\{ab\} / \{b\} = \{a\}$
 - if $x \in L'$ has no suffix in $L''$, it contributes nothing; if $L''/L' = \emptyset$ the quotient can be $\emptyset$
 
-### 3.2.4 Prefix-free language
+### 3.2.4 Prefix-free Language
 
 A language is **prefix-free** if no string is a *proper* prefix of another: for all $x, y \in L$, if $x$ is a prefix of $y$ then $x = y$.
 
@@ -144,10 +146,10 @@ Equivalently: $L \cap \mathrm{ProperPrefix}(L) = \emptyset$, where $\mathrm{Prop
 
 > [!note] Prefix vs proper prefix
 > $L \subseteq \mathrm{Prefix}(L)$ always holds, since every string is a prefix of itself — so disjointness must use **proper** prefixes.
->
+> 
 > e.g. $\{ab, ba\}$ is prefix-free; $\{a, ab\}$ is not ($a$ is a proper prefix of $ab$).
 
-## 3.3 Key identities
+## 3.3 Key Identities
 
 | Identity                      | Meaning                                  |
 | ----------------------------- | ---------------------------------------- |
@@ -159,6 +161,5 @@ Equivalently: $L \cap \mathrm{ProperPrefix}(L) = \emptyset$, where $\mathrm{Prop
 | $(xy)^R = y^R x^R$            | mirroring reverses factor order          |
 
 ---
-
 Related: [[_Formal Languages and Compilers MOC]]
 Source: [[FLC - series 01 - 2.pdf]]
