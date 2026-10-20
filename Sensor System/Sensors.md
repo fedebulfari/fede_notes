@@ -1,7 +1,7 @@
 ---
 date: 13-10-2026
 subject: Sensor System
-description:
+description: Introduction to transducers, sensor classification, static and dynamic characteristics, analog/smart readout, and sensor calibration.
 ---
 
 # 1. Transducer

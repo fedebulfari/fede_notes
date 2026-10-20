@@ -4,7 +4,8 @@ subject: Image Analysis
 description: Planar projective geometry for image rectification — homogeneous points, lines, vanishing points, cross ratio, conics, homographies, and affine/metric reconstruction from invariants.
 ---
 
-> [!summary] Overview Central projection in a pinhole camera ($x_p = f \frac{X_p}{Z_p},\ y_p = f \frac{Y_p}{Z_p}$) is non-linear and does not preserve shape or length ratios. To understand what we get from what we see we study planar projective geometry: points, lines, conics and their transformations, then use invariants to rectify an image of an unknown planar scene.
+> [!summary] Overview 
+> Central projection in a pinhole camera ($x_p = f \frac{X_p}{Z_p},\ y_p = f \frac{Y_p}{Z_p}$) is non-linear and does not preserve shape or length ratios. To understand what we get from what we see we study planar projective geometry: points, lines, conics and their transformations, then use invariants to rectify an image of an unknown planar scene.
 
 # 1. Homogeneous Coordinates for Points
 
@@ -65,7 +66,8 @@ $l = [a,b,c]^T$ is homogeneous like $x$ (2 dof: ratios $a:b:c$; $[0,0,0]^T$ is n
 
 # 3. Vanishing Points and Vanishing Line
 
-> [!theorem] Vanishing point The image of a set of parallel lines $l_i$ is a set of lines $l_i'$ concurrent at a common point $x'_\infty$, called the vanishing point of that direction.
+> [!theorem] Vanishing point
+>  The image of a set of parallel lines $l_i$ is a set of lines $l_i'$ concurrent at a common point $x'_\infty$, called the vanishing point of that direction.
 
 - **Vanishing point:** Image of a point at infinity $x_\infty$ under central projection (or any homography).
 	
@@ -150,7 +152,8 @@ $$I = [1,i,0]^T, \quad J = [1,-i,0]^T$$
 
 An invertible mapping $h: \mathbb{P}^2 \to \mathbb{P}'^2$ that preserves collinearity. Induced by central projection between planes (e.g., scene plane to image, two images of a planar surface, two images from a camera rotating about its optical center, planar shadow on the ground).
 
-> [!theorem] Fundamental Theorem of Projective Geometry A mapping $h: \mathbb{P}^2 \to \mathbb{P}'^2$ is projective iff there exists an invertible $3 \times 3$ matrix $H$ such that $x' = H x$.
+> [!theorem] Fundamental Theorem of Projective Geometry
+>  A mapping $h: \mathbb{P}^2 \to \mathbb{P}'^2$ is projective iff there exists an invertible $3 \times 3$ matrix $H$ such that $x' = H x$.
 
 - **Properties:** Linear in homogeneous coordinates (non-linear in Cartesian coordinates), **8 dof** (9 elements minus scale).
 - **Transformation rules under $H$:**
@@ -171,25 +174,29 @@ Only 2 of the 3 equations are linearly independent (each point correspondence gi
 
 Each transformation group is a subgroup of the ones below it and inherits all invariants of the groups below it.
 
-> [!info] Isometry / Euclidean ($H_I$ — 3 dof: $t_x, t_y, \vartheta$)
+> [!info] Isometry / Euclidean
+>  ($H_I$ — 3 dof: $t_x, t_y, \vartheta$)
 >
 > $$H_I = \begin{bmatrix} R_\perp & t \\ 0^T & 1 \end{bmatrix} = \begin{bmatrix} \cos\vartheta & -\sin\vartheta & t_x \\ \sin\vartheta & \cos\vartheta & t_y \\ 0 & 0 & 1 \end{bmatrix}, \quad R_\perp^T R_\perp = I, \quad \det(R_\perp) = 1 \text{ (or } -1 \text{ for reflection)}$$
 >
 > **Invariants:** lengths, distances, areas, shape, size, relative positions.
 
-> [!info] Similarity ($H_S$ — 4 dof: $t_x, t_y, \vartheta, s$)
+> [!info] Similarity
+>  ($H_S$ — 4 dof: $t_x, t_y, \vartheta, s$)
 >
 > $$H_S = \begin{bmatrix} sR_\perp & t \\ 0^T & 1 \end{bmatrix} = \begin{bmatrix} s\cos\vartheta & -s\sin\vartheta & t_x \\ s\sin\vartheta & s\cos\vartheta & t_y \\ 0 & 0 & 1 \end{bmatrix}$$
 >
 > **Invariants:** ratio of lengths, angles, shape (not size), circular points $I, J$ (and $C^*_\infty$).
 
-> [!info] Affinity ($H_A$ — 6 dof: $A_{2 \times 2}$ rank 2 + $t$)
+> [!info] Affinity
+> ($H_A$ — 6 dof: $A_{2 \times 2}$ rank 2 + $t$)
 >
 > $$H_A = \begin{bmatrix} A & t \\ 0^T & 1 \end{bmatrix} = \begin{bmatrix} a_{11} & a_{12} & t_x \\ a_{21} & a_{22} & t_y \\ 0 & 0 & 1 \end{bmatrix}, \quad \text{rank}(A) = 2$$
 >
 > **Invariants:** parallelism, ratio of parallel lengths, ratio of areas, line at infinity $l_{\infty}$. Linear in Cartesian coordinates.
 
-> [!info] Projectivity ($H$ — 8 dof: $A + t + v$)
+> [!info] Projectivity 
+> ($H$ — 8 dof: $A + t + v$)
 >
 > $$H = \begin{bmatrix} A & t \\ v^T & 1 \end{bmatrix} = \begin{bmatrix} a_{11} & a_{12} & t_x \\ a_{21} & a_{22} & t_y \\ v_1 & v_2 & 1 \end{bmatrix}, \quad v=[v_1,v_2]^T$$
 >
@@ -204,7 +211,8 @@ Each transformation group is a subgroup of the ones below it and inherits all in
 
 ## A. Affine Reconstruction
 
-> [!theorem] Affine Invariant A projective transformation $H$ maps $l_{\infty}$ onto itself iff $H$ is affine. _Proof:_ $H[x,y,0]^T$ has third coordinate $v_1 x + v_2 y = 0 \ \forall x,y \iff v_1 = v_2 = 0$.
+> [!theorem] Affine Invariant 
+> A projective transformation $H$ maps $l_{\infty}$ onto itself iff $H$ is affine. _Proof:_ $H[x,y,0]^T$ has third coordinate $v_1 x + v_2 y = 0 \ \forall x,y \iff v_1 = v_2 = 0$.
 
 **Method:** Find the image of the line at infinity $l'_{\infty} = [a,b,c]^T$ (e.g. from two vanishing points $v_1 = l_1 \times l_2$, $v_2 = l_3 \times l_4 \implies l'_{\infty} = v_1 \times v_2$) and apply a rectifying homography $H_{AR}$ that maps $l'_{\infty}$ back to $l_{\infty} = [0,0,1]^T$:
 
@@ -214,7 +222,8 @@ The reconstructed model $M_A = H_{AR} \cdot \text{Image}$ is an affine transform
 
 ## B. Shape (Euclidean / Metric) Reconstruction — Theory & SVD
 
-> [!theorem] Similarity Invariant A projective transformation $H$ maps the circular points $I, J$ (or equivalently $C^*_{\infty}$) onto themselves iff $H$ is a similarity.
+> [!theorem] Similarity Invariant 
+> A projective transformation $H$ maps the circular points $I, J$ (or equivalently $C^*_{\infty}$) onto themselves iff $H$ is a similarity.
 
 **Method:** Estimate $C^{*'}_{\infty} = I' J'^T + J' I'^T$ in the image and find $H_{SR}$ that maps $C^{*'}_{\infty}$ back to $C^*_{\infty} = \text{diag}(1,1,0)$:
 $$C^*_{\infty} = H_{SR} C^{*'}_{\infty} H_{SR}^T \implies C^{*'}_{\infty} = H_{SR}^{-1} C^*_{\infty} H_{SR}^{-T}$$

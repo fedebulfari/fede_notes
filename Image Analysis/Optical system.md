@@ -33,7 +33,8 @@ $$y_1 = y_2 = Y$$
 - **Small angles (paraxial approximation):** $\sin \theta \cong \theta$. The angles $\alpha_1, \alpha_2$ between the **surface normals** and the optical axis at heights $y_1, y_2$ are given by:
 $$\alpha_1 = \frac{y_1}{\rho_1} = \frac{Y}{\rho_1}, \quad \alpha_2 = -\frac{y_2}{\rho_2} = -\frac{Y}{\rho_2}$$
 
-> [!info] Snell's Law and Ray Deviation When a light ray crosses the boundary between two media with refractive indices $n_1, n_2$, it obeys **Snell's Law**: $n_1 \sin \theta_1 = n_2 \sin \theta_2$ (where $\theta_1, \theta_2$ are measured with respect to the surface normal).
+> [!info] Snell's Law and Ray Deviation 
+> When a light ray crosses the boundary between two media with refractive indices $n_1, n_2$, it obeys **Snell's Law**: $n_1 \sin \theta_1 = n_2 \sin \theta_2$ (where $\theta_1, \theta_2$ are measured with respect to the surface normal).
 >
 > Let $\theta$ be the angle of the incident ray in air ($n_{air}=1$), $\theta'$ the angle of the refracted ray inside the lens (refractive index $n$), and $\theta''$ the angle of the exiting ray in air. Under the small-angle approximation:
 >
