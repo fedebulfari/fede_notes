@@ -262,3 +262,6 @@ $$H_{SR} = \begin{bmatrix} \frac{1}{\sqrt{a}} & 0 & 0 \\ 0 & \frac{1}{\sqrt{b}} 
 1. **Noise in SVD:** Singular values of $C^{*'}_{\infty}$ are $a, b \ne 1$ $\rightarrow$ normalize with $1/\sqrt{a}, 1/\sqrt{b}$.
 2. **Line intersection uncertainty:** Intersecting lines that are too close to each other in the image yields poor vanishing point estimates $\rightarrow$ choose lines as far apart as possible.
 3. **Vanishing points near infinity:** When images of parallel lines are almost parallel in the image, vanishing points lie very far away $\rightarrow$ poor estimation of $l'_{\infty}$ and inaccurate affine rectification.
+---
+Related: [[_Image Analysis MOC]] 
+Source: [[IACV 2026 - C - 2D Projective Geometry and 2D Reconstruction.pdf]]

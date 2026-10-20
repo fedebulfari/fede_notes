@@ -59,7 +59,6 @@ The focal plane $Z = -f$ is the same for any direction of incoming parallel rays
 # 4. Focalization at Finite Distance and Screen Placement
 
 For a scene point $P$ at a finite distance $Z$ from the lens, the rays passing through the lens converge at a distance $r$ behind the lens according to the **Fresnel Law**:
-
 $$\frac{1}{Z} + \frac{1}{r} = \frac{1}{f}$$
 
 ![[Optical system-1791740843861.webp|401]]
