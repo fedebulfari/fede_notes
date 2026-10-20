@@ -251,16 +251,17 @@ Same scheme, but $Q$ holds frontier nodes and we always extract $\min d$:
 Procedure SPT_Dijkstra(G,r,P,d):
   for i:=1 to n do P[i]:=0 d[i]:=+∞;
   P[r]:=r; d[r]:=0; Q:={r};
-  repeat
-    select i from Q with d[i]=min{d[h]: h in Q};
-    Q:=Q\{i};
-    for each (i,j) in FS(i) do
-      if d[i]+c_ij < d[j] then
-        P[j]:=i; d[j]:=d[i]+c_ij; Q:=Q∪{j}
-  until Q=∅
+  repeat                                                   ---(n_times)
+    select i from Q with d[i]=min{d[h]: h in Q};                  |
+    Q:=Q\{i};                                                     |
+    for each (i,j) in FS(i) do         ---(n_times(worst case))   |
+      if d[i]+c_ij < d[j] then                      |             |
+	    P[j]:=i; d[j]:=d[i]+c_ij; Q:=Q∪{j}          |             |
+  until Q=∅                                                       |
 ```
 
 Requires $c_{ij} \ge 0$. Then extracted label is definitive — node never re-enters $Q$.
+	For $m=|A|, n=|N|$ the time cost is:
 
 - $Q$ as unordered list: $O(n^2)$
 - $Q$ as binary heap: $O(m \log n)$ — better when $m \log n < n^2$

@@ -17,7 +17,7 @@ Embed the Euclidean plane $X,Y$ as the plane $w=1$ in 3D. A point $P=[X,Y]$ is r
 
 > [!example] Example: $[9,6,3]^T \sim [3,2,1]^T \rightarrow [3,2]$, $[0,-8,-4]^T \sim [0,2,1]^T \rightarrow [0,2]$.
 
-## 1.1 Points at Infinity
+## Points at Infinity
 
 Points with $w=0$, e.g. $[x,y,0]^T$, have no Cartesian counterpart. They represent directions. All directions in a plane meet at infinity.
 
@@ -31,7 +31,7 @@ For $c=0$ the line passes through the origin. $l$ is homogeneous like $x$.
 
 Incidence is symmetric: $l^T x = x^T l = 0$. Point $x$ on line $l$ $\Leftrightarrow$ point $l$ on line $x$ in dual space. This is the duality principle between points and lines.
 
-## 2.1 Line through Two Points
+## Line through Two Points
 
 $x_1 \times x_2 = l$. Dual: intersection of two lines is $x = l_1 \times l_2$.
 
@@ -77,12 +77,12 @@ Degenerate if $|C|=0$:
 ![[Planar Geometry-1791807415729.webp]]
 Transformation under $H$: $C' = H^{-T} C H^{-1}$.
 
-## 5.1 Circular Points
+## Circular Points
 
 All circumferences intersect $l_{\infty}$ at the same two complex points:$$I = [1,i,0]^T, \ J = [1,-i,0]^T$$
 They are the same for all circles — centre and radius disappear on $l_{\infty}$.
 
-## 5.2 Dual Conics
+## Dual Conics
 
 Set of tangent lines $l$ to $C$: $l^T C^* l = 0$, with $C^* = C^{-1}$ for non-degenerate $C$.
 
@@ -130,7 +130,7 @@ Strategy:
 1. Reduce unknowns: require reconstruction similar (shape, 4 unknowns = 8-4) or affine (2 unknowns = 8-6) to original.
 2. Add constraints from scene knowledge.
 
-## 8.1 Affine Reconstruction
+## Affine Reconstruction
 
 > [!theorem] Affine invariant
 > $H$ maps $l_{\infty}$ onto itself iff $H$ is affine.
@@ -144,7 +144,7 @@ Method: image $l'_{\infty}$ is in general $\ne l_{\infty}$. Use it as additional
 - $H_{AA} = \begin{bmatrix} * & * & * \\ * & * & * \\ a & b & c \end{bmatrix}$ (first two rows arbitrary, ensure invertible)
 - Model $M_A = H_{AA} \times \text{Image}$ is affine to original.
 
-## 8.2 Shape / Euclidean Reconstruction — Theory
+## Shape / Euclidean Reconstruction — Theory
 
 > [!theorem] Similarity invariant
 > $H$ maps $I$ and $J$ onto themselves iff $H$ is a similarity.
@@ -157,7 +157,7 @@ Model $M_S = H_{SS} \times \text{Image}$ has same shape as original.
 
 Accuracy note: in principle $\text{diag}(1,1,0)$, but noise gives $\text{diag}(a,b,0)$. Normalise with $1/a,1/b$.
 
-## 8.3 How to Find $I',J'$ or $C^{*'}_{\infty}$ in Practice
+## How to Find $I',J'$ or $C^{*'}_{\infty}$ in Practice
 
 1. Known angles between lines
 2. Known shapes, e.g. circumferences
@@ -177,7 +177,7 @@ Accuracy note: in principle $\text{diag}(1,1,0)$, but noise gives $\text{diag}(a
 	3. **Circumference + parallelogram:** vanishing points $v_1 = p' \times q'$, $v_2 = l' \times m'$, $l'_{\infty}=v_1 \times v_2$, then $\{I',J'\}=l'_{\infty} \cap C'$.
 	4. **Rigid planar motion:** planar motion is isometry → similarity → fixes $I,J$. Any roto-translation is pure rotation about $O$ with angle $\vartheta$: 3 invariants $I,J,O$, hence $I',J',O'$ fixed. Fit inter-frame homography $H$, eigen-decompose: eigenvalues $\sim 1, e^{i\theta}, e^{-i\theta}$; eigenvector for $1$ is $O'$, complex ones are $I',J'$.
 
-## 8.4 Direct vs Stratified Method
+## Direct vs Stratified Method
 
 Direct: estimate $C^{*'}_{\infty}$ with 4-5 constraints, SVD, $H_{SS}$.
 
@@ -189,7 +189,7 @@ Two pairs suffice. Cholesky gives $G$, then $H_{rect} = \begin{bmatrix} G^{-1} &
 
 Geometric variant: 4-point homography for affine step, then enforce orthogonality with Euclid theorem $HC'^2 = AH \cdot HB$ for metric step.
 
-## 8.5 Accuracy Issues
+## Accuracy Issues
 
 1. Noise in SVD singular values.
 2. Poor line intersections when lines are too close — use far apart lines.

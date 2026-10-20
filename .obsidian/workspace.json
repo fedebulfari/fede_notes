@@ -4,41 +4,52 @@
     "type": "split",
     "children": [
       {
-        "id": "9030c6f879bc1e81",
+        "id": "e077bbda00527571",
         "type": "tabs",
-        "dimension": 66.48291069459758,
         "children": [
           {
-            "id": "03e09f8681777d28",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Database2/Physical Data.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Physical Data"
-            }
-          }
-        ]
-      },
-      {
-        "id": "350916c77975a0bf",
-        "type": "tabs",
-        "dimension": 33.51708930540242,
-        "children": [
-          {
-            "id": "2149b7ea694cc649",
+            "id": "4f218d2a0c68598f",
             "type": "leaf",
             "state": {
               "type": "pdf",
               "state": {
-                "file": "Database2/PDF/2 - Physical DB/02_Physical_Databases.pdf"
+                "file": "Image Analysis/PDF/IACV 2026 - C - 2D Projective Geometry and 2D Reconstruction.pdf"
               },
               "icon": "lucide-file-text",
-              "title": "02_Physical_Databases"
+              "title": "IACV 2026 - C - 2D Projective Geometry and 2D Reconstruction"
+            }
+          },
+          {
+            "id": "e92da9abddf53938",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Image Analysis/Planar Geometry.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Planar Geometry"
+            }
+          }
+        ],
+        "currentTab": 1
+      },
+      {
+        "id": "f27977096ab883d3",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "03a6edca1b2cbc01",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "Image Analysis/PDF/IACV 2026 - C - 2D Projective Geometry and 2D Reconstruction.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "IACV 2026 - C - 2D Projective Geometry and 2D Reconstruction"
             }
           }
         ]
@@ -103,8 +114,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "a208faef6a30291a",
@@ -246,24 +256,30 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "03e09f8681777d28",
+  "active": "e92da9abddf53938",
   "lastOpenFiles": [
-    "Database2/PDF/2 - Physical DB/02_Physical_Databases.pdf",
+    "Image Analysis/PDF/IACV 2026 - C - 2D Projective Geometry and 2D Reconstruction.pdf",
+    "Image Analysis/Planar Geometry.md",
+    "Image Analysis/PDF/IACV 2026 - D - 3D Projective Geometry.pdf",
+    "Image Analysis/PDF/IACV 2026 - E - Single-view Geometry and Camera Calibration.pdf",
+    "Operational Research/Graphs.md",
+    "Operational Research/PDF/Slides/shortest pathsnew.pdf",
+    "Senza nome.md",
+    "templates/template.md",
+    "templates",
+    "Excalidraw/Drawing 2026-10-20 10.33.25.excalidraw.md",
+    "Excalidraw",
+    "Software Engenering 2/PDF/01.IntroSE.pdf",
+    "Database2/~$ftware installation for UART.docx",
+    "Database2/Software installation for UART.docx",
+    "copilot/skills/openartifacts-publish/SKILL.md",
     "Database2/Physical Data.md",
+    "Database2/PDF/2 - Physical DB/02_Physical_Databases.pdf",
     "Database2/media/Physical Data-1792160815765.webp",
     "Database2/media/Physical Data-1792157268978.webp",
     "Database2/media/Physical Data-1792156284721.webp",
-    "Database2/PDF/2 - Physical DB/PhysDB-toComplete.pdf",
     "copilot/skills/copilot-fetch-x/SKILL.md",
-    "copilot/skills/copilot-fetch-x/fetch-x.ps1",
-    "copilot/skills/copilot-fetch-x/fetch-x.cmd",
-    "copilot/skills/copilot-fetch-x/fetch-x.sh",
-    "copilot/skills/copilot-fetch-x",
     "copilot/skills/copilot-youtube-transcript/SKILL.md",
-    "copilot/skills/copilot-youtube-transcript/youtube-transcript.ps1",
-    "copilot/skills/copilot-youtube-transcript/youtube-transcript.cmd",
-    "copilot/skills/copilot-youtube-transcript/youtube-transcript.sh",
-    "copilot/skills/copilot-youtube-transcript",
     "copilot/skills/obsidian-markdown/references/PROPERTIES.md",
     "copilot/skills/obsidian-markdown/references/EMBEDS.md",
     "copilot/skills/obsidian-markdown/references/CALLOUTS.md",
@@ -272,7 +288,6 @@
     "copilot/skills/json-canvas/references/EXAMPLES.md",
     "copilot/skills/obsidian-bases/references/EXAMPLES.md",
     "copilot/skills/obsidian-markdown/SKILL.md",
-    "copilot/skills/openartifacts-publish/SKILL.md",
     "copilot/skills/json-canvas/SKILL.md",
     "copilot/skills/obsidian-bases/SKILL.md",
     "copilot/skills/obsidian-cli/SKILL.md",
@@ -281,11 +296,6 @@
     "copilot/copilot-custom-prompts/Summarize.md",
     "copilot/copilot-custom-prompts/Rewrite as tweet.md",
     "copilot/copilot-custom-prompts/Simplify.md",
-    "copilot/copilot-custom-prompts/Remove URLs.md",
-    "copilot/copilot-custom-prompts/Rewrite as tweet thread.md",
-    "copilot/copilot-custom-prompts/Make longer.md",
-    "copilot/copilot-custom-prompts/Make shorter.md",
-    "copilot/copilot-custom-prompts/Emojify.md",
     "Database2/media/Physical Data-1792150200446.webp",
     "Database2/media/Physical Data-1792145181101.webp",
     "Database2/media/Physical Data-1792144188500.webp",
