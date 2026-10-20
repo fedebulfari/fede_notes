@@ -17,7 +17,7 @@ Subdivided in:
 
 # 2. Classification
 
-## By physical phenomena
+## By Physical Phenomena
 
 - Optical: visible / IR light (photodiode, CCD, CMOS APS, infrared sensor)
 - Thermal: temperature (RTD, thermistor, thermocouple…)
@@ -25,7 +25,7 @@ Subdivided in:
 - Mechanical: strain (strain gauge), force (piezo-electric sensor), displacement and distance (capacitive, inductive, acoustic, optical), acceleration and orientation (MEMS), viscosity, pressure, etc.
 - Chemical: pH (pH-meter)
 
-## By sensing mechanism
+## By Sensing Mechanism
 
 - Resistive
 - Capacitive
@@ -52,22 +52,23 @@ Subdivided in:
 - **Number of bits (n)**: in sensors with digital output, $2^n$ is number of levels in which FSR is divided:$$2^n = \frac{FSR}{LSB}$$
 - **Accuracy**: error between result of a measurement and true value being measured
 - **Repeatability / Precision**: ability of sensor to output same value for same input over a number of trials
-  > [!tip] Accuracy vs Precision
-  > - Precise without accurate: repeated measurements clustered together but far from true value
-  > - Accurate without precise: measurements centered on true value but spread out
-  > - Precise and accurate: measurements clustered on true value
-  ![[Sensors-1791925614863.webp|508]]
-  >	
+
+> [!tip] Accuracy vs Precision
+	> - **Precise without accurate**: repeated measurements clustered together but far from true value
+	> - **Accurate without precise**: measurements centered on true value but spread out
+	> - Precise and accurate: measurements clustered on true value
+	![[Sensors-1791925614863.webp|508]]
+
 - **Linearity**: deviation of output from a best-fit straight line for a given range.
-  Differential Non-Linearity (DNL) and Integral Non-Linearity (INL):$$DNL(i) = \Delta in(i) - LSB\\INL(i) = \sum_{k=1}^{i} DNL(k)$$
+	Differential Non-Linearity (DNL) and Integral Non-Linearity (INL):$$DNL(i) = \Delta in(i) - LSB\\INL(i) = \sum_{k=1}^{i} DNL(k)$$
 	- DNL: difference of real step compared to ideal one (i.e. 1 LSB)
 	- INL: distance between real and ideal output voltage
-	  ![[Sensors-1791925826885.webp|402]]
+		![[Sensors-1791925826885.webp|402]]
 
 - **Transfer Function (Frequency Response)**: relationship between physical input signal and electrical output signal, which may constitute complete description of sensor characteristics as function of frequency. Can describe the whole sensor characteristics.
 - **Bandwidth**: frequency range between lower and upper cutoff frequencies, within which sensor transfer function is at constant gain or linear
 - **Noise**: random fluctuation in measured value. Quantified with its rms (root mean square) value.
-  ![[Sensors-1791926310050.webp|409]]
+	![[Sensors-1791926310050.webp|409]]
 
 - **Dynamic Range**: ratio of maximum recordable input amplitude to minimum input amplitude, in dB:$$DR = 20 \cdot \log\left( \frac{\text{Input-Amplitude}|_{Max}}{\text{Input-Amplitude}|_{min}} \right)$$
 	- Min Input: typically noise
@@ -75,26 +76,27 @@ Subdivided in:
 
 # 4. Readout
 
-## Analog sensor readout
+## Analog Sensor Readout
+
 - ADC + microcontroller: many microcontrollers have built-in ADC (typically 8-bit to 12-bit or even 16-bit)
 - Data Acquisition Cards (DAQ):
-  - PC card or external devices with analog and digital I/O
-  - interface through LabVIEW or user-generated code
+	- PC card or external devices with analog and digital I/O
+	- interface through LabVIEW or user-generated code
 
-## Smart sensors readout
+## Smart Sensors Readout
 
 **Smart sensor** = sensor with built-in signal processing & communication (e.g. combining a "dumb sensor" and ADC / processing).
 
 Digital output:
 - parallel bus
 - serial I/O
-  - synchronous (with clock): SPI, I2C
-    - Serial Peripheral Interface (SPI): 1 clock + 1 bidirectional data + 1 chip select / enable
-    - Inter Integrated Circuit (I2C): 1 clock + 1 data
-    - must match byte format, stop/start bits, parity check, etc.
-  - asynchronous (no clock): one wire
-    - Universal Asynchronous Receiver Transmitter (UART)
-    - must match baud rate and bit width, transmission protocol, etc.
+	- synchronous (with clock): SPI, I2C
+		- Serial Peripheral Interface (SPI): 1 clock + 1 bidirectional data + 1 chip select / enable
+		- Inter Integrated Circuit (I2C): 1 clock + 1 data
+		- must match byte format, stop/start bits, parity check, etc.
+	- asynchronous (no clock): one wire
+		- Universal Asynchronous Receiver Transmitter (UART)
+		- must match baud rate and bit width, transmission protocol, etc.
 
 # Sensor Calibration
 
@@ -107,8 +109,8 @@ Sensors can exhibit non-ideal effects:
 - analog signal conditioning
 - look-up table
 - digital calibration: $T = a + bV + cV^2$
-  - $T$ = temperature, $V$ = sensor voltage
-  - $a,b,c$ = calibration coefficients
+	- $T$ = temperature, $V$ = sensor voltage
+	- $a,b,c$ = calibration coefficients
 
 ---
 Related: [[_Sensor System MOC]]
