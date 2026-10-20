@@ -26,12 +26,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Image Analysis/Planar Geometry.md",
+                "file": "Image Analysis/Optical system.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Planar Geometry"
+              "title": "Optical system"
             }
           }
         ],
@@ -116,8 +116,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "a208faef6a30291a",
@@ -261,8 +260,11 @@
   },
   "active": "e92da9abddf53938",
   "lastOpenFiles": [
-    "Image Analysis/PDF/IACV 2026 - C - 2D Projective Geometry and 2D Reconstruction.pdf",
+    "Image Analysis/Space Geometry.md",
     "Image Analysis/Planar Geometry.md",
+    "Image Analysis/Non-linear Filters.md",
+    "Image Analysis/Optical system.md",
+    "Image Analysis/PDF/IACV 2026 - C - 2D Projective Geometry and 2D Reconstruction.pdf",
     "Image Analysis/PDF/IACV 2026 - D - 3D Projective Geometry.pdf",
     "Image Analysis/PDF/IACV 2026 - E - Single-view Geometry and Camera Calibration.pdf",
     "Operational Research/Graphs.md",
@@ -297,8 +299,6 @@
     "copilot/skills/miyo-search/SKILL.md",
     "copilot/copilot-custom-prompts/Translate to Chinese.md",
     "copilot/copilot-custom-prompts/Summarize.md",
-    "copilot/copilot-custom-prompts/Rewrite as tweet.md",
-    "copilot/copilot-custom-prompts/Simplify.md",
     "Database2/media/Physical Data-1792150200446.webp",
     "Database2/media/Physical Data-1792145181101.webp",
     "Database2/media/Physical Data-1792144188500.webp",
