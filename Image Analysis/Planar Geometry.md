@@ -220,7 +220,7 @@ $$H_{AR} = \begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ a & b & c \end{bmatrix} \qu
 
 The reconstructed model $M_A = H_{AR} \cdot \text{Image}$ is an affine transformation of the original scene.
 
-## B. Shape (Euclidean / Metric) Reconstruction — Theory & SVD
+## B. Shape (Euclidean / Metric) Reconstruction 
 
 > [!theorem] Similarity Invariant 
 > A projective transformation $H$ maps the circular points $I, J$ (or equivalently $C^*_{\infty}$) onto themselves iff $H$ is a similarity.
