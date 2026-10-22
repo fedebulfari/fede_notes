@@ -35,10 +35,10 @@
             "state": {
               "type": "pdf",
               "state": {
-                "file": "Software Engineering 2/PDF/02e.UML4RE.pdf"
+                "file": "Software Engineering 2/PDF/02g.CreatingRASD.pdf"
               },
               "icon": "lucide-file-text",
-              "title": "02e.UML4RE"
+              "title": "02g.CreatingRASD"
             }
           }
         ]
@@ -248,8 +248,11 @@
   },
   "active": "bf293cf44ab20b70",
   "lastOpenFiles": [
-    "Software Engineering 2/PDF/02e.UML4RE.pdf",
+    "Software Engineering 2/PDF/02g.CreatingRASD.pdf",
+    "Software Engineering 2/PDF/03a.AlloyPart1-2.pdf",
     "Software Engineering 2/Requirement Engineering.md",
+    "Software Engineering 2/PDF/02f.ExercisesRE.pdf",
+    "Software Engineering 2/PDF/02e.UML4RE.pdf",
     "Software Engineering 2/media/Requirement Engineering-1792689091674.webp",
     "Software Engineering 2/media/Requirement Engineering-1792689051477.webp",
     "Software Engineering 2/media/Requirement Engineering-1792688584346.webp",
@@ -275,9 +278,7 @@
     "Image Analysis/Space Geometry.md",
     "Sensor System/Sensors.md",
     "Image Analysis/PDF/IACV 2026 - C - 2D Projective Geometry and 2D Reconstruction.pdf",
-    "Image Analysis/PDF/IACV 2026 - B - Camera Optical System.pdf",
     "Image Analysis/Non-linear Filters.md",
-    "Image Analysis/PDF/IACV 2026 - D - 3D Projective Geometry.pdf",
     "Operational Research/Graphs.md",
     "Senza nome.md",
     "templates/template.md",

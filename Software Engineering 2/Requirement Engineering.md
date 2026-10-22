@@ -228,6 +228,17 @@ Describe an activity without assigning responsibilities
 
 ![[Requirement Engineering-1792689091674.webp|589]]
 
+## RASD
+
+The purpose of RASD is to **Communicate** an understanding of the requirements, making a **Contractual** binding with the customers, defining a **Baseline** for other acivities as project planning, software verification and validation, change control
+
+Audience:
+- Customers and Users
+- System Analysts and Requirement Analysts
+- Developers and Programmers
+- Quality Assurance teams
+- Project Managers
+
 ---
 Related: [[_Software Engineering 2 MOC]]
-Source: [[02a.RE.pdf]]
+Sources: [[02a.RE.pdf]], [[02b.video1_ElicitationOfRequirements.pdf]], [[02c.ExampleScenarioUCReqs.pdf]], [[02d.video2_ModelingReqs.pdf]], [[02e.UML4RE.pdf]], [[02g.CreatingRASD.pdf]], [[02h.RASD_lab_DiNItto.pdf]]
