@@ -6,50 +6,39 @@
       {
         "id": "f27977096ab883d3",
         "type": "tabs",
+        "dimension": 57.386990077177515,
         "children": [
           {
-            "id": "03a6edca1b2cbc01",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "Software Engeneering 2/PDF/01.IntroSE.pdf"
-              },
-              "icon": "lucide-file-text",
-              "title": "01.IntroSE"
-            }
-          },
-          {
-            "id": "0cf0a6d6c08fa244",
+            "id": "bf293cf44ab20b70",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Software Engeneering 2/Software Production.md",
+                "file": "Software Engineering 2/Requirement Engineering.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Software Production"
+              "title": "Requirement Engineering"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       },
       {
         "id": "558e0a00959a567f",
         "type": "tabs",
+        "dimension": 42.61300992282249,
         "children": [
           {
-            "id": "3a17df53211823c1",
+            "id": "5355c5f5844def66",
             "type": "leaf",
             "state": {
               "type": "pdf",
               "state": {
-                "file": "Software Engeneering 2/PDF/01.IntroSE.pdf"
+                "file": "Software Engineering 2/PDF/02e.UML4RE.pdf"
               },
               "icon": "lucide-file-text",
-              "title": "01.IntroSE"
+              "title": "02e.UML4RE"
             }
           }
         ]
@@ -114,7 +103,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 309.51405334472656
+    "width": 309.51405334472656,
+    "collapsed": true
   },
   "right": {
     "id": "a208faef6a30291a",
@@ -256,14 +246,30 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "0cf0a6d6c08fa244",
+  "active": "bf293cf44ab20b70",
   "lastOpenFiles": [
-    "Software Engeneering 2/media/Software Production-1792573944598.webp",
-    "Software Engeneering 2/media/Software Production-1792573752883.webp",
-    "Software Engeneering 2/media",
-    "Software Engeneering 2/PDF/01.IntroSE.pdf",
-    "Software Engeneering 2/Software Production.md",
-    "Software Engeneering 2/_Software Engeneering 2 MOC.md",
+    "Software Engineering 2/PDF/02e.UML4RE.pdf",
+    "Software Engineering 2/Requirement Engineering.md",
+    "Software Engineering 2/media/Requirement Engineering-1792689091674.webp",
+    "Software Engineering 2/media/Requirement Engineering-1792689051477.webp",
+    "Software Engineering 2/media/Requirement Engineering-1792688584346.webp",
+    "Software Engineering 2/media/Requirement Engineering-1792688567096.webp",
+    "Software Engineering 2/media/Requirement Engineering-1792688346409.webp",
+    "Software Engineering 2/media/Requirement Engineering-1792688315965.webp",
+    "Software Engineering 2/media/Requirement Engineering-1792687690968.webp",
+    "Software Engineering 2/media/Requirement Engineering-1792687278152.webp",
+    "Software Engineering 2/media/Requirement Engineering-1792687027582.webp",
+    "Software Engineering 2/PDF/02d.video2_ModelingReqs.pdf",
+    "Software Engineering 2/PDF/02b.video1_ElicitationOfRequirements.pdf",
+    "Software Engineering 2/Senza nome.md",
+    "Software Engineering 2/PDF/02c.ExampleScenarioUCReqs.pdf",
+    "Software Engineering 2/PDF/02a.RE.pdf",
+    "Software Engineering 2/Software Production.md",
+    "Software Engineering 2/media/Requirement Engineering-1792684065345.webp",
+    "Software Engineering 2/PDF/01.IntroSE.pdf",
+    "Software Engineering 2/01.IntroSE.md",
+    "Software Engineering 2/_Software Engineering 2 MOC.md",
+    "Software Engineering 2/media",
     "Image Analysis/Planar Geometry.md",
     "Image Analysis/Optical system.md",
     "Image Analysis/Space Geometry.md",
@@ -272,20 +278,12 @@
     "Image Analysis/PDF/IACV 2026 - B - Camera Optical System.pdf",
     "Image Analysis/Non-linear Filters.md",
     "Image Analysis/PDF/IACV 2026 - D - 3D Projective Geometry.pdf",
-    "Image Analysis/PDF/IACV 2026 - E - Single-view Geometry and Camera Calibration.pdf",
     "Operational Research/Graphs.md",
-    "Operational Research/PDF/Slides/shortest pathsnew.pdf",
     "Senza nome.md",
     "templates/template.md",
-    "templates",
     "Excalidraw/Drawing 2026-10-20 10.33.25.excalidraw.md",
-    "Excalidraw",
-    "Database2/~$ftware installation for UART.docx",
     "copilot/skills/openartifacts-publish/SKILL.md",
     "Database2/Physical Data.md",
-    "Database2/media/Physical Data-1792160815765.webp",
-    "Database2/media/Physical Data-1792157268978.webp",
-    "Database2/media/Physical Data-1792156284721.webp",
     "copilot/skills/copilot-fetch-x/SKILL.md",
     "copilot/skills/copilot-youtube-transcript/SKILL.md",
     "copilot/skills/obsidian-markdown/references/PROPERTIES.md",
@@ -295,15 +293,6 @@
     "copilot/skills/obsidian-bases/references/FUNCTIONS_REFERENCE.md",
     "copilot/skills/json-canvas/references/EXAMPLES.md",
     "copilot/skills/obsidian-bases/references/EXAMPLES.md",
-    "copilot/skills/obsidian-markdown/SKILL.md",
-    "copilot/skills/json-canvas/SKILL.md",
-    "copilot/skills/obsidian-bases/SKILL.md",
-    "Database2/media/Physical Data-1792150200446.webp",
-    "Database2/media/Physical Data-1792145181101.webp",
-    "Database2/media/Physical Data-1792144188500.webp",
-    "Database2/media/Physical Data-1792144048944.webp",
-    "Sensor System/media/Light Sensor-1792071267475.webp",
-    "Sensor System/media/Light Sensor-1792071241517.webp",
     "Senza nome.canvas"
   ]
 }
