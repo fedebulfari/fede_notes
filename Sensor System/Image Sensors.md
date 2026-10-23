@@ -4,34 +4,36 @@ subject: Sensor System
 description:
 ---
 
-# 1. Charge Coupled Device (CCD)
+# Image Sensors
+
+## 1. Charge Coupled Device (CCD)
 
 ![[Image Sensors-1791960351242.webp|511]]
 
-## CCD Pixel: MOS Capacitor
+### 1.1. CCD Pixel: MOS Capacitor
 
 - Electrodes + depleted insulator region.
 - **Unbiased:** no current flow → free carriers recombination.
 - **Biased:** free carriers generate a current similarly to a photodiode.
 
-## Photon Absorption
+### 1.2. Photon Absorption
 
 When a photon is absorbed, it generates an electron-hole pair → photocurrent.
 Differently from photodiodes, electrons are stopped by the insulator at the n-doped side.
 Equivalent model: see slide 5.
 
-## Front / Back Side Illumination
+### 1.3. Front / Back Side Illumination
 
 - **Front side illuminated (Standard Wafer):** n-type Si / p-type Si / SiO2 insulating layer / polysilicon electrodes. Light must pass electrodes.
 - **Back side illuminated (Thinned Wafer):** same stack + anti-reflective (AR) coating, illuminated from back. Enables 3D vertical integration, better QE.
 
-## CCD Structure and Readout
+### 1.4. CCD Structure and Readout
 
 CCD structure: array of MOS capacitors where charge is shifted vertically then horizontally to output (see slides 7-14).
 
 Readout steps 1-6: charge packets are sequentially shifted from pixel to pixel toward First / Last output node then to OpAmp.
 
-## CCD Performance
+### 1.5. CCD Performance
 
 4 groups:
 1. **Charge generation:** Quantum Efficiency (QE), Pixel Uniformity, Dark Current
@@ -39,7 +41,7 @@ Readout steps 1-6: charge packets are sequentially shifted from pixel to pixel t
 3. **Charge transfer:** Charge Transfer Efficiency (CTE), Defects
 4. **Charge readout:** Readout Noise
 
-### Charge Generation: Quantum Efficiency
+#### 1.5.1. Charge Generation: Quantum Efficiency
 
 $$QE = \frac{detected\ photons}{incident\ photons}$$
 
@@ -50,13 +52,13 @@ Mechanisms which hamper photon collection:
 - Absorption
 - Transmission
 
-### Charge Generation: Pixel Uniformity
+#### 1.5.2. Charge Generation: Pixel Uniformity
 
 Fixed pattern noise.
 The sensitivity of pixels is not the same, for reasons such as differences in thickness, area of electrodes, doping, bias.
 However these differences do not change, and can be calibrated out by dividing by a flat field, which is an exposure of a uniform light source.
 
-### Charge Generation: Dark Current
+#### 1.5.3. Charge Generation: Dark Current
 
 Thermal effects cause an electron to move from the valence band to the conduction band.
 The majority of dark current is created near the interface between the Si and the SiO2, where interface states at energy between the valence and conduction bands act as a stepping stone for electrons.
@@ -64,7 +66,7 @@ The majority of dark current is created near the interface between the Si and th
 > [!info] Strongly temperature dependent: 
 > Electrons per pixel per hour drops rapidly when cooling (see plot slide 18, from -110°C to -40°C).
 
-### Charge Collection: Well Capacity
+#### 1.5.4. Charge Collection: Well Capacity
 
 Well capacity = maximum charge that can be held in a pixel.
 Typically, it is about $10,000\ electrons/\mu m^2$ → a few hundred thousand electrons per pixel.
@@ -81,12 +83,12 @@ Saturation = when a pixel has accumulated the maximum amount of charge that it c
 
 - > 100% → blooming
 
-### Charge Collection: Blooming
+#### 1.5.5. Charge Collection: Blooming
 
 Blooming occurs mainly vertically, as there is little horizontal bleeding because of the permanent doped channel stops.
 Example: bloomed star images.
 
-### Charge Transfer: Efficiency / Inefficiency
+#### 1.5.6. Charge Transfer: Efficiency / Inefficiency
 
 Charge Transfer Efficiency (CTE) = fraction of electrons transferred from one pixel to the next (typically 0.9999 to 0.999999).
 
@@ -99,7 +101,7 @@ $$CTE_{TOT} = 1 - 0.99999^{7000} = 6.7\%$$
 
 Part of the original image is smeared with an exponential decay function, producing "tails": original image after n transfers — good CTE vs bad CTE.
 
-### Charge Transfer: Dark Columns and Other Defects
+#### 1.5.7. Charge Transfer: Dark Columns and Other Defects
 
 Dark columns: Defects caused by "traps" that block the vertical transfer of charge during image readout. Dark columns are removed by calibration.
 
@@ -109,7 +111,7 @@ Other defects:
 - **Cluster of Hot Spots / Cosmic rays / Bright Column**
 - Somewhat rarer are light-emitting defects which are hot spots that act as tiny LEDs and cause a halo of light on the chip.
 
-## Readout Noise
+### 1.6. Readout Noise
 
 Mainly due to amplifier noise. It can be reduced by reducing the bandwidth (slower readout).
 
@@ -117,7 +119,7 @@ Example: rate at which one pixel is read by the CCD $f_s = 500 kHz$ → $T_s = 2
 
 The readout circuit consists of a storage capacitor, a reset transistor and a voltage amplifier or buffer (in this example a source follower).
 
-### Reset Noise
+#### 1.6.1. Reset Noise
 
 Noise associated with recharging the output storage capacitor:
 $$\sigma Q_{reset}=\sqrt{ kTC }$$
@@ -127,7 +129,7 @@ We can remove the noise by a practice called **Correlated Double Sampling**:
 The output voltage is measured after reset and again after readout. By subtracting the first value from the second we obtain a measurement without reset noise.
 ![[Drawing 2026-10-14 08.55.32.excalidraw|300]] $\Delta V$
 
-## Color Filtering
+### 1.7. Color Filtering
 
 Various methods.
 Bayer array (most common RGB filter)
@@ -138,7 +140,7 @@ Since the human eye is more sensitive to green than to the other two colors, the
 > [!info] Demosaicing algorithm
 > Needed to fill the gap between two pixels by making an average of the three different values.
 
-## Types of CCD
+### 1.8. Types of CCD
 
 - **Full frame**: entire chip is exposed to light. Readout requires shifting the charge both vertically and horizontally. Slow, and signal is corrupted during readout because light keeps arriving → mechanical shutter needed.
 - **Frame transfer**: upper (or lower) half of the array is shielded from light, so imaging happens only in the uncovered part. Fast vertical transfer from uncovered to masked region, then slow readout from the masked region.
@@ -146,7 +148,7 @@ Since the human eye is more sensitive to green than to the other two colors, the
 	Since the resulting pixels are rectangular the vertical pitch is double the horizontal one; we need to do an average of adjacent pixels to compensate the gap.
 	![[Image Sensors-1791962308534.webp|135]]
 
-## CCD Applications
+### 1.9. CCD Applications
 
 - Digital cameras
 - Optical scanners
@@ -154,9 +156,9 @@ Since the human eye is more sensitive to green than to the other two colors, the
 - Astrophotography (galaxies, nebulae)
 - Infrared photography (night vision, VLSI testing)
 
-# 2. CMOS Active Pixel Image Sensor
+## 2. CMOS Active Pixel Image Sensor
 
-## Active Pixel Sensor (APS)
+### 2.1. Active Pixel Sensor (APS)
 
 Both photodiode **and readout amplifier in each pixel**: charge accumulated by photodiode is converted to amplified voltage inside the pixel, then transferred by rows/columns to analog signal processing.
 
@@ -172,7 +174,7 @@ Main pixel components:
 
 ![[Image Sensors-1791962560250.webp|134]]
 
-## 3-transistor (3T) Pixel
+### 2.2. 3-transistor (3T) Pixel
 
 - **M1 – Reset:** restores initial condition before exposure
 - **M2 – Source-follower amplifier:** load common to all pixels in a column
@@ -182,14 +184,14 @@ All pixels in a column share one column amplifier.
 ![[Drawing 2026-10-14 09.31.09.excalidraw|250]]
 [!incomplete]
 
-## Noise Sources
+### 2.3. Noise Sources
 
 - **Fixed Pattern Noise (FPN):** variation in photodiode efficiency + mismatch in source-follower performance. Constant and reproducible → removed by flat-field correction (on-chip subtraction of uniform-illumination image).
 - **Reset noise (kTC noise):** $$\upsilon_{n}=\sqrt{ \frac{KT}{C} }$$
 - **Amplifier noise (1/f noise)**
 - **Photodiode shot noise**
 
-## Sensor Structure and Functional Blocks
+### 2.4. Sensor Structure and Functional Blocks
 
 Modern sensor: **Back-illuminated**, 3D-stacked hybrid-bonding **CIS + ISP** (CMOS Image Sensor + Image Signal Processor).
 
@@ -206,29 +208,29 @@ Typical blocks (VGA 640×480 example):
 > [!info] Functional Blocks
 > ![[Image Sensors-1791964086769.webp|278]]
 
-## Active Window
+### 2.5. Active Window
 
 **Active window / subsampling:** read only window of interest or subsampled pixels;
 Smaller resolution → Faster readout.
 ![[Image Sensors-1791964506041.webp|521]]
 
-## Readout Modes
+### 2.6. Readout Modes
 
 - **Rolling shutter:** rows scanned sequentially, not all pixels at same instant → distortion on fast-moving objects / flashes.
 - **Global shutter:** entire frame captured at same instant.
 
-## Communication Protocols
+### 2.7. Communication Protocols
 
 - **Parallel CMOS:** oldest, multiple data lines + clock/sync, still used in low-speed sensors
 - **MIPI CSI-2:** high-speed serial, from mobile, now standard in embedded vision
 - **LVDS:** low-voltage differential signaling, good noise immunity at high speed
 - To PC: Camera Link, USB3, Gigabit Ethernet
 
-## CMOS APS Applications
+### 2.8. CMOS APS Applications
 
 Camera phones, webcams, machine vision (area + line scan), high-speed motion capture, digital radiography, pill endoscopy, DSLRs.
 
-# 3. CCD vs CMOS
+## 3. CCD vs CMOS
 
 - **CCD pros:** uniformity (less structured noise), higher fill factor (almost all area for light), higher NIR sensitivity
 - **CMOS pros:** faster readout (converter per pixel), selectable active window, digital output, less off-chip electronics (amp, ADC, processing on-chip), less power → lower temperature

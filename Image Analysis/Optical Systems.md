@@ -4,7 +4,9 @@ subject: Image Analysis
 description: Camera optical system — thin spherical lens model, Snell's law, focalization, Fresnel law, pinhole camera model, and geometric distortions of central projection.
 ---
 
-# 1. Optical Sensor: Camera
+# Optical Systems
+
+## 1. Optical Sensor: Camera
 
 - **Screen:** Composed of an array (on the order of $10^6$ or more) of photosensitive elements called **pixels** (_PIXEL = PICture ELement_).
 	- Pixels act as optical $\to$ electric transducers.
@@ -12,7 +14,7 @@ description: Camera optical system — thin spherical lens model, Snell's law, f
 
 - **Optical system:** Enables the selection of a single direction of incoming light at each pixel element.
 
-# 2. Simplified Single Lens Model
+## 2. Simplified Single Lens Model
 
 A simplified camera lens is modeled as the intersection of two spheres of radii $\rho_1, \rho_2$, axially symmetric around the **optical axis** ($Z$-axis).
 
@@ -46,7 +48,7 @@ $$\delta \theta = \theta'' - \theta = (n-1)(\alpha_1 - \alpha_2) = (n-1) Y \left
 
 ![[Optical system-1791740538486.webp|415]]
 
-# 3. Focalization of Parallel Rays
+## 3. Focalization of Parallel Rays
 
 All parallel rays crossing the lens (i.e. rays coming from a single point at $\infty$ distance) concur at a common point on the **focal plane** $Z = -f$.
 
@@ -57,7 +59,7 @@ The focal plane $Z = -f$ is the same for any direction of incoming parallel rays
 
 ![[Optical system-1791740662290.webp|416]]
 
-# 4. Focalization at Finite Distance and Screen Placement
+## 4. Focalization at Finite Distance and Screen Placement
 
 For a scene point $P$ at a finite distance $Z$ from the lens, the rays passing through the lens converge at a distance $r$ behind the lens according to the **Fresnel Law**:
 $$\frac{1}{Z} + \frac{1}{r} = \frac{1}{f}$$
@@ -70,7 +72,7 @@ $$\frac{1}{Z} + \frac{1}{r} = \frac{1}{f}$$
 >
 > - **Distant scene approximation:** When observed points are far from the lens compared to the lens aperture $a$ ($Z(P) \gg a$), we have $r \approx f$, so we place the screen at the focal plane **$Z = -f$** where parallel rays converge.
 
-# 5. Pin-Hole Camera Model
+## 5. Pin-Hole Camera Model
 
 **Model Assumptions:**
 1. Thin spherical lens.
@@ -86,7 +88,7 @@ $$p = \text{image plane} \cap \text{line}(O,P)$$
 - **Pinhole Projection Equations:** Taking the principal point $c$ (intersection of the optical axis $Z$ with the image plane) as the 2D origin on the image plane, triangle similarity gives:
 $$x = f \frac{X}{Z}, \quad y = f \frac{Y}{Z}$$
 
-# 6. Central Projection: "What You See IS NOT What You Get"
+## 6. Central Projection: "What You See IS NOT What You Get"
 
 Due to the division by depth $Z$, central projection is:
 - **Non-linear**

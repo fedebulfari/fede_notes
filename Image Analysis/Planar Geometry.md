@@ -4,10 +4,12 @@ subject: Image Analysis
 description: Planar projective geometry for image rectification — homogeneous points, lines, vanishing points, cross ratio, conics, homographies, and affine/metric reconstruction from invariants.
 ---
 
+# Planar Geometry
+
 > [!summary] Overview 
 > Central projection in a pinhole camera ($x_p = f \frac{X_p}{Z_p},\ y_p = f \frac{Y_p}{Z_p}$) is non-linear and does not preserve shape or length ratios. To understand what we get from what we see we study planar projective geometry: points, lines, conics and their transformations, then use invariants to rectify an image of an unknown planar scene.
 
-# 1. Homogeneous Coordinates for Points
+## 1. Homogeneous Coordinates for Points
 
 Embed the Euclidean plane $X,Y$ as the plane $w=1$ in 3D. A point $P=[X,Y]$ is represented by any non-zero multiple of $[X,Y,1]^T$:
 
@@ -27,7 +29,7 @@ $$x = [x,y,w]^T = w[X,Y,1]^T, \quad X = \frac{x}{w},\quad Y = \frac{y}{w}$$
 
 **Line at infinity:** $l_{\infty} = [0,0,1]^T$ (or $[0,0,\lambda]^T$). A point $x$ is at infinity iff $l_{\infty}^T x = w = 0$.
 
-# 2. Lines, Incidence and Duality
+## 2. Lines, Incidence and Duality
 
 A line in the Euclidean plane $aX + bY + c = 0$ becomes in homogeneous coordinates $ax + by + cw = 0$, i.e.:
 
@@ -64,10 +66,10 @@ $l = [a,b,c]^T$ is homogeneous like $x$ (2 dof: ratios $a:b:c$; $[0,0,0]^T$ is n
 - **Special case (parallel pencil):** $l' = l + \lambda l_\infty = [a,b,c]^T + \lambda [0,0,1]^T = [a,b,c']^T$ represents the set of all lines parallel to $l$.
 	
 
-# 3. Vanishing Points and Vanishing Line
+## 3. Vanishing Points and Vanishing Line
 
 > [!theorem] Vanishing point
->  The image of a set of parallel lines $l_i$ is a set of lines $l_i'$ concurrent at a common point $x'_\infty$, called the vanishing point of that direction.
+> The image of a set of parallel lines $l_i$ is a set of lines $l_i'$ concurrent at a common point $x'_\infty$, called the vanishing point of that direction.
 
 - **Vanishing point:** Image of a point at infinity $x_\infty$ under central projection (or any homography).
 	
@@ -76,7 +78,7 @@ $l = [a,b,c]^T$ is homogeneous like $x$ (2 dof: ratios $a:b:c$; $[0,0,0]^T$ is n
 	$$l'_{\infty} = V_1 \times V_2$$
 	
 
-# 4. Cross Ratio — the Projective Invariant
+## 4. Cross Ratio — the Projective Invariant
 
 Lengths and ratios of lengths are **not** invariant under central projection (e.g., $50\text{ m}/-50\text{ m} = -1$ in scene becomes $420\text{ pix}/-160\text{ pix} = -2.62$ in image).
 
@@ -108,7 +110,7 @@ $$CR_{Y',Z',X_1',X_2'} = CR_{Y,Z,X_1,X_2}$$
 	This allows sorting features by time to impact and, if all features move at the same speed (static scene), provides a partial 3D reconstruction (depth proportional to $t_i$).
 	
 
-# 5. Conics and Dual Conics
+## 5. Conics and Dual Conics
 
 A conic is a second-degree curve $aX^2 + bXY + cY^2 + dX + eY + f = 0$. Homogenizing with $X=x/w, Y=y/w$ gives the quadratic form $x^T C x = 0$, with $C$ a symmetric $3 \times 3$ homogeneous matrix:
 
@@ -148,12 +150,12 @@ $$I = [1,i,0]^T, \quad J = [1,-i,0]^T$$
 		
 - **Conic dual to the circular points ($C^*_\infty$):** Degenerate dual conic ($\text{rank} = 2$) representing the set of all lines going through $I$ or $J$:$$C^*_{\infty} = I J^T + J I^T = \begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 0 \end{bmatrix}$$
 
-# 6. Projective Mapping / Homography
+## 6. Projective Mapping / Homography
 
 An invertible mapping $h: \mathbb{P}^2 \to \mathbb{P}'^2$ that preserves collinearity. Induced by central projection between planes (e.g., scene plane to image, two images of a planar surface, two images from a camera rotating about its optical center, planar shadow on the ground).
 
 > [!theorem] Fundamental Theorem of Projective Geometry
->  A mapping $h: \mathbb{P}^2 \to \mathbb{P}'^2$ is projective iff there exists an invertible $3 \times 3$ matrix $H$ such that $x' = H x$.
+> A mapping $h: \mathbb{P}^2 \to \mathbb{P}'^2$ is projective iff there exists an invertible $3 \times 3$ matrix $H$ such that $x' = H x$.
 
 - **Properties:** Linear in homogeneous coordinates (non-linear in Cartesian coordinates), **8 dof** (9 elements minus scale).
 - **Transformation rules under $H$:**
@@ -170,19 +172,19 @@ Only 2 of the 3 equations are linearly independent (each point correspondence gi
 - **Exact case ($n = 4$ correspondences):** Gives $A_{8 \times 9} h = 0$, solved via Right Null Space $h = \text{RNS}(A)$.
 - **Overdetermined case ($n > 4$ correspondences):** Minimize algebraic error $\arg\min_h \Vert{}A_{2n \times 9} h\Vert{}_2$ subject to $\Vert{}h\Vert{}_2 = 1$. Compute $\text{SVD}(A) = U D V^T$ (with singular values in decreasing order): $h$ is the last column of $V$ (eigenvector of $A^T A$ with minimum eigenvalue).
 
-# 7. Hierarchy of 2D Transformations
+## 7. Hierarchy of 2D Transformations
 
 Each transformation group is a subgroup of the ones below it and inherits all invariants of the groups below it.
 
 > [!info] Isometry / Euclidean
->  ($H_I$ — 3 dof: $t_x, t_y, \vartheta$)
+> ($H_I$ — 3 dof: $t_x, t_y, \vartheta$)
 >
 > $$H_I = \begin{bmatrix} R_\perp & t \\ 0^T & 1 \end{bmatrix} = \begin{bmatrix} \cos\vartheta & -\sin\vartheta & t_x \\ \sin\vartheta & \cos\vartheta & t_y \\ 0 & 0 & 1 \end{bmatrix}, \quad R_\perp^T R_\perp = I, \quad \det(R_\perp) = 1 \text{ (or } -1 \text{ for reflection)}$$
 >
 > **Invariants:** lengths, distances, areas, shape, size, relative positions.
 
 > [!info] Similarity
->  ($H_S$ — 4 dof: $t_x, t_y, \vartheta, s$)
+> ($H_S$ — 4 dof: $t_x, t_y, \vartheta, s$)
 >
 > $$H_S = \begin{bmatrix} sR_\perp & t \\ 0^T & 1 \end{bmatrix} = \begin{bmatrix} s\cos\vartheta & -s\sin\vartheta & t_x \\ s\sin\vartheta & s\cos\vartheta & t_y \\ 0 & 0 & 1 \end{bmatrix}$$
 >
@@ -202,14 +204,14 @@ Each transformation group is a subgroup of the ones below it and inherits all in
 >
 > **Invariants:** collinearity, incidence, order of contact (crossing, tangency, inflection), cross ratio. Maps origin to $[t_x, t_y]^T$ and axis directions to vanishing points $[a_{11}/v_1, a_{21}/v_1]^T$ and $[a_{12}/v_2, a_{22}/v_2]^T$.
 
-# 8. 2D Reconstruction Problem (Image Rectification)
+## 8. 2D Reconstruction Problem (Image Rectification)
 
 **Problem:** Given image points $x_i' = H x_i$, both scene points $x_i$ on plane $\pi$ and $H$ (8 dof) are unknown. We cannot simply invert $H$. **Combined Strategy:**
 
 1. **Relax requirements (reduce unknowns):** Aim for a reconstruction up to a _similarity_ (same shape: $8 - 4 = 4$ unknowns) or up to an _affinity_ (parallelism preserved: $8 - 6 = 2$ unknowns).
 2. **Add constraints** from geometric scene knowledge.
 
-## A. Affine Reconstruction
+### 8.1. A. Affine Reconstruction
 
 > [!theorem] Affine Invariant 
 > A projective transformation $H$ maps $l_{\infty}$ onto itself iff $H$ is affine. _Proof:_ $H[x,y,0]^T$ has third coordinate $v_1 x + v_2 y = 0 \ \forall x,y \iff v_1 = v_2 = 0$.
@@ -220,7 +222,7 @@ $$H_{AR} = \begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ a & b & c \end{bmatrix} \qu
 
 The reconstructed model $M_A = H_{AR} \cdot \text{Image}$ is an affine transformation of the original scene.
 
-## B. Shape (Euclidean / Metric) Reconstruction 
+### 8.2. B. Shape (Euclidean / Metric) Reconstruction
 
 > [!theorem] Similarity Invariant 
 > A projective transformation $H$ maps the circular points $I, J$ (or equivalently $C^*_{\infty}$) onto themselves iff $H$ is a similarity.
@@ -234,7 +236,7 @@ $$\text{svd}(C^{*'}_{\infty}) = U \begin{bmatrix} a & 0 & 0 \\ 0 & b & 0 \\ 0 & 
 Hence the rectifying homography is:
 $$H_{SR} = \begin{bmatrix} \frac{1}{\sqrt{a}} & 0 & 0 \\ 0 & \frac{1}{\sqrt{b}} & 0 \\ 0 & 0 & 1 \end{bmatrix} U^T$$
 
-## C. How to Find $I', J'$ or $C^{*'}_{\infty}$ in Practice
+### 8.3. C. How to Find $I', J'$ or $C^{*'}_{\infty}$ in Practice
 
 1. **Known Angles Between Lines:** For scene lines $l, m$ with angle $\vartheta$ between their normals:$$\cos\vartheta = \frac{l^T C^*_{\infty} m}{\sqrt{(l^T C^*_{\infty} l)(m^T C^*_{\infty} m)}} = \frac{l'^T C^{*'}_{\infty} m'}{\sqrt{(l'^T C^{*'}_{\infty} l')(m'^T C^{*'}_{\infty} m')}}$$
 	- General known angle $\vartheta \rightarrow$ non-linear constraint on $C^{*'}_{\infty}$.
@@ -250,7 +252,7 @@ $$H_{SR} = \begin{bmatrix} \frac{1}{\sqrt{a}} & 0 & 0 \\ 0 & \frac{1}{\sqrt{b}} 
 	- Eigenvalues are proportional to $\{1, e^{i\vartheta}, e^{-i\vartheta}\}$.
 	- Real eigenvector ($\lambda' = 1$) is $O'$; complex conjugate eigenvectors ($\lambda'', \lambda''' = e^{\pm i\vartheta}$) are $I', J'$, from which $C^{*'}_{\infty} = I' J'^T + J' I'^T$.
 
-## D. Direct vs. Stratified Method
+### 8.4. D. Direct vs. Stratified Method
 
 - **Direct Method:** Estimate $C^{*'}_{\infty}$ in one step from 4–5 constraints, then rectify via SVD.
 - **Stratified Algebraic Method (often numerically more stable):**
@@ -266,7 +268,7 @@ $$H_{SR} = \begin{bmatrix} \frac{1}{\sqrt{a}} & 0 & 0 \\ 0 & \frac{1}{\sqrt{b}} 
 	2. _Affine $\to$ Metric (1st orthogonal pair):_ Apply a 3-point affinity $H_{A1}$ ($A, B, C \to A', B', C'$) that makes the first pair of lines orthogonal.
 	3. _Affine $\to$ Metric (2nd orthogonal pair):_ Given the second pair forming a triangle $ABC$ with altitude $CH \perp AB$, move $C$ along line $HC$ to $C'$ so that $\triangle ABC'$ is right-angled at $C'$. By **Euclid's theorem**, $HC' = \sqrt{AH \cdot HB}$ ($HC'^2 = AH \cdot HB$). Apply the 3-point affinity $H_{A2}$ mapping $A \to A, B \to B, C \to C'$, which enforces the second orthogonality while preserving the first.
 
-## E. Numerical Accuracy Issues
+### 8.5. E. Numerical Accuracy Issues
 
 1. **Noise in SVD:** Singular values of $C^{*'}_{\infty}$ are $a, b \ne 1$ $\rightarrow$ normalize with $1/\sqrt{a}, 1/\sqrt{b}$.
 2. **Line intersection uncertainty:** Intersecting lines that are too close to each other in the image yields poor vanishing point estimates $\rightarrow$ choose lines as far apart as possible.

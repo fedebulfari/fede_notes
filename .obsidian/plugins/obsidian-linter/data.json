@@ -395,10 +395,10 @@
       "ending-word-ignore-characters": ".?!,:;'\")”’0123456789-"
     },
     "file-name-heading": {
-      "enabled": false
+      "enabled": true
     },
     "header-increment": {
-      "enabled": false,
+      "enabled": true,
       "start-at-h2": false
     },
     "headings-start-line": {
@@ -436,7 +436,7 @@
       "default-language": ""
     },
     "emphasis-style": {
-      "enabled": false,
+      "enabled": true,
       "style": "consistent"
     },
     "no-bare-urls": {
@@ -462,13 +462,13 @@
       "enabled": false
     },
     "remove-empty-list-markers": {
-      "enabled": false
+      "enabled": true
     },
     "remove-hyphenated-line-breaks": {
       "enabled": false
     },
     "remove-multiple-spaces": {
-      "enabled": false
+      "enabled": true
     },
     "strong-style": {
       "enabled": false,
@@ -541,7 +541,7 @@
       "characters-to-remove-space-after": "¿¡‘“(["
     },
     "space-after-list-markers": {
-      "enabled": false
+      "enabled": true
     },
     "space-between-chinese-japanese-or-korean-and-english-or-numbers": {
       "enabled": false,
@@ -574,7 +574,7 @@
       "enabled": false
     },
     "remove-multiple-blank-lines-on-paste": {
-      "enabled": false
+      "enabled": true
     },
     "move-inline-fields-to-yaml": {
       "enabled": false,
@@ -594,14 +594,15 @@
   "enableDiffPreviewView": true,
   "suppressLintAllFilesConfirmationModal": false,
   "suppressLintAllFilesInFolderConfirmationModal": false,
-  "lintOnFileChange": false,
+  "lintOnFileChange": true,
   "displayLintOnFileChangeNotice": false,
   "settingsConvertedToConfigKeyValues": true,
   "textAreaSettingsConvertedToListItemSettings": true,
   "defaultArrayStyleMovedToCommonStyles": true,
   "additionalFileExtensions": [],
   "foldersToIgnore": [
-    "copilot"
+    "copilot",
+    "templates"
   ],
   "filesToIgnore": [],
   "linterLocale": "system-default",

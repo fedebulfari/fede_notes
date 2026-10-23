@@ -16,9 +16,7 @@
     "autoCapitalize": true,
     "removeDoubledWords": true,
     "extraAbbreviations": [],
-    "userDictionary": [
-      "software-to-be"
-    ],
+    "userDictionary": [],
     "userDictionaryUserAdded": [],
     "suggestUserDictionary": true,
     "undoAddsToDictionary": true,
@@ -58,14 +56,14 @@
     "currencyUseCode": false,
     "fractionGlyphs": false,
     "syncFrontmatterTags": true,
-    "replaceLinkMenu": true
+    "replaceLinkMenu": false
   },
   "engagement": {
-    "totalSaved": 279,
-    "todaySaved": 279,
-    "lastActiveDay": "2026-10-22",
-    "streak": 1,
-    "bestStreak": 1,
+    "totalSaved": 391,
+    "todaySaved": 112,
+    "lastActiveDay": "2026-10-23",
+    "streak": 2,
+    "bestStreak": 2,
     "milestones": [],
     "alternativesAccepted": 0
   }

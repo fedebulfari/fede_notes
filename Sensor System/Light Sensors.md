@@ -3,9 +3,10 @@ date: 14-10-2026
 subject: Sensor System
 description:
 ---
-	
 
-# 1. Photodiode
+# Light Sensors
+
+## 1. Photodiode
 
 Two-terminal device that produces a current when stimulated by photons.
 
@@ -15,7 +16,7 @@ It is used with reverse bias (voltage at cathode > voltage at anode) in order to
 
 ![[Light Sensor-1791980682491.webp|455]]
 
-## Current Generation
+### 1.1. Current Generation
 
 ![[Light Sensor-1791980956918.webp]]
 
@@ -25,7 +26,7 @@ It is used with reverse bias (voltage at cathode > voltage at anode) in order to
 
 There is a high probability of electron recombination in the P region. With reverse bias, electrons travel toward the cathode, so they have a low probability of recombining.
 
-## P-N vs P-I-N
+### 1.2. P-N vs P-I-N
 
 ![[Light Sensor-1791981591420.webp|555]]
 
@@ -33,7 +34,7 @@ P-I-N has an intrinsic layer between P and N, which means the depletion region i
 - higher sensitivity / responsivity over a wider spectrum
 - reduced capacitance (which usually causes circuit instability)
 
-## Penetration Depth
+### 1.3. Penetration Depth
 
 **Penetration depth**: depth at which the intensity of the radiation inside the material falls to $\frac{1}{e}$ (about 37%) of its original value at the surface.
 
@@ -41,7 +42,7 @@ P-I-N has an intrinsic layer between P and N, which means the depletion region i
 
 Photo-generation requires: the energy of the photons must be higher than the energy gap of silicon: $E_{ph} > E_g$ (Si: $E_g = 1.12 \, eV$).
 
-## Responsivity
+### 1.4. Responsivity
 
 ![[Light Sensor-1791984039609.webp|375]]
 
@@ -59,7 +60,7 @@ $R_{\lambda}$ depends on:
 
 > [!warning] Around 1 µm the energy of photons becomes lower than the energy gap of silicon.
 
-## Electrical Model
+### 1.5. Electrical Model
 
 ![[Light Sensor-1791982071614.webp|392]]
 
@@ -71,11 +72,11 @@ $R_{\lambda}$ depends on:
 
 ![[Drawing 2026-10-14 16.05.50.excalidraw]]
 
-## Noise
+### 1.6. Noise
 
 **Standard Deviation**:$$V_{n}=\sqrt{ S_{v}*\Delta f},\ I_{n}=\sqrt{ S_{i}*\Delta f}$$
 
-### Thermal (Johnson) Noise
+#### 1.6.1. Thermal (Johnson) Noise
 
  In resistors we have so-called Brownian motion of charges caused by temperature, so in practice it can be modelled as an ideal voltage generator in series with an ideal resistor (or with its Norton equivalent).
 
@@ -84,14 +85,14 @@ $R_{\lambda}$ depends on:
 **Spectral density**:$$S_{v}=4KT*R\ \left[ \frac{V^2}{Hz} \right]\\ S_{i}=\frac{4KT}{R}\ \left[\frac{A^2}{Hz} \right]$$
 $4kT=1.66*10^{-20}\  \left[\frac{V^2}{Hz*\Omega}\right]$
 
-### Shot Noise
+#### 1.6.2. Shot Noise
 
 Granularity of charge crossing a P-N junction.
 
 ![[Light Sensor-1791988073736.webp|144]]
 $$S_{i}=2q*I$$
 
-### Photodiode Noise
+#### 1.6.3. Photodiode Noise
 
 - Shot noise = statistical fluctuation in both the photocurrent and the dark current: $$I_{s} = \sqrt{2q(I_{ph}+I_{d})\Delta f}$$
 - Thermal (Johnson) noise = thermal generation of the shunt resistance: $$I_{jn\_R_{SH}} = \sqrt{\frac{4kT\Delta f}{R_{SH}}} \cdot \frac{R_{s}}{R_{SH}+R_{s}} \approx \sqrt{\frac{4kT\Delta f}{R_{SH}}}$$
@@ -100,11 +101,11 @@ $$S_{i}=2q*I$$
 > [!tip] Noise Equivalent Power (NEP)
 > Amount of incident light power on a photodetector which generates a photocurrent equal to the noise current: $$NEP = \frac{I_{n}}{R_{\lambda}}$$
 
-### Noise SPICE Simulations
+#### 1.6.4. Noise SPICE Simulations
 
 Commercial diode model vs diode modelled with passive components: compare the $R_S$ noise transfer function, the $R_{SH}$ noise transfer function, and the ratio between the $R_{SH}$ and $R_S$ noise transfer functions.
 
-## Basic Readout Circuits
+### 1.7. Basic Readout Circuits
 
 - Non-inverting configuration: $V_o = I_{sens} \cdot R_L \cdot \left(1+\frac{R_f}{R}\right)$
 	![[Light Sensor-1792068237487.webp|310]] ![[Drawing 2026-10-15 14.51.22.excalidraw|200]]
@@ -117,10 +118,10 @@ Commercial diode model vs diode modelled with passive components: compare the $R
 > [!info] TIA Instability
 > Since we can model the photodiode as a capacitance, it can create instability in the node.
 > ![[Light Sensor-1792070072517.webp|342x305]]
-> 
+>
 > A capacitor is needed in the feedback to reduce the oscillation (but it also reduces the bandwidth)
 
-## Photodiode Applications
+### 1.8. Photodiode Applications
 
 - Camera: Light Meters, Automatic Shutter Control, Auto-focus, Photographic Flash Control
 - Medical: X-ray Detection, Pulse Oximeters, Blood Particle Analyzers
@@ -129,7 +130,7 @@ Commercial diode model vs diode modelled with passive components: compare the $R
 - Industry: Bar Code Scanners, Light Pens, Brightness Controls, Rotary Encoders, Position Sensors, Surveying Instruments, Copiers / Density of Toner
 - Communications: Fiber Optic Links, Optical Communications
 
-## IR Receiver Module: TSOP58238
+### 1.9. IR Receiver Module: TSOP58238
 
 Application circuit with Automatic Gain Control. Carrier frequency = 38 kHz.
 
@@ -139,7 +140,7 @@ Application circuit with Automatic Gain Control. Carrier frequency = 38 kHz.
 ![[Light Sensor-1792071214503.webp|464]] 
 ![[Light Sensor-1792071241517.webp|271x235]] ![[Light Sensor-1792071267475.webp|270x235]]
 
-# 2. Avalanche Photodiode (APD)
+## 2. Avalanche Photodiode (APD)
 
 ![[Light Sensor-1792071106166.webp|257]]
 - P-i-N junction
@@ -151,7 +152,7 @@ Basic structure:
 - Absorption region = separates photo-generated holes and electrons
 - Multiplication region = high electric field to provide internal photo-current gain by impact ionization
 
-# 3. Single-Photon Avalanche-Diode (SPAD)
+## 3. Single-Photon Avalanche-Diode (SPAD)
 
 ![[Light Sensor-1792071126371.webp|287]]
 - P-N junction
@@ -163,14 +164,14 @@ Basic structure:
 
 Solid-state device: can be integrated together with electronics (counter & TDC). Cycle: photon ($h\nu$) → avalanche → quench → reset.
 
-# 4. Silicon Photo-Multipliers (SiPM)
+## 4. Silicon Photo-Multipliers (SiPM)
 
 Hundreds / thousands of SPADs + quenching resistance in parallel:
 - Single photon sensitivity
 - Photon number resolving capability
 - Large active area
 
-# 5. Light Dependent Resistor (LDR)
+## 5. Light Dependent Resistor (LDR)
 
 In the dark → $R$ very high (up to $1 M\Omega$). Exposed to light → $R$ drops dramatically (few ohms).
 ![[Light Sensor-1792071180779.webp|267]]

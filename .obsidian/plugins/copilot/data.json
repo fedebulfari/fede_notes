@@ -31,6 +31,7 @@
   "defaultSaveFolder": "copilot/copilot-conversations",
   "defaultConversationTag": "copilot-conversation",
   "autosaveChat": false,
+  "autoAttachActiveNote": true,
   "defaultOpenArea": "view",
   "defaultSendShortcut": "enter",
   "customPromptsFolder": "copilot/copilot-custom-prompts",
@@ -318,7 +319,7 @@
   "inlineEditCommands": [],
   "projectList": [],
   "lastDismissedVersion": null,
-  "lastShownStartupVersion": "4.0.15",
+  "lastShownStartupVersion": "4.0.16",
   "passMarkdownImages": true,
   "enableAutonomousAgent": true,
   "enableCustomPromptTemplating": true,
@@ -681,5 +682,5 @@
   "autoAddActiveContentToContext": true,
   "miyoConnectionMode": "local",
   "_keychainVaultId": "4cc0ac26",
-  "settingsVersion": 15
+  "settingsVersion": 16
 }

@@ -4,7 +4,7 @@ subject: Software Engineering 2
 description:
 ---
 
-# Definition
+# Requirement Engineering
 
 Requirement engineering is the process of discovering the pourpose of a system un order to implement it the closest to the needs of the user.
 
@@ -15,7 +15,7 @@ We can subdivide requirements in 3 types:
 - Non-functional(NFR): characterization of user-visibble aspect not directly related to functions
 - Constraint: imoosed by the customer or the environment
 
-## NFR
+## 1. NFR
 
  Constraint on how the functionality must be provided.
 
@@ -40,13 +40,13 @@ We can subdivide requirements in 3 types:
 > - **Cannot be achieved by the software system itself**: it is not something the system must do 
 > It could be expressed as a constraint or assumption, but it is not a functional requirement
 
-# Issues
+# 1. Issues
 
 Requirements engineering can be misleading if too ubiquitous.
 If error are made, to fix them can be one of the bigger cost in a software development, since design decision depend on them.
 Is important to be Coherent and limit the Ambiguity or things left to interpretation
 
-# Complexity
+# 2. Complexity
 
 - Broad scope:
 	- Composite systems 
@@ -61,10 +61,10 @@ Is important to be Coherent and limit the Ambiguity or things left to interpreta
 - Multiple stakeholders with different background 
 	 customers, users, domain experts, developers,…
 
-# Word and Machine
+# 3. Word and Machine
 
 We can define as Machine the system to be developed and world the environment that affect it.
-Requirement Engineering need to concerns with the  phenomena occurring in the World and model them in to the Machine
+Requirement Engineering need to concerns with the phenomena occurring in the World and model them in to the Machine
 
 ![[Requirement Engineering-1792684065345.webp|437]]
 
@@ -73,7 +73,7 @@ Requirement Engineering need to concerns with the  phenomena occurring in the Wo
 - Requirements: Prescriptive assertion dormulaed in term if shared phenomena
  
 
-# Completeness
+# 4. Completeness
 
 Given a set of Requirements $R$, Goals $G$ and Domain $D$
 $R$ is complete iff:
@@ -82,7 +82,7 @@ $$R \text{ and } D ⊨ G$$
 - G capture all stakeholders needs
 - D represent valid properties/assumption about the world
 
-# Steps
+# 5. Steps
 
 1. Carry out domain analysis
 	- Identify phenomena, in particular the shared ones -
@@ -104,7 +104,7 @@ In Particular:
 		- Insist on task observation if the system already exists (interface engineering or reengineering) 
 		- Ask to speak to the end user, not just to the software contractor 
 		- Expect resistance and try to overcome it
-2. After the scenrio  is formmuylated
+2. After the scenario is formmulated
 	- Generalize scenarios: 
 		- Example: from “Warehouse on fire” we can generalize a “Report Emergency” use case 
 	- Structure the description in terms of:
@@ -127,7 +127,7 @@ In Particular:
 
 ![[Requirement Engineering-1792689051477.webp|608]]
 
-# Modelling Tools
+# 6. Modelling Tools
 
 As a mean to model our system we can use:
 - Natural Language:
@@ -135,12 +135,12 @@ As a mean to model our system we can use:
 		- simple
 	- Cons: 
 		- ambiguous and vague
-- Formal language:
+- Formal language([[Alloy]], Z, first order logic, etc.):
 	- Pros: 
 		- possibility to use tools to support analysis and validation
 		- Needs to be specific an detailed
 	- Cons: needs to be an expert
-- Semi-formal Language(UML, etc.):
+- Semi-formal Language([[UMLs]]):
 	- Pros:
 		- Simpler than formal language
 		- Impose some kind of structure in the models
@@ -152,93 +152,8 @@ As a mean to model our system we can use:
 	- Comment the semi-formal model with explanatory informal text
 	- Use formal language for most critical parts
 
-## UMLs
-
-UMLs as already said are a type of semi-formal languages.
-![[Requirement Engineering-1792687027582.webp|488]]
-Use case:
-- Flow of events in the system including interaction with actors
-- It is initiated by an actor
-- Each use case has a name
-- Each use case has a termination condition.
-
-Use Case **association**(relationship between use cases):
-- Include: a use case ses another use case
-- Extend: a use case extend another use case
-- Generalization: abstract use case that has several different speculations
-
-![[Requirement Engineering-1792687278152.webp|516]]
-
-### Requirements-level Class Diagrams
-
-Conceptual models for the application domain
-
-They include entities that will not be represented in the software-to-be
-
-Usually, no operations of the entities are modelled
-
-### Domain-level Class Diagrams
-
-![[Requirement Engineering-1792687690968.webp|467x250]]
-
-### Dynamic Models
-
-Dynamic models have the purpose to model the interactions, behavior of users and workflow
-
-Considering a use-cases, we model:
-- Interaction between objects— **sequence diagrams** 
-- Dynamic behavior of single objects— **state machine diagrams**
-- Workflow— **activity diagram**
-
-#### Sequence Diagrams
-
-Graphical description of objects participating in a use case or scenario using a DAG(directed acyclic graph) notation
-
-Steps:
-- Analyze the flow of **events** in a use case (or scenario) 
-- Each event must have a **sender** and a **receiver** 
-- The representation of the event is referred to as **message** in the sequence diagram notation 
-- Sender and receiver are **objects** participating in the use-case
-
-![[Requirement Engineering-1792688346409.webp|490]]
-
-#### State Machine Diagrams
-
-Capture the behavior of objects, instances of a class
-
-![[Requirement Engineering-1792688315965.webp|564]]
-
-| State diagram                                                  | Sequence diagram                                   |
-| -------------------------------------------------------------- | -------------------------------------------------- |
-| Focus on changes in an individual object over time             | Focus on the interaction between objects over time |
-| Class-level documentation                                      | Instance-level documentation                       |
-| We can infer many possible event and order-dependent behaviors | Shows one specific case or a subset of cases       |
-
-#### Activity Diagrams
-
-Describe an activity without assigning responsibilities
-![[Requirement Engineering-1792688567096.webp|287]]![[Requirement Engineering-1792688584346.webp|222x276]]
-
-| Sequence diagram                              | Activity diagram                           |
-| --------------------------------------------- | ------------------------------------------ |
-| Focus on object interaction                   | Focus on activities and flow of activities |
-| Suited for describing an interaction protocol | Suited for describing a process            |
-
-### Requirements Elicitation and Modeling with UMLs
-
-![[Requirement Engineering-1792689091674.webp|589]]
-
-## RASD
-
-The purpose of RASD is to **Communicate** an understanding of the requirements, making a **Contractual** binding with the customers, defining a **Baseline** for other acivities as project planning, software verification and validation, change control
-
-Audience:
-- Customers and Users
-- System Analysts and Requirement Analysts
-- Developers and Programmers
-- Quality Assurance teams
-- Project Managers
+We can also help ourselves using [[RASD]]
 
 ---
 Related: [[_Software Engineering 2 MOC]]
-Sources: [[02a.RE.pdf]], [[02b.video1_ElicitationOfRequirements.pdf]], [[02c.ExampleScenarioUCReqs.pdf]], [[02d.video2_ModelingReqs.pdf]], [[02e.UML4RE.pdf]], [[02g.CreatingRASD.pdf]], [[02h.RASD_lab_DiNItto.pdf]]
+Sources: [[02a.RE.pdf]], [[02b.video1_ElicitationOfRequirements.pdf]], [[02c.ExampleScenarioUCReqs.pdf]], [[02d.video2_ModelingReqs.pdf]]

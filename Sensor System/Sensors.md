@@ -4,7 +4,9 @@ subject: Sensor System
 description: Introduction to transducers, sensor classification, static and dynamic characteristics, analog/smart readout, and sensor calibration.
 ---
 
-# 1. Transducer
+# Sensors
+
+## 1. Transducer
 
 **Transducer**: device which transforms energy from one type to another, even if both energy types are in the same domain.
 Typical domains: mechanical, electrical, chemical, magnetic, optical and thermal.
@@ -15,9 +17,9 @@ Subdivided in:
 
 ![[Sensors-1791907985501.webp|405]]
 
-# 2. Classification
+## 2. Classification
 
-## By Physical Phenomena
+### 2.1. By Physical Phenomena
 
 - Optical: visible / IR light (photodiode, CCD, CMOS APS, infrared sensor)
 - Thermal: temperature (RTD, thermistor, thermocouple…)
@@ -25,7 +27,7 @@ Subdivided in:
 - Mechanical: strain (strain gauge), force (piezo-electric sensor), displacement and distance (capacitive, inductive, acoustic, optical), acceleration and orientation (MEMS), viscosity, pressure, etc.
 - Chemical: pH (pH-meter)
 
-## By Sensing Mechanism
+### 2.2. By Sensing Mechanism
 
 - Resistive
 - Capacitive
@@ -44,7 +46,7 @@ Subdivided in:
 | Acceleration and orientation | Accelerometers (MEMS), Gyroscopes (MEMS) |
 | Sound | Microphone |
 
-# 3. Characteristics
+## 3. Characteristics
 
 - **Sensitivity**: ratio between change in output signal to small change in input physical signal. Slope of the input-output fit line:$$S = \frac{\partial out}{\partial in}$$
 - **Resolution (LSB)**: smallest increment of measure that a device can make (Least Significant Bit)
@@ -74,16 +76,16 @@ Subdivided in:
 	- Min Input: typically noise
 	- Max Input: typically FSR
 
-# 4. Readout
+## 4. Readout
 
-## Analog Sensor Readout
+### 4.1. Analog Sensor Readout
 
 - ADC + microcontroller: many microcontrollers have built-in ADC (typically 8-bit to 12-bit or even 16-bit)
 - Data Acquisition Cards (DAQ):
 	- PC card or external devices with analog and digital I/O
 	- interface through LabVIEW or user-generated code
 
-## Smart Sensors Readout
+### 4.2. Smart Sensors Readout
 
 **Smart sensor** = sensor with built-in signal processing & communication (e.g. combining a "dumb sensor" and ADC / processing).
 
@@ -98,7 +100,7 @@ Digital output:
 		- Universal Asynchronous Receiver Transmitter (UART)
 		- must match baud rate and bit width, transmission protocol, etc.
 
-# Sensor Calibration
+## 5. Sensor Calibration
 
 Sensors can exhibit non-ideal effects:
 - **offset**: nominal output $\neq$ nominal parameter value, with fixed difference

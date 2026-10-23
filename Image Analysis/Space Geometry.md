@@ -2,7 +2,9 @@
 date: 11-10-2026
 subject: Image Analysis
 ---
-## Space Geometry
+
+# Space Geometry
+
 - In 3 dimensions we find: Points, Lines, Planes, Quadrics, Dual Quadrics.
 - Points: $x=[\begin{matrix}x\\ y\\ z\end{matrix}]=[\begin{matrix}x\\ y\\ z\end{matrix}]\sim x_{2}\le y=y=\underline{y},z=\frac{y}{w}$.
 - Plane $\pi=[\begin{matrix}a\\ c\\ c\\ c\\ \end{matrix}],(abc)=direction~normal~to~the~Plane$.
@@ -14,7 +16,8 @@ subject: Image Analysis
 - Cross Ratio.
 - Intersection of Coaxial Planes.
 
-## Quadrics
+## 1. Quadrics
+
 - $X^T Q X = 0$ general quadric.
 - $Q=[\begin{matrix}0&0&0&1\\ 0&0&.&.\\ 0&0&.&.\\ 0&0&0&0\end{matrix}]$.
 - Various types. Projectively equivalent to spheres: Spheres, Ellipsoids, Hyperboloids of 2 Sheets, Paraboloids.
@@ -22,23 +25,27 @@ subject: Image Analysis
 - Degenerate Ruled Quadrics: Cone, Two Planes.
 - Sphere: $-5f_{prex}=[\begin{matrix}x_{p}+m\end{matrix}][\begin{matrix}1&0&0&0&-p_{p}\\ 0&i&-p_{p}\\ -x_{p}+p_{p}&-p_{p}\\ -x_{p}-x_{p}&x_{p}^{2}+p_{p}^{2}\end{matrix}][\begin{matrix}\frac{1}{q}\\ 1\\ w\end{matrix}]=0$.
 
-## Intersection Quadric, Plane
+## 2. Intersection Quadric, Plane
+
 - To describe these intersections we introduce the span.
 - Span: X Mx with homogeneous coordinates in 3D.
 - Intersection $M^T Q M$.
 - I obtain a Conic $C=H^{5}QH\mapsto x^{3}Cx=0$.
 
-## Absolute Conic
+## 3. Absolute Conic
+
 - Intersection of a Sphere with the Plane at infinity.
 - $\Omega_{e0}\times[\begin{matrix}t&0\\ 0&t&0\\ 0&0&t\end{matrix}]$.
 - This contains all the Circular Points of all the Planes.
 
-## Degenerate Quadrics
+## 4. Degenerate Quadrics
+
 - Rank 3 Quadrics $Q=AA^{r}$.
 - Rank 4 $a=AB^{T}+B^{T}A$.
 - Rank 3 Q: Cone with vertex $R~us(Q)$.
 
-## Transformations
+## 5. Transformations
+
 - Follow the concepts already seen in Planar Geometry.
 - Branches.
 

@@ -1,11 +1,13 @@
 ---
 name: obsidian-markdown
-description: Create and edit Obsidian-specific Markdown syntax, including wikilinks, embeds, block references, callouts, properties, tags, and comments. Use for Obsidian notes when these extensions matter; ordinary Markdown is assumed knowledge.
+description: Create and edit Obsidian-specific Markdown syntax, including wikilinks, embeds, block references and block IDs, callouts, properties, tags, aliases, and comments. Load before adding or changing any of these in a note.
 license: MIT
 metadata:
   copilot-enabled-agents: opencode, claude, codex
-  copilot-builtin-version: "1"
-  copilot-upstream-revision: "a1dc48e68138490d522c04cbf5822214c6eb1202"
+  copilot-builtin-version: "2"
+  copilot-upstream-revision: a1dc48e68138490d522c04cbf5822214c6eb1202
+tags:
+  - nested/tag
 ---
 
 # Obsidian Markdown
@@ -34,7 +36,8 @@ CommonMark or GFM unless the user asks.
 This paragraph is addressable. ^block-id
 ~~~
 
-Put a block ID on its own line after a list or quote block.
+Put a block ID on its own line after a list or quote block, with a blank line
+before and after it; without the line before it marks only the last item.
 
 ## Embeds
 

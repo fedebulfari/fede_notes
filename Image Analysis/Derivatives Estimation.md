@@ -3,7 +3,10 @@ date: 11-10-2026
 subject: Image Analysis
 ---
 
+# Derivatives Estimation
+
 ## Derivative Estimation
+
 - Techniques to find contours of the analyzed objects.
 - Given a grayscale image I want as output Binary images containing the edges.
 - To do this, use Derivatives, computed via convolutions.
