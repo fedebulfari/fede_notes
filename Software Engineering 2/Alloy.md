@@ -7,7 +7,7 @@ description:
 # Alloy
 
 Alloy is a formal notation for specifying models of systems and software.
-	It looks like a declarative OO language but with strong mathematical founfdation.
+	It looks like a declarative OO language but with strong mathematical foundations.
 
 It comes with **supporting** tools to **simulate** specifications and perform formal verification of properties(bounded model checking).
 

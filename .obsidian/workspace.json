@@ -14,12 +14,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Software Engineering 2/Alloy.md",
+                "file": "Software Engineering 2/_Software Engineering 2 MOC.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Alloy"
+              "title": "_Software Engineering 2 MOC"
             }
           }
         ]
@@ -62,8 +62,8 @@
               "state": {
                 "sortOrder": "alphabetical",
                 "autoReveal": false,
-                "showSearch": false,
-                "searchQuery": ""
+                "showSearch": true,
+                "searchQuery": "soft"
               },
               "icon": "lucide-folder-closed",
               "title": "Esplora file"
@@ -192,7 +192,7 @@
               "type": "copilot-agent-chat-view",
               "state": {},
               "icon": "copilot-agent",
-              "title": "Copilot Agent"
+              "title": "Copilot Agent Chat"
             }
           },
           {
@@ -221,12 +221,11 @@
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
-    "width": 272.2955322265625,
-    "collapsed": true
+    "width": 272.2955322265625
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -245,12 +244,13 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "bf293cf44ab20b70",
+  "active": "04676eb336cffe0f",
   "lastOpenFiles": [
+    "Software Production.md",
     "Software Engineering 2/Alloy.md",
+    "Software Engineering 2/PDF/03a.AlloyPart1-2.pdf",
     "Software Engineering 2/Requirement Engineering.md",
     "Software Engineering 2/Requirements Engineering.md",
-    "Software Engineering 2/PDF/03a.AlloyPart1-2.pdf",
     "Software Engineering 2/RASD.md",
     "Software Engineering 2/PDF/02h.RASD_lab_DiNItto.pdf",
     "Software Engineering 2/PDF/02g.CreatingRASD.pdf",
@@ -283,7 +283,6 @@
     "Sensor System/_Sensor System MOC.md",
     "Image Analysis/Camera Geometry.md",
     "Image Analysis/_Image Analysis MOC.md",
-    "Software Engineering 2/_Software Engineering 2 MOC.md",
     "Software Engineering 2/PDF/02d.video2_ModelingReqs.pdf",
     "Software Engineering 2/PDF/02a.RE.pdf",
     "Software Engineering 2/PDF/02e.UML4RE.pdf",

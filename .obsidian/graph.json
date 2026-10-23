@@ -1,12 +1,55 @@
 {
-  "collapse-filter": true,
+  "collapse-filter": false,
   "search": "",
   "showTags": false,
   "showAttachments": false,
   "hideUnresolved": false,
   "showOrphans": true,
-  "collapse-color-groups": true,
-  "colorGroups": [],
+  "collapse-color-groups": false,
+  "colorGroups": [
+    {
+      "query": "path:\"Operational Research\"  ",
+      "color": {
+        "a": 1,
+        "rgb": 681513
+      }
+    },
+    {
+      "query": "path:Database2  ",
+      "color": {
+        "a": 1,
+        "rgb": 14706514
+      }
+    },
+    {
+      "query": "path:\"Formal Languages and Compilers\"  ",
+      "color": {
+        "a": 1,
+        "rgb": 1413794
+      }
+    },
+    {
+      "query": "path:\"Image Analysis\"  ",
+      "color": {
+        "a": 1,
+        "rgb": 5431473
+      }
+    },
+    {
+      "query": "path:\"Sensor System\"  ",
+      "color": {
+        "a": 1,
+        "rgb": 3417011
+      }
+    },
+    {
+      "query": "path:\"Software Engineering 2\"  ",
+      "color": {
+        "a": 1,
+        "rgb": 14701138
+      }
+    }
+  ],
   "collapse-display": false,
   "showArrow": false,
   "textFadeMultiplier": 0.2,
@@ -17,6 +60,6 @@
   "repelStrength": 12.1989606533036,
   "linkStrength": 1,
   "linkDistance": 250,
-  "scale": 0.9605536763590441,
+  "scale": 0.2755991420518384,
   "close": false
 }
