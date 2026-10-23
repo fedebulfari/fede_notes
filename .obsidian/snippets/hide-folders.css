@@ -1,0 +1,5 @@
+/* Nasconde il nodo genitore se contiene un attributo data-path corrispondente */
+.nav-folder:has([data-path="copilot"]),
+.nav-folder:has([data-path="templates"]) {
+    display: none !important;
+}

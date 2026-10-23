@@ -18,14 +18,14 @@
       "query": "path:Database2  ",
       "color": {
         "a": 1,
-        "rgb": 14706514
+        "rgb": 13551629
       }
     },
     {
       "query": "path:\"Formal Languages and Compilers\"  ",
       "color": {
         "a": 1,
-        "rgb": 1413794
+        "rgb": 9115042
       }
     },
     {
@@ -60,6 +60,6 @@
   "repelStrength": 12.1989606533036,
   "linkStrength": 1,
   "linkDistance": 250,
-  "scale": 0.2755991420518384,
-  "close": false
+  "scale": 0.30844057177957385,
+  "close": true
 }

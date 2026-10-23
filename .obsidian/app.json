@@ -1,9 +1,13 @@
 {
   "newFileLocation": "current",
   "attachmentFolderPath": "./media",
-  "promptDelete": false,
+  "promptDelete": true,
   "showLineNumber": false,
   "alwaysUpdateLinks": true,
   "readableLineLength": false,
-  "showInlineTitle": true
+  "showInlineTitle": true,
+  "userIgnoreFilters": [
+    "copilot/",
+    "templates/"
+  ]
 }
