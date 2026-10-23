@@ -6,153 +6,193 @@ description:
 
 # Requirement Engineering
 
-Requirement engineering is the process of discovering the pourpose of a system un order to implement it the closest to the needs of the user.
+**Definition** (Nuseibeh & Easterbrook, 2000): the primary measure of success of a software system is the degree to which it meets the purpose for which it was intended. RE is the process of *discovering that purpose*, by identifying stakeholders and their needs and documenting them in a form amenable to analysis, communication and implementation.
 
-Example of requirement are: Accessibility, Responsiveness, Avability, Implementation, etc.
+RE is not a one-shot phase: it starts in the feasibility study and requirements analysis & specification, but new requirements keep emerging during design, deployment and maintenance.
 
-We can subdivide requirements in 3 types:
-- Functioonal: describe the interactions between the system and its environment.
-- Non-functional(NFR): characterization of user-visibble aspect not directly related to functions
-- Constraint: imoosed by the customer or the environment
+Requirements classify by kind — for example:
+
+- Functional: "The system shall allow users to reserve taxis."
+- NFR: "The system has to provide feedback in 5 seconds."
+- Constraint: "The system must be implemented in Java."
+
+Requirements fall into three types:
+
+- **Functional**: describe the interactions between the system and its environment (independent of implementation).
+- **Non-functional (NFR)**: characterize user-visible aspects that are not directly related to functions.
+- **Constraint**: imposed by the customer or the environment.
 
 ## 1. NFR
 
- Constraint on how the functionality must be provided.
+Constraints on *how* the functionality must be provided.
 
- > [!example] Es.1
- > “The system shall validate and accept credit cards and cashier’s check with high priority” 
- >
- > Issue(s)? 
- > - **Multiple concerns**: two requirements instead of one 
- > - **Ambiguous**: if the credit card processing works, but the cashier’s check validation does not, is this requirement satisfied? 
- > - **Ambiguous**: does “high priority” refer to cashier’s checks only, so are credit cards low priority? Other way around? Are they both high priority?
+- Must be **measurable through metrics**, otherwise they cannot be verified.
+- Product qualities involved: performance efficiency, security, safety, reliability, maintainability, compatibility, interaction capability…
+- The **application domain** determines their relevance and prioritization (Netflix vs. Ariane 5).
+- They have a strong impact on the system structure: 24/7 availability ⇒ likely a replicated system with redundant components.
+
+> [!example] Es.1
+> "The system shall validate and accept credit cards and cashier's check with high priority"
+>
+> Issues:
+> - **Multiple concerns**: two requirements in one.
+> - **Ambiguous**: if credit card processing works but cashier's check validation does not, is the requirement satisfied?
+> - **Ambiguous**: does "high priority" apply only to cashier's checks? To both? Are credit cards low priority?
 
 > [!example] Es.2
-> “The system shall process all mouse clicks very fast to ensure users do not have to wait” 
+> "The system shall process all mouse clicks very fast to ensure users do not have to wait"
 >
-> Issue(s)?
-> - **Cannot be verified (tested)**: what does “fast” mean? Do we have a metric? Can you quantify it?
+> Issue:
+> - **Cannot be verified (tested)**: what does "fast" mean? Is there a metric? Can it be quantified?
 
 > [!example] Es.3
-> “the user must have Adobe Acrobat installed” 
+> "The user must have Adobe Acrobat installed"
 >
-> Issue(s)? 
-> - **Cannot be achieved by the software system itself**: it is not something the system must do 
-> It could be expressed as a constraint or assumption, but it is not a functional requirement
+> Issue:
+> - **Cannot be achieved by the software system itself**: it is not something the system must do. It could be stated as a constraint or assumption, but it is not a functional requirement.
 
-# 1. Issues
+> [!example] Es.4
+> "The search for the available taxi should be implemented in class Controller"
+>
+> Issue:
+> - **Design, not a requirement**: it dictates the implementation instead of the observable behavior.
 
-Requirements engineering can be misleading if too ubiquitous.
-If error are made, to fix them can be one of the bigger cost in a software development, since design decision depend on them.
-Is important to be Coherent and limit the Ambiguity or things left to interpretation
+## 2. Issues
 
-# 2. Complexity
+- Poor requirements are ubiquitous and need continuous review and revision (Bell & Thayer, 1976).
+- The cost of correcting an error grows with the number of later decisions based on it (Boehm, 1981): relative cost goes from ~1 during requirements to ~50 after delivery. Requirements errors have the greatest potential cost, because many design decisions depend on them.
+- Extracting and refining requirements iteratively is the hardest and most important function of software engineering (Brooks, 1987).
+- ⇒ Be coherent and limit ambiguity or anything left to interpretation.
 
-- Broad scope:
-	- Composite systems 
-		human organizations + physical devices + software components 
-	- More than one system 
-		alternative proposals for system-to-be, system evolutions, product family 
-	- Multiple abstraction levels 
-		high-level goals, operational details 
-- Multiple concerns: 
-	- functional, quality, development 
-	- hard and soft concerns 
-- Multiple stakeholders with different background 
-	 customers, users, domain experts, developers,…
+## 3. Complexity
 
-# 3. Word and Machine
+- **Broad scope**
+	- Composite systems: human organizations + physical devices + software components
+	- More than one system: alternative proposals for the system-to-be, system evolution, product families
+	- Multiple abstraction levels: high-level goals, operational details
+- **Multiple concerns**
+	- Functional, quality, development ⇒ conflicts
+	- Hard and soft concerns
+- **Multiple stakeholders** with different backgrounds: customers, users, domain experts, developers… ⇒ conflicts
 
-We can define as Machine the system to be developed and world the environment that affect it.
-Requirement Engineering need to concerns with the phenomena occurring in the World and model them in to the Machine
+## 4. World and Machine
+
+- **Machine**: the portion of the system to be developed (software-to-be + hardware).
+- **World** (environment): the portion of the real world affected by the machine.
+
+The purpose of the machine is always in the world. RE deals with the phenomena occurring in the World and models them into the Machine — **requirement models are models of the world** (a new `Accident` object is a machine-only phenomenon, not a RE concern).
 
 ![[Requirement Engineering-1792684065345.webp|437]]
 
-- Goals: Prescriptive assertions formmuylated in terms of the phenomena
-- Assumption: Descriptive assertion assumed to hold in the world
-- Requirements: Prescriptive assertion dormulaed in term if shared phenomena
- 
+- **Goals**: prescriptive assertions formulated in terms of World phenomena (not necessarily shared).
+- **Domain assumptions/properties**: descriptive assertions assumed to hold in the World.
+- **Requirements**: prescriptive assertions formulated in terms of **shared** phenomena.
 
-# 4. Completeness
+Since the purpose lives in the world, "the reserved taxi picks the user up" is not something the machine alone can guarantee.
 
-Given a set of Requirements $R$, Goals $G$ and Domain $D$
-$R$ is complete iff:
-- $R$ ensure datisfaction of g in he context of domain assumption D
-$$R \text{ and } D ⊨ G$$
-- G capture all stakeholders needs
-- D represent valid properties/assumption about the world
+## 5. Completeness
 
-# 5. Steps
+Given a set of Requirements $R$, Goals $G$ and Domain assumptions $D$, $R$ is complete iff:
 
-1. Carry out domain analysis
-	- Identify phenomena, in particular the shared ones -
-	- Identify goals
-	- Identify domain assumptions
-2. Define Requirements
-	Make sure that requirements are expressed using only shared phenomena
-3. Prove that $R \text{ and } D ⊨ G$
+$$R \land D \models G$$
 
-In Particular: 
-1. Finding the scenario:
-	- Ask yourself or the client the following questions:
-		- Which user groups are supported by the system to perform their work? 
-		- What are the primary tasks that the system needs to perform? 
-		- What data will the actor create, store, change, remove or add in the system? 
-		- What external changes does the system need to know about? 
-		- What changes or events will the actor of the system need to be informed about? 
-	- However, don’t rely on questionnaires alone:
-		- Insist on task observation if the system already exists (interface engineering or reengineering) 
-		- Ask to speak to the end user, not just to the software contractor 
-		- Expect resistance and try to overcome it
-2. After the scenario is formmulated
-	- Generalize scenarios: 
-		- Example: from “Warehouse on fire” we can generalize a “Report Emergency” use case 
-	- Structure the description in terms of:
-		- Participating actors
-		- Describe the Entry Condition 
-		- Describe the Flow of Events 
-		- Describe the Exit Condition 
-		- Describe Exceptions 
-		- Describe Special Requirements (Constraints, Nonfunctional Requirements)
+- $R$ ensures satisfaction of $G$ in the context of domain assumptions $D$.
+- $G$ captures all stakeholders' needs.
+- $D$ represents valid properties/assumptions about the World.
 
-> [!tip] 
-> - Use cases named with verbs that indicate what the user is trying to accomplish 
-> - Actors named with nouns 
-> - Use cases steps in active voice 
-> - The causal relationship between steps should be clear 
-> - A use case per user transaction
-> - Separate description of exceptions 
-> - Keep use cases small (no more than two/three pages) 
-> - The steps accomplished by actors and those accomplished by the system should be clearly distinguished
+Analogy with program correctness: program $P$ running on computer $C$ is correct if $P \land C \models R$.
+
+> [!example] Case study: Airbus A320 (Warsaw, 1993)
+> - Landing in bad weather, the software-controlled braking deployed **9 seconds after touchdown**; the runway was too short, the aircraft hit an embankment: 2 dead, 54 injured.
+> - Goal $G$: reverse thrust enabled iff the aircraft is moving on the runway.
+> - Domain assumptions $D$: wheel pulses on iff wheels turning; wheels turning iff moving on runway.
+> - Requirement $R$: reverse thrust enabled iff wheel pulses on.
+> - $R \land D \models G$ holds — yet the system failed, because **$D$ did not hold**: when aquaplaning the wheels stop turning while the aircraft is still moving, so reverse thrust stayed disabled.
+> - Lesson: an invalid/incomplete domain assumption silently breaks the correctness argument; the weaker or wrong $D$, the more dangerous the "proof".
+
+## 6. Steps
+
+1. **Carry out domain analysis**
+	- Identify phenomena, in particular the shared ones.
+	- Identify goals.
+	- Identify domain assumptions.
+2. **Define requirements**
+	- With an eye to the goals to be achieved.
+	- Express them using only shared phenomena.
+3. **Prove that $R \land D \models G$**
+
+The point of the whole activity is to explore alternatives — different World/Machine interfaces and different $(R, D)$ pairs satisfying the same $G$ — and to evaluate their strengths and risks.
+
+### 6.1. Elicitation: Scenarios and Use Cases
+
+Why it is hard (e.g. loan-approval rules): **implicit knowledge** (rules never written down, or docs ambiguous/outdated), **conflicting information** (people disagree), **bias** (fear of being replaced), **probe effect** (observed behavior differs from normal). Coping: combine listening, observing, studying; stay close to stakeholders; let them describe their own viewpoints.
+
+A **scenario** is a concrete, focused, informal narrative of a *single instance* of using the system (e.g. "warehouse on fire": Bob spots the fire, Alice reports address/level and requests units, John acknowledges and allocates, Alice gets the ETA). It names concrete actors and does not cover all possible situations.
+
+**Finding the scenario** — ask yourself or the client:
+
+- Which user groups are supported by the system in performing their work?
+- What are the primary tasks the system must perform?
+- What data will the actor create, store, change, remove or add?
+- What external changes does the system need to know about?
+- What changes or events must the actor of the system be informed about?
+
+Don't rely on questionnaires alone:
+
+- Insist on task observation if the system already exists (interface engineering or reengineering).
+- Ask to speak to the end user, not just the software contractor.
+- Expect resistance and try to overcome it.
+
+**After the scenario is formulated** — generalize it (e.g. from "Warehouse on fire" derive a "Report Emergency" use case) and structure the description in terms of:
+
+- Participating actors (generalize "Bob" to FieldOfficer)
+- Entry condition ("when the use case starts, …")
+- Flow of events (informal natural language, active voice)
+- Exit condition ("the use case terminates when …")
+- Exceptions
+- Special requirements (constraints, NFRs)
+
+> [!warning] Poor use case
+> Name "Accident" (not a verb), the Dispatcher actor is missing although it appears in the flow, and steps have no clear subject ("an ambulance is dispatched" — by whom?).
+
+> [!tip]
+> - Name use cases with verbs indicating what the user is trying to accomplish.
+> - Name actors with nouns.
+> - Write use case steps in active voice.
+> - Make the causal relationship between steps clear.
+> - One use case per user transaction.
+> - Describe exceptions separately.
+> - Keep use cases small (no more than two/three pages).
+> - Clearly distinguish steps done by actors from steps done by the system — it helps identify the system boundary.
 
 ![[Requirement Engineering-1792689051477.webp|608]]
 
-# 6. Modelling Tools
+**Use cases and requirements**: each use case may lead to one or more requirements (e.g. "FRIEND must have a response time lower than 30 seconds"), and from requirements new, more detailed use cases can be derived.
 
-As a mean to model our system we can use:
-- Natural Language:
-	- Pros: 
-		- simple
-	- Cons: 
-		- ambiguous and vague
-- Formal language([[Alloy]], Z, first order logic, etc.):
-	- Pros: 
-		- possibility to use tools to support analysis and validation
-		- Needs to be specific an detailed
-	- Cons: needs to be an expert
-- Semi-formal Language([[UMLs]]):
-	- Pros:
-		- Simpler than formal language
-		- Impose some kind of structure in the models
-	- Cons: 
-		- Not as useful for automated analysis
-		- Some level of ambiguity
-- Mixed approach:
-	- Semi-formal language for basics
-	- Comment the semi-formal model with explanatory informal text
-	- Use formal language for most critical parts
+## 7. Modelling Tools
 
-We can also help ourselves using [[RASD]]
+A model is "a representation in a certain medium of something in the same or another medium; it captures the important aspects of the thing being modeled and simplifies or omits the rest" (Booch). A model is *good* when an interpretation $I$ maps reality to the model while preserving the relationships that hold in reality.
+
+- **What to model in RE**: the objects and people of interest for the problem, the relevant phenomena, the goals, requirements and domain assumptions.
+- **Modelling issues**: different views must stay **coherent**; some **ambiguity** is unavoidable, so state where alternative interpretations are acceptable.
+
+Tools:
+
+- **Natural language**
+	- Pros: simple.
+	- Cons: ambiguous and vague; easy to forget relevant information.
+- **Formal language** ([[Alloy]], Z, first-order logic, etc.)
+	- Pros: supports tool-based analysis and validation; forces specifying all relevant details.
+	- Cons: requires an expert.
+- **Semi-formal language** ([[UMLs]])
+	- Pros: simpler than formal; imposes some structure on models.
+	- Cons: not amenable to automated analysis; some ambiguity remains.
+- **Mixed approach**
+	- Semi-formal language for the basics.
+	- Annotate and complement the semi-formal model with explanatory informal text.
+	- Formal language for the most critical parts.
+
+We can also help ourselves using [[RASD]].
 
 ---
 Related: [[_Software Engineering 2 MOC]]

@@ -7,7 +7,7 @@
   "readableLineLength": false,
   "showInlineTitle": true,
   "userIgnoreFilters": [
-    "copilot/",
-    "templates/"
+    "templates/",
+    "copilot/"
   ]
 }

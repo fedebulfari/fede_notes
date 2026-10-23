@@ -336,7 +336,7 @@
   "parallelApiKey": "",
   "exaApiKey": "",
   "supadataApiKey": "",
-  "enableMiyoDocumentProcessing": false,
+  "enableMiyoDocumentProcessing": true,
   "enableLexicalBoosts": true,
   "suggestedDefaultCommands": false,
   "autonomousAgentEnabledToolIds": [
@@ -503,7 +503,7 @@
   "backends": {
     "opencode": {
       "enabledModels": [
-        "cdd22b62-98f3-44e4-954b-bb4c2c30d4a9"
+        "5d15005e-a9b6-4fe4-b0e5-d33d0de2d879"
       ]
     },
     "chat": {

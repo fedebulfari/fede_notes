@@ -14,12 +14,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Software Engineering 2/Software Production.md",
+                "file": "Sensor System/Image Sensors.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Software Production"
+              "title": "Image Sensors"
             }
           }
         ]
@@ -221,11 +221,12 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
-    "width": 272.2955322265625
+    "width": 329.84759521484375,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -246,15 +247,16 @@
   },
   "active": "0a0e4e7eebbe5db7",
   "lastOpenFiles": [
-    "Software Engineering 2/_Software Engineering 2 MOC.md",
-    "Software Engineering 2/RASD.md",
     "Software Engineering 2/Software Production.md",
-    "Software Production.md",
-    "Software Engineering 2/Alloy.md",
-    "Software Engineering 2/PDF/03a.AlloyPart1-2.pdf",
     "Software Engineering 2/Requirement Engineering.md",
-    "Software Engineering 2/Requirements Engineering.md",
+    "Software Engineering 2/UMLs.md",
+    "Software Engineering 2/Alloy.md",
+    "Software Engineering 2/RASD.md",
     "Software Engineering 2/PDF/02h.RASD_lab_DiNItto.pdf",
+    "Software Engineering 2/_Software Engineering 2 MOC.md",
+    "Software Production.md",
+    "Software Engineering 2/PDF/03a.AlloyPart1-2.pdf",
+    "Software Engineering 2/Requirements Engineering.md",
     "Software Engineering 2/PDF/02g.CreatingRASD.pdf",
     "Software Engineering 2/Senza nome.base",
     "Software Engineering 2/media/Software Production-1792573752883.webp",
@@ -264,7 +266,6 @@
     "Software Engineering 2/media/Software Production-1792664465643.webp",
     "Software Engineering 2/media/Software Production-1792664874012.webp",
     "Software Engineering 2/media/Software Production-1792665006106.webp",
-    "Software Engineering 2/UMLs.md",
     "Formal Languages and Compilers/Basics.md",
     "Formal Languages and Compilers/Context-free Grammars.md",
     "Formal Languages and Compilers/Regular Expressions and Languages.md",
