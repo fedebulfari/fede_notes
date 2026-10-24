@@ -1,7 +1,7 @@
 {
   "newFileLocation": "current",
   "attachmentFolderPath": "./media",
-  "promptDelete": true,
+  "promptDelete": false,
   "showLineNumber": false,
   "alwaysUpdateLinks": true,
   "readableLineLength": false,
