@@ -75,7 +75,7 @@ The meaning $L(r)$ is a language over $\Sigma$:
 - The **language generated** by a regexp is: $L(r) = \{ x \in \Sigma^* \mid r \Rightarrow^* x \}$ 
 	only derivations ending in pure terminal strings count.
 - **Equivalence**: Two regexps are equivalent iff they generate the same language. A derived regexp defines a subset of the original.
-- **Ambiguity**: a phrase obtainable by two substantially different choice sequences. Formal check via marked regexp $f^\##$: if two marked strings project to the same unmarked string, $f$ is ambiguous.
+- **Ambiguity**: a phrase obtainable by two substantially different choice sequences. Formal check via marked regexp $f_{}\#$: if two marked strings project to the same unmarked string, $f$ is ambiguous.
 
 ## 5. Other Operators
 

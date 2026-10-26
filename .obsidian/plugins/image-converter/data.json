@@ -342,7 +342,7 @@
   "showSpaceSavedNotification": true,
   "revertToOriginalIfLarger": false,
   "minimumCompressionSavingsInKB": 30,
-  "enableImageCaptions": false,
+  "enableImageCaptions": true,
   "skipCaptionExtensions": "icns",
   "captionFontSize": "var(--font-smaller)",
   "captionColor": "var(--text-gray)",

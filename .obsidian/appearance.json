@@ -8,5 +8,6 @@
   "monospaceFontFamily": "0xProto Nerd Font Mono",
   "enabledCssSnippets": [
     "hide-folders"
-  ]
+  ],
+  "baseFontSizeAction": true
 }
