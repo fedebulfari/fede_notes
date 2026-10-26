@@ -6,7 +6,7 @@
       {
         "id": "f667282556052dba",
         "type": "tabs",
-        "dimension": 62.07276736493937,
+        "dimension": 59.12851627137341,
         "children": [
           {
             "id": "bf293cf44ab20b70",
@@ -27,7 +27,7 @@
       {
         "id": "1f1c1a311441bd22",
         "type": "tabs",
-        "dimension": 37.92723263506063,
+        "dimension": 40.871483728626586,
         "children": [
           {
             "id": "1e1e9209c1a22207",
@@ -35,10 +35,10 @@
             "state": {
               "type": "pdf",
               "state": {
-                "file": "Formal Languages and Compilers/PDF/FLC - series 05 - new.pdf"
+                "file": "Formal Languages and Compilers/PDF/FLC - series 06 - new.pdf"
               },
               "icon": "lucide-file-text",
-              "title": "FLC - series 05 - new"
+              "title": "FLC - series 06 - new"
             }
           }
         ]
@@ -103,7 +103,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "a208faef6a30291a",
@@ -247,8 +248,11 @@
   },
   "active": "bf293cf44ab20b70",
   "lastOpenFiles": [
-    "Formal Languages and Compilers/PDF/FLC - series 05 - new.pdf",
+    "Formal Languages and Compilers/PDF/FLC - series 06 - new.pdf",
     "Formal Languages and Compilers/Finite State Automata.md",
+    "Formal Languages and Compilers/PDF/FLC - series 05 - new.pdf",
+    "Formal Languages and Compilers/media/Finite State Automata-1793030966965.webp",
+    "Formal Languages and Compilers/_Formal Languages and Compilers MOC.md",
     "Formal Languages and Compilers/PDF/Senza nome.md",
     "Formal Languages and Compilers/Senza nome.md",
     "Formal Languages and Compilers/Senza nome 1.md",
@@ -262,11 +266,9 @@
     "Formal Languages and Compilers/Basics.md",
     "Database2/GeminiSetup.exe",
     "Software Engineering 2/PDF/03a.AlloyPart1-2.pdf",
-    "Formal Languages and Compilers/PDF/FLC - series 06 - new.pdf",
     "Formal Languages and Compilers/PDF/FLC - series 12 - new.pdf",
     "Formal Languages and Compilers/PDF/ELR(1) pilot construction.pdf",
     "Formal Languages and Compilers/PDF/FLC - series 17.pdf",
-    "Formal Languages and Compilers/_Formal Languages and Compilers MOC.md",
     "Sensor System/_Sensor System MOC.md",
     "Operational Research/_Operational Research MOC.md",
     "Image Analysis/_Image Analysis MOC.md",
@@ -291,7 +293,6 @@
     "Image Analysis/Non-linear Filters.md",
     "Image Analysis/Optical Systems.md",
     "Image Analysis/Planar Geometry.md",
-    "Software Engineering 2/media/Requirement Engineering-1792747000099.webp",
     "Senza nome.canvas"
   ]
 }

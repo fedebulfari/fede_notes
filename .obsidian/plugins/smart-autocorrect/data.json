@@ -59,12 +59,14 @@
     "replaceLinkMenu": false
   },
   "engagement": {
-    "totalSaved": 991,
-    "todaySaved": 19,
+    "totalSaved": 1104,
+    "todaySaved": 132,
     "lastActiveDay": "2026-10-26",
     "streak": 5,
     "bestStreak": 5,
-    "milestones": [],
+    "milestones": [
+      1000
+    ],
     "alternativesAccepted": 0
   }
 }
