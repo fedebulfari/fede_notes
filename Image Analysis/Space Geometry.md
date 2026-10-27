@@ -115,8 +115,7 @@ $$\mathbf{X}^T Q \mathbf{X} = 0, \qquad Q = Q^T \in \mathbb{R}^{4\times4}$$
 - **9 points** in general position define a quadric.
 
 > [!info] Classification
->
-> ![[Space Geometry-1793104091076.webp|308x258]]
+> ![[Space Geometry-1793104182025.webp|308x274]]
 
 **Example: the sphere** In Cartesian coordinates, with center $(X_o,Y_o,Z_o)$ and radius $r$:
 
@@ -141,21 +140,33 @@ Substituting into the quadric equation:
 $$\mathbf{X}^T Q \mathbf{X} = \mathbf{x}^T M^T Q M \mathbf{x} = \mathbf{x}^T C \mathbf{x} = 0, \qquad \boxed{C = M^T Q M}$$
 
 The result is a **conic** $C$ (a $3\times3$ symmetric matrix) — a set of points $\mathbf{x}$ _within_ the plane $\boldsymbol{\pi}$. This is the 3D mechanism behind every plane–quadric intersection: a plane cuts a quadric in a conic.
-
+![[Space Geometry-1793104492487.webp|479]]
 ## 8. The Absolute Conic
 
 > [!theorem] Absolute conic
 > Intersecting **any** sphere with the plane at infinity $\boldsymbol{\pi}_\infty$ gives the _same_ conic, independent of center and radius.
 
-With $w=0$ in $(x-X_o w)^2+(y-Y_o w)^2+(z-Z_o w)^2-r^2w^2 = 0$:
+With $w=0$ in 
+Since
+$$\begin{cases}
+(x-X_o w)^2+(y-Y_o w)^2+(z-Z_o w)^2-r^2w^2 = 0 \\ w=0
 
-$$x^2+y^2+z^2 = 0,\quad w=0 \quad\Longrightarrow\quad \Omega_\infty = \begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix}$$
+\end{cases} \implies
+\begin{cases}
+
+x^2+y^2+z^2 = 0 \\ w=0
+
+\end{cases}
+$$
+then
+$$x^2+y^2+z^2 = [x,y,z]\Omega_\infty \begin{bmatrix} x\\y\\z\end{bmatrix} = 0, \quad \Omega_\infty = \begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix}$$
 
 The sphere parameters **disappear**: the intersection is a conic lying in $\boldsymbol{\pi}_\infty$, the **absolute conic** $\Omega_\infty$.
 
 - $\Omega_\infty$ is made of the **circular points of all planes** ($\Omega_\infty = \bigcup_\pi \{I_\pi, J_\pi\}$) — the 3D extension of $I=[1,i,0]^T$, $J=[1,-i,0]^T$ of the planar case.
 - It encodes the **metric** (Euclidean) structure of space: it is exactly what similarities preserve and affinities do not.
 - Dual object: the **absolute dual quadric** $Q^*_\infty = \Omega_\infty$ as an envelope of tangent planes, with matrix $\text{diag}(1,1,1,0)$.
+![[Space Geometry-1793105256199.webp|334]]
 
 ## 9. Degenerate Quadrics
 
@@ -163,7 +174,9 @@ $\mathbf{X}^T Q \mathbf{X} = 0$ with $\det(Q) = 0$:
 
 - $\text{rank}(Q) = 1$: $Q = \mathbf{A}\mathbf{A}^T$ — a **repeated plane** $\mathbf{A}$.
 - $\text{rank}(Q) = 2$: $Q = \mathbf{A}\mathbf{B}^T + \mathbf{B}\mathbf{A}^T$ — the union of **two planes** $\mathbf{A}$ and $\mathbf{B}$.
+	![[Space Geometry-1793105218985.webp|130]]
 - $\text{rank}(Q) = 3$: a **cone**, with vertex $= \text{RNS}(Q)$.
+	![[Space Geometry-1793105206003.webp|153]]
 
 > [!tip] A cylinder is a cone whose vertex is at infinity.
 
@@ -176,7 +189,7 @@ $$\boldsymbol{\pi}^T Q^* \boldsymbol{\pi} = 0$$
 - For a non-degenerate quadric, $Q^* = Q^{-1}$ (analogous to $C^* = C^{-1}$ in the plane).
 - Degenerate cases are the dual of §9 (e.g. $\text{rank}(Q^*)=3$: planes through a point / tangent to a cone).
 
-## 11. Projective Mappings
+## 11. Projective Transformation
 
 > [!definition] Projective mapping
 > An **invertible** mapping $h: \mathbb{P}^3 \to \mathbb{P}'^3$ that **preserves collinearity**: $\mathbf{X}_1,\mathbf{X}_2,\mathbf{X}_3$ collinear $\iff$ $h(\mathbf{X}_1), h(\mathbf{X}_2), h(\mathbf{X}_3)$ collinear. Also called **projectivity**.
@@ -190,12 +203,12 @@ $$\boldsymbol{\pi}^T Q^* \boldsymbol{\pi} = 0$$
 
 **Transformation rules for the space elements**
 
-| Element | Rule |
-|---|---|
-| Point | $\mathbf{X} \to H\mathbf{X}$ |
-| Plane | $\boldsymbol{\pi} \to H^{-T}\boldsymbol{\pi}$ |
-| Quadric | $Q \to H^{-T} Q H^{-1}$ |
-| Dual quadric | $Q^* \to H Q^* H^T$ |
+| Element      | Rule                                               |
+| ------------ | -------------------------------------------------- |
+| Point        | $\mathbf{X} \to H\mathbf{X}=X'$                    |
+| Plane        | $\boldsymbol{\pi} \to H^{-T}\boldsymbol{\pi}=\pi'$ |
+| Quadric      | $Q \to H^{-T} Q H^{-1}=Q'$                         |
+| Dual quadric | $Q^* \to H Q^* H^T=Q^{*'}$                         |
 
 **Invariants:** collinearity, incidence, order of contact (crossing, tangency, inflection), and the 1D, 2D and 3D cross ratios.
 
@@ -206,18 +219,22 @@ Each group is a subgroup of the ones below it and inherits all their invariants.
 > [!info] Isometry / Euclidean ($H_I$ — **6 dof**: $t$ + Euler angles $\vartheta,\varphi,\psi$)
 > $$H_I = \begin{bmatrix} R_\perp & \mathbf{t} \\ \mathbf{0}^T & 1 \end{bmatrix}, \qquad R_\perp^T R_\perp = I,\quad \det(R_\perp) = 1 \ (-1 \text{ for reflection})$$
 > **Invariants:** lengths, distances, areas $\Rightarrow$ shape and size, relative positions.
+> ![[Space Geometry-1793105649549.webp|318x119]]
 
 > [!info] Similarity ($H_S$ — **7 dof**: rigid displacement + scale $s$)
 > $$H_S = \begin{bmatrix} sR_\perp & \mathbf{t} \\ \mathbf{0}^T & 1 \end{bmatrix}$$
 > **Invariants:** ratios of lengths, angles $\Rightarrow$ shape (not size); the **absolute conic $\Omega_\infty$** (and the absolute dual quadric $Q^*_\infty$).
+> ![[Space Geometry-1793105682393.webp]]
 
 > [!info] Affinity ($H_A$ — **12 dof**: $A_{3\times3}$ invertible + $\mathbf{t}$)
 > $$H_A = \begin{bmatrix} A & \mathbf{t} \\ \mathbf{0}^T & 1 \end{bmatrix}$$
 > **Invariants:** parallelism of planes, ratios of parallel lengths, ratios of areas, centroids; the **plane at infinity $\boldsymbol{\pi}_\infty$**. Linear in Cartesian coordinates.
+> ![[Space Geometry-1793105702888.webp|316x138]]
 
 > [!info] Projectivity ($H$ — **15 dof**: $A + \mathbf{v} + \mathbf{t}$)
 > $$H = \begin{bmatrix} A & \mathbf{t} \\ \mathbf{v}^T & 1 \end{bmatrix}$$
 > **Invariants:** incidence, collinearity, order of contact, cross ratios (1D, 2D, 3D).
+> ![[Space Geometry-1793105714597.webp|316x138]]
 
 **What fixes what:** $\boldsymbol{\pi}_\infty$ is fixed $\iff$ the map is affine; $\Omega_\infty$ is fixed $\iff$ the map is a similarity. This is the 3D analogue of the planar $l_\infty$ / $I,J$ criterion, and it is the key to stratified 3D reconstruction.
 
