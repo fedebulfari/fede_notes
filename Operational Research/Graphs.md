@@ -245,7 +245,7 @@ Procedure LongestPT_Acyclic(G,P,d):
 > [!tip] Dynamic programming = longest/shortest path on acyclic state graph
 > Knapsack, purchase planning (§5.2), car renewal (§5.3), project scheduling / CPM (§5.7) all build an acyclic state graph and run the above. See [[chapter+2.pdf##page=18]].
 
-#### 6.3.2. Dijkstra — Non-negative Costs, General Graph
+#### 6.3.2. Dijkstra — Non-negative Costs, General Graph — $O(n^2) \land O(m \log n)$
 
 Same scheme, but $Q$ holds frontier nodes and we always extract $\min d$:
 
@@ -270,9 +270,9 @@ Requires $c_{ij} \ge 0$. Then extracted label is definitive — node never re-en
 
 Worked example with root $1$ (Fig. 6–11): see [[chapter+2.pdf##page=22]].
 
-#### 6.3.3. SPT_Label-Correcting — Arbitrary Costs, No Negative Cycles
+#### 6.3.3. SPT_Label-Correcting — $O(nm)$
 
-If some $c_{ij} < 0$, Dijkstra fails. Keep correcting violations, using $Q$ as queue (FIFO) to get $O(nm)$:
+If some $c_{ij} < 0$, Dijkstra fails. Keep correcting violations, using $Q$ as queue (FIFO) to get $O(nm)$ time complexity:
 
 ```
 Procedure SPT_L(G,r,P,d):

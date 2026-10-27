@@ -67,7 +67,7 @@ Typical families:
 	- Generalized: if at least $m$ of $x_1,\dots,x_n$ are $1$ then $y=1$:$$y \geq \frac{\sum x_i - m + 1}{\,n-m+1\,}$$
 		- *Satisfiability*: clause $P_1 \lor \lnot P_2 \lor P_3 \lor \lnot P_4$ becomes $x_1+(1-x_2)+x_3+(1-x_4) \geq 1$, i.e. $ax \geq 1-n(a)$. CNF $A$ is SAT iff the corresponding 0–1 system $Ax \geq b$ is feasible; MAX-SAT maximizes satisfied clauses.
 
-### 4.1 Transformations
+### 4.1. Transformations
 
 $$A_i x \geq b_i \to A_i x - s_i = b_i, \qquad A_i x \leq b_i \to A_i x + s_i = b_i, \quad s_i \geq 0$$
 

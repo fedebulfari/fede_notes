@@ -4,41 +4,41 @@
     "type": "split",
     "children": [
       {
-        "id": "f667282556052dba",
+        "id": "f428c7158b411fab",
         "type": "tabs",
-        "dimension": 59.12851627137341,
+        "dimension": 65.87651598676956,
         "children": [
           {
-            "id": "bf293cf44ab20b70",
+            "id": "b467f2462c7641a1",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Formal Languages and Compilers/Finite State Automata.md",
+                "file": "Image Analysis/Space Geometry.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Finite State Automata"
+              "title": "Space Geometry"
             }
           }
         ]
       },
       {
-        "id": "1f1c1a311441bd22",
+        "id": "6a64de1199e91417",
         "type": "tabs",
-        "dimension": 40.871483728626586,
+        "dimension": 34.12348401323043,
         "children": [
           {
-            "id": "1e1e9209c1a22207",
+            "id": "73e806d7a54d3961",
             "type": "leaf",
             "state": {
               "type": "pdf",
               "state": {
-                "file": "Formal Languages and Compilers/PDF/FLC - series 06 - new.pdf"
+                "file": "Image Analysis/PDF/IACV 2026 - D - 3D Projective Geometry.pdf"
               },
               "icon": "lucide-file-text",
-              "title": "FLC - series 06 - new"
+              "title": "IACV 2026 - D - 3D Projective Geometry"
             }
           }
         ]
@@ -53,6 +53,7 @@
       {
         "id": "032f17508f52cdb1",
         "type": "tabs",
+        "dimension": 59.13978494623656,
         "children": [
           {
             "id": "962e634c0bc6f7cd",
@@ -75,7 +76,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:",
+                "query": "[\"date\"]",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -100,6 +101,28 @@
             }
           }
         ]
+      },
+      {
+        "id": "91dc530f918ee9cf",
+        "type": "tabs",
+        "dimension": 40.86021505376344,
+        "children": [
+          {
+            "id": "1e66be5296dd7fda",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Image Analysis/Space Geometry.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Struttura"
+            }
+          }
+        ]
       }
     ],
     "direction": "horizontal",
@@ -114,68 +137,6 @@
         "id": "1187345ea85ebe04",
         "type": "tabs",
         "children": [
-          {
-            "id": "9c58becec449ccf2",
-            "type": "leaf",
-            "state": {
-              "type": "backlink",
-              "state": {
-                "file": "Sensor System/Light Sensor.md",
-                "collapseAll": false,
-                "extraContext": false,
-                "sortOrder": "alphabetical",
-                "showSearch": false,
-                "searchQuery": "",
-                "backlinkCollapsed": false,
-                "unlinkedCollapsed": true
-              },
-              "icon": "links-coming-in",
-              "title": "Riferimenti"
-            }
-          },
-          {
-            "id": "35af3c3f2e756de1",
-            "type": "leaf",
-            "state": {
-              "type": "outgoing-link",
-              "state": {
-                "file": "Operational Research/Problem Optimization/Problem Optimization.md",
-                "linksCollapsed": false,
-                "unlinkedCollapsed": true
-              },
-              "icon": "links-going-out",
-              "title": "Collegamenti in uscita"
-            }
-          },
-          {
-            "id": "51dbb6d664616734",
-            "type": "leaf",
-            "state": {
-              "type": "all-properties",
-              "state": {
-                "sortOrder": "frequency",
-                "showSearch": false,
-                "searchQuery": ""
-              },
-              "icon": "lucide-archive",
-              "title": "Tutte le proprietà"
-            }
-          },
-          {
-            "id": "1e66be5296dd7fda",
-            "type": "leaf",
-            "state": {
-              "type": "outline",
-              "state": {
-                "file": "Sensor System/Sensors.md",
-                "followCursor": false,
-                "showSearch": false,
-                "searchQuery": ""
-              },
-              "icon": "lucide-list",
-              "title": "Struttura"
-            }
-          },
           {
             "id": "04676eb336cffe0f",
             "type": "leaf",
@@ -197,7 +158,50 @@
             }
           },
           {
-            "id": "701d0393cf285b15",
+            "id": "9fb7fed58f336877",
+            "type": "leaf",
+            "state": {
+              "type": "copilot-relevant-notes-view",
+              "state": {},
+              "icon": "files",
+              "title": "Copilot Relevant Notes"
+            }
+          },
+          {
+            "id": "084392ab91348a2e",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Image Analysis/Space Geometry.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Riferimenti"
+            }
+          },
+          {
+            "id": "bf78d63cbd78cdac",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Image Analysis/Space Geometry.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Collegamenti in uscita"
+            }
+          },
+          {
+            "id": "0cb06d16530492d4",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -212,32 +216,35 @@
             }
           },
           {
-            "id": "9fb7fed58f336877",
+            "id": "9df5991fc5e56ad7",
             "type": "leaf",
             "state": {
-              "type": "copilot-relevant-notes-view",
-              "state": {},
-              "icon": "files",
-              "title": "Copilot Relevant Notes"
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "Tutte le proprietà"
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
-    "width": 329.84759521484375,
-    "collapsed": true
+    "width": 329.84759521484375
   },
   "left-ribbon": {
     "hiddenItems": {
-      "switcher:Apri selettore rapido": false,
+      "switcher:Apri selettore rapido": true,
       "command-palette:Apri riquadro comandi": false,
       "graph:Apri vista grafo": false,
       "canvas:Crea nuova lavagna": true,
       "daily-notes:Apri nota giornaliera": true,
       "templates:Inserisci modello": true,
-      "bases:Crea nuova Base": false,
+      "bases:Crea nuova Base": true,
       "obsidian-git:Open Git source control": false,
       "copilot:Open Copilot Agent Chat": false,
       "obsidian-excalidraw-plugin:New drawing": false,
@@ -246,11 +253,26 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "bf293cf44ab20b70",
+  "active": "2cb8085403a072de",
   "lastOpenFiles": [
-    "Formal Languages and Compilers/PDF/FLC - series 06 - new.pdf",
+    "Image Analysis/media/Space Geometry-1793102171938.webp",
+    "Image Analysis/media/Space Geometry-1793101921773.webp",
+    "Image Analysis/PDF/IACV 2026 - D - 3D Projective Geometry.pdf",
+    "Image Analysis/Space Geometry.md",
+    "Image Analysis/Camera Geometry.md",
+    "Image Analysis/PDF/IACV 2026 - E - Single-view Geometry and Camera Calibration.pdf",
+    "Image Analysis/PDF/IACV 2026 - C - 2D Projective Geometry and 2D Reconstruction.pdf",
+    "Operational Research/PDF/Slides/flowsnew.pdf",
+    "Operational Research/Flows.md",
+    "Operational Research/PDF/Slides/shortest pathsnew.pdf",
+    "Operational Research/PDF/Slides/modelsnew.pdf",
+    "Operational Research/PDF/Slides/froinfointro2026.pdf",
+    "Operational Research/PDF/Slides/LPnew.pdf",
+    "Operational Research/PDF/Slides/graphsnew2 (1).pdf",
+    "Operational Research/Graphs.md",
+    "Operational Research/Problem Optimization.md",
+    "Operational Research/PDF/chapter+2.pdf",
     "Formal Languages and Compilers/Finite State Automata.md",
-    "Formal Languages and Compilers/PDF/FLC - series 05 - new.pdf",
     "Formal Languages and Compilers/media/Finite State Automata-1793030966965.webp",
     "Formal Languages and Compilers/_Formal Languages and Compilers MOC.md",
     "Formal Languages and Compilers/PDF/Senza nome.md",
@@ -259,16 +281,8 @@
     "Formal Languages and Compilers/media/Finite State Automata-1792948318460.webp",
     "Formal Languages and Compilers/media/Finite State Automata-1792948061195.webp",
     "Formal Languages and Compilers/Regular Expressions and Languages.md",
-    "Formal Languages and Compilers/PDF/FLC - series 02 - 2.pdf",
-    "Formal Languages and Compilers/PDF/FLC - series 03 - new.pdf",
-    "Formal Languages and Compilers/PDF/FLC - series 04 - new.pdf",
     "Formal Languages and Compilers/Context-free Grammars.md",
     "Formal Languages and Compilers/Basics.md",
-    "Database2/GeminiSetup.exe",
-    "Software Engineering 2/PDF/03a.AlloyPart1-2.pdf",
-    "Formal Languages and Compilers/PDF/FLC - series 12 - new.pdf",
-    "Formal Languages and Compilers/PDF/ELR(1) pilot construction.pdf",
-    "Formal Languages and Compilers/PDF/FLC - series 17.pdf",
     "Sensor System/_Sensor System MOC.md",
     "Operational Research/_Operational Research MOC.md",
     "Image Analysis/_Image Analysis MOC.md",
@@ -287,12 +301,6 @@
     "Software Engineering 2/media/Software Production-1792663351942.webp",
     "Software Engineering 2/media/Software Production-1792664465643.webp",
     "Software Engineering 2/media/Software Production-1792664874012.webp",
-    "Software Engineering 2/media/Software Production-1792665006106.webp",
-    "Image Analysis/Derivatives Estimation.md",
-    "Image Analysis/Geometry matching.md",
-    "Image Analysis/Non-linear Filters.md",
-    "Image Analysis/Optical Systems.md",
-    "Image Analysis/Planar Geometry.md",
     "Senza nome.canvas"
   ]
 }

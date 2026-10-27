@@ -13,5 +13,6 @@
   "text-extractor",
   "smart-autocorrect",
   "obsidian-smart-typography",
-  "number-headings-obsidian"
+  "number-headings-obsidian",
+  "ascii-tree-generator"
 ]
