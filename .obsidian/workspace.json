@@ -6,7 +6,7 @@
       {
         "id": "f428c7158b411fab",
         "type": "tabs",
-        "dimension": 65.87651598676956,
+        "dimension": 52.326365475387725,
         "children": [
           {
             "id": "b467f2462c7641a1",
@@ -27,7 +27,7 @@
       {
         "id": "6a64de1199e91417",
         "type": "tabs",
-        "dimension": 34.12348401323043,
+        "dimension": 47.673634524612275,
         "children": [
           {
             "id": "73e806d7a54d3961",
@@ -53,7 +53,7 @@
       {
         "id": "032f17508f52cdb1",
         "type": "tabs",
-        "dimension": 59.13978494623656,
+        "dimension": 70.16129032258065,
         "children": [
           {
             "id": "962e634c0bc6f7cd",
@@ -62,7 +62,7 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical",
-                "autoReveal": false,
+                "autoReveal": true,
                 "showSearch": true,
                 "searchQuery": ""
               },
@@ -105,7 +105,7 @@
       {
         "id": "91dc530f918ee9cf",
         "type": "tabs",
-        "dimension": 40.86021505376344,
+        "dimension": 29.838709677419356,
         "children": [
           {
             "id": "1e66be5296dd7fda",
@@ -234,7 +234,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 329.84759521484375
+    "width": 329.84759521484375,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -253,54 +254,54 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "2cb8085403a072de",
+  "active": "b467f2462c7641a1",
   "lastOpenFiles": [
+    "Image Analysis/media/Space Geometry-1793104091076.webp",
+    "Image Analysis/_Image Analysis MOC.md",
+    "Image Analysis/Space Geometry.md",
+    "Sensor System/_Sensor System MOC.md",
+    "Sensor System/Image Sensors.md",
+    "Sensor System/Sensors.md",
+    "Operational Research/_Operational Research MOC.md",
+    "Operational Research/Problem Optimization.md",
+    "Software Engineering 2/_Software Engineering 2 MOC.md",
+    "Software Engineering 2/RASD.md",
+    "Sensor System/Light Sensors.md",
+    "Image Analysis/PDF/IACV 2026 - D - 3D Projective Geometry.pdf",
+    "Image Analysis/Incomplete/Geometry matching.md",
+    "Image Analysis/Camera Geometry.md",
+    "Image Analysis/Incomplete/Derivatives Estimation.md",
+    "Image Analysis/Incomplete",
+    "Image Analysis/Planar Geometry.md",
+    "Image Analysis/Incomplete/Non-linear Filters.md",
+    "Image Analysis/media/Space Geometry-1793103374814.webp",
+    "Image Analysis/PDF/IACV 2026 - H - Model fitting to noisy images.pdf",
+    "Image Analysis/PDF/IACV 2026 - F - Multi-view Geometry.pdf",
+    "Image Analysis/PDF/IACV 2026 - G - 3D Reconstruction.pdf",
+    "Image Analysis/PDF/IACV 2026 - E - Single-view Geometry and Camera Calibration.pdf",
+    "Image Analysis/Optical Systems.md",
+    "Image Analysis/media/Space Geometry-1793103054948.webp",
+    "Image Analysis/media/Space Geometry-1793103039916.webp",
+    "Image Analysis/PDF/IACV 2026 - B - Camera Optical System.pdf",
+    "Operational Research/Flows.md",
+    "Operational Research/Graphs.md",
+    "Software Engineering 2/Alloy.md",
+    "Software Engineering 2/Requirement Engineering.md",
+    "Software Engineering 2/UMLs.md",
+    "Software Engineering 2/Software Production.md",
+    "Image Analysis/media/Space Geometry-1793102403032.webp",
     "Image Analysis/media/Space Geometry-1793102171938.webp",
     "Image Analysis/media/Space Geometry-1793101921773.webp",
-    "Image Analysis/PDF/IACV 2026 - D - 3D Projective Geometry.pdf",
-    "Image Analysis/Space Geometry.md",
-    "Image Analysis/Camera Geometry.md",
-    "Image Analysis/PDF/IACV 2026 - E - Single-view Geometry and Camera Calibration.pdf",
     "Image Analysis/PDF/IACV 2026 - C - 2D Projective Geometry and 2D Reconstruction.pdf",
     "Operational Research/PDF/Slides/flowsnew.pdf",
-    "Operational Research/Flows.md",
     "Operational Research/PDF/Slides/shortest pathsnew.pdf",
-    "Operational Research/PDF/Slides/modelsnew.pdf",
-    "Operational Research/PDF/Slides/froinfointro2026.pdf",
-    "Operational Research/PDF/Slides/LPnew.pdf",
-    "Operational Research/PDF/Slides/graphsnew2 (1).pdf",
-    "Operational Research/Graphs.md",
-    "Operational Research/Problem Optimization.md",
-    "Operational Research/PDF/chapter+2.pdf",
     "Formal Languages and Compilers/Finite State Automata.md",
     "Formal Languages and Compilers/media/Finite State Automata-1793030966965.webp",
     "Formal Languages and Compilers/_Formal Languages and Compilers MOC.md",
     "Formal Languages and Compilers/PDF/Senza nome.md",
-    "Formal Languages and Compilers/Senza nome.md",
-    "Formal Languages and Compilers/Senza nome 1.md",
     "Formal Languages and Compilers/media/Finite State Automata-1792948318460.webp",
     "Formal Languages and Compilers/media/Finite State Automata-1792948061195.webp",
-    "Formal Languages and Compilers/Regular Expressions and Languages.md",
-    "Formal Languages and Compilers/Context-free Grammars.md",
-    "Formal Languages and Compilers/Basics.md",
-    "Sensor System/_Sensor System MOC.md",
-    "Operational Research/_Operational Research MOC.md",
-    "Image Analysis/_Image Analysis MOC.md",
-    "Software Engineering 2/_Software Engineering 2 MOC.md",
-    "Sensor System/Image Sensors.md",
-    "Software Engineering 2/Software Production.md",
-    "Software Engineering 2/Requirement Engineering.md",
-    "Software Engineering 2/UMLs.md",
-    "Software Engineering 2/Alloy.md",
-    "Software Engineering 2/RASD.md",
-    "Software Production.md",
-    "Software Engineering 2/Requirements Engineering.md",
     "Software Engineering 2/media/Software Production-1792573752883.webp",
-    "Software Engineering 2/media/Requirement Engineering-1792747110337.webp",
-    "Software Engineering 2/media/Software Production-1792573944598.webp",
-    "Software Engineering 2/media/Software Production-1792663351942.webp",
-    "Software Engineering 2/media/Software Production-1792664465643.webp",
-    "Software Engineering 2/media/Software Production-1792664874012.webp",
     "Senza nome.canvas"
   ]
 }

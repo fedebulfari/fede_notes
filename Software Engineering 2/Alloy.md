@@ -1,10 +1,13 @@
 ---
 date: 23-10-2026
 subject: Software Engineering 2
-description: Alloy — language reference (signatures, relations, operators, commands, temporal layer) and worked examples
+description: Alloy 6 formal specification — atoms and typed relations, signatures, multiplicities, facts, predicates, functions, assertions, run/check scopes and bounded verification, the temporal layer over mutable state, plus worked and exam-style models
 ---
 
 # Alloy
+
+> [!summary] Overview
+> A reference-and-examples note on **Alloy 6**, the formal specification language used in this course to model a system's structure and behaviour with first-order logic over typed **relations**. Part I is the language itself — atoms, signatures and multiplicities, expressions, the kinds of paragraph (`sig`, `fact`, `pred`, `assert`, `run`, `check`), scopes, bounded model checking, and the temporal layer over mutable state — while Part II applies it to worked models (address book, family tree, device, mailbox) and to exam-style exercises. It is the formal counterpart to the informal models in [[UMLs]] and to the domain properties of [[Requirement Engineering]], and closes with a checklist of common pitfalls.
 
 Alloy is a formal notation for specifying models of systems and software.
 	It looks like a declarative OO language but with strong mathematical foundations.

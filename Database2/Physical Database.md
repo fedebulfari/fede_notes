@@ -6,6 +6,9 @@ description: Physical storage (blocks, pages, heap, hash, B/B+ indexes) and I/O 
 
 # Physical Database
 
+> [!summary] Overview
+> How relations are physically stored and how that storage dictates query cost: **blocks** and **pages**, heap vs sequentially-ordered files, hash buckets with overflow chains, and **B/B+ tree** indexes (dense/sparse, primary/secondary/clustering). The unifying thread is the I/O cost model — a query costs the number of blocks moved — applied to sequential scans, equality and interval lookups, and join strategies. Those formulas are what let the **optimizer** pick access paths from statistics and selectivity, the practical bridge to the trigger-based maintenance in [[Triggers]].
+
 > [!abstract] Goal
 > How are tables stored at the physical level? How can they be accessed efficiently? How does storage impact query performance?
 > Cost model in I/O-bound applications: **cost of a query = number of blocks moved** between secondary and main memory.

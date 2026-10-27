@@ -1,9 +1,13 @@
 ---
 date: 08-10-2026
 subject: Operational Research
+description: Graph theory for optimization — nodes, arcs and stars, paths and cycles, connectivity and cuts, trees, matchings and Kruskal MST, the path-or-cut property and shortest-path algorithms
 ---
 
 # Graphs
+
+> [!summary] Overview
+> This note builds the graph vocabulary used throughout the course — nodes, arcs, stars and degree — then the notions of **chain, path and cycle**, connectivity and cuts, bipartite graphs, trees, matchings and the **minimum spanning tree** via Kruskal. The central thread is the **path-or-cut** property: a search procedure either finds an $s$–$t$ path or exhibits a cut, a duality underlying both shortest paths and maximum flow. Shortest paths are then cast as a flow model obeying **Bellman optimality conditions** and solved by acyclic scanning, Dijkstra for non-negative costs, and label-correcting for negative arcs. These tools are the direct prerequisite for [[Flows]].
 
 ## 1. Definitions and Notation
 

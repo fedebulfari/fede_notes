@@ -1,10 +1,13 @@
 ---
 date: 14-10-2026
 subject: Sensor System
-description:
+description: Photodiode physics — reverse-bias photo-generation, p-n versus p-i-n, penetration depth and the silicon bandgap, responsivity, the electrical model, thermal and shot noise with NEP, readout circuits, APD, SPAD, SiPM and LDR.
 ---
 
 # Light Sensors
+
+> [!summary] Overview
+> This note studies the **photodiode** as the basic light transducer: photo-generation under reverse bias, p-n versus p-i-n structures, **penetration depth** and the silicon bandgap limit, **responsivity** $R_\lambda = I_{ph}/P$, and the electrical model built on $I_{ph}$, $I_d$, $C_j$, $R_{SH}$ and $R_s$. Noise is split into thermal (Johnson) and shot contributions, leading to **Noise Equivalent Power**, before the basic readout circuits — non-inverting, **transimpedance amplifier** and light integration. Faster and more sensitive devices follow: **APD**, **SPAD**, **SiPM**, and the resistive **LDR**.
 
 ## 1. Photodiode
 

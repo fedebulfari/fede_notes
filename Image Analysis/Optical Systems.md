@@ -6,6 +6,9 @@ description: Camera optical system — thin spherical lens model, Snell's law, f
 
 # Optical Systems
 
+> [!summary] Overview
+> This note derives the physics behind the camera before moving to its geometric model. A **thin spherical lens** is treated with two refractions, **Snell's law** under the paraxial approximation, yielding the total deviation $\delta\theta$ and the **focal distance** $f$; parallel rays then concur on the focal plane, while finite-distance points obey the **Fresnel law** $1/Z + 1/r = 1/f$. Placing the screen at the focal plane gives the **pinhole model** $x = fX/Z$, $y = fY/Z$. Because central projection divides by depth, it is non-linear and shape-distorting, which motivates the projective treatment in [[Camera Geometry]] and the broader study of [[Planar Geometry]] and [[Space Geometry]].
+
 ## 1. Optical Sensor: Camera
 
 - **Screen:** Composed of an array (on the order of $10^6$ or more) of photosensitive elements called **pixels** (_PIXEL = PICture ELement_).

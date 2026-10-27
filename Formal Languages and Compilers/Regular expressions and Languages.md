@@ -1,9 +1,13 @@
 ---
 date: 09-10-2026
 subject: Formal Languages and Compilers
+description: Regular expressions as generators of regular languages — syntax, precedence and meaning, derivations and ambiguity, derived and extended operators, closure properties of REG, and linguistic abstraction with lists and nested lists
 ---
 
 # Regular Expressions and Languages
+
+> [!summary] Overview
+> Regular expressions are the generative notation for the simplest language family: built from $\emptyset$, symbols, union, concatenation and star, they generate exactly the **regular languages**. The note gives the syntax and its precedence, the meaning $L(r)$, derivations and ambiguity, then derived operators (power, cross, optionality, intervals) and extended ones ($\cap$, $\lnot$, $-$), which add convenience but no expressive power. It closes with the **closure properties** of REG and the linguistic abstraction used in compiler design, building on the operations of [[Basics]] and preparing the step to [[Context-free Grammars]] and [[Finite State Automata]].
 
 - **Regular languages**: simplest family of formal languages.
 - **Regular expression (regexp)**: string over $\Sigma$ plus meta-symbols, used to *generate* a language.

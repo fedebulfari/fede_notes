@@ -1,10 +1,13 @@
 ---
 date: 13-10-2026
 subject: Database2
-description:
+description: Active database triggers — Event-Condition-Action model, SQL:1999 syntax and transition variables, BEFORE vs AFTER modes, row vs statement granularity, cascading termination graphs, materialized view maintenance, vendor syntax
 ---
 
 # Triggers
+
+> [!summary] Overview
+> This note moves from **passive** declarative constraints to **active** database behaviour: triggers as Event-Condition-Action rules fired automatically by `INSERT`, `UPDATE` and `DELETE`. It covers the SQL:1999 syntax, `OLD`/`NEW` transition variables, `BEFORE` vs `AFTER` timing and row vs statement granularity, then applies them to conditional replication and **materialized view** maintenance. Cascading, termination analysis through triggering graphs and vendor-specific limits show why triggers are powerful but hard to reason about; they are the active counterpart to the storage and cost concerns of [[Physical Database]].
 
 > [!abstract] Overview
 > Triggers implement **active behaviour** in DBMS: automatic actions executed on `INSERT`, `UPDATE`, `DELETE`. They follow the **Event-Condition-Action (ECA)** paradigm and complement declarative integrity constraints.

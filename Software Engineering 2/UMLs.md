@@ -1,10 +1,13 @@
 ---
 date: 23-10-2026
 subject: Software Engineering 2
-description:
+description: UML as a semi-formal requirements modelling language — use case diagrams with include, extend and generalization, requirements- and domain-level class diagrams via noun–verb analysis, sequence, state machine and activity diagrams, and the limits of UML for expressing assertions
 ---
 
 # UMLs
+
+> [!summary] Overview
+> UML is the **semi-formal** middle ground of the course: it imposes structure on requirements models but resists automated analysis, so some ambiguity always remains. The note splits diagrams into **static** (class, object, component, deployment) and **dynamic** (use case, state, sequence, collaboration, activity), then treats each in turn — use case associations, **requirements-level class diagrams** derived by noun–verb analysis, and the three dynamic views used to model interactions, object behaviour and workflow. It closes on diagram selection and on the Airbus braking case, where UML captures every phenomenon but cannot state the **goal, domain properties or requirement** as assertions — the gap that [[Requirement Engineering]] and [[Alloy]] must fill.
 
 UMLs, as already said, are a type of semi-formal language: they impose structure but are not amenable to automated analysis, and some ambiguity remains. Their models and views are split into **static** (class, object, component, deployment) and **dynamic** (use case, state, sequence/scenario, collaboration, activity) diagrams.
 ![[Requirement Engineering-1792687027582.webp|488]]

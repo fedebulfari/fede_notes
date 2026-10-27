@@ -68,13 +68,13 @@ $$\begin{bmatrix} \mathbf{X}_1^T \\ \mathbf{X}_2^T \\ \mathbf{X}_3^T \end{bmatri
 
 **Line as the set of points on two planes** (a "pencil" of points, 1D):
 
-$$\begin{bmatrix} \boldsymbol{\pi}_1^T \\ \boldsymbol{\pi}_2^T \end{bmatrix}_{2\times4} \mathbf{X} = \mathbf{0}, \qquad \mathbf{L} = \text{RNS}\!\left(\begin{bmatrix} \boldsymbol{\pi}_1^T \\ \boldsymbol{\pi}_2^T \end{bmatrix}\right)$$
+$$\begin{bmatrix} \boldsymbol{\pi}_1^T \\ \boldsymbol{\pi}_2^T \end{bmatrix}_{2\times4} \mathbf{X} = \mathbf{0}, \qquad \mathbf{L} = \text{RNS}\!\left(\begin{bmatrix} \boldsymbol{\pi}_1^T \\ \boldsymbol{\pi}_2^T \end{bmatrix}_{2\times 4}\right)$$
 
 A 2D space of solutions (two points and all their linear combinations) $\Rightarrow$ a 1D set of points (parameter: abscissa along the line).
-
+![[Space Geometry-1793102403032.webp|244]]
 **Line as the set of planes through two points** (dual, 1D):
 
-$$\begin{bmatrix} \mathbf{X}_1^T \\ \mathbf{X}_2^T \end{bmatrix}_{2\times4} \boldsymbol{\pi} = \mathbf{0}, \qquad \mathbf{L}^* = \text{RNS}\!\left(\begin{bmatrix} \mathbf{X}_1^T \\ \mathbf{X}_2^T \end{bmatrix}\right)$$
+$$\begin{bmatrix} \mathbf{X}_1^T \\ \mathbf{X}_2^T \end{bmatrix}_{2\times4} \boldsymbol{\pi} = \mathbf{0}, \qquad \mathbf{L}^* = \text{RNS}\!\left(\begin{bmatrix} \mathbf{X}_1^T \\ \mathbf{X}_2^T \end{bmatrix}_{2\times 4}\right)$$
 
 A 2D space of solutions (two planes and all their combinations) $\Rightarrow$ a 1D set of planes through the line (parameter: rotation angle).
 
@@ -98,11 +98,11 @@ A 2D space of solutions (two planes and all their combinations) $\Rightarrow$ a 
 **1D — four collinear points** (abscissae $a,b,c,d$):
 
 $$CR_{Y,Z,X_1,X_2} = \frac{\dfrac{c-a}{c-b}}{\dfrac{d-a}{d-b}}$$
-
+![[Space Geometry-1793103039916.webp|210]]
 **2D — four coplanar, concurrent lines:** take any crossing (transversal) line and compute the 1D cross ratio of the four intersection points.
-
+![[Space Geometry-1793103054948.webp|346]]
 **3D — four coaxial planes** (sharing a line): take any crossing plane and compute the 2D cross ratio of the four intersection lines.
-
+![[Space Geometry-1793103374814.webp|367]]
 All three levels are invariant under projective mappings (see §8).
 
 ## 6. Quadrics
@@ -116,11 +116,7 @@ $$\mathbf{X}^T Q \mathbf{X} = 0, \qquad Q = Q^T \in \mathbb{R}^{4\times4}$$
 
 > [!info] Classification
 >
-> | Class | Surfaces |
-> |---|---|
-> | Projectively equivalent to the sphere | sphere, ellipsoid, hyperboloid of two sheets, paraboloid |
-> | Ruled quadrics | hyperboloid of **one** sheet |
-> | Degenerate ruled quadrics | cone, two planes |
+> ![[Space Geometry-1793104091076.webp|308x258]]
 
 **Example: the sphere** In Cartesian coordinates, with center $(X_o,Y_o,Z_o)$ and radius $r$:
 
@@ -128,7 +124,7 @@ $$(X-X_o)^2 + (Y-Y_o)^2 + (Z-Z_o)^2 - r^2 = 0$$
 
 In homogeneous coordinates, $Q$ is (row $\times$ column against $[x,y,z,w]^T$):
 
-$$Q = \begin{bmatrix} 1 & 0 & 0 & -X_o \\ 0 & 1 & 0 & -Y_o \\ 0 & 0 & 1 & -Z_o \\ -X_o & -Y_o & -Z_o & X_o^2+Y_o^2+Z_o^2-r^2 \end{bmatrix}, \qquad \mathbf{X}^T Q \mathbf{X} = 0$$
+$$Q = \begin{bmatrix} 1 & 0 & 0 & -X_o \\ 0 & 1 & 0 & -Y_o \\ 0 & 0 & 1 & -Z_o \\ -X_o & -Y_o & -Z_o & X_o^2+Y_o^2-r^2 \end{bmatrix}, \qquad \mathbf{X}^T Q \mathbf{X} = 0$$
 
 Note the structure: identity block (unit sphere) plus the translation terms of the center.
 

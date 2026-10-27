@@ -1,10 +1,13 @@
 ---
 date: 21-10-2026
 subject: Software Engineering 2
-description:
+description: Software engineering as multi-person, multi-version production — software qualities and the ISO/IEC 25010 model, the intangible software product, lifecycles from code-and-fix to waterfall and agile, maintenance categories, evolution, V&V and flexible processes
 ---
 
 # Software Production
+
+> [!summary] Overview
+> Why software engineering exists at all: software-intensive systems are everywhere and failures are costly, yet **programming skills are not enough** for systems built by teams, in many versions, over many years. The note covers the **qualities** a software product must show, then the **lifecycles** — code-and-fix, the rigid **waterfall** with its high and low phases, and the **flexible, iterative** processes (XP, Scrum, DevOps) that exist to absorb change. Maintenance and evolution show why change must be anticipated rather than patched into the code, and the **verification vs validation** distinction frames the rest of the course: requirements, modelling and formal analysis.
 
 Software is everywhere: our society is totally dependent on software-intensive systems (healthcare, transportation, energy, manufacturing), so failures cannot be tolerated — yet they still happen. E.g. the **worldwide IT outage of 19 July 2024**: a CrowdStrike update crashed ~8.5 million Windows devices, hitting airlines and airports, healthcare, media, banks and stock exchanges, F1 teams and the Paris 2024 committee — caused by an *array out of bounds read*.
 

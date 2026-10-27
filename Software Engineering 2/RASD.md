@@ -1,11 +1,14 @@
 ---
 date: 23-10-2026
 subject: Software Engineering 2
-description:
+description: The Requirements Analysis and Specification Document — its purpose as communication, contract and baseline, target qualities such as completeness, precision, consistency and traceability, the ISO/IEC/IEEE 29148 structure, requirement-writing templates and review criteria
 aliases:
 ---
 
 # RASD
+
+> [!summary] Overview
+> The RASD is the concrete deliverable that turns [[Requirement Engineering]] into a document: it **communicates** an understanding of the domain and the system-to-be, acts as a possibly **legally binding contract** with customers, and sets a **baseline** for planning, V&V and change control. The note lists the target qualities a reviewer should test it against — completeness ($Req \land Dom \models Goals$), precision, pertinence, consistency, unambiguity, feasibility, modifiability and traceability — then walks through the standard **ISO/IEC/IEEE 29148** structure, including its dedicated **formal analysis with Alloy** section. It closes with requirement-sentence templates, the traceability matrix, and a procedure for reviewing a RASD on content rather than structure.
 
 The purpose of RASD (_Requirements Analysis and Specification Document_) is to:
 

@@ -1,10 +1,13 @@
 ---
 date: 22-10-2026
 subject: Software Engineering 2
-description:
+description: Requirements engineering foundations — functional, non-functional and constraint requirements, elicitation through scenarios and use cases, the world/machine distinction with goals and domain assumptions, completeness as $R \land D \models G$, and modelling tools
 ---
 
 # Requirement Engineering
+
+> [!summary] Overview
+> Requirements engineering is the process of **discovering the purpose** of a system and documenting it so it can be analysed, communicated and implemented — and it is not a one-shot phase — new requirements keep appearing during design, deployment and maintenance. The note separates **functional**, **non-functional** and **constraint** requirements, shows why vague ones are unverifiable, and argues that requirements errors carry the greatest cost. Its core is the **World/Machine** model: goals, domain assumptions and requirements over shared phenomena, with completeness stated as $R \land D \models G$ — and the Airbus A320 case showing how a false domain assumption silently breaks the proof. **Scenarios and use cases** provide elicitation, and the closing section on modelling tools leads to [[UMLs]], [[RASD]] and [[Alloy]].
 
 **Definition** (Nuseibeh & Easterbrook, 2000): the primary measure of success of a software system is the degree to which it meets the purpose for which it was intended. RE is the process of *discovering that purpose*, by identifying stakeholders and their needs and documenting them in a form amenable to analysis, communication and implementation.
 

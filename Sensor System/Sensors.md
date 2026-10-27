@@ -1,10 +1,13 @@
 ---
 date: 13-10-2026
 subject: Sensor System
-description: Introduction to transducers, sensor classification, static and dynamic characteristics, analog/smart readout, and sensor calibration.
+description: Transducers as energy converters — sensors versus actuators, classification by physical phenomena and sensing mechanism, figures of merit such as sensitivity, LSB, FSR, accuracy, INL/DNL, noise and dynamic range, plus analog and smart readout and calibration.
 ---
 
 # Sensors
+
+> [!summary] Overview
+> This note covers the sensor layer of a measurement chain: a **transducer** converts energy between domains, and a **sensor** monitors a system parameter while an actuator acts on the mechanism. Sensors are classified by physical phenomena (optical, thermal, magnetic, mechanical, chemical) and by mechanism (resistive, capacitive, inductive, piezoelectric, Hall, MEMS), then characterised through figures of merit — **sensitivity**, resolution/LSB, FSR, accuracy versus repeatability, linearity with INL/DNL, transfer function and bandwidth, noise and **dynamic range**. It closes on analog versus **smart sensor** readout (SPI, I2C, UART) and on calibrating offset, nonlinearity and cross-sensitivity.
 
 ## 1. Transducer
 

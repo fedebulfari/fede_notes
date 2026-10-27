@@ -1,9 +1,13 @@
 ---
 date: 09-10-2026
 subject: Formal Languages and Compilers
+description: Context-free grammars — 4-tuple definition and rule shapes, derivations and generated languages, reduced forms and nullables, recursion and infinity, syntax trees, Dyck languages, ambiguity, normal forms, EBNF and the Chomsky hierarchy
 ---
 
 # Context-free Grammar
+
+> [!summary] Overview
+> Context-free grammars generate languages by applying production rules to non-terminals, and this note covers the whole toolkit: the 4-tuple definition, rule shapes, derivations and generated languages, reduced forms, nullables, and the link between recursion and infinite languages. It then treats syntax trees and canonical derivations, **Dyck languages** and regular composition, ambiguity with its catalogue of causes, normal forms (Chomsky, Greibach, uni-linear) and EBNF, before placing everything in the **Chomsky hierarchy**. It generalises [[Regular Expressions and Languages]] and sits above REG in that hierarchy, while [[Finite State Automata]] covers the machine side of recognition.
 
 A **generative grammar** is a set of rules that, by repeated application, generate all and only the phrases of a language.
 

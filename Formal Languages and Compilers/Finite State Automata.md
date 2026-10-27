@@ -1,10 +1,13 @@
 ---
 date: 23-10-2026
 subject: Formal Languages and Compilers
-description:
+description: Finite state automata — recognition algorithms and configurations, deterministic automata, state transition and syntax diagrams, cleaning and minimisation, uni-linear grammars, non-determinism with epsilon-moves, and the BCM method back to regexps
 ---
 
 # Finite State Automata
+
+> [!summary] Overview
+> Recognition is framed as an abstract machine reading an input tape, and the note then specialises it to the **finite state automaton**: definitions, configurations, acceptance, state transition graphs and their dual syntax diagrams. It covers deterministic automata, cleaning and **minimisation** through undistinguishable states, the bijective correspondence with uni-linear grammars, and non-determinism with spontaneous $\epsilon$-moves. It ends with the **BCM method** for turning an automaton back into a regular expression, completing the round trip with [[Regular Expressions and Languages]] and complementing the generative view of [[Context-free Grammars]].
 
 ## 1. Recognition Algorithms
 

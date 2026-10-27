@@ -1,9 +1,13 @@
 ---
 date: 2026-10-09
 subject: Formal Languages and Compilers
+description: Alphabets, strings and languages — length, prefix/suffix, concatenation, mirroring and power — plus language operations, the Kleene star, cross and quotient operators, prefix-free languages and key identities
 ---
 
 # Basics
+
+> [!summary] Overview
+> This note lays the vocabulary the whole course builds on: alphabets, strings and languages, with operations on strings (concatenation, mirroring, power) and on languages (union, complement, concatenation, prefix, mirroring). The **Kleene star** and **Kleene plus** are introduced as limits of the power operator, together with the quotient operator and prefix-free languages, and a table of key identities ties the results together. These definitions are what [[Regular Expressions and Languages]] and [[Context-free Grammars]] later use to characterise regular and free languages, while [[Finite State Automata]] supplies the machines that recognise them.
 
 ## 1. Definitions
 

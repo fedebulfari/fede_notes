@@ -1,10 +1,13 @@
 ---
 date: 14-10-2026
 subject: Sensor System
-description:
+description: CCD and CMOS image sensors — MOS-capacitor pixels, quantum efficiency, dark current, well capacity, blooming, charge transfer efficiency, readout and reset noise with CDS, Bayer filtering, and active-pixel architecture.
 ---
 
 # Image Sensors
+
+> [!summary] Overview
+> This note compares the two dominant image-sensor architectures. The **CCD** is an array of MOS capacitors whose charge packets are shifted to a common output; performance is grouped by charge generation (**quantum efficiency**, pixel uniformity, dark current), collection (well capacity, linearity, blooming), transfer (**CTE**/**CTI**, defects) and readout noise (reset $kTC$, removed by **correlated double sampling**), plus Bayer colour filtering and full-frame/frame/interline variants. The **CMOS active pixel sensor** instead puts a photodiode and amplifier in every pixel, trading fill factor for speed, selectable windows and on-chip processing — hence rolling versus global shutter and MIPI/LVDS links.
 
 ## 1. Charge Coupled Device (CCD)
 

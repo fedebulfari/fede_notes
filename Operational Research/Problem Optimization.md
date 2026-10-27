@@ -1,9 +1,13 @@
 ---
 date: 07-10-2026
 subject: Operational Research
+description: LP and MILP modelling — decisions mapped to variables, rules to constraints, objectives to functions, with variable domains, constraint families, slack transformations and linear, bottleneck and multi-objective goals
 ---
 
 # Problem Optimization
+
+> [!summary] Overview
+> This note is the entry point of the course: it shows how a real decision problem becomes an **optimization problem** through three correspondences — decisions to variables, rules to constraints, objective to objective function. It develops the general form $\min f(x)$ subject to $g_i(x) \leq 0$ and $h_j(x)=0$, then details variable domains, typical constraint families (availability, requirement, blending, flow conservation, logical and big-$M$ linking), the standard slack and surplus transformations, and the main objective types. It closes with small LP examples whose vertex enumeration motivates the efficient algorithms developed in [[Graphs]] and [[Flows]].
 
 ## 1. Definitions
 
