@@ -129,7 +129,10 @@ For an arc $(i,j)\in A(x)$:
 > [!warning] Backward arcs are cancellations
 > An arc of $A^-$ does **not** mean negative flow and does **not** create a new physical arc. Sending one unit on $(j,i)\in A^-$ means *reducing* $x_{ij}$ by one unit, freeing capacity on $(i,j)$ for a different use downstream. This rerouting is the whole power of the residual graph.
 
-### 3.1. Augmenting Path Algorithm
+> [!Example]
+![[Drawing 2026-10-28 10.54.55.excalidraw|300]]
+
+### 3.1. Augmenting Path Algorithm — $O(n)$
 
 An **augmenting path** is an $s$–$t$ path in $G_R(x)$. Its bottleneck is
 
@@ -148,10 +151,30 @@ Procedure Augmenting_paths(G, s, t, x):
     if P[t] ≠ 0 then
       Augment_flow(P, x)           // θ = bottleneck of P, update as above
   until P[t] = 0
+
+Augment_flow(P,x): 
+  foreach (i,j) ∈ P do if (i,j) ∈ A+ then
+      x[i,j] ← x[i,j]+ϑ 
+    else 
+      x[j,i] ← x[j,i]-ϑ
+      
+Residual_capacity(P,x)= min{uij- x[i,j]: (i,j) ∈ A+ ∩P x[j,i]: (i,j) ∈ A- ∩P}
 ```
 
-**Correctness.**
+> [!Example] Pathological Case
+> ![[Drawing 2026-10-28 11.05.51.excalidraw|600]]
+> 1.   $P=s\to 1\to 2\to t$
+> $\theta = min\{1000-0,1-0,1000-0\}=$
+> 2.  $P=$ 	
+> $\theta = min\{1000-0,1-0,1000-0\}=$
+> 3.  $P=$ 	
+> $\theta = min\{1000-0,1-0,1000-0\}=$
+>
+> Millions iteration…
+>
+> To avoid it we select each time the path with less arcs
 
+**Correctness:**
 - If a path exists, $\theta>0$, so the flow value increases — $x$ was not optimal.
 - If no path exists, let $N_s$ be the nodes reachable from $s$ in $G_R(x)$ and $N_t=N\setminus N_s$. For any original arc $(i,j)$ with $i\in N_s$, $j\in N_t$: if $x_{ij}<u_{ij}$, then $(i,j)$ would be a residual arc and $j$ would be reachable, contradiction. Hence $x_{ij}=u_{ij}$. Similarly, if $i\in N_t$, $j\in N_s$ and $x_{ij}>0$, the backward residual arc $(j,i)$ would make $i$ reachable, contradiction; hence $x_{ij}=0$. Therefore
 	$$ x(N_s,N_t)=\sum_{A^+} u_{ij}=U(N_s,N_t), $$
