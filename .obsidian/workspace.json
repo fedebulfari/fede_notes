@@ -100,7 +100,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "[\"date\"]",
+                "query": "[\"subject\"]",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -123,8 +123,38 @@
               "icon": "lucide-bookmark",
               "title": "Segnalibri"
             }
+          },
+          {
+            "id": "0cb06d16530492d4",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Etichette"
+            }
+          },
+          {
+            "id": "9df5991fc5e56ad7",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "Tutte le proprietà"
+            }
           }
-        ]
+        ],
+        "currentTab": 4
       },
       {
         "id": "91dc530f918ee9cf",
@@ -150,7 +180,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 286.87489318847656
+    "width": 286.87489318847656,
+    "collapsed": true
   },
   "right": {
     "id": "a208faef6a30291a",
@@ -222,38 +253,8 @@
               "icon": "links-going-out",
               "title": "Collegamenti in uscita"
             }
-          },
-          {
-            "id": "0cb06d16530492d4",
-            "type": "leaf",
-            "state": {
-              "type": "tag",
-              "state": {
-                "sortOrder": "frequency",
-                "useHierarchy": true,
-                "showSearch": false,
-                "searchQuery": ""
-              },
-              "icon": "lucide-tags",
-              "title": "Etichette"
-            }
-          },
-          {
-            "id": "9df5991fc5e56ad7",
-            "type": "leaf",
-            "state": {
-              "type": "all-properties",
-              "state": {
-                "sortOrder": "frequency",
-                "showSearch": false,
-                "searchQuery": ""
-              },
-              "icon": "lucide-archive",
-              "title": "Tutte le proprietà"
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -279,20 +280,21 @@
   },
   "active": "c0cf9d4fc39b8b14",
   "lastOpenFiles": [
-    "Operational Research/media/Drawing 2026-10-28 11.05.51.excalidraw.md",
-    "Operational Research/Flows.md",
+    "Operational Research/media/Flows-1793183967418.webp",
     "Operational Research/PDF/Slides/flowsnew.pdf",
+    "Operational Research/PDF/chapter+2.pdf",
+    "Operational Research/Flows.md",
+    "Operational Research/Problem Optimization.md",
+    "Sensor System/Temperature Sensors.md",
+    "Operational Research/media/Drawing 2026-10-28 11.05.51.excalidraw.md",
     "Operational Research/media/Drawing 2026-10-28 10.54.55.excalidraw.md",
     "Operational Research/Graphs.md",
-    "Operational Research/Problem Optimization.md",
     "Operational Research/_Operational Research MOC.md",
     "Excalidraw",
     "Sensor System/_Sensor System MOC.md",
-    "Sensor System/Temperature sensors.md",
     "Operational Research/media/Flows-1793180716477.webp",
     "Operational Research/media/Flows-1793180701449.webp",
     "Formal Languages and Compilers/PDF/FLC - series 06 - new.pdf",
-    "Operational Research/PDF/chapter+2.pdf",
     "Operational Research/PDF/chapter+3.pdf",
     "Operational Research/PDF/chapter+1.pdf",
     "Sensor System/PDF/Theory/04 - Temperature sensors - Part 2.pdf",
@@ -324,7 +326,6 @@
     "Software Engineering 2/Alloy.md",
     "Software Engineering 2/Requirement Engineering.md",
     "Software Engineering 2/UMLs.md",
-    "Software Engineering 2/Software Production.md",
     "Senza nome.canvas"
   ]
 }

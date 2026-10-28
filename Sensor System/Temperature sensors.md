@@ -11,7 +11,7 @@ description: Thermal transducers — RTDs (sensitivity, temperature coefficient,
 
 ## 1. RTDs
 
-[incomplete]
+#incomplete
 
 **Sensitivity**: quantity characteristic of a specific RTD
 $$S=\frac{\Delta R}{\Delta T}\quad \left[ \frac{\Omega}{°C} \right]$$

@@ -6,14 +6,14 @@ description: Map of content for the sensor system block — transducers and sens
 # Sensor System
 
 > [!summary] Overview
-> The block moves from general sensing theory to concrete transducers. [[Sensors]] establishes the vocabulary — transducers, classification and figures of merit — then two families apply it: [[Light Sensors]] takes the photodiode and its noise and readout up to [[Image Sensors]] and its CCD and CMOS pixel arrays, while [[Temperature sensors]] builds thermal measurement from resistive devices (RTDs and thermistors) to the thermoelectric thermocouple. Read [[Sensors]] first; afterwards the light and thermal branches are independent and each reuses the specifications of the introduction.
+> The block moves from general sensing theory to concrete transducers. [[Sensors]] establishes the vocabulary — transducers, classification and figures of merit — then two families apply it: [[Light Sensors]] takes the photodiode and its noise and readout up to [[Image Sensors]] and its CCD and CMOS pixel arrays, while [[Temperature Sensors]] builds thermal measurement from resistive devices (RTDs and thermistors) to the thermoelectric thermocouple. Read [[Sensors]] first; afterwards the light and thermal branches are independent and each reuses the specifications of the introduction.
 
 ## 1. Reading Path
 
 1. [[Sensors]] — transducer as energy converter, sensor versus actuator, classification by phenomenon and mechanism, characteristics (sensitivity, LSB, FSR, accuracy, INL/DNL, noise, dynamic range), readout and calibration.
 2. [[Light Sensors]] — photodiode physics: reverse bias, p-n versus p-i-n, penetration depth and bandgap, responsivity, electrical model, thermal and shot noise, NEP, readout; then APD, SPAD, SiPM and LDR.
 3. [[Image Sensors]] — CCD (MOS capacitor, charge transfer, blooming, CTE) and CMOS active pixels, quantum efficiency, dark current, well capacity, reset noise and CDS, Bayer filtering.
-4. [[Temperature sensors]] — RTDs with $\alpha$ and the 2/3/4-wire and bridge readouts, NTC and PTC thermistors with their $\beta$ law and applications, and the Seebeck effect behind the thermocouple.
+4. [[Temperature Sensors]] — RTDs with $\alpha$ and the 2/3/4-wire and bridge readouts, NTC and PTC thermistors with their $\beta$ law and applications, and the Seebeck effect behind the thermocouple.
 
 ## 2. Core Ideas
 
@@ -27,6 +27,6 @@ description: Map of content for the sensor system block — transducers and sens
 
 ## 3. Gaps and next Steps
 
-- [[Temperature sensors]] stops at the standard thermocouple types — **cold-junction compensation**, the signal conditioning chain and the linearisation of NTCs are still missing, and sections 1 (RTD introduction) and 1.3 (self-heating) are marked incomplete.
+- [[Temperature Sensors]] stops at the standard thermocouple types — **cold-junction compensation**, the signal conditioning chain and the linearisation of NTCs are still missing, and sections 1 (RTD introduction) and 1.3 (self-heating) are marked incomplete.
 - No note yet on the optical front-end (lenses, filters, IR-cut) — see [[Optical Systems]] and [[_Image Analysis MOC]].
 - [[Image Sensors]] compares CCD and CMOS qualitatively; quantitative noise and SNR budgets would need the datasheet parameters from [[Sensors]].

@@ -2,6 +2,8 @@
 date: 27-10-2026
 subject: Operational Research
 description: Network flows — maximum flow and minimum cut, residual graphs and augmenting paths, Edmonds–Karp and capacity scaling, matching as max flow, minimum cost flow with cycle canceling and successive shortest paths, multicommodity flows
+tags:
+  - incomplete
 ---
 
 # Flows
@@ -94,7 +96,7 @@ $$ U(N_s,N_t)=\sum_{(i,j)\in A^+} u_{ij} $$
 
 The cut viewpoint is also the modelling intuition for "destroying" the network: if cutting an arc costs proportional to its capacity, the cheapest way to disconnect $s$ from $t$ is the minimum cut.
 
-> [!Example] Modelling Example — Scheduling with Release Dates and Deadlines
+> [!Example]- Modelling Example — Scheduling with Release Dates and Deadlines
 >
 > The repair-shop example from the lecture shows how far the max-flow model reaches. There are $m$ identical machines and a set of jobs $J=\{1,\dots,n\}$, each with processing time $p_j$, release time $r_j$ and due date $d_j$. Jobs may be **preempted** and resumed without loss of time, but only one machine can work on a job at a time.
 >
@@ -108,7 +110,7 @@ The cut viewpoint is also the modelling intuition for "destroying" the network: 
 
 All jobs meet their deadlines **iff** the maximum flow equals $\sum_j p_j$. If it is smaller, the minimum cut identifies the set of jobs and intervals that cannot be scheduled — a compact infeasibility certificate, not just a "no".
 
-## 3. Residual Graph and Augmenting Paths
+### 2.3. Residual Graph and Augmenting Paths
 
 Given a feasible flow $x$, two things can be done on an arc $(i,j)\in A$:
 ![[Flows-1793180701449.webp|313]]
@@ -132,7 +134,7 @@ For an arc $(i,j)\in A(x)$:
 > [!Example]
 ![[Drawing 2026-10-28 10.54.55.excalidraw|300]]
 
-### 3.1. Augmenting Path Algorithm — $O(n)$
+#### 2.3.1. Augmenting Path Algorithm — $O(n)$
 
 An **augmenting path** is an $s$–$t$ path in $G_R(x)$. Its bottleneck is
 
@@ -170,6 +172,8 @@ Residual_capacity(P,x)= min{uij- x[i,j]: (i,j) ∈ A+ ∩P x[j,i]: (i,j) ∈ A- 
 > 3.  $P=$ 	
 > $\theta = min\{1000-0,1-0,1000-0\}=$
 >
+> #incomplete
+>
 > Millions iteration…
 >
 > To avoid it we select each time the path with less arcs
@@ -182,30 +186,30 @@ Residual_capacity(P,x)= min{uij- x[i,j]: (i,j) ∈ A+ ∩P x[j,i]: (i,j) ∈ A- 
 
 This is the algorithmic version of the path-or-cut property in [[Graphs]]: the search either marks $t$ (augment) or leaves $t$ unmarked (certificate of optimality).
 
-### 3.2. Worked Example — Why Rerouting Is Needed
+> [!example]- Worked Example — Why Rerouting Is Needed
+>
+> Network with $s,a,b,t$:
+>
+> | Arc      | Capacity |
+> | :------- | :------: |
+> | $s\to a$ |    2     |
+> | $s\to b$ |    2     |
+> | $a\to b$ |    1     |
+> | $a\to t$ |    2     |
+> | $b\to t$ |    2     |
+>
+> Maximum flow is $4$: send $2$ on $s\to a\to t$ and $2$ on $s\to b\to t$.
+>
+> A greedy sequence can do worse:
+>
+>  1. Send $s\to a\to b\to t$: bottleneck $\min(2,1,2)=1$. Flow: $x_{sa}=1$, $x_{ab}=1$, $x_{bt}=1$.
+>  2. Send $s\to b\to t$: bottleneck $\min(2,1)=1$. Flow: $x_{sb}=1$, $x_{bt}=2$.
+> 3. Send $s\to a\to t$ with the remaining capacity of $s\to a$: bottleneck $\min(1,2)=1$. Flow: $x_{sa}=2$, $x_{at}=1$. The value is now $3$.
+>  4. Now $s\to a$, $a\to b$ and $b\to t$ are saturated, so no path using only forward arcs remains. In the residual graph the backward arc $b\to a$ exists. Send $s\to b\to a\to t$: bottleneck $\min(1,1,1)=1$. This **cancels** $x_{ab}$ and reroutes: $x_{sb}=2$, $x_{ab}=0$, $x_{at}=2$.
+>
+> Final flow value $2+2=4$. The min cut is $(\{s\},\{a,b,t\})$ with capacity $u_{sa}+u_{sb}=4$, matching the flow. Without the backward arc of step 4 the algorithm would stop at value $3$ — a valid flow, but not maximum.
 
-Network with $s,a,b,t$:
-
-| Arc | Capacity |
-| :--- | :---: |
-| $s\to a$ | 2 |
-| $s\to b$ | 2 |
-| $a\to b$ | 1 |
-| $a\to t$ | 2 |
-| $b\to t$ | 2 |
-
-Maximum flow is $4$: send $2$ on $s\to a\to t$ and $2$ on $s\to b\to t$.
-
-A greedy sequence can do worse:
-
-1. Send $s\to a\to b\to t$: bottleneck $\min(2,1,2)=1$. Flow: $x_{sa}=1$, $x_{ab}=1$, $x_{bt}=1$.
-2. Send $s\to b\to t$: bottleneck $\min(2,1)=1$. Flow: $x_{sb}=1$, $x_{bt}=2$.
-3. Send $s\to a\to t$ with the remaining capacity of $s\to a$: bottleneck $\min(1,2)=1$. Flow: $x_{sa}=2$, $x_{at}=1$. The value is now $3$.
-4. Now $s\to a$, $a\to b$ and $b\to t$ are saturated, so no path using only forward arcs remains. In the residual graph the backward arc $b\to a$ exists. Send $s\to b\to a\to t$: bottleneck $\min(1,1,1)=1$. This **cancels** $x_{ab}$ and reroutes: $x_{sb}=2$, $x_{ab}=0$, $x_{at}=2$.
-
-Final flow value $2+2=4$. The min cut is $(\{s\},\{a,b,t\})$ with capacity $u_{sa}+u_{sb}=4$, matching the flow. Without the backward arc of step 4 the algorithm would stop at value $3$ — a valid flow, but not maximum.
-
-### 3.3. Path Choice and Complexity
+#### 2.3.2. Path Choice and Complexity
 
 The plain augmenting-path algorithm (Ford–Fulkerson) is correct for any path choice, but not polynomial in the input size: capacities are encoded in binary, while each augmentation may add only one unit.
 
@@ -225,7 +229,7 @@ $$ O(nm^2). $$
 
 $$ O(m^2\log U). $$
 
-## 4. Maximum Cardinality Matching as Max Flow
+### 2.4. Maximum Cardinality Matching as Max Flow
 
 Given a bipartite graph $G=(S,T,A)$ with $A\subseteq S\times T$, a **matching** $M\subseteq A$ is a set of arcs no two of which share a node. The **maximum cardinality matching** problem asks for a matching of maximum size.
 
@@ -242,9 +246,9 @@ A flow of value $k$ uses $k$ disjoint $S$–$T$ arcs, i.e. a matching of size $k
 
 This is the "workers and jobs" example: compatibility arcs, at most one job per worker and one worker per job, maximize the number of pairs. The **minimum cost** version — assign every worker exactly one job while minimizing total cost — is a min cost flow problem (§7.4).
 
-## 5. Minimum Cost Flow
+## 3. Minimum Cost Flow
 
-### 5.1. Model
+### 3.1. Model
 
 The maximum-flow model ignores that different routings have different prices. The **minimum cost flow** model adds unit costs and node balances.
 
@@ -267,7 +271,7 @@ $$ 0\le x_{ij}\le u_{ij} \qquad \forall (i,j)\in A \qquad \text{(capacity)} $$
 
 If all $b_i=0$, the problem is a **circulation**: the flow is driven only by costs, so some arc must have a negative cost for a non-zero optimal flow.
 
-### 5.2. Special Cases
+### 3.2. Special Cases
 
 | Problem | Balances $b_i$ | Costs $c_{ij}$ | Capacities $u_{ij}$ |
 | :--- | :--- | :--- | :--- |
@@ -280,9 +284,10 @@ If all $b_i=0$, the problem is a **circulation**: the flow is driven only by cos
 
 The max-flow reduction uses the dummy arc: minimizing $-x_{ts}$ is maximizing the flow, and conservation at all nodes makes the dummy arc carry exactly the flow value.
 
-### 5.3. Applications
+### 3.3. Applications
 
 > [!example]- Road construction — earth moving at minimum cost
+> ![[Flows-1793183967418.webp|549x167]]
 > Divide the road into sections, one node per section. A **hump** must be excavated: the section supplies truckloads, so $b_i<0$. A **depression** must be filled: it demands truckloads, so $b_i>0$. Adjacent sections are connected by arcs with **infinite capacity** (no limit on the number of trucks) and cost equal to the transport cost per truckload. The flow on an arc is the number of truckloads moved between the two sections. Minimizing $\sum c_{ij}x_{ij}$ distributes the material at minimum cost. The Pedemontana case moves about $35\times 10^6\ \mathrm{m}^3$ of earth.
 
 > [!example]- Waste disposal
@@ -291,9 +296,9 @@ The max-flow reduction uses the dummy arc: minimizing $-x_{ts}$ is maximizing th
 > [!example]- Communications network design
 > Terminals $1,\dots,n$ must reach a central computer, either directly or through one of $p$ concentrators. Model: terminal nodes have $b_i=-1$, the computer has $b_0=n$, concentrators are transshipment. Arcs terminal $\to$ computer cost $c_{i0}$; terminal $\to$ concentrator $h$ cost $c_{ih}$; concentrator $\to$ computer capacity $k$. The optimal flow is $0/1$: $x_{ij}=1$ means "build this line". Integrality follows from the network structure, so no separate binary constraints are needed.
 
-## 6. Optimality for Minimum Cost Flow
+### 3.4. Optimality for Minimum Cost Flow
 
-### 6.1. Only Cycles Preserve Feasibility
+#### 3.4.1. Only Cycles Preserve Feasibility
 
 Start from a feasible flow $x$. A variation $d$ preserves the balance constraints iff $d$ is a **circulation**: inflow equals outflow at every node. Every circulation decomposes into simple cycles (flow decomposition theorem), so any improvement can be described as sending a quantity $\theta$ around one or more cycles.
 
@@ -310,7 +315,7 @@ $$ \sum_{(i,j)\in A} c_{ij}x'_{ij}-\sum_{(i,j)\in A} c_{ij}x_{ij} =\sum_{(i,j)\i
 
 **Why it is a theorem, not just intuition.** If $x^*$ is a better feasible flow, then $x^*-x$ is a circulation and decomposes into at most $m$ simple circulations. At least one of them must have negative cost (otherwise the total change would not improve the objective), and it corresponds to a negative cycle in $G_R(x)$.
 
-### 6.2. Cycle-Canceling Algorithm
+#### 3.4.2. Cycle-Canceling Algorithm
 
 ```
 Procedure Negative_cycle_elimination(G, x):
@@ -326,7 +331,7 @@ Procedure Negative_cycle_elimination(G, x):
 	$$ O(nm^2C_{\max}U_{\max}). $$
 	This is pseudo-polynomial. Choosing cycles by a special rule (e.g. minimum mean cycle) gives a polynomial algorithm.
 
-### 6.3. Finding a Feasible Starting Flow
+#### 3.4.3. Finding a Feasible Starting Flow
 
 Cycle canceling needs a feasible flow. Build an **auxiliary graph** $G'=(N\cup\{s,t\},A')$:
 
@@ -344,11 +349,11 @@ then the flow on the original arcs is feasible. Otherwise **no feasible flow exi
 > [!tip] Flow to solve flow
 > The feasibility question of a min cost flow instance is itself a max-flow question. This is a common exam trick: do not try to guess a feasible flow; build the auxiliary graph and run Edmonds–Karp.
 
-## 7. Successive Shortest Paths
+### 3.5. Successive Shortest Paths
 
 Cycle canceling starts from any feasible flow and repairs its cost. The **successive shortest path** algorithm does the opposite: it starts from an infeasible but cost-optimal pseudoflow and repairs feasibility.
 
-### 7.1. Reduced Costs and Potentials
+#### 3.5.1. Reduced Costs and Potentials
 
 For a potential vector $\pi$ on the nodes, the **reduced cost** of arc $(i,j)$ is
 
@@ -370,7 +375,7 @@ So a cycle is negative in reduced costs iff it is negative in original costs.
 
 **Equivalence with "no negative cycle".** If such a $\pi$ exists, every residual cycle has non-negative reduced cost, hence non-negative original cost. Conversely, if $G_R(x)$ has no negative cycle, compute shortest-path labels $d$ from any root; setting $\pi_i=d_i$ gives Bellman's inequalities $c_{ij}+d_i-d_j\ge 0$ on every residual arc.
 
-### 7.2. Pseudoflows and Excess
+#### 3.5.2. Pseudoflows and Excess
 
 A **pseudoflow** satisfies capacity constraints but not necessarily conservation. Define the **excess** of node $i$:
 
@@ -382,7 +387,7 @@ $$ g_i=\sum_{(j,i)\in BS(i)}x_{ji}-\sum_{(i,j)\in FS(i)}x_{ij}-b_i. $$
 
 The algorithm sends flow from excess nodes to defect nodes while preserving the reduced-cost optimality condition.
 
-### 7.3. Algorithm
+#### 3.5.3. Algorithm
 
 ```
 Procedure Shortest_path_sequence(G, x, π):
@@ -418,7 +423,7 @@ $$ O\bigl(B\cdot S(n,m)\bigr), $$
 
 where $S(n,m)$ is the complexity of the SPT subroutine. With Dijkstra and a binary heap, $S=O(m\log n)$.
 
-### 7.4. Minimum Cost Assignment
+#### 3.5.4. Minimum Cost Assignment
 
 A bipartite complete graph $G=(S,T,A)$ with $A=S\times T$, $|S|=|T|=n$, and costs $c_{ij}$. Choose exactly one arc incident to every node, minimizing total cost.
 
@@ -426,7 +431,7 @@ As a min cost flow: $b_i=-1$ for $i\in S$, $b_j=1$ for $j\in T$, capacities $1$ 
 
 $$ O(n^3). $$
 
-## 8. Multicommodity Flows
+## 4. Multicommodity Flows
 
 All models above assume a **single homogeneous commodity**: one unit of flow is interchangeable with any other. In many applications, different commodities share the same arcs but cannot be converted into one another.
 
@@ -451,7 +456,7 @@ $$ \sum_{p\in P_k} x_p=d_k \quad \forall k\in K, \qquad \sum_{k\in K}\sum_{p\ni(
 
 Typical instance: routing traffic on the Politecnico intranet, given an origin/destination matrix and link capacities in both directions — send all required flows, respect capacities, minimize total cost. This is the multi-terminal routing problem that reappears in the LP duality chapter via complementary slackness.
 
-## 9. Summary
+## 5. Summary
 
 | Problem | Model | Algorithm | Complexity |
 | :--- | :--- | :--- | :--- |
@@ -464,7 +469,7 @@ Typical instance: routing traffic on the Politecnico intranet, given an origin/d
 | Min cost assignment | unit balances | SSP + Dijkstra | $O(n^3)$ |
 | Multicommodity flow | shared capacities | LP / MILP | no combinatorial max-flow |
 
-## 10. Common Mistakes
+## 6. Common Mistakes
 
 > [!warning] Check these before an exam
 > - **Augmenting paths live in the residual graph**, not in the original graph. A backward residual arc is a legitimate move.
@@ -478,7 +483,7 @@ Typical instance: routing traffic on the Politecnico intranet, given an origin/d
 > - A negative-cost **arc** is harmless; a negative-cost **cycle** in the residual graph is what makes a flow improvable.
 > - Do not apply max-flow/min-cut to multicommodity flow: shared capacities destroy total unimodularity.
 
-## 11. Exam Checklist
+## 7. Exam Checklist
 
 1. Given a flow, draw $G_R(x)$, compute $\theta$ on a path, update $x$, and verify conservation.
 2. If the search from $s$ fails, extract the cut $N_s$ = reachable nodes and check $v=U(N_s,N_t)$.
