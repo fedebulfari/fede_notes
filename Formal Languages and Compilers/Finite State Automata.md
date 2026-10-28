@@ -203,7 +203,7 @@ These are represented by arc labeled with an $\epsilon$ ($\epsilon$-arcs), and t
 
 A non-deterministic automaton may have more than one initial state. This is fixed creating a new initial state $q_{0}$ and connecting it via $\epsilon$-arcs to the already existing initial states, therefore constructing an equivalent ned automaton with only one initial stage.
 
-## 6. BCM Method
+## 6. FSA → Regexp — Brzozowski and McCluskey(BCM) Method
 
 We can go from the automaton to the regexp directly:
 1. Assume the initial and final states ($i$ and $t$) are unique and, respectively, not have incoming and outcoming arcs.
@@ -216,10 +216,153 @@ The regexp that labels such an arc generates the complete language recognized by
 > FSA whose arcs can be labeled by regexps and not only individual terminal characters
 
 > [!info] Internal nodes
-> all the other states different from i and t
+> all the other states different from $i$ and $t$
 
 > [!tip] Important
 > The elimination order is not relevant. However different orders may generate different regexps, all equivalent to one another but of different complexity
+
+### 6.1. Elimination of Indeterminism
+
+Every non-deterministic FSA can be transformed in a deterministic one.
+
+For this purpose we need to:
+1. Eliminate the spontaneous moves(same algorithm as for removing copy rules)
+2. Replace the non-deterministic multiple transitions with a subset construction.
+
+## 7. Regexp → FSA
+
+There are two main algorithms:
+- **Thompson**:
+	1. Decompose the regexp into subexpression until it reaches the atomic constituent(terminal symbol).
+	2. Connects them and builds up a network of recognizers that implement the union, concatenation and star operator
+
+- **Berry-Sethi(BS) Method**: Constructs a det. recognizer without spontaneous moves, but of size often larger than Thompson
+
+### 7.1. Thompson
+
+- Recognizers of atomic regexps
+	![[Finite State Automata-1793111716526.webp|441]]
+- Concatenation of two regexps
+	![[Finite State Automata-1793111726584.webp|444]]
+- Union of two regexps
+	![[Finite State Automata-1793111741362.webp|309]]
+- Star closure of a regexp 
+	![[Finite State Automata-1793111914085.webp|538]]
+	_in case of closed closure we have to omit the upper arc_
+
+In general the outcome of the Thomson method is a non-deterministic automaton with spontaneous moves.
+
+> [!info] Via optimization is possible to avoid adding redundant states.
+
+#### 7.1.1. Local Sets of a Language
+
+It constructs the automaton equivalent to a given regexp.
+
+> [!Definition]
+> Given a language $L$ over alphabet $\Sigma$:
+> - Start set $Ini(L)=\{a\in\Sigma|\quad a\Sigma^*\cap L\neq \emptyset\}$
+> - End set $Fin(L)=\{a\in\Sigma|\quad\Sigma^*a\cap L\neq \emptyset\}$
+> - Adjacency set $Dig(L)=\{x\in\Sigma^2|\quad\Sigma^*x\Sigma^*\cap L\neq \emptyset\}$
+> - Complement set $\overline{Dig(L)}=\Sigma^2 \setminus Dig(L)$
+
+##### Computing Local Set of Languages
+
+First we compute $Null$ predicate, than $Ini$ and $Fin$ sets, finally $Dig$ set.
+
+- **Null Predicate:** _Recursive rules that compute the predicate $Null$ of a regexp._
+
+$$\begin{aligned}
+\mathit{Null}(\emptyset) &= \textbf{false}\\
+\mathit{Null}(\varepsilon) &= \textbf{true}\\
+\mathit{Null}(a) &= \textbf{false} && \text{for every character } a\\
+\mathit{Null}(e \cup e') &= \mathit{Null}(e) \lor \mathit{Null}(e')\\
+\mathit{Null}(e \cdot e') &= \mathit{Null}(e) \land \mathit{Null}(e')\\
+\mathit{Null}(e^{*}) &= \textbf{true}\\
+\mathit{Null}(e^{+}) &= \mathit{Null}(e)
+\end{aligned}$$
+
+- **Set of Initials**: _Recursive rules that compute the set $Ini$ of a regexp._
+
+$$\begin{aligned}
+\mathit{Ini}(\emptyset) &= \emptyset\\
+\mathit{Ini}(\varepsilon) &= \emptyset\\
+\mathit{Ini}(a) &= \{a\} && \text{for every character } a\\
+\mathit{Ini}(e \cup e') &= \mathit{Ini}(e) \cup \mathit{Ini}(e')\\
+\mathit{Ini}(e \cdot e') &= \textbf{if}\ \mathit{Null}(e)\ \textbf{then}\ \mathit{Ini}(e) \cup \mathit{Ini}(e')\ \textbf{else}\ \mathit{Ini}(e)\ \textbf{end if}\\
+\mathit{Ini}(e^{*}) &= \mathit{Ini}(e^{+}) = \mathit{Ini}(e)
+\end{aligned}$$
+
+- **Set of Finals**: _Recursive rules that compute the set $Fin$ of a regexp._
+
+$$\begin{aligned}
+\mathit{Fin}(\emptyset) &= \emptyset\\
+\mathit{Fin}(\varepsilon) &= \emptyset\\
+\mathit{Fin}(a) &= \{a\} && \text{for every character } a\\
+\mathit{Fin}(e \cup e') &= \mathit{Fin}(e) \cup \mathit{Fin}(e')\\
+\mathit{Fin}(e \cdot e') &= \textbf{if}\ \mathit{Null}(e')\ \textbf{then}\ \mathit{Fin}(e) \cup \mathit{Fin}(e')\ \textbf{else}\ \mathit{Fin}(e')\ \textbf{end if}\\
+\mathit{Fin}(e^{*}) &= \mathit{Fin}(e^{+}) = \mathit{Fin}(e)
+\end{aligned}$$
+
+- **Set of Adjacency**: _Recursive rules that compute the set $Dig$ of a regexp._
+
+$$\begin{aligned}
+\mathit{Dig}(\emptyset) &= \emptyset\\
+\mathit{Dig}(\varepsilon) &= \emptyset\\
+\mathit{Dig}(a) &= \emptyset && \text{for every character } a\\
+\mathit{Dig}(e \cup e') &= \mathit{Dig}(e) \cup \mathit{Dig}(e')\\
+\mathit{Dig}(e \cdot e') &= \mathit{Dig}(e) \cup \mathit{Dig}(e') \cup \mathit{Fin}(e) \cdot \mathit{Ini}(e')\\
+\mathit{Dig}(e^{*}) &= \mathit{Dig}(e^{+}) = \mathit{Dig}(e) \cup \mathit{Fin}(e) \cdot \mathit{Ini}(e)
+\end{aligned}$$
+
+
+> [!info] Generation of empty string of a regexp
+$$\text{if} \ Null(e)=true \ \text{then} \ \epsilon \in L(e)\\ \text{if } Null(e)=false \text{ then } \epsilon \notin L(e)$$
+
+### 7.2. Construction of Deterministic Recognizer (BS Algorithm)
+
+To go from a generic regexp to an FSA is needed to enumerate the generators by applying an index on them:$$e = (a b)^* a \quad \text{becomes} \quad e_{\#} = (a_1 b_2 )^* a_3$$
+
+	$e_\#$: numbered version of e over $\Sigma_\#$ with predicate $Null$ and local sets $Ini$, $Fin$ and $Dig$
+
+Considering now $e_\#$ we can define $Fol(c_{\#})$ as the set of the followers of $c_{\#}\in\Sigma_{\#}$:
+
+$$Fol(c_{\#}) \in \wp\left(\Sigma_{\#} \cup \{\dashv\}\right) \qquad \text{and} \qquad Fol(\dashv) = \Phi \\ Fol(a_i) = \{\, b_j \mid a_i b_j \in \mathit{Dig}(e_{\#} \dashv) \,\} \qquad a_i \text{ and } b_j \text{ may coincide}$$
+	in practice the set Fol is a different way to express the digram set Dig, and it is usually presented in the form of a table
+
+Each state is denotated by a subset of $\Sigma_{\#}R┤$. The algorithm examines the states, and constructs their destination states and outgoing moves, by the subset construction
+
+Set $Ini (e_\# ┤)$ is the initial state, final states contain ┤, and the state set $Q$ starts with the initial state
+
+**Algorithm**:
+
+1. $q_0 := \mathit{Ini}(e_{\#}\dashv)$![[Finite State Automata-1793124015188.webp|186x83]]
+2. $Q := \{q_0\}$
+3. $\delta := \emptyset$
+4. **while** $(\exists q \in Q$ s.t. $q$ is unmarked$)$ **do**
+	1. mark state $q$ as visited
+	2. **for** (each character $c \in \Sigma$) **do**![[Finite State Automata-1793124181539.webp]]
+		1. $q' := \bigcup_{\forall c_{\#} \in \Sigma_{\#}\ \text{s.t.}\ c_{\#} \in q} Fol(c_{\#})$
+		2. **if** $(q' \neq \emptyset)$ **then**
+			- **if** $(q' \notin Q)$ **then**
+				- set $q'$ as a new unmarked state
+				- $Q := Q \cup \{q'\}$
+			- **end if**
+			- $\delta := \delta \cup \{q \xrightarrow{c} q'\}$
+		3. **end if**![[Finite State Automata-1793124221665.webp|425x68]]
+	3. **end for**
+	4. **end while** $\square$
+
+
+>[!example] Es.
+>![[Finite State Automata-1793123892896.webp|493x329]]
+
+## 8. Expansion of Regexp
+
+Regexps may also contain the operators of complement, intersection and set difference, which are very useful to make the regexp more concise
+
+The family $REG$ is  closed under complement and intersection$$\text{if } L’, L’’ ∈ REG \text{ then } ¬ L’ ∈ REG \text{ and } L’ ∩ L’’ ∈ REG$$
+Assume the recognizer M of L is deterministic, with initial state q0, state set Q, set of final states F and transition function δ
+
 
 ---
 Related: [[_Formal Languages and Compilers MOC]]

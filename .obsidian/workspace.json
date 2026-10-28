@@ -4,30 +4,30 @@
     "type": "split",
     "children": [
       {
-        "id": "f428c7158b411fab",
+        "id": "fe79c2bd73a0cf80",
         "type": "tabs",
-        "dimension": 52.326365475387725,
+        "dimension": 63.099834528405964,
         "children": [
           {
-            "id": "b467f2462c7641a1",
+            "id": "c0cf9d4fc39b8b14",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Image Analysis/Space Geometry.md",
+                "file": "Sensor System/Temperature sensors.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Space Geometry"
+              "title": "Temperature sensors"
             }
           }
         ]
       },
       {
-        "id": "6a64de1199e91417",
+        "id": "a46bd99cbb95ef49",
         "type": "tabs",
-        "dimension": 47.673634524612275,
+        "dimension": 36.90016547159404,
         "children": [
           {
             "id": "73e806d7a54d3961",
@@ -35,13 +35,26 @@
             "state": {
               "type": "pdf",
               "state": {
-                "file": "Image Analysis/PDF/IACV 2026 - D - 3D Projective Geometry.pdf"
+                "file": "Formal Languages and Compilers/PDF/FLC - series 06 - new.pdf"
               },
               "icon": "lucide-file-text",
-              "title": "IACV 2026 - D - 3D Projective Geometry"
+              "title": "FLC - series 06 - new"
+            }
+          },
+          {
+            "id": "b467f2462c7641a1",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "Sensor System/PDF/Theory/04 - Temperature sensors - Part 2.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "04 - Temperature sensors - Part 2"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -53,7 +66,7 @@
       {
         "id": "032f17508f52cdb1",
         "type": "tabs",
-        "dimension": 70.16129032258065,
+        "dimension": 70.16129032258064,
         "children": [
           {
             "id": "962e634c0bc6f7cd",
@@ -105,7 +118,7 @@
       {
         "id": "91dc530f918ee9cf",
         "type": "tabs",
-        "dimension": 29.838709677419356,
+        "dimension": 29.838709677419352,
         "children": [
           {
             "id": "1e66be5296dd7fda",
@@ -113,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Image Analysis/Space Geometry.md",
+                "file": "Sensor System/Temperature sensors.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -126,7 +139,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 286.87489318847656,
+    "collapsed": true
   },
   "right": {
     "id": "a208faef6a30291a",
@@ -229,7 +243,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -253,21 +267,32 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "b467f2462c7641a1",
+  "active": "c0cf9d4fc39b8b14",
   "lastOpenFiles": [
-    "Image Analysis/media/Space Geometry-1793105714597.webp",
-    "Image Analysis/media/Space Geometry-1793105702888.webp",
-    "Image Analysis/media/Space Geometry-1793105682393.webp",
-    "Image Analysis/PDF/IACV 2026 - D - 3D Projective Geometry.pdf",
+    "Sensor System/media/Temperature sensors-1793178077416.webp",
+    "Sensor System/media/Temperature sensors-1793177968403.webp",
+    "Sensor System/media/Temperature sensors-1793177957070.webp",
+    "Sensor System/media/Temperature sensors-1793177935639.webp",
+    "Sensor System/media/Temperature sensors-1793177380434.webp",
+    "Sensor System/media/Temperature sensors-1793177280956.webp",
+    "Sensor System/media/Temperature sensors-1793177271515.webp",
+    "Sensor System/PDF/Theory/04 - Temperature sensors - Part 2.pdf",
+    "Sensor System/Temperature sensors.md",
+    "Sensor System/media/Temperature sensors-1793176793068.webp",
+    "Sensor System/PDF/Theory/04 - Temperature sensors - Part 1.pdf",
+    "Sensor System/media/Temperature sensors-1793176445553.webp",
+    "Sensor System/media/Temperature sensors-1793176245361.webp",
+    "Sensor System/media/Temperature sensors-1793175970608.webp",
+    "Sensor System/Light Sensors.md",
+    "Formal Languages and Compilers/PDF/FLC - series 06 - new.pdf",
+    "Formal Languages and Compilers/Finite State Automata.md",
     "Image Analysis/Space Geometry.md",
-    "Image Analysis/media/Space Geometry-1793105649549.webp",
-    "Image Analysis/media/Space Geometry-1793105256199.webp",
-    "Image Analysis/media/Space Geometry-1793105218985.webp",
-    "Image Analysis/media/Space Geometry-1793105206003.webp",
-    "Image Analysis/media/Space Geometry-1793104492487.webp",
-    "Image Analysis/media/Space Geometry-1793104182025.webp",
-    "Image Analysis/media/Space Geometry-1793104154130.webp",
-    "Image Analysis/media/Space Geometry-1793104147451.webp",
+    "Formal Languages and Compilers/PDF/FLC - series 04 - new.pdf",
+    "Formal Languages and Compilers/PDF/FLC - series 03 - new.pdf",
+    "Formal Languages and Compilers/PDF/FLC - series 05 - new.pdf",
+    "Formal Languages and Compilers/PDF/FLC - series 08 - new.pdf",
+    "Formal Languages and Compilers/PDF/FLC - series 07 - new.pdf",
+    "Image Analysis/PDF/IACV 2026 - D - 3D Projective Geometry.pdf",
     "Image Analysis/_Image Analysis MOC.md",
     "Sensor System/_Sensor System MOC.md",
     "Sensor System/Image Sensors.md",
@@ -276,31 +301,20 @@
     "Operational Research/Problem Optimization.md",
     "Software Engineering 2/_Software Engineering 2 MOC.md",
     "Software Engineering 2/RASD.md",
-    "Sensor System/Light Sensors.md",
     "Image Analysis/Incomplete/Geometry matching.md",
     "Image Analysis/Camera Geometry.md",
     "Image Analysis/Incomplete/Derivatives Estimation.md",
     "Image Analysis/Incomplete",
     "Image Analysis/Planar Geometry.md",
     "Image Analysis/Incomplete/Non-linear Filters.md",
-    "Image Analysis/PDF/IACV 2026 - H - Model fitting to noisy images.pdf",
-    "Image Analysis/PDF/IACV 2026 - F - Multi-view Geometry.pdf",
-    "Image Analysis/PDF/IACV 2026 - G - 3D Reconstruction.pdf",
-    "Image Analysis/PDF/IACV 2026 - E - Single-view Geometry and Camera Calibration.pdf",
     "Image Analysis/Optical Systems.md",
-    "Image Analysis/PDF/IACV 2026 - B - Camera Optical System.pdf",
     "Operational Research/Flows.md",
     "Operational Research/Graphs.md",
     "Software Engineering 2/Alloy.md",
     "Software Engineering 2/Requirement Engineering.md",
     "Software Engineering 2/UMLs.md",
     "Software Engineering 2/Software Production.md",
-    "Image Analysis/PDF/IACV 2026 - C - 2D Projective Geometry and 2D Reconstruction.pdf",
-    "Operational Research/PDF/Slides/flowsnew.pdf",
-    "Operational Research/PDF/Slides/shortest pathsnew.pdf",
-    "Formal Languages and Compilers/Finite State Automata.md",
     "Formal Languages and Compilers/_Formal Languages and Compilers MOC.md",
-    "Formal Languages and Compilers/PDF/Senza nome.md",
     "Senza nome.canvas"
   ]
 }
