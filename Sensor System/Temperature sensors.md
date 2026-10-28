@@ -1,10 +1,13 @@
 ---
 date: 28-10-2026
 subject: Sensor System
-description:
+description: Thermal transducers — RTDs (sensitivity, temperature coefficient, resistance-temperature law, 2-, 3- and 4-wire lead configurations, Wheatstone and wire bridges, self-heating, pros and cons), NTC and PTC thermistors (exponential characteristic, switching point, applications, pros and cons) and thermocouples (Seebeck effect, Seebeck coefficient, measured voltage and standard types).
 ---
 
 # Temperature Sensors
+
+> [!summary] Overview
+> The note compares the three ways of turning temperature into an electrical signal. The **RTD** is a metal resistor with an almost linear law $R = R_0(1+\alpha\Delta T)$: sensitivity $S$ and temperature coefficient $\alpha$ are material constants, and accuracy depends on the wiring — **2-wire** keeps the lead resistance, the **3-wire** scheme cancels it by differencing two readings, and the **4-wire** one removes it entirely — or on reading the small $\Delta R$ with a **Wheatstone** or **wire bridge**, where the 2- and 3-wire versions leave a residual error $\varepsilon$. **Thermistors** are ceramics with a strongly non-linear exponential characteristic: **NTC** falls with temperature ($\beta$ law) and serves measurement, compensation, level sensing and inrush limiting, while **PTC** stays flat until the switching point and is used for overcurrent protection and battery charging. The **thermocouple** instead relies on the **Seebeck effect**: the hot end of two dissimilar metals drives an electron diffusion, so $\Delta V = \int S_{AB}(T)\,dT$ with $S_{AB}$ the difference between the two Seebeck coefficients — the voltage is a differential, self-powered measurement over the widest range of the three, at the price of a small signal and the need to know the reference-junction temperature.
 
 ## 1. RTDs
 
@@ -175,4 +178,4 @@ $$S_{AB}(T)=S_{B}(T)-S_{A}(T)$$
 
 ---
 Related: [[_Sensor System MOC]]
-Source:[[04 - Temperature sensors - Part 1.
+Source:[[04 - Temperature sensors - Part 1.pdf]]
