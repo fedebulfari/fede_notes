@@ -14,14 +14,14 @@ description: Single-view camera geometry — the projective camera P = K[R t], b
 The pinhole model maps the scene point $\mathbf{X} = [X,Y,Z]^T$ to the image point on the plane $\Pi$:
 
 $$x = f\,\frac{X}{Z}, \qquad y = f\,\frac{Y}{Z}$$
-
+![[Camera Geometry-1793187261465.webp|416]]
 - **Perspective projection:** non-linear, not shape-preserving, not length-ratio preserving.
 - **But collinearity is preserved:** three collinear scene points project to three collinear image points.
 
 Collinearity plus planar projective geometry ([[Planar Geometry]]) gives a **linear** mapping in homogeneous coordinates:
 
-$$\mathbf{u} = P\,\mathbf{X}, \qquad P = [M\,|\,\mathbf{m}] \in \mathbb{R}^{3\times4}, \quad \text{rank}(P) = 3$$
-
+$$\mathbf{u} = P_{3\times 4}\,\mathbf{X}, \qquad P_{3\times 4} = [M_{3\times 3}\ |\ \mathbf{m}_{3\times 1}] \in \mathbb{R}^{3\times4}, \quad \text{rank}(P) = 3$$
+![[Camera Geometry-1793187425673.webp|438x182]]
 - $P$ has **11 dof** (12 entries minus scale).
 - $M$ is $3\times3$ and invertible; it maps directions, not points.
 - $\lambda\mathbf{u} \sim \mathbf{u}$, $\lambda \ne 0$ — a pixel is a *ray* in 3D.
@@ -29,30 +29,32 @@ $$\mathbf{u} = P\,\mathbf{X}, \qquad P = [M\,|\,\mathbf{m}] \in \mathbb{R}^{3\ti
 ## 2. Backprojection: The Viewing Ray
 
 > [!theorem] Backprojection of an image point
-> For $P = [M\,|\,\mathbf{m}]$ the backprojection of $\mathbf{u}$ is the straight line through the optical centre $O$ with direction $\mathbf{d} = M^{-1}\mathbf{u}$.
+> For $P = [M\,|\,\mathbf{m}]$ the backprojection of $\mathbf{u}$ is the straight line(we assume an homogeneous medium in which the light travels) through the optical centre $O$ with direction $\mathbf{d} = M^{-1}\mathbf{u}$.
+![[Camera Geometry-1793188755982.webp|508]]
 
 **Proof.** Any point on the ray is $\mathbf{X}' = O + \lambda\mathbf{X}$, and the projection is linear:
 
 $$P\mathbf{X}' = P O + \lambda\,P\mathbf{X} = P\mathbf{X} = \mathbf{u}$$
 
-so every point of the ray projects to $\mathbf{u}$. From $\mathbf{u} = M\mathbf{X} + \mathbf{m}$ we get $\mathbf{d} = M^{-1}\mathbf{u}$.
+so every point of the ray projects to $\mathbf{u}$ through $O=RNS(P)$. From $\mathbf{u} = M\mathbf{X} + \mathbf{m}$ we get $\mathbf{d} = M^{-1}\mathbf{u}$.
 
-**Where is the camera centre?** It is the point that projects nowhere, i.e. $PO = \mathbf{0}$. Writing $P = [M\,|\,\mathbf{m}]$ in Cartesian form $PO = M O + \mathbf{m} = \mathbf{0}$:
+**Where is the camera centre($O$)?** It is the point that projects nowhere, i.e. $PO = \mathbf{0}$. Writing $P = [M\,|\,\mathbf{m}]$ in Cartesian form $PO = M + \mathbf{m}\begin{bmatrix} o\\1 \end{bmatrix} =\mathbf{0}$:
 
-$$O = -M^{-1}\mathbf{m} \qquad (\text{cartesian coordinates})$$
+$$ o =\begin{bmatrix} x\\y\\z \end{bmatrix}= -M^{-1}\mathbf{m}\qquad (\text{cartesian coordinates})$$
 
 > [!important] One pixel = one ray, not one point
 > A $3\times4$ matrix kills one dimension: single-view geometry can never recover depth from one image alone. Everything below (vanishing points, calibration, rectification, symmetry) works *with* this limitation instead of against it.
 
 ## 3. Vanishing Points and the Vanishing Point Theorem
 
-Parallel lines in space concur at the point at infinity of their common direction $\mathbf{d}$, i.e. at $\mathbf{X}_\infty = [\mathbf{d}^T, 0]^T$. Its image is the **vanishing point**:
+Parallel lines in space concur at the point at infinity of their common direction $\mathbf{d}$, i.e. at $\mathbf{X}_\infty = [\mathbf{d}^T, 0]^T$. Its image is the **vanishing point** at the infinity of direction $\mathbf{d}$:
 
-$$\mathbf{v_d} = P\begin{bmatrix}\mathbf{d}\\0\end{bmatrix} = M\,\mathbf{d} = KR\,\mathbf{d}$$
+$$\mathbf{V} = P\begin{bmatrix}\mathbf{d}\\0\end{bmatrix} = M\,\mathbf{d} = KR\,\mathbf{d}$$
 
-The direction of the viewing ray of $\mathbf{V_d}$ is, by §2:
+The direction of the viewing ray of $\mathbf{V}$ is, by §2:
 
-$$M^{-1}\mathbf{v_d} = M^{-1}M\mathbf{d} = \mathbf{d}$$
+$$M^{-1}\mathbf{V} = M^{-1}M\mathbf{d} = \mathbf{d}$$
+![[Camera Geometry-1793190085253.webp|273x105]]
 
 > [!theorem] Vanishing point theorem
 > The viewing ray associated with the vanishing point $\mathbf{V}$ of a direction $\mathbf{d}$ is **parallel** to $\mathbf{d}$.
@@ -64,43 +66,60 @@ This is the single most used result of the lecture: it converts an image measure
 
 ## 4. From the Image Plane to Pixels: The Calibration Matrix
 
-Coordinates on $\Pi$ are in cm, but digital images are in **pixels** and pixels need not be square. Three corrections:
+Coordinates on $\Pi$ are in cm, but digital images are in **pixels** and pixels need not be square.
 
-| Correction | Cause | Effect |
-|---|---|---|
-| Offset $\mathbf{c} = [u_o, v_o]^T$ | principal point (projection of $O$ on $\Pi$) is not the pixel origin | add $\mathbf{c}$ |
-| Different units | $k$ = pixel width, $l$ = pixel height (cm/pixel) | $f_x = f/k$, $f_y = f/l$ |
-| Aspect ratio | $k \ne l$ | $a = \dfrac{f_x}{f_y} = \dfrac{l}{k}$ (square pixels $\Rightarrow a = 1$, **natural** camera) |
+Three corrections:
 
-$$x_p = f_x\,\frac{X_P}{Z_P} + u_o, \qquad y_p = f_y\,\frac{Y_P}{Z_P} + v_o$$
+| Correction                         | Cause                                                                | Effect                                                                                        |
+| ---------------------------------- | -------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| Offset $\mathbf{c} = [u_o, v_o]^T$ | principal point (projection of $O$ on $\Pi$) is not the pixel origin | add $\mathbf{c}$                                                                              |
+| Different units (cm/pixel)         | $k$ = pixel width, $l$ = pixel height                                | $f_x = f/k$, $f_y = f/l$                                                                      |
+| Aspect ratio                       | $k \ne l$                                                            | $a = \dfrac{f_x}{f_y} = \dfrac{l}{k}$ (square pixels $\Rightarrow a = 1$, **natural** camera) |
 
+$$P=[X_{p},Y_{p},Z_{p}]\to p=[x_{p},y_{p}]\qquad 
+\begin{cases}
+x_p = f_x\,\frac{X_P}{Z_P} + u_o\\ y_p = f_y\,\frac{Y_P}{Z_P} + v_o
+\end{cases}\quad \{u_{0},v_{0}\}\text{: pixel coordinates}$$
+![[Camera Geometry-1793190693746.webp|336]]
 In homogeneous pixel coordinates:
 
-$$\mathbf{u} = \begin{bmatrix} x_p \\ y_p \\ w \end{bmatrix} = \begin{bmatrix} f_x & 0 & u_o \\ 0 & f_y & v_o \\ 0 & 0 & 1 \end{bmatrix}\begin{bmatrix} X_P \\ Y_P \\ Z_P \end{bmatrix} = K[I\,|\,\mathbf{0}]\,\mathbf{X}_{cam}$$
+$$\mathbf{u} = \begin{bmatrix} x \\ y \\ w \end{bmatrix} = \begin{bmatrix} f_x & 0 & u_o \\ 0 & f_y & v_o \\ 0 & 0 & 1 \end{bmatrix}\begin{bmatrix} X \\ Y \\ Z \end{bmatrix} = [K\,|\,\mathbf{0}]\,\mathbf{X}_{cam}$$
 
 $$K = \begin{bmatrix} f_x & 0 & u_o \\ 0 & f_y & v_o \\ 0 & 0 & 1 \end{bmatrix} \quad\text{— calibration matrix (intrinsic parameters)}$$
-
+![[Camera Geometry-1793191093775.webp|487x195]]
 ## 5. The Projection Matrix $P = K[R\,|\,\mathbf{t}]$
 
 In general the world reference frame is **not** the camera frame. Let $(R,\mathbf{t})$ be the rototranslation *camera $\to$ world* (i.e. world with respect to camera):
 
-$$\mathbf{X}_{cam} = \begin{bmatrix} R & \mathbf{t} \\ \mathbf{0}^T & 1 \end{bmatrix}\mathbf{X}_{world}$$
+$$\mathbf{X}_{cam} = \begin{bmatrix} R & \mathbf{t} \\ \mathbf{0}& 1 \end{bmatrix}\mathbf{X}_{world}$$
 
-$$\mathbf{u} = K[I\,|\,\mathbf{0}]\begin{bmatrix} R & \mathbf{t} \\ \mathbf{0}^T & 1 \end{bmatrix}\mathbf{X}_{world} = K[R\,|\,\mathbf{t}]\,\mathbf{X}_{world}$$
+$$\mathbf{u} = [K\,|\,\mathbf{0}]\begin{bmatrix} R & \mathbf{t} \\ \mathbf{0}& 1 \end{bmatrix}\mathbf{X}_{world} = K[R\,|\,\mathbf{t}]\,\mathbf{X}_{world}$$
 
-$$P = [\,KR \;|\; K\mathbf{t}\,] = [M\,|\,\mathbf{m}], \qquad M = KR, \quad \mathbf{m} = K\mathbf{t}$$
+$$P = [\,KR \;|\; K\mathbf{t}\,] = [M\,|\,\mathbf{m}], \qquad \boxed{M = KR}, \quad \boxed{\mathbf{m} = K\mathbf{t}}$$
 
 - $K$ — **intrinsic** parameters: do **not** vary under camera displacement.
-- $R,\mathbf{t}$ — **extrinsic** parameters: **do** vary under camera displacement.
+- $R,\mathbf{t}$ — **extrinsic** parameters(**Rotation** and **translation**): **do** vary under camera displacement.
 
 ## 6. What Calibration Gives You
 
-| Calibration | Known | Viewing ray direction | Expressed in |
-|---|---|---|---|
-| Intrinsic only | $K$ | $\mathbf{d} = K^{-1}\mathbf{u}$ | **camera** frame |
-| Intrinsic + extrinsic | $K, R$ | $\mathbf{d} = (KR)^{-1}\mathbf{u}$ | **world** frame |
+| Calibration           | Known  | Viewing ray direction              | Expressed in     |
+| --------------------- | ------ | ---------------------------------- | ---------------- |
+| Intrinsic only        | $K$    | $\mathbf{d} = K^{-1}\mathbf{u}$    | **camera** frame |
+| Intrinsic + extrinsic | $K, R$ | $\mathbf{d} = (KR)^{-1}\mathbf{u}$ | **world** frame  |
+|                       |        |                                    |                  |
+**Intrinsic** camera calibration: camera parameters don’t vary under camera displacement
+	Estimation of matrix $𝐊$
+	 - focal distance $𝑓_𝑋$ 
+	 - focal distance $𝑓_𝑌$
+	 - principal point $(𝑈_𝑜, 𝑉_𝑜)$ 
+	 - skew factor (in old cameras) aspect ratio $𝑎 = 𝑓_𝑋/𝑓_𝑌 = 𝑙/𝑘$ : ratio between pixel height and length
 
-In both cases all rays pass through the camera centre; a pixel is never a point. Intrinsic calibration already gives the full mapping pixel $\to$ 3D ray direction, which is what rectification and single-view reconstruction need.
+**Extrinsic** camera calibration: camera parameters vary under camera displacement
+	Estimation of matrix $𝐑$ and vector $𝒕$ 
+	- Camera → World rotation $𝐑$ 
+	- Camera → World translation $𝒕$
+
+In all cases all rays pass through the camera centre; a pixel is never a point. Intrinsic calibration already gives the full mapping pixel $\to$ 3D ray direction, which is what rectification and single-view reconstruction need.
 
 ## 7. Angles Between Viewing Rays and the IAC
 
@@ -138,9 +157,9 @@ where $R_\pi = [\mathbf{r}_{\pi1}\ \mathbf{r}_{\pi2}\ \mathbf{o}_\pi]$ is the ro
 
 **a) The plane at infinity $\pi_\infty$** — its points are pure directions $[\mathbf{d}^T, 0]^T$, so the homography collapses to the vanishing points:
 
-$$\mathbf{v_d} = P\begin{bmatrix}\mathbf{d}\\0\end{bmatrix} = K[R\,|\,\mathbf{t}]\begin{bmatrix}\mathbf{d}\\0\end{bmatrix} = KR\,\mathbf{d} \qquad\Longrightarrow\qquad H_{\pi_\infty} = KR$$
+$$\mathbf{V} = P\begin{bmatrix}\mathbf{d}\\0\end{bmatrix} = K[R\,|\,\mathbf{t}]\begin{bmatrix}\mathbf{d}\\0\end{bmatrix} = KR\,\mathbf{d} \qquad\Longrightarrow\qquad H_{\pi_\infty} = KR$$
 
-and its inverse gives the direction of any vanishing point: $\mathbf{d} = (KR)^{-1}\mathbf{v_d}$.
+and its inverse gives the direction of any vanishing point: $\mathbf{d} = (KR)^{-1}\mathbf{V}$.
 
 **b) $\pi$ parallel to the image plane** ($\mathbf{r}_{\pi1} = [1,0,0]^T$, $\mathbf{r}_{\pi2} = [0,1,0]^T$):
 
@@ -410,7 +429,7 @@ Polarity is what makes **circles, spheres, right cones and cylinders, and planar
 ## 19. Cheat Sheet
 
 $$P = [M\,|\,\mathbf{m}] = K[R\,|\,\mathbf{t}], \qquad \mathbf{d} = M^{-1}\mathbf{u}, \qquad O = -M^{-1}\mathbf{m}$$
-$$\mathbf{v_d} = M\mathbf{d} \quad(\text{and } \mathbf{d} = M^{-1}\mathbf{v_d}), \qquad \omega = (KK^T)^{-1} = K^{-T}K^{-1}$$
+$$\mathbf{V} = M\mathbf{d} \quad(\text{and } \mathbf{d} = M^{-1}\mathbf{V}), \qquad \omega = (KK^T)^{-1} = K^{-T}K^{-1}$$
 $$H = K[\mathbf{r}_{\pi1}\ \mathbf{r}_{\pi2}\ \mathbf{o}_\pi], \qquad \omega^{-1} = KK^T = MM^T \;\Rightarrow\; K = \text{Cholesky}(\omega^{-1})$$
 $$H_R = R_\pi^T K^{-1}, \qquad \mathbf{n}_\pi = K^T l'_\infty, \qquad \mathbf{r}_1, \mathbf{r}_2, \mathbf{o}_\pi = K^{-1}[\mathbf{h}_1\ \mathbf{h}_2\ \mathbf{h}_3] \text{ normalized}$$
 

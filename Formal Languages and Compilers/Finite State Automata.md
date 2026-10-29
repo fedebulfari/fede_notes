@@ -1,13 +1,13 @@
 ---
 date: 23-10-2026
 subject: Formal Languages and Compilers
-description: Finite state automata — recognition algorithms and configurations, deterministic automata, state transition and syntax diagrams, cleaning and minimisation, uni-linear grammars, non-determinism with epsilon-moves, and the BCM method back to regexps
+description: Finite state automata — recognition algorithms and configurations, deterministic automata, state transition and syntax diagrams, cleaning and minimisation through undistinguishable states, uni-linear grammars, non-determinism with epsilon-moves, the BCM and elimination methods between automata and regexps, the Thompson and Berry-Sethi constructions with local sets, and the closure of regular languages under complement, intersection and set difference
 ---
 
 # Finite State Automata
 
 > [!summary] Overview
-> Recognition is framed as an abstract machine reading an input tape, and the note then specialises it to the **finite state automaton**: definitions, configurations, acceptance, state transition graphs and their dual syntax diagrams. It covers deterministic automata, cleaning and **minimisation** through undistinguishable states, the bijective correspondence with uni-linear grammars, and non-determinism with spontaneous $\epsilon$-moves. It ends with the **BCM method** for turning an automaton back into a regular expression, completing the round trip with [[Regular Expressions and Languages]] and complementing the generative view of [[Context-free Grammars]].
+> Recognition is framed as an abstract machine reading an input tape, and the note then specialises it to the **finite state automaton**: definitions, configurations, acceptance, state transition graphs and their dual syntax diagrams. It covers deterministic automata, cleaning and **minimisation** through undistinguishable states, and the bijective correspondence with uni-linear grammars, which motivates **non-determinism** with spontaneous $\epsilon$-moves. The correspondence is then closed in both directions: the **BCM method** turns an automaton back into a regular expression (with the elimination of indeterminism on the side), while **Thompson** and **Berry-Sethi** build an automaton from a regexp, the latter through the local sets $Ini$, $Fin$ and $Dig$ and the follower table. A final section treats the **expansion of regexps** with complement, intersection and set difference, using completion with an error state and the Cartesian product of automata. This completes the round trip with [[Regular Expressions and Languages]] and complements the generative view of [[Context-free Grammars]].
 
 ## 1. Recognition Algorithms
 
@@ -362,6 +362,62 @@ Regexps may also contain the operators of complement, intersection and set diffe
 
 The family $REG$ is  closed under complement and intersection$$\text{if } L’, L’’ ∈ REG \text{ then } ¬ L’ ∈ REG \text{ and } L’ ∩ L’’ ∈ REG$$
 Assume the recognizer M of L is deterministic, with initial state q0, state set Q, set of final states F and transition function δ
+
+### 8.1. Algorithm
+
+Deterministic recognizer $\overline{M}$ of the complement language
+
+Complete the automaton $M$ by adding the error state p and the missing moves 
+1. create the error state $p$, not in $Q$, so the states of are $Q U \{ p \}$ 
+2. the complement transition function is , see below 
+3. swap the non-final and final states, see below
+
+$$\overline{F} = (Q \setminus F) \cup \{p\}$$
+$$
+\begin{aligned}
+\overline{\delta}(q, a) &= \delta(q, a) && \text{if } \delta(q, a) \in Q\\
+\overline{\delta}(q, a) &= p && \text{if } \delta(q, a) \text{ is undefined}\\
+\overline{\delta}(p, a) &= p && \text{for every character } a \in \Sigma
+\end{aligned}
+$$
+
+A recognizing path of M does not end into a final state of $\overline{M}$
+A non-recognizing path of M does not end into a final state of $\overline{M}$
+
+
+### 8.2. Set Difference of Regular Languages
+
+The set difference of regular languages is a regular language
+$$L\setminus L'=L\cap \neg L'$$
+>[!Warning] 
+>For the complement construction to work correctly, the original automaton must be deterministic, otherwise the original and complement languages may be not disjoint, which fact would be in violation of the complement definition.
+>
+>Also the complement automaton may contain useless states and may not be in the minimal form either; it should be reduced and minimized, if necessary.
+### 8.3. Intersection of Regular Languages
+
+The intersection of regular languages is a regular language.
+
+We can prove it using De Morgan
+$$L\cap L'=\neg\left( \neg L \cup \neg L'\right)$$
+#### 8.3.1. Cartesian Product for Automata
+
+The intersection of two languages is directly recognised by the Cartesian product of their automata
+
+To obtain the intersection automaton we can resort to the De Morgan theorem:
+- construct the deterministic recognizers of the two languages 
+- construct the respective complement automata (as before) 
+- construct their union (e.g., use the Thompson method) 
+- make deterministic the union automaton (e.g., use BS or subset) 
+- complement again and thus obtain the intersection automaton
+
+We can, tho, obtain the cartesian product also in a more direct way:
+Supposing there are not present spontaneous moves, the state set of the product machine is the cartesian product of the state sets of the two automata. Each product state is a pair $\langle q', q'' \rangle$, where the left (right) member is a state of the first (second) machine.
+
+The move is:
+$$\langle q', q'' \rangle \xrightarrow{a} \langle r', r'' \rangle \quad \text{if and only if} \quad q' \xrightarrow{a} r' \text{ and } q'' \xrightarrow{a} r''$$
+_The product machine has a move if, and only if, the projection of such a move onto the left (right) component is a move of the first (second) automaton_
+
+The initial and final state sets are the cartesian products of the initial and final state sets of the two automata, respectively
 
 
 ---
