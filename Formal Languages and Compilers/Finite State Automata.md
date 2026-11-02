@@ -422,4 +422,4 @@ The initial and final state sets are the cartesian products of the initial and f
 
 ---
 Related: [[_Formal Languages and Compilers MOC]]
-Source: [[FLC - series 05 - new.pdf]]
+Source: [[FLC - series 05 - new.pdf]], [[FLC - series 06 - new.pdf]]

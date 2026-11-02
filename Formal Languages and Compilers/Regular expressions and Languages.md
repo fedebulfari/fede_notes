@@ -134,4 +134,4 @@ Lists can contain lower-level lists, e.g. level 1 `begin istr ; istr end`, level
 
 ---
 Related: [[_Formal Languages and Compilers MOC]]
-Source: [[FLC - series 02 - 2.pdf]].
+Source: [[FLC - series 02 - 2.pdf]]

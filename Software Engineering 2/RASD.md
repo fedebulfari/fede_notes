@@ -19,8 +19,6 @@ The purpose of RASD (_Requirements Analysis and Specification Document_) is to:
 	- _Software V&V_ — it must contain enough information to verify whether the delivered system meets the requirements (supports system testing).
 	- _Change control_ — requirements change, software evolves.
 
-Audience:
-
 | Audience                       | What they look for                                                                            |
 | ------------------------------ | --------------------------------------------------------------------------------------------- |
 | Customers & Users              | Validation of goals and of the high-level description of functions, not detailed requirements |
@@ -51,8 +49,8 @@ Audience:
 
 ## 2. RASD Structure Summary
 
-> [!Example] Possible structure
-> ![[Requirement Engineering-1792747000099.webp|630x296]]
+> [!Example] IEEE structure
+> ![[Requirement Engineering-1792747000099.webp|576x271]]
 > ![[Requirement Engineering-1792747110337.webp|439x175]]
 >
 > Reference standard: ISO/IEC/IEEE 29148 (Nov 2018).
@@ -105,9 +103,9 @@ Templates:
 $$\text{[Subject][Action][Constraint of Action]} \quad \text{or} \quad \text{[Condition][Subject][Action][Object][Constraint of Action]}$$
 
 > [!example]
-> "The system **shall display** resources in ascending order of identifier." → _[Subject][Action][Constraint of Action]_
+> "The system | shall display resources | in ascending order of identifier." → _[Subject][Action][Constraint of Action]_
 >
-> "**When the system receives a new position from an ambulance**, the system **shall update** the recorded ambulance position **within 2 seconds**." → _[Condition][Subject][Action][Object][Constraint of Action]_
+> "**When the system receives a new position from an ambulance**, | the system | **shall update** | the recorded ambulance position | **within 2 seconds**." → _[Condition][Subject][Action][Object][Constraint of Action]_
 
 ### 2.2. Traceability
 
