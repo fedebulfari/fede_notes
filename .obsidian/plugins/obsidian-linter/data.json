@@ -436,7 +436,7 @@
       "default-language": ""
     },
     "emphasis-style": {
-      "enabled": true,
+      "enabled": false,
       "style": "consistent"
     },
     "no-bare-urls": {
@@ -494,10 +494,10 @@
       "tabsize": "2"
     },
     "empty-line-around-blockquotes": {
-      "enabled": true
+      "enabled": false
     },
     "empty-line-around-code-fences": {
-      "enabled": true
+      "enabled": false
     },
     "empty-line-around-horizontal-rules": {
       "enabled": false

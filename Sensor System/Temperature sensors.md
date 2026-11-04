@@ -2,6 +2,8 @@
 date: 28-10-2026
 subject: Sensor System
 description: Thermal transducers — RTDs (sensitivity, temperature coefficient, resistance-temperature law, 2-, 3- and 4-wire lead configurations, Wheatstone and wire bridges, self-heating, pros and cons), NTC and PTC thermistors (exponential characteristic, switching point, applications, pros and cons) and thermocouples (Seebeck effect, Seebeck coefficient, measured voltage and standard types).
+tags:
+  - incomplete
 ---
 
 # Temperature Sensors
@@ -174,7 +176,7 @@ $$S_{AB}(T)=S_{B}(T)-S_{A}(T)$$
 
 ### 3.2. Types
 
-![[Temperature sensors-1793178077416.webp|602]]
+![[Temperature sensors-1793178077416.webp|529]]
 
 ---
 Related: [[_Sensor System MOC]]

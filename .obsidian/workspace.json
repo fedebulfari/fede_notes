@@ -6,41 +6,28 @@
       {
         "id": "a46bd99cbb95ef49",
         "type": "tabs",
+        "dimension": 60.672917815774966,
         "children": [
           {
-            "id": "80a7824629e30e41",
+            "id": "911dc648bd6ec596",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Database2/Physical Database.md",
+                "file": "Database2/Concurrency.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Physical Database"
-            }
-          },
-          {
-            "id": "b6b8bc0e9c6eabfc",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Database2/Transactions.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Transactions"
+              "title": "Concurrency"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       },
       {
         "id": "cb79d7879e47955b",
         "type": "tabs",
+        "dimension": 39.32708218422504,
         "children": [
           {
             "id": "0a05fbce5072bac0",
@@ -48,10 +35,10 @@
             "state": {
               "type": "pdf",
               "state": {
-                "file": "Database2/PDF/3 - Concurrency Control/03_1_Transactions.pdf"
+                "file": "Database2/PDF/3 - Concurrency Control/03_2_Concurrency.pdf"
               },
               "icon": "lucide-file-text",
-              "title": "03_1_Transactions"
+              "title": "03_2_Concurrency"
             }
           }
         ]
@@ -89,7 +76,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "[\"subject\"]",
+                "query": "tag:#incomplete",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -142,7 +129,8 @@
               "title": "Tutte le proprietà"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       },
       {
         "id": "91dc530f918ee9cf",
@@ -155,7 +143,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Database2/Transactions.md",
+                "file": "Database2/Concurrency.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -259,7 +247,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 329.84759521484375
+    "width": 329.84759521484375,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -278,31 +267,41 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "2cb8085403a072de",
+  "active": "911dc648bd6ec596",
   "lastOpenFiles": [
+    "Database2/PDF/3 - Concurrency Control/03_2_Concurrency.pdf",
+    "Database2/Concurrency.md",
+    "Database2/Senza nome.base",
+    "Formal Languages and Compilers/ELR.md",
+    "Sensor System/Temperature Sensors.md",
+    "Operational Research/Flows.md",
+    "Database2/PDF/3 - Concurrency Control/03_1_Transactions.pdf",
+    "Database2/media/Transactions-1793811026347.webp",
+    "Database2/Triggers.md",
+    "Database2/Physical Database.md",
+    "Operational Research/PDF/Slides/LPnew.pdf",
+    "Operational Research/Linear Programming.md",
+    "Operational Research/media/Linear Programming-1793790112132.webp",
+    "Image Analysis/Space Geometry.md",
+    "Database2/NVIDIA_app_v11.w33pYmpX.0.9.585_x64.exe.part",
+    "Database2/NVIDIA_app_v11.0.9.585_x64.exe",
+    "Operational Research/media/LP feasible region.excalidraw.md",
+    "Operational Research/PDF/chapter+3.pdf",
+    "Operational Research/Graphs.md",
+    "Operational Research/PDF/Slides/flowsnew.pdf",
     "copilot/skills/json-canvas/SKILL.md",
     "copilot/skills/json-canvas/LICENSE",
     "copilot/skills/json-canvas/references/EXAMPLES.md",
     "copilot/skills/json-canvas/references",
-    "copilot/skills/json-canvas",
     "copilot/skills/obsidian-bases/SKILL.md",
-    "copilot/skills/obsidian-bases/LICENSE",
     "copilot/skills/obsidian-bases/references/EXAMPLES.md",
     "copilot/skills/obsidian-bases/references/FUNCTIONS_REFERENCE.md",
-    "copilot/skills/obsidian-bases/references",
-    "copilot/skills/obsidian-bases",
     "copilot/skills/obsidian-markdown/SKILL.md",
-    "copilot/skills/obsidian-markdown/LICENSE",
     "copilot/skills/obsidian-markdown/references/PROPERTIES.md",
     "copilot/skills/obsidian-markdown/references/EMBEDS.md",
     "copilot/skills/obsidian-markdown/references/CALLOUTS.md",
-    "copilot/skills/obsidian-markdown/references",
-    "copilot/skills/obsidian-markdown",
     "Database2/media/Concurrency Control-1793717543038.webp",
     "Database2/media/Concurrency Control-1793717237862.webp",
-    "Database2/PDF/3 - Concurrency Control/03_1_Transactions.pdf",
-    "Database2/Transactions.md",
-    "Database2/Physical Database.md",
     "Image Analysis/Camera Geometry.md",
     "Image Analysis/media/Camera Geometry-1793709396471.webp",
     "Image Analysis/media/Camera Geometry-1793709365272.webp",
@@ -310,22 +309,11 @@
     "Image Analysis/media/Camera Geometry-1793706597331.webp",
     "Image Analysis/media/Camera Geometry-1793706525729.webp",
     "Image Analysis/media/Camera Geometry-1793706201688.webp",
-    "Image Analysis/media/Camera Geometry-1793706163380.webp",
-    "Image Analysis/media/Camera Geometry-1793706150149.webp",
     "Software Engineering 2/RASD.md",
     "Software Engineering 2/Alloy.md",
-    "Formal Languages and Compilers/ELR.md",
     "Formal Languages and Compilers/_Formal Languages and Compilers MOC.md",
     "Formal Languages and Compilers/Recognition of Free Languages.md",
     "Formal Languages and Compilers/Regular Expressions and Languages.md",
-    "Formal Languages and Compilers/Context-free Grammars.md",
-    "Formal Languages and Compilers/Finite State Automata.md",
-    "Image Analysis/Space Geometry.md",
-    "Image Analysis/Optical Systems.md",
-    "Operational Research/Flows.md",
-    "Image Analysis/media/Space Geometry 2026-10-28 12.32.36.excalidraw.md",
-    "Excalidraw/Drawing 2026-10-28 12.31.30.excalidraw.md",
-    "Excalidraw/Drawing 2026-10-28 12.31.16.excalidraw.md",
     "Senza nome.canvas"
   ]
 }

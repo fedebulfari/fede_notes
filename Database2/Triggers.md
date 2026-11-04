@@ -125,7 +125,7 @@ Cases:
 
 ## 6. Execution Modes: BEFORE vs AFTER
 
-### BEFORE
+### 6.1. BEFORE
 
 - Action executed **before** DB change, if condition holds.
 - Used to **validate a modification before it takes place** and possibly condition its effect.
@@ -135,7 +135,7 @@ Cases:
 SET new.VALUE = 0;
 ```
 
-### AFTER
+### 6.2. AFTER
 
 - Action executed **after** DB modification, if condition holds.
 - Most common mode, suitable for most applications.
@@ -208,17 +208,17 @@ WHERE (passengerName, flightNumber, date) IN (
 
 ## 7. Granularity: ROW vs STATEMENT
 
-### Row-level: `For each Row`
+### 7.1. Row-level: `For each Row`
 
 - Considered and possibly executed **once per affected tuple**.
 - Simpler to write, but can be less efficient.
 
-### Statement-level: `For Each Statement`
+### 7.2. Statement-level: `For Each Statement`
 
 - Considered and possibly executed **only once per activating statement**, independently of number of affected tuples (even if zero).
 - Set-oriented, closer to traditional SQL philosophy.
 
-### Transition Variables
+### 7.3. Transition Variables
 
 Special variables denoting the before and after state of the modification with a syntax that depends on the granularity:
 
@@ -282,7 +282,7 @@ WHEN (old.VALUE >= 10 AND new.VALUE < 10 AND new.ID = old.ID)
 DELETE FROM T2 WHERE ID = new.ID;
 ```
 
-### Statement-level Version
+### 8.1. Statement-level Version
 
 ```sql
 -- DELETE
@@ -330,7 +330,7 @@ If several triggers in same category: order depends on implementation (creation 
 - **Cascading / nesting:** action of T1 fires T2.
 - **Recursive cascading / looping:** statement S on T starts cascade generating same event S on T.
 
-### Termination Analysis via Triggering Graph
+### 10.1. Termination Analysis via Triggering Graph
 
 - Node i for each trigger Ti.
 - Arc i → j if execution of Ti's action **may activate** Tj (syntactic analysis).
@@ -367,25 +367,19 @@ Real systems limits:
 - **Informix:** complex rules, see docs.
 
 > [!example] Es 1: Book Sales
-
 Schema:
-
 >```
-
 BOOK(Isbn, Title, SoldCopies)
 WRITING(Isbn, Name)
 AUTHOR(Name, SoldCopies) -- maintained only by triggers
-
 >```
-
-No cascading: events on base tables, actions on materialized table.
-
+>
+>No cascading: events on base tables, actions on materialized table.
+>
 > - T1: `UPDATE SoldCopies ON BOOK` → update AUTHOR
 > - T2: `INSERT ON WRITING` → update AUTHOR
 > - T3 on `INSERT BOOK` not needed: referential integrity forces BOOK and AUTHOR to exist before WRITING.
->
->>```sql
-
+>```sql
 CREATE TRIGGER UpdateSalesAfterNewSale
 AFTER UPDATE OF SoldCopies ON Book
 FOR EACH ROW
@@ -393,34 +387,27 @@ UPDATE Author
 SET SoldCopies = SoldCopies + new.SoldCopies - old.SoldCopies
 WHERE Name IN (SELECT Name FROM Writing WHERE Isbn = new.Isbn);
 -- assumes Isbn never updated
-
 >```
->
 >```sql
-
 CREATE TRIGGER UpdateSalesAfterNewAuthorship
 AFTER INSERT ON Writing
 FOR EACH ROW
-UPDATE Author
-SET SoldCopies = SoldCopies +
-	(SELECT SoldCopies FROM Book WHERE Isbn = new.Isbn)
-WHERE Name = new.Name;
-
+> UPDATE Author
+> SET SoldCopies = SoldCopies +
+> (SELECT SoldCopies FROM Book WHERE Isbn = new.Isbn)
+> WHERE Name = new.Name;
 >```
 
 > [!example] Es 2: Hierarchy Management
 >
 >```
-
 Product(ID, Name, SuperProduct, OwnWeight, TotalWeight)
 -- TotalWeight = OwnWeight + sum(sub-products TotalWeight)
 -- Root: SuperProduct = NULL
 -- TotalWeight updated only by triggers
-
 >```
 >
 Assumption: users can only 1) insert, 2) delete, 3) update SuperProduct. Alternative is recursive view (`WITH RECURSIVE`). Triggers good design **only if reads of TotalWeight >> updates**.
-
 > - T1: INSERT product → set `TotalWeight = OwnWeight` (+ propagate via T3)
 > - T2: DELETE product → decrease super's TotalWeight (+ propagate via T3)
 > - T3: UPDATE TotalWeight → propagate to super (recursive cascading)
@@ -428,13 +415,11 @@ Assumption: users can only 1) insert, 2) delete, 3) update SuperProduct. Alterna
 > - Deletion of sub-products managed by `ON DELETE CASCADE`.
 >
 >```sql
-
 -- T1
 CREATE TRIGGER Product_After_Insert
 AFTER INSERT ON Product FOR EACH ROW
 UPDATE Product SET TotalWeight = OwnWeight WHERE ID = new.ID;
-
-
+>
 -- T2
 CREATE TRIGGER Product_After_Delete
 AFTER DELETE ON Product FOR EACH ROW
@@ -442,31 +427,28 @@ WHEN (old.SuperProduct IS NOT NULL)
 UPDATE Product
 SET TotalWeight = TotalWeight - old.TotalWeight
 WHERE ID = old.SuperProduct;
-
-
+>
 -- T3: propagation
 CREATE TRIGGER Product_After_Update_TotalWeight
 AFTER UPDATE OF TotalWeight ON Product FOR EACH ROW
-WHEN (new.SuperProduct IS NOT NULL
-	AND new.TotalWeight != old.TotalWeight)
-UPDATE Product
-SET TotalWeight = TotalWeight + (new.TotalWeight - old.TotalWeight)
-WHERE ID = new.SuperProduct;
-
-
--- T4: move
-CREATE TRIGGER Product_After_Update_Super
-AFTER UPDATE OF SuperProduct ON Product FOR EACH ROW
-WHEN (new.SuperProduct IS NULL OR new.SuperProduct != old.SuperProduct)
-BEGIN
-	UPDATE Product
-	SET TotalWeight = TotalWeight - old.TotalWeight
-	WHERE ID = old.SuperProduct;
-	UPDATE Product
-	SET TotalWeight = TotalWeight + new.TotalWeight
-	WHERE ID = new.SuperProduct;
+> WHEN (new.SuperProduct IS NOT NULL
+> AND new.TotalWeight != old.TotalWeight)
+> UPDATE Product
+> SET TotalWeight = TotalWeight + (new.TotalWeight - old.TotalWeight)
+> WHERE ID = new.SuperProduct;
+>
+> -- T4: move
+> CREATE TRIGGER Product_After_Update_Super
+> AFTER UPDATE OF SuperProduct ON Product FOR EACH ROW
+> WHEN (new.SuperProduct IS NULL OR new.SuperProduct != old.SuperProduct)
+> BEGIN
+> UPDATE Product
+> SET TotalWeight = TotalWeight - old.TotalWeight
+> WHERE ID = old.SuperProduct;
+> UPDATE Product
+> SET TotalWeight = TotalWeight + new.TotalWeight
+> WHERE ID = new.SuperProduct;
 END;
-
 >```
 >
 >> [!warning] Cascading order
@@ -475,12 +457,10 @@ END;
 > [!warning] Postgres cascading trap
 >
 >```sql
-
 CREATE TRIGGER T1 AFTER UPDATE OF x ON ttest
 FOR EACH ROW WHEN (NEW.x >= 10)
 UPDATE ttest SET x = NEW.x / 2.0;
-
-
+>
 CREATE TRIGGER T2 AFTER UPDATE OF x ON ttest
 FOR EACH ROW WHEN (NEW.x >= 6)
 UPDATE ttest SET x = NEW.x * 1.4;
@@ -488,7 +468,6 @@ UPDATE ttest SET x = NEW.x * 1.4;
 -- chain creates delayed T2 instances seeing stale NEW values
 -- e.g. T2 sees NEW=11.76 but current x=5.88 -> sets 16.46
 -- process never stops -> error
-
 >```
 >
 >Key lesson: delayed instances see **activation-time NEW**, not current value. Document and avoid such mutual recursion.
@@ -528,59 +507,50 @@ Solution sketch (no cascading, events on base, actions on view table):
 > [!example] Es. 3
 >
 >```sql
-
 CREATE TRIGGER Incremental_InsEmp
 AFTER INSERT ON emp FOR EACH ROW
 UPDATE DeptCost SET totCost = totCost + new.salary
 WHERE dept = new.dept;
-
-
+>
 CREATE TRIGGER Incremental_DelEmp
 AFTER DELETE ON emp FOR EACH ROW
 UPDATE DeptCost SET totCost = totCost - old.salary
 WHERE dept = old.dept;
-
-
+>
 CREATE TRIGGER Incremental_SalaryUpdate
 AFTER UPDATE OF salary ON emp FOR EACH ROW
 WHEN (old.dept = new.dept)
 UPDATE DeptCost
 SET totCost = totCost - old.salary + new.salary
 WHERE dept = new.dept;
-
-
+>
 CREATE TRIGGER Incremental_DeptChange
 AFTER UPDATE OF dept ON emp FOR EACH ROW
 BEGIN
-	UPDATE DeptCost SET totCost = totCost + new.salary
-	WHERE dept = new.dept;
-	UPDATE DeptCost SET totCost = totCost - old.salary
-	WHERE dept = old.dept;
+> UPDATE DeptCost SET totCost = totCost + new.salary
+> WHERE dept = new.dept;
+> UPDATE DeptCost SET totCost = totCost - old.salary
+> WHERE dept = old.dept;
 END;
-
-
+>
 CREATE TRIGGER Incremental_DeptInsert
 AFTER INSERT ON dept FOR EACH ROW
 INSERT INTO DeptCost VALUES (new.DeptNum, 0);
-
-
+>
 CREATE TRIGGER Incremental_DeptDelete
 AFTER DELETE ON dept FOR EACH ROW
 DELETE FROM DeptCost WHERE dept = old.DeptNum;
-
 >```
-
-Integrity interaction:
-
+>
+>Integrity interaction:
+>
 >```sql
-
 CREATE TABLE emp (
-	idemp INT NOT NULL AUTO_INCREMENT,
-	salary INT DEFAULT NULL,
-	dept INT NOT NULL,
-	PRIMARY KEY (idemp),
-	CONSTRAINT empdept FOREIGN KEY (dept)
-
+> idemp INT NOT NULL AUTO_INCREMENT,
+> salary INT DEFAULT NULL,
+> dept INT NOT NULL,
+> PRIMARY KEY (idemp),
+> CONSTRAINT empdept FOREIGN KEY (dept)
 > REFERENCES dept(DeptNum) ON DELETE CASCADE
 > );
 >```
