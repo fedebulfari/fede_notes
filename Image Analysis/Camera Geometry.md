@@ -102,11 +102,10 @@ $$P = [\,KR \;|\; K\mathbf{t}\,] = [M\,|\,\mathbf{m}], \qquad \boxed{M = KR}, \q
 
 ## 6. What Calibration Gives You
 
-| Calibration           | Known  | Viewing ray direction              | Expressed in     |
-| --------------------- | ------ | ---------------------------------- | ---------------- |
-| Intrinsic only        | $K$    | $\mathbf{d} = K^{-1}\mathbf{u}$    | **camera** frame |
-| Intrinsic + extrinsic | $K, R$ | $\mathbf{d} = (KR)^{-1}\mathbf{u}$ | **world** frame  |
-|                       |        |                                    |                  |
+| Calibration    | Known  | Viewing ray direction              | x                                           | Expressed in     |
+| -------------- | ------ | ---------------------------------- | ------------------------------------------- | ---------------- |
+| Intrinsic only | $K$    | $\mathbf{d} = K^{-1}\mathbf{x}$    | $x=K[I\|0]\begin{bmatrix}d\\0\end{bmatrix}$ | **camera** frame |
+| Extrinsic      | $K, R$ | $\mathbf{d} = (KR)^{-1}\mathbf{x}$ | $x=K[R\|t]\begin{bmatrix}d\\0\end{bmatrix}$ | **world** frame  |
 **Intrinsic** camera calibration: camera parameters don’t vary under camera displacement
 	Estimation of matrix $𝐊$
 	 - focal distance $𝑓_𝑋$ 
@@ -136,6 +135,7 @@ $$(KR)^{-T}(KR)^{-1} = K^{-T}K^{-1} = (KK^T)^{-1}$$
 > $\omega$ is symmetric and positive definite. It is the **image of the absolute conic** $\Omega_\infty$ of [[Space Geometry]] (2D analogue: $C^*_\infty$ of [[Planar Geometry]]).
 >
 > $$\cos\theta = \frac{\mathbf{u}_1^T\omega\,\mathbf{u}_2}{\sqrt{\mathbf{u}_1^T\omega\,\mathbf{u}_1}\;\sqrt{\mathbf{u}_2^T\omega\,\mathbf{u}_2}}$$
+> ![[Camera Geometry-1793706163380.webp|376x183]]
 
 **Key consequences**
 
@@ -150,6 +150,7 @@ Attach the world reference frame to a known plane $\pi$. A point on $\pi$ has ho
 $$\mathbf{u} = P\mathbf{X}_\pi = K[\mathbf{r}_{\pi1}\ \mathbf{r}_{\pi2}\ \mathbf{r}_{\pi3}\ \mathbf{o}_\pi]\begin{bmatrix}x\\y\\0\\1\end{bmatrix} = K[\mathbf{r}_{\pi1}\ \mathbf{r}_{\pi2}\ \mathbf{o}_\pi]\begin{bmatrix}x\\y\\1\end{bmatrix}$$
 
 $$\boxed{\mathbf{u} = H\,\mathbf{x}_\pi, \qquad H = K[\mathbf{r}_{\pi1}\ \mathbf{r}_{\pi2}\ \mathbf{o}_\pi] = K R_\pi}$$
+![[Camera Geometry-1793706201688.webp|460]]
 
 where $R_\pi = [\mathbf{r}_{\pi1}\ \mathbf{r}_{\pi2}\ \mathbf{o}_\pi]$ is the rototranslation plane $\to$ camera. **A plane and its image are related by a homography** ($8$ dof); by contrast, a full $P$ has 11 dof, so planar scenes are the "easy" case.
 
@@ -164,18 +165,19 @@ and its inverse gives the direction of any vanishing point: $\mathbf{d} = (KR)^{
 **b) $\pi$ parallel to the image plane** ($\mathbf{r}_{\pi1} = [1,0,0]^T$, $\mathbf{r}_{\pi2} = [0,1,0]^T$):
 
 $$H = \begin{bmatrix}f_x&0&u_o\\0&f_y&v_o\\0&0&1\end{bmatrix}\begin{bmatrix}1&0&X_o\\0&1&Y_o\\0&0&1\end{bmatrix} = K\cdot L$$
+![[Camera Geometry-1793706525729.webp|456]]
 
 where $K$ is a 2D affinity (unit change + offset) and $L$ a 2D translation: $H$ = 2D-affine $\times$ 2D-isometry = **2D affinity** — shape not preserved, parallelism preserved.
 
 **c) $\pi$ parallel to the image plane and a natural camera** ($f_x = f_y = f$, plane rotated by $\theta$):
 
-$$H = \begin{bmatrix}f&0&u_o\\0&f&v_o\\0&0&1\end{bmatrix}\begin{bmatrix}\cos\theta&-\sin\theta&X_o\\ \sin\theta&\cos\theta&Y_o\\0&0&1\end{bmatrix} = \text{2D-similarity}\times\text{2D-isometry} = \textbf{2D-similarity}$$
-
+$$H =  \begin{bmatrix}f&0&u_o\\0&f&v_o\\0&0&1\end{bmatrix} [r_{\pi_{1}}\quad r_{\pi_{2}}\quad o_{\pi}]= \begin{bmatrix}f&0&u_o\\0&f&v_o\\0&0&1\end{bmatrix}\begin{bmatrix}\cos\theta&-\sin\theta&X_o\\ \sin\theta&\cos\theta&Y_o\\0&0&1\end{bmatrix} =\text{2D-similarity}\times\text{2D-isometry} = \textbf{2D-similarity}$$
+![[Camera Geometry-1793706827716.webp|480]]
 Shape **is** preserved. This is exactly the target of *rectification* (§13): make the scene plane parallel to a new image plane of a natural camera.
 
 ## 9. From $P$ Back to $K$: Cholesky
 
-$P$ contains $K$; recover it without knowing $R$ by using $M = KR$:
+$P$(projection matrix) contains $K$; recover it without knowing $R$ by using $M = KR$:
 
 $$MM^T = KR\,(KR)^T = KRR^TK^T = KK^T$$
 
@@ -258,10 +260,10 @@ The face's plane-to-image homography is the inverse of the rectifying homography
 
 **Unknowns.** With skew $= 0$ only four remain ($f_x, f_y, u_o, v_o$):
 
-$$\omega = (KK^T)^{-1} = \begin{bmatrix} 1/f_x^2 & 0 & -u_o/f_x^2 \\ 0 & 1/f_y^2 & -v_o/f_y^2 \\ -u_o/f_x^2 & -v_o/f_y^2 & u_o^2/f_x^2 + v_o^2/f_y^2 + 1 \end{bmatrix} \quad(\text{up to scale})$$
+$$\omega = (KK^T)^{-1} = \begin{bmatrix} a^2 & 0 & -u_0a^2 \\ * & 1 & -v_0 \\ * & * & f_Y^2 + a^2u_0^2 + v_0^2 \end{bmatrix} \qquad a \triangleq \frac{f_X}{f_Y}$$
 
 **Four equations** are therefore enough — the Zhang pair for the face, plus the two orthogonality constraints with the normal:
-
+![[Camera Geometry-1793709396471.webp|456]]
 $$\mathbf{h}_1^T\omega\,\mathbf{h}_2 = 0 \qquad \text{(in-plane directions are orthogonal)}$$
 $$\mathbf{h}_1^T\omega\,\mathbf{h}_1 - \mathbf{h}_2^T\omega\,\mathbf{h}_2 = 0 \qquad \text{(equal unit norm, i.e. square pixels)}$$
 $$\mathbf{V}^T\omega\,\mathbf{h}_1 = 0, \qquad \mathbf{V}^T\omega\,\mathbf{h}_2 = 0 \qquad (\text{normal orthogonal to both in-plane directions})$$

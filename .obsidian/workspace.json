@@ -8,17 +8,50 @@
         "type": "tabs",
         "children": [
           {
-            "id": "b467f2462c7641a1",
+            "id": "80a7824629e30e41",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Software Engineering 2/Alloy.md",
+                "file": "Database2/Physical Database.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Alloy"
+              "title": "Physical Database"
+            }
+          },
+          {
+            "id": "b6b8bc0e9c6eabfc",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Database2/Transactions.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Transactions"
+            }
+          }
+        ],
+        "currentTab": 1
+      },
+      {
+        "id": "cb79d7879e47955b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "0a05fbce5072bac0",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "Database2/PDF/3 - Concurrency Control/03_1_Transactions.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "03_1_Transactions"
             }
           }
         ]
@@ -122,7 +155,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Software Engineering 2/Alloy.md",
+                "file": "Database2/Transactions.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -135,7 +168,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "a208faef6a30291a",
@@ -176,6 +210,18 @@
             }
           },
           {
+            "id": "cc490679f2f35ad8",
+            "type": "leaf",
+            "pinned": true,
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {},
+              "pinned": true,
+              "icon": "spreadsheet",
+              "title": "Advanced Tables"
+            }
+          },
+          {
             "id": "084392ab91348a2e",
             "type": "leaf",
             "state": {
@@ -207,26 +253,13 @@
               "icon": "links-going-out",
               "title": "Collegamenti in uscita"
             }
-          },
-          {
-            "id": "cc490679f2f35ad8",
-            "type": "leaf",
-            "pinned": true,
-            "state": {
-              "type": "advanced-tables-toolbar",
-              "state": {},
-              "pinned": true,
-              "icon": "spreadsheet",
-              "title": "Advanced Tables"
-            }
           }
         ],
         "currentTab": 1
       }
     ],
     "direction": "horizontal",
-    "width": 329.84759521484375,
-    "collapsed": true
+    "width": 329.84759521484375
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -245,53 +278,54 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "b467f2462c7641a1",
+  "active": "2cb8085403a072de",
   "lastOpenFiles": [
+    "copilot/skills/json-canvas/SKILL.md",
+    "copilot/skills/json-canvas/LICENSE",
+    "copilot/skills/json-canvas/references/EXAMPLES.md",
+    "copilot/skills/json-canvas/references",
+    "copilot/skills/json-canvas",
+    "copilot/skills/obsidian-bases/SKILL.md",
+    "copilot/skills/obsidian-bases/LICENSE",
+    "copilot/skills/obsidian-bases/references/EXAMPLES.md",
+    "copilot/skills/obsidian-bases/references/FUNCTIONS_REFERENCE.md",
+    "copilot/skills/obsidian-bases/references",
+    "copilot/skills/obsidian-bases",
+    "copilot/skills/obsidian-markdown/SKILL.md",
+    "copilot/skills/obsidian-markdown/LICENSE",
+    "copilot/skills/obsidian-markdown/references/PROPERTIES.md",
+    "copilot/skills/obsidian-markdown/references/EMBEDS.md",
+    "copilot/skills/obsidian-markdown/references/CALLOUTS.md",
+    "copilot/skills/obsidian-markdown/references",
+    "copilot/skills/obsidian-markdown",
+    "Database2/media/Concurrency Control-1793717543038.webp",
+    "Database2/media/Concurrency Control-1793717237862.webp",
+    "Database2/PDF/3 - Concurrency Control/03_1_Transactions.pdf",
+    "Database2/Transactions.md",
+    "Database2/Physical Database.md",
+    "Image Analysis/Camera Geometry.md",
+    "Image Analysis/media/Camera Geometry-1793709396471.webp",
+    "Image Analysis/media/Camera Geometry-1793709365272.webp",
+    "Image Analysis/media/Camera Geometry-1793706827716.webp",
+    "Image Analysis/media/Camera Geometry-1793706597331.webp",
+    "Image Analysis/media/Camera Geometry-1793706525729.webp",
+    "Image Analysis/media/Camera Geometry-1793706201688.webp",
+    "Image Analysis/media/Camera Geometry-1793706163380.webp",
+    "Image Analysis/media/Camera Geometry-1793706150149.webp",
     "Software Engineering 2/RASD.md",
-    "Software Engineering 2/PDF/02g.CreatingRASD.pdf",
-    "Software Engineering 2/PDF/02e.UML4RE.pdf",
-    "Software Engineering 2/PDF/03b.AlloyExercises.pdf",
-    "Software Engineering 2/PDF/03a.AlloyPart1-2.pdf",
-    "Software Engineering 2/PDF/02h.RASD_lab_DiNItto.pdf",
     "Software Engineering 2/Alloy.md",
-    "Formal Languages and Compilers/PDF/FLC - series 01 - 2.pdf",
-    "Formal Languages and Compilers/PDF/FLC - series 09 - new.pdf",
-    "Formal Languages and Compilers/PDF/FLC - series 08 - new.pdf",
     "Formal Languages and Compilers/ELR.md",
     "Formal Languages and Compilers/_Formal Languages and Compilers MOC.md",
     "Formal Languages and Compilers/Recognition of Free Languages.md",
     "Formal Languages and Compilers/Regular Expressions and Languages.md",
     "Formal Languages and Compilers/Context-free Grammars.md",
     "Formal Languages and Compilers/Finite State Automata.md",
-    "Formal Languages and Compilers/PDF/FLC - series 05 - new.pdf",
-    "Formal Languages and Compilers/PDF/FLC - series 04 - new.pdf",
-    "Formal Languages and Compilers/media/ELR-1793290680656.webp",
-    "Formal Languages and Compilers/media/ELR-1793290659911.webp",
     "Image Analysis/Space Geometry.md",
     "Image Analysis/Optical Systems.md",
-    "Formal Languages and Compilers/media/Recognition of Free Languages-1793274301848.webp",
-    "Formal Languages and Compilers/media/Recognition of Free Languages-1793271600755.webp",
-    "Formal Languages and Compilers/media/Recognition of Free Languages-1793209122545.webp",
-    "Formal Languages and Compilers/media/Recognition of Free Languages-1793209106798.webp",
-    "Formal Languages and Compilers/media/Recognition of Free Languages-1793204084227.webp",
-    "Formal Languages and Compilers/media/Recognition of Free Languages-1793201953902.webp",
-    "Formal Languages and Compilers/media/Finite State Automata-1793200551495.webp",
-    "Formal Languages and Compilers/media/Finite State Automata-1793199409579.webp",
-    "Image Analysis/Camera Geometry.md",
     "Operational Research/Flows.md",
     "Image Analysis/media/Space Geometry 2026-10-28 12.32.36.excalidraw.md",
     "Excalidraw/Drawing 2026-10-28 12.31.30.excalidraw.md",
     "Excalidraw/Drawing 2026-10-28 12.31.16.excalidraw.md",
-    "Excalidraw/Drawing 2026-10-28 12.31.05.excalidraw.md",
-    "Operational Research/media/Drawing 2026-10-28 11.05.51.excalidraw.md",
-    "Excalidraw/Drawing 2026-10-28 12.28.47.excalidraw.md",
-    "Operational Research/Problem Optimization.md",
-    "Sensor System/Temperature Sensors.md",
-    "Operational Research/media/Drawing 2026-10-28 10.54.55.excalidraw.md",
-    "Operational Research/Graphs.md",
-    "Operational Research/_Operational Research MOC.md",
-    "Sensor System/_Sensor System MOC.md",
-    "Sensor System/Light Sensors.md",
     "Senza nome.canvas"
   ]
 }

@@ -2,7 +2,6 @@
 date: 23-10-2026
 subject: Software Engineering 2
 description: The Requirements Analysis and Specification Document — its purpose as communication, contract and baseline, target qualities such as completeness, precision, consistency and traceability, the ISO/IEC/IEEE 29148 structure, requirement-writing templates and review criteria
-aliases:
 ---
 
 # RASD

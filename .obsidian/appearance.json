@@ -9,5 +9,6 @@
   "enabledCssSnippets": [
     "hide-folders"
   ],
-  "baseFontSizeAction": true
+  "baseFontSizeAction": true,
+  "showRibbon": true
 }
