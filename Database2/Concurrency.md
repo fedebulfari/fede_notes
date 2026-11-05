@@ -134,6 +134,40 @@ We can verify conflict-serializability with conflict graphs:
 > [!Example] Es.
 > ![[Concurrency-1793891610307.webp|504x256]]
 
+This would be perfect if the graph was known prior the execution. Since this isn’t the case the scheduler need to work “online”, tho is not feasible to maintain the conflict graph, update it, and check its acyclicity at each operation request.
+
+Concurrency Control can not work only with the commit-projection of the schedule is unrealistic, aborts do occur.
+
+#### 3.1.2. Arrival Sequences
+
+The notation “$r_{1}(x)w_{2}(x)w_{1}(x)w_{3}(x)$” used so far, represent an **a posteriori view**
+
+When dealing with “online” concurrency control, it is important also to consider **arrival sequences**, i.e., sequences of operation requests emitted in order by transactions
+
+For simplicity, with an abuse of annotations we use the same notation as for **a posteriori view**
+
+## 4. Concurrency Control Approaches
+
+In order to implement concurrency control “online” there are two major families of techniques:
+- Pessimistic: Based on locks, if a resource is taken, make the requester wait or preempt the holder — i.e., resource access control 
+- Optimistic: Based on timestamps and versions, serve as many requests as possible, possibly using out-of-date versions of the data
+
+### 4.1. Locking
+
+A transaction is well-formed w.r.t. locking if:
+- read operations are preceded by r_lock (aka SHARED LOCK) and followed by unlock
+- write operations are preceded by w_lock (aka EXCLUSIVE LOCK) and followed by unlock
+	*unlocking can be delayed w.r.t. to the end of the read/write operation*
+
+Transactions that first read and then write an object may:
+- Acquire a w_lock already when reading 
+- Acquire a r_lock first and then upgrade it into a w_lock (lock upgrade)
+
+Possible states of an object: 
+- Free 
+- r-locked (locked by one or more readers) 
+- w-locked (locked by a writer) 
+
 ---
 Related: [[_Database2 MOC]]
 Source: [[03_1_Transactions.pdf]], [[03_2_Concurrency.pdf]]

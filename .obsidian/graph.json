@@ -2,7 +2,7 @@
   "collapse-filter": false,
   "search": "",
   "showTags": false,
-  "showAttachments": true,
+  "showAttachments": false,
   "hideUnresolved": false,
   "showOrphans": true,
   "collapse-color-groups": false,
@@ -11,7 +11,7 @@
       "query": "path:Database2  ",
       "color": {
         "a": 1,
-        "rgb": 14734418
+        "rgb": 16113664
       }
     },
     {
@@ -61,5 +61,5 @@
   "linkStrength": 1,
   "linkDistance": 250,
   "scale": 0.30180159099985626,
-  "close": true
+  "close": false
 }
