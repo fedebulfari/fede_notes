@@ -4,12 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "a46bd99cbb95ef49",
+        "id": "cb79d7879e47955b",
         "type": "tabs",
-        "dimension": 60.672917815774966,
         "children": [
           {
-            "id": "911dc648bd6ec596",
+            "id": "0a05fbce5072bac0",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -25,20 +24,45 @@
         ]
       },
       {
-        "id": "cb79d7879e47955b",
+        "id": "ecaa6138a5bb05cc",
         "type": "tabs",
-        "dimension": 39.32708218422504,
         "children": [
           {
-            "id": "0a05fbce5072bac0",
+            "id": "e29f81bf1944a731",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Formal Languages and Compilers/Regular Expressions and Languages.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Regular Expressions and Languages"
+            }
+          },
+          {
+            "id": "d130edb300583d91",
             "type": "leaf",
             "state": {
               "type": "pdf",
               "state": {
-                "file": "Database2/PDF/3 - Concurrency Control/03_2_Concurrency.pdf"
+                "file": "Software Engineering 2/PDF/02f.ExercisesRE.pdf"
               },
               "icon": "lucide-file-text",
-              "title": "03_2_Concurrency"
+              "title": "02f.ExercisesRE"
+            }
+          },
+          {
+            "id": "dea1625c648b2dd7",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Sensor System/media/Sensors-1791925614863.webp"
+              },
+              "icon": "lucide-image",
+              "title": "Sensors-1791925614863"
             }
           }
         ]
@@ -129,8 +153,7 @@
               "title": "Tutte le proprietà"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       },
       {
         "id": "91dc530f918ee9cf",
@@ -156,8 +179,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "a208faef6a30291a",
@@ -215,7 +237,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Image Analysis/Space Geometry.md",
+                "file": "Database2/Concurrency.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -267,53 +289,53 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "911dc648bd6ec596",
+  "active": "0a05fbce5072bac0",
   "lastOpenFiles": [
+    "Formal Languages and Compilers/Regular Expressions and Languages.md",
+    "Software Engineering 2/PDF/02f.ExercisesRE.pdf",
+    "Sensor System/media/Sensors-1791925614863.webp",
+    "Operational Research/Problem Optimization.md",
     "Database2/PDF/3 - Concurrency Control/03_2_Concurrency.pdf",
     "Database2/Concurrency.md",
+    "Formal Languages and Compilers/media/Finite State Automata-1793200551495.webp",
+    "Formal Languages and Compilers/media/Basics-1791567228274.webp",
+    "Database2/_Database2 MOC.md",
+    "Database2/Triggers.md",
+    "Operational Research/media/grafi2.md",
+    "Operational Research/Graphs.md",
+    "Operational Research/Linear Programming.md",
+    "Operational Research/media/Es.1-1791401200992.webp",
+    "Operational Research/media/Es. 3-1791478780648.webp",
+    "Operational Research/media/Es. 3-1791478758471.webp",
+    "Operational Research/media/Es. 1-1791561061335.webp",
+    "Operational Research/media/Graphs/media/Es. 1.md",
+    "Operational Research/media/grafo1.md",
+    "Operational Research/media/Problem Optimization/media/Es.1.md",
+    "Operational Research/media/Problem Optimization/media/Es. 3.md",
+    "Operational Research/media/Problem Optimization/media/Es. 2.md",
+    "Sensor System/_Sensor System MOC.md",
+    "Database2/media/Concurrency 2026-11-05 16.11.24.excalidraw.md",
+    "Database2/media/Concurrency-1793891610307.webp",
+    "Database2/media/Concurrency-1793891200929.webp",
+    "Database2/media/Concurrency-1793890649691.webp",
     "Database2/Senza nome.base",
+    "Operational Research/media/LP feasible region.excalidraw.md",
+    "Image Analysis/_Image Analysis MOC.md",
     "Formal Languages and Compilers/ELR.md",
     "Sensor System/Temperature Sensors.md",
     "Operational Research/Flows.md",
     "Database2/PDF/3 - Concurrency Control/03_1_Transactions.pdf",
-    "Database2/media/Transactions-1793811026347.webp",
-    "Database2/Triggers.md",
     "Database2/Physical Database.md",
     "Operational Research/PDF/Slides/LPnew.pdf",
-    "Operational Research/Linear Programming.md",
-    "Operational Research/media/Linear Programming-1793790112132.webp",
     "Image Analysis/Space Geometry.md",
     "Database2/NVIDIA_app_v11.w33pYmpX.0.9.585_x64.exe.part",
     "Database2/NVIDIA_app_v11.0.9.585_x64.exe",
-    "Operational Research/media/LP feasible region.excalidraw.md",
     "Operational Research/PDF/chapter+3.pdf",
-    "Operational Research/Graphs.md",
     "Operational Research/PDF/Slides/flowsnew.pdf",
     "copilot/skills/json-canvas/SKILL.md",
     "copilot/skills/json-canvas/LICENSE",
     "copilot/skills/json-canvas/references/EXAMPLES.md",
-    "copilot/skills/json-canvas/references",
     "copilot/skills/obsidian-bases/SKILL.md",
-    "copilot/skills/obsidian-bases/references/EXAMPLES.md",
-    "copilot/skills/obsidian-bases/references/FUNCTIONS_REFERENCE.md",
-    "copilot/skills/obsidian-markdown/SKILL.md",
-    "copilot/skills/obsidian-markdown/references/PROPERTIES.md",
-    "copilot/skills/obsidian-markdown/references/EMBEDS.md",
-    "copilot/skills/obsidian-markdown/references/CALLOUTS.md",
-    "Database2/media/Concurrency Control-1793717543038.webp",
-    "Database2/media/Concurrency Control-1793717237862.webp",
-    "Image Analysis/Camera Geometry.md",
-    "Image Analysis/media/Camera Geometry-1793709396471.webp",
-    "Image Analysis/media/Camera Geometry-1793709365272.webp",
-    "Image Analysis/media/Camera Geometry-1793706827716.webp",
-    "Image Analysis/media/Camera Geometry-1793706597331.webp",
-    "Image Analysis/media/Camera Geometry-1793706525729.webp",
-    "Image Analysis/media/Camera Geometry-1793706201688.webp",
-    "Software Engineering 2/RASD.md",
-    "Software Engineering 2/Alloy.md",
-    "Formal Languages and Compilers/_Formal Languages and Compilers MOC.md",
-    "Formal Languages and Compilers/Recognition of Free Languages.md",
-    "Formal Languages and Compilers/Regular Expressions and Languages.md",
     "Senza nome.canvas"
   ]
 }
